@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>元界的HD账户模型及加密 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/developers/account-model.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/account-model.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/account-model.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="元界的HD账户模型及加密元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。 1 HD钱包1.1 HD钱包原理HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD">
+<meta property="og:type" content="website">
+<meta property="og:title" content="元界的HD账户模型及加密">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/developers/account-model.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="元界的HD账户模型及加密元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。 1 HD钱包1.1 HD钱包原理HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://i.imgur.com/k12Jkk0.png">
+<meta property="og:image" content="https://i.imgur.com/phpWeVF.png">
+<meta property="og:image" content="https://i.imgur.com/j09an8W.png">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="元界的HD账户模型及加密">
+<meta name="twitter:description" content="元界的HD账户模型及加密元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。 1 HD钱包1.1 HD钱包原理HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD">
+<meta name="twitter:image" content="https://i.imgur.com/k12Jkk0.png">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="developers/account-model.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">元界的HD账户模型及加密</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/developers/account-model.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="元界的HD账户模型及加密" class="article-heading"><a href="#元界的HD账户模型及加密" class="headerlink" title="元界的HD账户模型及加密"></a>元界的HD账户模型及加密<a class="article-anchor" href="#元界的HD账户模型及加密" aria-hidden="true"></a></h1><p>元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。</p>
+<h1 id="1-HD钱包" class="article-heading"><a href="#1-HD钱包" class="headerlink" title="1 HD钱包"></a>1 HD钱包<a class="article-anchor" href="#1-HD钱包" aria-hidden="true"></a></h1><h2 id="1-1-HD钱包原理" class="article-heading"><a href="#1-1-HD钱包原理" class="headerlink" title="1.1 HD钱包原理"></a>1.1 HD钱包原理<a class="article-anchor" href="#1-1-HD钱包原理" aria-hidden="true"></a></h2><p>HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD钱包使用的便利性还表现在“助记词”，元界HD钱包便是基于此规则生成，用户只需要记住“助记词”和地址个数就可恢复出该账户所持有的资产的。</p>
+<p>以12单词助记词为例，从“助记词”到“根种子”运算原理如下图所示：</p>
+<p>助记词生成过程：<br><img src="https://i.imgur.com/k12Jkk0.png" alt="助记词生成过程"></p>
+<p>根种子生成过程：<br><img src="https://i.imgur.com/phpWeVF.png" alt="根种子生成过程"></p>
+<p>HD钱包的“根种子”为128到256位的随机数。它使用CKD(child key derivation)方程从母密钥衍生出子密钥。子密钥衍生方程是基于单向散列函数。这个函数结合了：一个母公共钥匙、一个叫做链码（256位）的种子、一个索引号（32位）。这三个参数相结合并散列可以生成子密钥。”母公共钥匙+链码+索引号“合并在一起，并且用HMAC-SHA512散列之后可以产生512位的散列值。并将其拆分为两部分。右半部分的256位产生出可以给子链当链码。左半部分256位散列以及索引友被加载在母私钥上来衍生子私钥。如下图所示：</p>
+<p><img src="https://i.imgur.com/j09an8W.png" alt="从母密钥衍生出子密钥"></p>
+<p>这样改变索引可以让我们延长母密钥假造序列中的其他子密钥。每个母密钥可以产生2的32次方个子密钥。</p>
+<h2 id="1-2-HD账户实现" class="article-heading"><a href="#1-2-HD账户实现" class="headerlink" title="1.2 HD账户实现"></a>1.2 HD账户实现<a class="article-anchor" href="#1-2-HD账户实现" aria-hidden="true"></a></h2><p>元界中新账户对应一个新生成的分层确定性钱包，新账户建立成功后会返回24个英文助记词，通过账户助记词可以恢复出用户的所有普通地址（后续元界还引入了多重签名地址）上的资产信息。一个账户可以连续生成多个地址，目前地址的最大个数为4294967296（2的32次方）个。每个元界HD账户生成的过程为：</p>
+<ol>
+<li><p>用户通过RPC发送getnewaccout命令，并带有用户名和密码给mvsd。</p>
+</li>
+<li><p>mvsd通过由“密码学上安全的随机数生成器”生成“种子随机数”。</p>
+</li>
+<li><p>mvsd根据上述步骤中所得到的“种子随机数”生成“助记词”。生成“助记词”的目的是为了便于人们存储和输入。</p>
+</li>
+<li><p>mvsd由“助记词”进行解码恢复出步骤3中所产生的随机数“种子”。</p>
+</li>
+<li><p>mvsd根据“种子”计算“HD私钥”，该“HD私钥”为该账户的“根私钥”，以后所有的地址生成都是基于该“根私钥”和当前账户地址“索引值”生成的。“索引值”默认为0。账户生成时，会应用后续步骤生成第一个默认地址。</p>
+</li>
+</ol>
+<h2 id="1-3-账户地址" class="article-heading"><a href="#1-3-账户地址" class="headerlink" title="1.3 账户地址"></a>1.3 账户地址<a class="article-anchor" href="#1-3-账户地址" aria-hidden="true"></a></h2><p>HD钱包的所有地址都是经由“助记词”和地址索引生成的。新地址产生流程为：</p>
+<ol>
+<li><p>由“助记词”解码出随机数“种子”。</p>
+</li>
+<li><p>根据“种子”计算“主HD私钥”，并修改当前账户最新地址的“索引值”。计算出新的地址的“HD私钥”，该“HD私钥”是基于“主HD私钥”计算出的第“索引值”个“子HD私钥”</p>
+</li>
+<li><p>将“子HD私钥”换算成“EC私钥”</p>
+</li>
+<li><p>根据“EC私钥”通过单向散列函数计算出其“EC公钥”</p>
+</li>
+<li><p>根据“EC公钥”将其进行编码处理，计算出“元界地址”</p>
+</li>
+</ol>
+<p><a href="mvs-wallet-address-example.html">参考示例</a></p>
+<h2 id="1-4-多重签名地址" class="article-heading"><a href="#1-4-多重签名地址" class="headerlink" title="1.4 多重签名地址"></a>1.4 多重签名地址<a class="article-anchor" href="#1-4-多重签名地址" aria-hidden="true"></a></h2><p>在元界中，普通地址是以M开头的，而所有以数字3开头的地址是P2SH地址。多重签名作为合约脚本，其所对应的多重签名地址都是以3开头的脚本地址。它可以指定交易中受益人作为哈希的脚本，而不是公钥的所有者。该功能是依据BIP0016。资金被发送到以3开头的地址时，不仅仅需要一个公钥哈希值，同进也需要一个私钥签名作为所有都证明。在创建地址的时候，这些要求会被定义在脚本中，所有对地址的输入都会被这些要求阻隔。多重签名地址脚本是一种最常见的P2SH。在多重签名中需要多个签名来证明来证明所有权，此后才能消费资金。它需要从总共N个密钥中需要M个签名，被称为M-N多重签名，其中M是等于或小于N。M是需要的最小匹配的签名，N是提供公钥的数量。</p>
+<p>若要创建一个多重签名合约，所有参与人都要给其他人一个地址公钥。然后，任何得到的所参与人的公钥的人可以创建P2SH脚本。如2-3签名脚本，OP_2  [A’s pubkey] [B’s pubkey] [C’s pubkey] OP_3 OP_CHECKMULTISIGOP_2和OP_3代表实际数字2和3。OP_2指定需要2个签名，OP_3指定需要提供3个未哈希过的公钥。</p>
+<h1 id="2-HD账户设计" class="article-heading"><a href="#2-HD账户设计" class="headerlink" title="2 HD账户设计"></a>2 HD账户设计<a class="article-anchor" href="#2-HD账户设计" aria-hidden="true"></a></h1><p>在元界钱包中的账户设计中主要涉及account、acccount_multisig两个类。其中account类是对HD账户的抽象，account_multisig类是对多重签名的抽象。</p>
+<p> account类和account_multisig类为组合关系，一个account实例可以拥有0个或多个account_multisig实例。</p>
+<p>account类主要通过以下字段记录账户相关关键信息。</p>
+<p> name —-账户的名字，对应于钱包页面的用户名，该字段是以字符串的形式持久存储于钱包的本地账户数据库表中的。</p>
+<p> mnemonic —-账户注册成功后，为使得用户存储、记录其账户在的信息所生成的助记词。该字段是以加密字符串的形式持久存储在钱包的本地账户数据库表中的。该字段是用户最重要的信息，若用户忘记旧的用户名或者密码，用户完全可以从备份在U盘或者纸张上的助记词重新导入新账户达到恢复资产的目的。</p>
+<p> passwd —-账户的密码，对应用钱包页面的用户密码，针对密码，元界钱包在用户注册时针对用户密码应用单向散列函数进行了哈希计算，而不是存储的密码明文，这样做的好处增加了密码的安全性，即使获取到了钱包的本地账户数据表，也无法从哈希值反向计算出用户密码。</p>
+<p> hd_index —-账户地址索引，对应于钱包从主助记词导入账户页面中的地址个数。主要用户记录账户地址个数的。其值加1即为该账户目前已建立地址个数，该字段以数值的形式存储于钱包本地账户数据库表中。</p>
+<p> mulitisg_vec —-账户多重签名信息，账户可以从自己的地址列表选择地址，并获取其公钥，然后与其他账户地址的公钥共同生成多重签名合约。该字段被序列化后存储于钱包本地账户数据库表中。</p>
+<p> account_multisig类主要通过以下字段记录账户多重签名相关关键信息。</p>
+<p> m_ —-记录该项多重签名最少签名个数</p>
+<p> n_ —-记录该项多重签名脚本中公钥的最大个数</p>
+<p> pubkey_ —-记录该项多重签名所使用的该账户地址的公钥</p>
+<p> cosigner_pubkeys_ —-用于存储该项目多重签名中所有其他参与方提供的公钥</p>
+<p> address_ —-记录该多重签名合约所对应的地址</p>
+<p>元界的地址是通过account_address类进行抽象的，它与account类之间是关联关系，每个账户可以拥有多个地址，它们主要是基于根私钥，依据索引值产生新的地址。</p>
+<p>类主要应用如下字段存储地址关键信息。</p>
+<p>name —-用于存储该地址所属账户的用户名</p>
+<p> prv_key —-该字段用于存储地址所对应的私钥，由于获取到地址的私钥后就可以花费或转移该地址上的所有资产，出于安全性考虑，没有在数据库的地址表中存储私钥的明文，而是存储是加密后的私钥信息。</p>
+<p> hd_index —-用于存储该地址的索引值，即从根私钥产生该地址所应用的索引值。</p>
+<p> address —-用于存储地址字符串的实际值。</p>
+<p>账户除具有熵（ETP）之外，还可以拥有各种在元界中发行的数据资产。asset_detail类是元界中数据资产的抽象，它与account类是通过account_address类作为中介关联起来的，可以将这种关系理解为间接关联。</p>
+<p>asset_detail类主要应用如下字段存储地址关键信息。</p>
+<p> symbol —-用于存储该资产的名字，该资产在元界是唯一的，若已有用户发布过同名的资产则该资产则不能以现有的名字进行发布。</p>
+<p> maximum_supply —-用于存储该资产发行的最大份数。该值是在资产建立时就指定的。</p>
+<p> decimal_number —-用于指定单份资产可以被切分的小数位数。</p>
+<p> address —-用于指定最初发布资产的发起地址。</p>
+<p> description —-用于指定该资产的描述信息。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="di-send.html" class="article-footer-prev" title="DID 发送交易"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="consensus-and-mining.html" class="article-footer-next" title="共识与挖矿"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/developers/account-model.html';
+  var disqus_title = "元界的HD账户模型及加密";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#元界的HD账户模型及加密"><span class="toc-text">元界的HD账户模型及加密</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-HD钱包"><span class="toc-text">1 HD钱包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-HD钱包原理"><span class="toc-text">1.1 HD钱包原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-HD账户实现"><span class="toc-text">1.2 HD账户实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-账户地址"><span class="toc-text">1.3 账户地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-4-多重签名地址"><span class="toc-text">1.4 多重签名地址</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-HD账户设计"><span class="toc-text">2 HD账户设计</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开发者文档概览</strong><a href="index.html" class="sidebar-link">介绍</a><a href="mvs-whitepaper.html" class="sidebar-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">简版数字身份白皮书</a><a href="build-mvs.html" class="sidebar-link">编译元界全节点钱包</a><strong class="sidebar-title">数字资产-MST</strong><a href="da-index.html" class="sidebar-link">介绍</a><a href="da-issue.html" class="sidebar-link">发行MST</a><a href="da-secondary-issue.html" class="sidebar-link">MST多次增发</a><a href="da-attenuation.html" class="sidebar-link">MST曲线发行</a><a href="da-multi-sig.html" class="sidebar-link">MST的多重签名</a><a href="da-certification.html" class="sidebar-link">MST的资产证书</a><a href="da-burn.html" class="sidebar-link">MST数量销毁</a><a href="da-programmable.html" class="sidebar-link">可编程MST</a><strong class="sidebar-title">数字资产-MIT</strong><a href="mit-index.html" class="sidebar-link">MIT 介绍</a><a href="mit-register.html" class="sidebar-link">MIT 登记</a><a href="mit-transfer.html" class="sidebar-link">MIT 转移</a><a href="mit-query.html" class="sidebar-link">MIT 查询</a><strong class="sidebar-title">数字身份-Avatar</strong><a href="di-index.html" class="sidebar-link">DID 介绍</a><a href="di-register.html" class="sidebar-link">DID 注册</a><a href="di-transfer.html" class="sidebar-link">DID 转移</a><a href="di-query.html" class="sidebar-link">DID 查询</a><a href="di-send.html" class="sidebar-link">DID 发送交易</a><strong class="sidebar-title">技术概览</strong><a href="account-model.html" class="sidebar-link current">账户模型</a><a href="consensus-and-mining.html" class="sidebar-link">共识与挖矿</a><a href="database.html" class="sidebar-link">高性能数据库</a><a href="httpserver.html" class="sidebar-link">Httpserver</a><a href="p2p-network.html" class="sidebar-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">交易格式和签名</a><a href="utxo-and-script.html" class="sidebar-link">utxo与script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO的限制条件</a><a href="cross-chain.html" class="sidebar-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开发者文档概览</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="mvs-whitepaper.html" class="mobile-nav-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">简版数字身份白皮书</a><a href="build-mvs.html" class="mobile-nav-link">编译元界全节点钱包</a><strong class="mobile-nav-title">数字资产-MST</strong><a href="da-index.html" class="mobile-nav-link">介绍</a><a href="da-issue.html" class="mobile-nav-link">发行MST</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST多次增发</a><a href="da-attenuation.html" class="mobile-nav-link">MST曲线发行</a><a href="da-multi-sig.html" class="mobile-nav-link">MST的多重签名</a><a href="da-certification.html" class="mobile-nav-link">MST的资产证书</a><a href="da-burn.html" class="mobile-nav-link">MST数量销毁</a><a href="da-programmable.html" class="mobile-nav-link">可编程MST</a><strong class="mobile-nav-title">数字资产-MIT</strong><a href="mit-index.html" class="mobile-nav-link">MIT 介绍</a><a href="mit-register.html" class="mobile-nav-link">MIT 登记</a><a href="mit-transfer.html" class="mobile-nav-link">MIT 转移</a><a href="mit-query.html" class="mobile-nav-link">MIT 查询</a><strong class="mobile-nav-title">数字身份-Avatar</strong><a href="di-index.html" class="mobile-nav-link">DID 介绍</a><a href="di-register.html" class="mobile-nav-link">DID 注册</a><a href="di-transfer.html" class="mobile-nav-link">DID 转移</a><a href="di-query.html" class="mobile-nav-link">DID 查询</a><a href="di-send.html" class="mobile-nav-link">DID 发送交易</a><strong class="mobile-nav-title">技术概览</strong><a href="account-model.html" class="mobile-nav-link current">账户模型</a><a href="consensus-and-mining.html" class="mobile-nav-link">共识与挖矿</a><a href="database.html" class="mobile-nav-link">高性能数据库</a><a href="httpserver.html" class="mobile-nav-link">Httpserver</a><a href="p2p-network.html" class="mobile-nav-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">交易格式和签名</a><a href="utxo-and-script.html" class="mobile-nav-link">utxo与script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO的限制条件</a><a href="cross-chain.html" class="mobile-nav-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/account-model.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

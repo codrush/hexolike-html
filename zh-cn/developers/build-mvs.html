@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>编译元界全节点钱包 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/developers/build-mvs.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/build-mvs.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/build-mvs.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Linux环境下编译可以使用的Linux版本几乎所有的Linux都可进行MVS全节点钱包的编译，官方使用Ubuntu 16.04进行编译测试。 获取源码git clone https://github.com/mvs-org/metaverse.git 编译引用到github：https://github.com/mvs-org/metaverse MacOSX环境下编译获取源码git clone">
+<meta property="og:type" content="website">
+<meta property="og:title" content="编译元界全节点钱包">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/developers/build-mvs.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Linux环境下编译可以使用的Linux版本几乎所有的Linux都可进行MVS全节点钱包的编译，官方使用Ubuntu 16.04进行编译测试。 获取源码git clone https://github.com/mvs-org/metaverse.git 编译引用到github：https://github.com/mvs-org/metaverse MacOSX环境下编译获取源码git clone">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="编译元界全节点钱包">
+<meta name="twitter:description" content="Linux环境下编译可以使用的Linux版本几乎所有的Linux都可进行MVS全节点钱包的编译，官方使用Ubuntu 16.04进行编译测试。 获取源码git clone https://github.com/mvs-org/metaverse.git 编译引用到github：https://github.com/mvs-org/metaverse MacOSX环境下编译获取源码git clone">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="developers/build-mvs.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">编译元界全节点钱包</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/developers/build-mvs.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Linux环境下编译" class="article-heading"><a href="#Linux环境下编译" class="headerlink" title="Linux环境下编译"></a>Linux环境下编译<a class="article-anchor" href="#Linux环境下编译" aria-hidden="true"></a></h2><h2 id="可以使用的Linux版本" class="article-heading"><a href="#可以使用的Linux版本" class="headerlink" title="可以使用的Linux版本"></a>可以使用的Linux版本<a class="article-anchor" href="#可以使用的Linux版本" aria-hidden="true"></a></h2><p>几乎所有的Linux都可进行MVS全节点钱包的编译，官方使用Ubuntu 16.04进行编译测试。</p>
+<h2 id="获取源码" class="article-heading"><a href="#获取源码" class="headerlink" title="获取源码"></a>获取源码<a class="article-anchor" href="#获取源码" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/mvs-org/metaverse.git</span><br></pre></td></tr></table></figure>
+<h2 id="编译" class="article-heading"><a href="#编译" class="headerlink" title="编译"></a>编译<a class="article-anchor" href="#编译" aria-hidden="true"></a></h2><p>引用到github：<br><a href="https://github.com/mvs-org/metaverse" target="_blank" rel="noopener">https://github.com/mvs-org/metaverse</a></p>
+<h2 id="MacOSX环境下编译" class="article-heading"><a href="#MacOSX环境下编译" class="headerlink" title="MacOSX环境下编译"></a>MacOSX环境下编译<a class="article-anchor" href="#MacOSX环境下编译" aria-hidden="true"></a></h2><h2 id="获取源码-1" class="article-heading"><a href="#获取源码-1" class="headerlink" title="获取源码"></a>获取源码<a class="article-anchor" href="#获取源码-1" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/mvs-org/metaverse.git</span><br></pre></td></tr></table></figure>
+<h2 id="安装Homebrew" class="article-heading"><a href="#安装Homebrew" class="headerlink" title="安装Homebrew"></a>安装Homebrew<a class="article-anchor" href="#安装Homebrew" aria-hidden="true"></a></h2><p>如果已经安装可以跳过此步骤。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">/usr/bin/ruby -e <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="编译-1" class="article-heading"><a href="#编译-1" class="headerlink" title="编译"></a>编译<a class="article-anchor" href="#编译-1" aria-hidden="true"></a></h2><p>引用到github：<br><a href="https://github.com/mvs-org/metaverse" target="_blank" rel="noopener">https://github.com/mvs-org/metaverse</a></p>
+<h2 id="Windows环境下编译" class="article-heading"><a href="#Windows环境下编译" class="headerlink" title="Windows环境下编译"></a>Windows环境下编译<a class="article-anchor" href="#Windows环境下编译" aria-hidden="true"></a></h2><h2 id="Dependencies" class="article-heading"><a href="#Dependencies" class="headerlink" title="Dependencies:"></a>Dependencies:<a class="article-anchor" href="#Dependencies" aria-hidden="true"></a></h2><ul>
+<li>Microsoft Visual Studio Community 2015 With Update 3</li>
+<li><a href="https://sourceforge.net/projects/boost/files/boost/1.63.0/boost_1_63_0.zip/download" target="_blank" rel="noopener">boost_1_63_0</a></li>
+<li><a href="https://github.com/zeromq/libzmq/releases/download/v4.2.1/zeromq-4.2.1.zip" target="_blank" rel="noopener">zeromq-4.2.1</a></li>
+<li><a href="https://github.com/mvs-org/secp256k1.git" target="_blank" rel="noopener">secp256k1</a></li>
+<li><a href="https://github.com/mvs-org/metaverse.git" target="_blank" rel="noopener">metaverse</a></li>
+</ul>
+<h2 id="Get-the-source-code" class="article-heading"><a href="#Get-the-source-code" class="headerlink" title="Get the source code"></a>Get the source code<a class="article-anchor" href="#Get-the-source-code" aria-hidden="true"></a></h2><h3 id="Download-all-the-dependencies-to-the-specific-folder-as-below" class="article-heading"><a href="#Download-all-the-dependencies-to-the-specific-folder-as-below" class="headerlink" title="Download all the dependencies to the specific folder as below:"></a>Download all the dependencies to the specific folder as below:<a class="article-anchor" href="#Download-all-the-dependencies-to-the-specific-folder-as-below" aria-hidden="true"></a></h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">boost_1_63_0/</span><br><span class="line">zeromq-4.2.1/</span><br><span class="line">secp256k1/</span><br><span class="line">metaverse/</span><br></pre></td></tr></table></figure>
+<h2 id="Build-Metaverse-Step-by-Step" class="article-heading"><a href="#Build-Metaverse-Step-by-Step" class="headerlink" title="Build Metaverse Step by Step"></a>Build Metaverse Step by Step<a class="article-anchor" href="#Build-Metaverse-Step-by-Step" aria-hidden="true"></a></h2><ul>
+<li><p>Build Boost</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bootstrap.bat</span><br><span class="line">b2.exe address-model=64 runtime-link=static link=static</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Build zeromq-4.2.1<br>Open <code>zeromq-4.2.1\builds\msvc\vs2015\libzmq.sln</code>, switch to libzmq project, then build x64 Platform StaticDebug and StaticRelease versions separately.</p>
+</li>
+<li><p>Build secp256k1<br>Open <code>secp256k1\builds\msvc\vs2013\secp256k1.sln</code>, switch to secp256k1 project, then build x64 Platform StaticDebug or StaticRelease versions separately.</p>
+</li>
+<li><p>Build metaverse<br>Open <code>metaverse\builds\msvc-140\metaverse.sln</code>, switch to mvsd project, then build x64 Platform Debug or Release versions separately.</p>
+</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="mvs-avatar-whitepaper.html" class="article-footer-prev" title="简版数字身份白皮书"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="da-index.html" class="article-footer-next" title="介绍"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Linux环境下编译"><span class="toc-text">Linux环境下编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以使用的Linux版本"><span class="toc-text">可以使用的Linux版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取源码"><span class="toc-text">获取源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译"><span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MacOSX环境下编译"><span class="toc-text">MacOSX环境下编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取源码-1"><span class="toc-text">获取源码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Homebrew"><span class="toc-text">安装Homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编译-1"><span class="toc-text">编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Windows环境下编译"><span class="toc-text">Windows环境下编译</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dependencies"><span class="toc-text">Dependencies:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-the-source-code"><span class="toc-text">Get the source code</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Download-all-the-dependencies-to-the-specific-folder-as-below"><span class="toc-text">Download all the dependencies to the specific folder as below:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Build-Metaverse-Step-by-Step"><span class="toc-text">Build Metaverse Step by Step</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开发者文档概览</strong><a href="index.html" class="sidebar-link">介绍</a><a href="mvs-whitepaper.html" class="sidebar-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">简版数字身份白皮书</a><a href="build-mvs.html" class="sidebar-link current">编译元界全节点钱包</a><strong class="sidebar-title">数字资产-MST</strong><a href="da-index.html" class="sidebar-link">介绍</a><a href="da-issue.html" class="sidebar-link">发行MST</a><a href="da-secondary-issue.html" class="sidebar-link">MST多次增发</a><a href="da-attenuation.html" class="sidebar-link">MST曲线发行</a><a href="da-multi-sig.html" class="sidebar-link">MST的多重签名</a><a href="da-certification.html" class="sidebar-link">MST的资产证书</a><a href="da-burn.html" class="sidebar-link">MST数量销毁</a><a href="da-programmable.html" class="sidebar-link">可编程MST</a><strong class="sidebar-title">数字资产-MIT</strong><a href="mit-index.html" class="sidebar-link">MIT 介绍</a><a href="mit-register.html" class="sidebar-link">MIT 登记</a><a href="mit-transfer.html" class="sidebar-link">MIT 转移</a><a href="mit-query.html" class="sidebar-link">MIT 查询</a><strong class="sidebar-title">数字身份-Avatar</strong><a href="di-index.html" class="sidebar-link">DID 介绍</a><a href="di-register.html" class="sidebar-link">DID 注册</a><a href="di-transfer.html" class="sidebar-link">DID 转移</a><a href="di-query.html" class="sidebar-link">DID 查询</a><a href="di-send.html" class="sidebar-link">DID 发送交易</a><strong class="sidebar-title">技术概览</strong><a href="account-model.html" class="sidebar-link">账户模型</a><a href="consensus-and-mining.html" class="sidebar-link">共识与挖矿</a><a href="database.html" class="sidebar-link">高性能数据库</a><a href="httpserver.html" class="sidebar-link">Httpserver</a><a href="p2p-network.html" class="sidebar-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">交易格式和签名</a><a href="utxo-and-script.html" class="sidebar-link">utxo与script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO的限制条件</a><a href="cross-chain.html" class="sidebar-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开发者文档概览</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="mvs-whitepaper.html" class="mobile-nav-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">简版数字身份白皮书</a><a href="build-mvs.html" class="mobile-nav-link current">编译元界全节点钱包</a><strong class="mobile-nav-title">数字资产-MST</strong><a href="da-index.html" class="mobile-nav-link">介绍</a><a href="da-issue.html" class="mobile-nav-link">发行MST</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST多次增发</a><a href="da-attenuation.html" class="mobile-nav-link">MST曲线发行</a><a href="da-multi-sig.html" class="mobile-nav-link">MST的多重签名</a><a href="da-certification.html" class="mobile-nav-link">MST的资产证书</a><a href="da-burn.html" class="mobile-nav-link">MST数量销毁</a><a href="da-programmable.html" class="mobile-nav-link">可编程MST</a><strong class="mobile-nav-title">数字资产-MIT</strong><a href="mit-index.html" class="mobile-nav-link">MIT 介绍</a><a href="mit-register.html" class="mobile-nav-link">MIT 登记</a><a href="mit-transfer.html" class="mobile-nav-link">MIT 转移</a><a href="mit-query.html" class="mobile-nav-link">MIT 查询</a><strong class="mobile-nav-title">数字身份-Avatar</strong><a href="di-index.html" class="mobile-nav-link">DID 介绍</a><a href="di-register.html" class="mobile-nav-link">DID 注册</a><a href="di-transfer.html" class="mobile-nav-link">DID 转移</a><a href="di-query.html" class="mobile-nav-link">DID 查询</a><a href="di-send.html" class="mobile-nav-link">DID 发送交易</a><strong class="mobile-nav-title">技术概览</strong><a href="account-model.html" class="mobile-nav-link">账户模型</a><a href="consensus-and-mining.html" class="mobile-nav-link">共识与挖矿</a><a href="database.html" class="mobile-nav-link">高性能数据库</a><a href="httpserver.html" class="mobile-nav-link">Httpserver</a><a href="p2p-network.html" class="mobile-nav-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">交易格式和签名</a><a href="utxo-and-script.html" class="mobile-nav-link">utxo与script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO的限制条件</a><a href="cross-chain.html" class="mobile-nav-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/build-mvs.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

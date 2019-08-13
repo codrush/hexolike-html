@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>API v3 Usage | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/api_v3/index.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v3/index.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v3/index.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="This documentation provides more detailed information about the API.v3(JSON-RPC 2.0) list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If">
+<meta property="og:type" content="website">
+<meta property="og:title" content="API v3 Usage">
+<meta property="og:url" content="https://docs.mvs.org/api_v3/index.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="This documentation provides more detailed information about the API.v3(JSON-RPC 2.0) list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API v3 Usage">
+<meta name="twitter:description" content="This documentation provides more detailed information about the API.v3(JSON-RPC 2.0) list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="api_v3/index.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">API v3 Usage</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/api_v3/index.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>This documentation provides more detailed information about the <strong>API.v3(JSON-RPC 2.0)</strong> list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If you are interested in more basic usage of Metaverse, please refer to the <a href="../docs">docs</a> instead.</p>
+<p>Please note that this documentation is only valid for MVS FULL NODE.<br>Differences between <strong>API.v3</strong> and <strong>API.v2</strong>, please refers to <a href="../api_v3/v3-VS-v2.html">v3 VS v2</a><br>Compatiblity for API v2, please refers to <a href="/api_v2">API v2</a>.<br>Compatiblity for API v1, please refers to <a href="/api">API v1</a>.</p>
+<h2 id="API-v3-Usage" class="article-heading"><a href="#API-v3-Usage" class="headerlink" title="API v3 Usage"></a>API v3 Usage<a class="article-anchor" href="#API-v3-Usage" aria-hidden="true"></a></h2><p><strong> Supported <a href="/news">v0.8.2</a> and later</strong></p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Default Port</th>
+<th>URI</th>
+<th>Default URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API v3</td>
+<td>8820</td>
+<td><strong>/rpc/v3</strong></td>
+<td><strong><a href="http://127.0.0.1:8820/rpc/v3" target="_blank" rel="noopener">http://127.0.0.1:8820/rpc/v3</a></strong></td>
+</tr>
+<tr>
+<td>Websocket</td>
+<td>8821</td>
+<td><strong>/ws</strong></td>
+<td><strong><a href="http://127.0.0.1:8821/ws" target="_blank" rel="noopener">http://127.0.0.1:8821/ws</a></strong></td>
+</tr>
+</tbody>
+</table>
+<p>Refers to <a href="../docs/config-file.html">How to configure Port</a>.</p>
+<p>Build Json, then HTTP POST to URL:<br><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;                                                                        </span><br><span class="line"> <span class="attr">"id"</span>:number,                                                         </span><br><span class="line"> <span class="attr">"method"</span>:<span class="string">"xxx"</span>,                                                         </span><br><span class="line"> <span class="attr">"params"</span>:[                                                              </span><br><span class="line">     <span class="string">"param1"</span>,  //command arguments from help</span><br><span class="line">     <span class="string">"param2"</span>,  </span><br><span class="line">     &#123;</span><br><span class="line">         "option1": value1,  //command options from help</span><br><span class="line">         "option2": value2,  </span><br><span class="line">     &#125;</span><br><span class="line">     ]                                                                   </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>Example:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getinfo","params":[],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v3</span><br><span class="line">$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"sendmore","params":["account_name","account_auth",&#123;"receivers":"t7r9twiK5gAwhR2gXDqT2zqpzS6ogvaqnJ:100000"&#125;],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v3</span><br></pre></td></tr></table></figure></p>
+<p>Obviously, Use <code>help</code> to get all commands(methods) list.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli <span class="built_in">help</span></span><br><span class="line">$ ./mvs-cli <span class="built_in">help</span> <span class="variable">$command</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="API-v3-Call-List" class="article-heading"><a href="#API-v3-Call-List" class="headerlink" title="API v3 Call List"></a>API v3 Call List<a class="article-anchor" href="#API-v3-Call-List" aria-hidden="true"></a></h3><h4 id="Account" class="article-heading"><a href="#Account" class="headerlink" title="Account"></a>Account<a class="article-anchor" href="#Account" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="account.html#getnewaccount">getnewaccount</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#validateaddress">validateaddress</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#importaccount">importaccount</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#importkeyfile">importkeyfile</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#dumpkeyfile">dumpkeyfile</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#getnewaddress">getnewaddress</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#listaddresses">listaddresses</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#changepasswd">changepasswd</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#deleteaccount">deleteaccount</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="account.html#getaccount">getaccount</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Blockchain" class="article-heading"><a href="#Blockchain" class="headerlink" title="Blockchain"></a>Blockchain<a class="article-anchor" href="#Blockchain" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="blockchain.html#shutdown">shutdown</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getinfo">getinfo</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getheight">getheight</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getpeerinfo">getpeerinfo</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getmininginfo">getmininginfo</a></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getstakeinfo">getstakeinfo</a></td>
+<td>√</td>
+<td>√</td>
+<td>×</td>
+<td>0.9.0</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#startmining">startmining</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#stopmining">stopmining</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getwork">getwork</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#addnode">addnode</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#setminingaccount">setminingaccount</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#submitwork">submitwork</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="blockchain.html#getmemorypool">getmemorypool</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Block" class="article-heading"><a href="#Block" class="headerlink" title="Block"></a>Block<a class="article-anchor" href="#Block" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="block.html#getblock">getblock</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="block.html#getblockheader">getblockheader</a></td>
+<td>×</td>
+<td>√</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="ETP" class="article-heading"><a href="#ETP" class="headerlink" title="ETP"></a>ETP<a class="article-anchor" href="#ETP" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="etp.html#getbalance">getbalance</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="etp.html#listbalances">listbalances</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="etp.html#send">send</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="etp.html#sendfrom">sendfrom</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="etp.html#sendmore">sendmore</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="etp.html#getaddressetp">getaddressetp</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="etp.html#lock">lock</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.9.0</td>
+</tr>
+<tr>
+<td><a href="etp.html#getlocked">getlocked</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.9.0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Transaction" class="article-heading"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction<a class="article-anchor" href="#Transaction" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="transaction.html#gettx">gettx</a></td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="transaction.html#listtxs">listtxs</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Multi-Signatue" class="article-heading"><a href="#Multi-Signatue" class="headerlink" title="Multi-Signatue"></a>Multi-Signatue<a class="article-anchor" href="#Multi-Signatue" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="multisig.html#createmultisigtx">createmultisigtx</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="multisig.html#getpublickey">getpublickey</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="multisig.html#deletemultisig">deletemultisig</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="multisig.html#getnewmultisig">getnewmultisig</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="multisig.html#listmultisig">listmultisig</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="multisig.html#signmultisigtx">signmultisigtx</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Rawtx-offline-sign" class="article-heading"><a href="#Rawtx-offline-sign" class="headerlink" title="Rawtx(offline-sign)"></a>Rawtx(offline-sign)<a class="article-anchor" href="#Rawtx-offline-sign" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="rawtx.html#createrawtx">createrawtx</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="rawtx.html#signrawtx">signrawtx</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="rawtx.html#decoderawtx">decoderawtx</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="rawtx.html#sendrawtx">sendrawtx</a></td>
+<td>√</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+</tbody>
+</table>
+<h4 id="DID" class="article-heading"><a href="#DID" class="headerlink" title="DID"></a>DID<a class="article-anchor" href="#DID" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="identity.html#registerdid">registerdid</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="identity.html#didchangeaddress">didchangeaddress</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="identity.html#listdids">listdids</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="identity.html#getdid">getdid</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="etp.html#send">didsend</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="etp.html#sendfrom">didsendfrom</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="etp.html#sendmore">didsendmore</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="asset.html#sendasset">didsendasset</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="asset.html#sendassetfrom">didsendassetfrom</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="MST" class="article-heading"><a href="#MST" class="headerlink" title="MST"></a>MST<a class="article-anchor" href="#MST" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="asset.html#createasset">createasset</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#deletelocalasset">deletelocalasset</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#getaccountasset">getaccountasset</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#getaddressasset">getaddressasset</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#getasset">getasset</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#issue">issue</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#issuefrom">issuefrom</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#listassets">listassets</a></td>
+<td>√</td>
+<td>×</td>
+<td>optional</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#sendasset">sendasset</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#sendassetfrom">sendassetfrom</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
+<td><a href="asset.html#burn">burn</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="asset.html#validatesymbol">validatesymbol</a></td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td>0.9.0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Cert" class="article-heading"><a href="#Cert" class="headerlink" title="Cert"></a>Cert<a class="article-anchor" href="#Cert" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="asset.html#issuecert">issuecert</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="asset.html#transfercert">transfercert</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+</tbody>
+</table>
+<h4 id="MIT" class="article-heading"><a href="#MIT" class="headerlink" title="MIT"></a>MIT<a class="article-anchor" href="#MIT" aria-hidden="true"></a></h4><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Online-required</th>
+<th>Admin-required</th>
+<th>Account-required</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="mit.html#registermit">registermit</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="mit.html#transfermit">transfermit</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="mit.html#listmits">listmits</a></td>
+<td>×</td>
+<td>×</td>
+<td>optional</td>
+<td>0.8.0</td>
+</tr>
+<tr>
+<td><a href="mit.html#getmit">getmit</a></td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td>0.8.0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Method : JSON-RPC Method</li>
+<li>Online-required: whether needs to wait for almost latest height.</li>
+<li><p>Admin-required: whether provides administrator authorization, defaluts to no. (name: administrator)(password: mvsgo).</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mvs.conf</span></span><br><span class="line">[server]</span><br><span class="line">administrator_required = 1</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Account-required : user account name, password required. </p>
+</li>
+<li>Version : release in version.</li>
+</ul>
+<h3 id="mvs-cli" class="article-heading"><a href="#mvs-cli" class="headerlink" title="mvs-cli"></a>mvs-cli<a class="article-anchor" href="#mvs-cli" aria-hidden="true"></a></h3><p>mvs-cli uses <code>/rpc/v3</code> to call mvsd after v0.8.2.</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="websocket.html" class="article-footer-next" title="Websocket"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#API-v3-Usage"><span class="toc-text">API v3 Usage</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API-v3-Call-List"><span class="toc-text">API v3 Call List</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Account"><span class="toc-text">Account</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Blockchain"><span class="toc-text">Blockchain</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Block"><span class="toc-text">Block</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ETP"><span class="toc-text">ETP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transaction"><span class="toc-text">Transaction</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Multi-Signatue"><span class="toc-text">Multi-Signatue</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Rawtx-offline-sign"><span class="toc-text">Rawtx(offline-sign)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DID"><span class="toc-text">DID</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MST"><span class="toc-text">MST</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cert"><span class="toc-text">Cert</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MIT"><span class="toc-text">MIT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mvs-cli"><span class="toc-text">mvs-cli</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link current">Introduction</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">Block</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">Account</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">Blockchain</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">Transaction</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">Asset</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">Multi-signature</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">RawTx</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">Identity</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link current">Introduction</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">Block</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">Account</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">Blockchain</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">Transaction</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">Asset</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">Multi-signature</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">RawTx</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">Identity</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v3/index.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

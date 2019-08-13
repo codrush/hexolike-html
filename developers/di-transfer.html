@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Digital Identity(Avatar) Usage | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/di-transfer.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/di-transfer.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/di-transfer.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="数字身份转移数字身份可以通过改变地址进行迁移；如果要把数字身份从用户1向用户2转移，可以先转移到两个人的多重签名地址，再从多重签名地址转移到用户2的公钥地址，每次转移过程都需要多重签名确认和收取一定的手续费；转移数字身份需要校验当前所属账户和目的地址。如果需要迁移到多重签名地址，需要多个人对迁移交易签名确认。 命令：   $ didchangeaddress Usage: mvs-cli didc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Digital Identity(Avatar) Usage">
+<meta property="og:url" content="https://docs.mvs.org/developers/di-transfer.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="数字身份转移数字身份可以通过改变地址进行迁移；如果要把数字身份从用户1向用户2转移，可以先转移到两个人的多重签名地址，再从多重签名地址转移到用户2的公钥地址，每次转移过程都需要多重签名确认和收取一定的手续费；转移数字身份需要校验当前所属账户和目的地址。如果需要迁移到多重签名地址，需要多个人对迁移交易签名确认。 命令：   $ didchangeaddress Usage: mvs-cli didc">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Digital Identity(Avatar) Usage">
+<meta name="twitter:description" content="数字身份转移数字身份可以通过改变地址进行迁移；如果要把数字身份从用户1向用户2转移，可以先转移到两个人的多重签名地址，再从多重签名地址转移到用户2的公钥地址，每次转移过程都需要多重签名确认和收取一定的手续费；转移数字身份需要校验当前所属账户和目的地址。如果需要迁移到多重签名地址，需要多个人对迁移交易签名确认。 命令：   $ didchangeaddress Usage: mvs-cli didc">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/di-transfer.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Digital Identity(Avatar) Usage</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/di-transfer.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="数字身份转移" class="article-heading"><a href="#数字身份转移" class="headerlink" title="数字身份转移"></a>数字身份转移<a class="article-anchor" href="#数字身份转移" aria-hidden="true"></a></h2><p>数字身份可以通过改变地址进行迁移；<br>如果要把数字身份从用户1向用户2转移，可以先转移到两个人的多重签名地址，再从多重签名地址转移到用户2的公钥地址，每次转移过程都需要多重签名确认和收取一定的手续费；<br>转移数字身份需要校验当前所属账户和目的地址。如果需要迁移到多重签名地址，需要多个人对迁移交易签名确认。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">命令：   </span><br><span class="line">$ didchangeaddress </span><br><span class="line">Usage: mvs-cli didchangeaddress [-h] [--fee value] ACCOUNTNAME           </span><br><span class="line">ACCOUNTAUTH TOADDRESS DIDSYMBOL                                          </span><br><span class="line"></span><br><span class="line">Info: didchangeaddress                                                   </span><br><span class="line"></span><br><span class="line">Options (named):</span><br><span class="line"></span><br><span class="line">-h [--<span class="built_in">help</span>]          Get a description and instructions <span class="keyword">for</span> this <span class="built_in">command</span>.</span><br><span class="line">-f [--fee]           Transaction fee. defaults to 10000 ETP bits         </span><br><span class="line"></span><br><span class="line">Arguments (positional):</span><br><span class="line"></span><br><span class="line">ACCOUNTNAME          Account name required.                              </span><br><span class="line">ACCOUNTAUTH          Account password(authorization) required.           </span><br><span class="line">TOADDRESS            Target address                                      </span><br><span class="line">DIDSYMBOL            Did symbol </span><br><span class="line"></span><br><span class="line">规则：</span><br><span class="line">TOADDRESS为当前账户下有效的地址且未绑定其他did</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>示例：转移did到当前账户的另一个地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ /mvs-cli didchangeaddress <span class="built_in">test</span> 123 MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83 test.mvs </span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"transaction"</span> : </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="string">"hash"</span> : <span class="string">"018a877766c95f97bbf8d710867a4a4266eeb2c12fa16442166f7e5c411a1ac1"</span>,</span><br><span class="line">		<span class="string">"inputs"</span> : </span><br><span class="line">		[</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">				<span class="string">"previous_output"</span> : </span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">"hash"</span> : <span class="string">"e38c3347b2d23dc0dd524c3cad5bd75835e787b4abb0baee67b0f93a7d988805"</span>,</span><br><span class="line">					<span class="string">"index"</span> : 0</span><br><span class="line">				&#125;,</span><br><span class="line">				<span class="string">"script"</span> : <span class="string">"[ 30440220242c0e31ffc0ba07874f4910e7ec10070c1004d1eeb0fe4f95943565ba615b7602203b3889a281f0f2f2dcff2a29419d14998e7910f74acacf328ea495a3171f3e6c01 ] [ 028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab2 ]"</span>,</span><br><span class="line">				<span class="string">"sequence"</span> : 4294967295</span><br><span class="line">			&#125;,</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="string">"address"</span> : <span class="string">"M9L3ipy3Hcf6kdvknU3mH7mwH9ER3uCziu"</span>,</span><br><span class="line">				<span class="string">"previous_output"</span> : </span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">"hash"</span> : <span class="string">"4d5ae5bfdd89d30a771680cd3080478e741ff1bea65b4903ea42160952c0c9e8"</span>,</span><br><span class="line">					<span class="string">"index"</span> : 0</span><br><span class="line">				&#125;,</span><br><span class="line">				<span class="string">"script"</span> : <span class="string">"[ 304502210099ba2727501df331fc9c48095c117adfd5a58ee8950b9610ce39de026d3ff01c02207aa5de45c6546b46113cd8e2c0fa44762600d1db7b27d26e6d13e5acf4dc8fe401 ] [ 035f572a164ec0e7d8f1935e357d86c6441152bed7251389a1c66174ae890dad90 ]"</span>,</span><br><span class="line">				<span class="string">"sequence"</span> : 4294967295</span><br><span class="line">			&#125;</span><br><span class="line">		],</span><br><span class="line">		<span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">		<span class="string">"outputs"</span> : </span><br><span class="line">		[</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">				<span class="string">"attachment"</span> : </span><br><span class="line">				&#123;</span><br><span class="line">					<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">					<span class="string">"symbol"</span> : <span class="string">"test.mvs"</span>,</span><br><span class="line">					<span class="string">"type"</span> : <span class="string">"did-transfer"</span></span><br><span class="line">				&#125;,</span><br><span class="line">				<span class="string">"index"</span> : 0,</span><br><span class="line">				<span class="string">"locked_height_range"</span> : 0,</span><br><span class="line">				<span class="string">"script"</span> : <span class="string">"dup hash160 [ a672b25c96da4a80a1f0f78d44515716e776d52a ] equalverify checksig"</span>,</span><br><span class="line">				<span class="string">"value"</span> : 0</span><br><span class="line">			&#125;</span><br><span class="line">		],</span><br><span class="line">		<span class="string">"version"</span> : <span class="string">"4"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">等待交易入块后查看test.mvs的迁移记录</span><br><span class="line">命令:</span><br><span class="line">$ ./mvs-cli getdid test.mvs</span><br><span class="line">输出:</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"addresses"</span> : </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"current"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"M9L3ipy3Hcf6kdvknU3mH7mwH9ER3uCziu"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"did"</span> : <span class="string">"test.mvs"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例：转移did到多重签名地址，35cY636TPTfFW8PxhqH3BNRL54g1T4mbR2为test和test2的多重签名地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvscli didchangeaddress <span class="built_in">test</span> 123 35cY636TPTfFW8PxhqH3BNRL54g1T4mbR2 test.mvs</span><br><span class="line">输出:</span><br><span class="line">0400000002e2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c00000000093004830450221009f620f2316ce9b5d803f7651e09971443d6cb46da47619f870148551d29ac00f022016aa63ffde9c336b8e5a094eab14007c4eea9ba3755a7494e45d13527b990d6c014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffc11a1a415c7e6f164264a12fc1b2ee66424a7a8610d7f8bb975fc96677878a01000000006a473044022033c3646519579094f35f10d7dcbc443f4fac1a1346146b1d50772d88f6fa5802022057b250d9097d1cebffae67559a3cd95870ada89a1cd26470cc0d26fcbafab3720121028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab2ffffffff01000000000000000017a9142b079a4a2c1354791df4341d86ff7983426b3a9f87010000000400000002000000036c7866223335635936333654505466465738507868714833424e524c3534673154346d62523200000000</span><br><span class="line"></span><br><span class="line">签名交易并广播：</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-clisignmultisigtx test2 123 -b 0400000002e2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c00000000093004830450221009f620f2316ce9b5d803f7651e09971443d6cb46da47619f870148551d29ac00f022016aa63ffde9c336b8e5a094eab14007c4eea9ba3755a7494e45d13527b990d6c014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffc11a1a415c7e6f164264a12fc1b2ee66424a7a8610d7f8bb975fc96677878a01000000006a473044022033c3646519579094f35f10d7dcbc443f4fac1a1346146b1d50772d88f6fa5802022057b250d9097d1cebffae67559a3cd95870ada89a1cd26470cc0d26fcbafab3720121028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab2ffffffff01000000000000000017a9142b079a4a2c1354791df4341d86ff7983426b3a9f87010000000400000002000000036c7866223335635936333654505466465738507868714833424e524c3534673154346d62523200000000</span><br><span class="line">输出：</span><br><span class="line">0400000002e2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c000000000dc00483045022100e76e63c4f77ec03be48be1e1b5f0ca5ef344ce2d72d718b0dd958ceae74f4225022071599344cc3a03601d45ad387f2e022674e5785a2655fdbb1df2ea1c80818544014830450221009f620f2316ce9b5d803f7651e09971443d6cb46da47619f870148551d29ac00f022016aa63ffde9c336b8e5a094eab14007c4eea9ba3755a7494e45d13527b990d6c014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffc11a1a415c7e6f164264a12fc1b2ee66424a7a8610d7f8bb975fc96677878a01000000006a473044022033c3646519579094f35f10d7dcbc443f4fac1a1346146b1d50772d88f6fa5802022057b250d9097d1cebffae67559a3cd95870ada89a1cd26470cc0d26fcbafab3720121028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab2ffffffff01000000000000000017a9142b079a4a2c1354791df4341d86ff7983426b3a9f87010000000400000002000000036c7866223335635936333654505466465738507868714833424e524c3534673154346d62523200000000</span><br><span class="line"></span><br><span class="line">等待交易入块后查看test.mvs的迁移记录</span><br><span class="line">命令:</span><br><span class="line">$ ./mvs-cli getdid test.mvs</span><br><span class="line">输出:</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"addresses"</span> : </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"35cY636TPTfFW8PxhqH3BNRL54g1T4mbR2"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"current"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"M9L3ipy3Hcf6kdvknU3mH7mwH9ER3uCziu"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"did"</span> : <span class="string">"test.mvs"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例：did从多重签名地址一般地址</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvscli didchangeaddress test2 123 M9kDHsDKJj9hM8FzSmDu4xCDbo2DFzUhzj test.mvs</span><br><span class="line">输出:</span><br><span class="line">0400000002fe8ecb0c9d91147996f7cb1d2abbc2fd70253fa40a5138070167599d5125c6be000000009300483045022100a395d37e15d7e1110a53fd0f79572849511652c6a7f830a59a1f777e6d2beceb02207a9a059f935c8658595d658ea49e1a82a1a4ac501de55b522f58bd8f1f62a916014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffe2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c0010000006a47304402207f71094ebe0767c6593f8c749432b49ad981e5471af618bcf620ad6b249fb04b02204d00da73a85ed34016139772a982ba4bc003e5447fac07ffbf0163a43080dad60121023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05fffffffff0100000000000000001976a914143f0fc7d1186851be00b48bf526964b776af83b88ac010000000400000002000000036c7866224d396b444873444b4a6a39684d38467a536d447534784344626f3244467a55687a6a00000000</span><br><span class="line"></span><br><span class="line">签名交易并广播：</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-clisignmultisigtx <span class="built_in">test</span> 123 -b 0400000002fe8ecb0c9d91147996f7cb1d2abbc2fd70253fa40a5138070167599d5125c6be000000009300483045022100a395d37e15d7e1110a53fd0f79572849511652c6a7f830a59a1f777e6d2beceb02207a9a059f935c8658595d658ea49e1a82a1a4ac501de55b522f58bd8f1f62a916014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffe2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c0010000006a47304402207f71094ebe0767c6593f8c749432b49ad981e5471af618bcf620ad6b249fb04b02204d00da73a85ed34016139772a982ba4bc003e5447fac07ffbf0163a43080dad60121023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05fffffffff0100000000000000001976a914143f0fc7d1186851be00b48bf526964b776af83b88ac010000000400000002000000036c7866224d396b444873444b4a6a39684d38467a536d447534784344626f3244467a55687a6a00000000</span><br><span class="line">输出：</span><br><span class="line">0400000002fe8ecb0c9d91147996f7cb1d2abbc2fd70253fa40a5138070167599d5125c6be00000000db00483045022100a395d37e15d7e1110a53fd0f79572849511652c6a7f830a59a1f777e6d2beceb02207a9a059f935c8658595d658ea49e1a82a1a4ac501de55b522f58bd8f1f62a9160147304402202e860ee7cb122577102a9423be059a3a994c9e2804b9decdd6771c42d158f42f0220226e3e445309620184263d5dc059495ff8c379525a19636485cfb9cadbac92b7014c475221023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05f21028d6413e29808640ed5727546e62aec9a66f39465293db31eeaf2810314aa3ab252aeffffffffe2ff847f7f660baae489cc219c25982b6b6c00afddc238ad92767017246917c0010000006a47304402207f71094ebe0767c6593f8c749432b49ad981e5471af618bcf620ad6b249fb04b02204d00da73a85ed34016139772a982ba4bc003e5447fac07ffbf0163a43080dad60121023a5277232a4f9a08c83a968440c85b3a81fe43f86113342c08687bc9eb94c05fffffffff0100000000000000001976a914143f0fc7d1186851be00b48bf526964b776af83b88ac010000000400000002000000036c7866224d396b444873444b4a6a39684d38467a536d447534784344626f3244467a55687a6a00000000</span><br><span class="line"></span><br><span class="line">等待交易入块后查看test.mvs的迁移记录</span><br><span class="line">命令:</span><br><span class="line">$ ./mvs-cli getdid test.mvs</span><br><span class="line">输出:</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"addresses"</span> : </span><br><span class="line">	[</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"M9kDHsDKJj9hM8FzSmDu4xCDbo2DFzUhzj"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"current"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"35cY636TPTfFW8PxhqH3BNRL54g1T4mbR2"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"MP5FoYQHiEQ52pcEURkaYmuqZMnYHNAZ83"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;,</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="string">"address"</span> : <span class="string">"M9L3ipy3Hcf6kdvknU3mH7mwH9ER3uCziu"</span>,</span><br><span class="line">			<span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">		&#125;</span><br><span class="line">	],</span><br><span class="line">	<span class="string">"did"</span> : <span class="string">"test.mvs"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="di-register.html" class="article-footer-prev" title="DID register"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="di-query.html" class="article-footer-next" title="DID query"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#数字身份转移"><span class="toc-text">数字身份转移</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link current">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link current">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/di-transfer.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

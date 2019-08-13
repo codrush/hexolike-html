@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>如何备份和导入账户信息? | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/backup-account.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/backup-account.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/backup-account.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="备份与导入账户请按照如下步骤来备份与导入您的账户信息： 1 .  CAUTION: PLEASE BACKUP YOUR ACCOUNT’s MNEMONIC-PHRASE OF MASTER-KEY AT FIRST.注意: 请首先备份好您所有账户的主私钥助记符（即注册账户时生成的24个单词）。  2 . 备份账户使用命令 dumpkeyfile 逐个将账户信息导出到备份文件。    $ ./m">
+<meta name="keywords" content="Metaverse">
+<meta property="og:type" content="website">
+<meta property="og:title" content="如何备份和导入账户信息?">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/backup-account.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="备份与导入账户请按照如下步骤来备份与导入您的账户信息： 1 .  CAUTION: PLEASE BACKUP YOUR ACCOUNT’s MNEMONIC-PHRASE OF MASTER-KEY AT FIRST.注意: 请首先备份好您所有账户的主私钥助记符（即注册账户时生成的24个单词）。  2 . 备份账户使用命令 dumpkeyfile 逐个将账户信息导出到备份文件。    $ ./m">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何备份和导入账户信息?">
+<meta name="twitter:description" content="备份与导入账户请按照如下步骤来备份与导入您的账户信息： 1 .  CAUTION: PLEASE BACKUP YOUR ACCOUNT’s MNEMONIC-PHRASE OF MASTER-KEY AT FIRST.注意: 请首先备份好您所有账户的主私钥助记符（即注册账户时生成的24个单词）。  2 . 备份账户使用命令 dumpkeyfile 逐个将账户信息导出到备份文件。    $ ./m">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/backup-account.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">如何备份和导入账户信息?</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/backup-account.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="备份与导入账户" class="article-heading"><a href="#备份与导入账户" class="headerlink" title="备份与导入账户"></a>备份与导入账户<a class="article-anchor" href="#备份与导入账户" aria-hidden="true"></a></h1><p>请按照如下步骤来备份与导入您的账户信息：</p>
+<p>1 . <font color="#FF0000"> <b>CAUTION: PLEASE BACKUP YOUR ACCOUNT’s MNEMONIC-PHRASE OF MASTER-KEY AT FIRST.<br>注意: 请首先备份好您所有账户的主私钥助记符（即注册账户时生成的24个单词）。<br></b></font> </p>
+<p>2 . 备份账户<br>使用命令 <code>dumpkeyfile</code> 逐个将账户信息导出到备份文件。<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli dumpkeyfile account_name password last_word path_of_backup_keyfile</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>last_word 为注册账户时生成的24个单词的最后一个单词<br>path_of_backup_keyfile 为备份文件路径  </p>
+</blockquote>
+<p>3 . 导入账户<br>使用命令 <code>importkeyfile</code> 从备份文件逐个导入账户信息。<br>注意，导入时需要使用与导出时一致的账户密码。<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli importkeyfile account_name password path_of_backup_keyfile</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>path_of_backup_keyfile 为备份文件路径  </p>
+</blockquote>
+<h1 id="备份与导入账户相关表" class="article-heading"><a href="#备份与导入账户相关表" class="headerlink" title="备份与导入账户相关表"></a>备份与导入账户相关表<a class="article-anchor" href="#备份与导入账户相关表" aria-hidden="true"></a></h1><p>请按照如下步骤来备份与导入您的账户信息相关的表：<br>1 . 备份账户相关的表<br>在文件浏览器中输入以下位置进入相关目录:<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Windows: Explorer</span><br><span class="line">%HOMEPATH%\AppData\Roaming\Metaverse</span><br><span class="line"></span><br><span class="line"># Mac-OSX: Finder =&gt; go to folder</span><br><span class="line">~/Library/Application Support/Metaverse</span><br><span class="line"></span><br><span class="line"># Linux(unix-like):</span><br><span class="line">~/.metaverse</span><br></pre></td></tr></table></figure></p>
+<p>通过拷贝粘贴方式备份子目录 <code>mainnet</code> 中的账户相关表，<br>这些表都是以 <code>account_</code> 为前缀，包括如下几张表:<br>    <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">account_address_rows</span><br><span class="line">account_address_table</span><br><span class="line">account_asset_row</span><br><span class="line">account_asset_table</span><br><span class="line">account_table</span><br></pre></td></tr></table></figure></p>
+<p>2 . 导入账户相关的表<br>只需将上一步备份好的账户相关表拷贝加 <code>mainnet</code> 子目录即可。<br>注意，使用时需要记住备份表中的账户名和密码。</p>
+<h1 id="重新同步区块" class="article-heading"><a href="#重新同步区块" class="headerlink" title="重新同步区块"></a>重新同步区块<a class="article-anchor" href="#重新同步区块" aria-hidden="true"></a></h1><p>以下为数据库出现问题时重新同步的两种解决方案</p>
+<h3 id="方案一-重新从块高0同步-Linux" class="article-heading"><a href="#方案一-重新从块高0同步-Linux" class="headerlink" title="方案一 - 重新从块高0同步(Linux)"></a>方案一 - 重新从块高0同步(Linux)<a class="article-anchor" href="#方案一-重新从块高0同步-Linux" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份老的 mainnet 目录</span></span><br><span class="line">$ mv ~/.metaverse/mainnet ~/.metaverse/mainnet.bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重建新的数据库</span></span><br><span class="line">$ ./mvsd -i</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入账户相关的表(覆盖)</span></span><br><span class="line">$ cp -f ~/.metaverse/mainnet.bak/account_* ~/.metaverse/mainnet/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新启动 mvsd （以守护进程方式运行）</span></span><br><span class="line">$ ./mvsd -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待同步完成，查看日志</span></span><br><span class="line">$ tail -f ~/.metaverse/debug.log</span><br></pre></td></tr></table></figure>
+<h3 id="方案二-重新从块高1270000-同步-Linux" class="article-heading"><a href="#方案二-重新从块高1270000-同步-Linux" class="headerlink" title="方案二 - 重新从块高1270000+同步(Linux)"></a>方案二 - 重新从块高1270000+同步(Linux)<a class="article-anchor" href="#方案二-重新从块高1270000-同步-Linux" aria-hidden="true"></a></h3><h4 id="Linux" class="article-heading"><a href="#Linux" class="headerlink" title="Linux"></a>Linux<a class="article-anchor" href="#Linux" aria-hidden="true"></a></h4><h5 id="自动方式（推荐）" class="article-heading"><a href="#自动方式（推荐）" class="headerlink" title="自动方式（推荐）"></a>自动方式（推荐）<a class="article-anchor" href="#自动方式（推荐）" aria-hidden="true"></a></h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载最新数据包</span></span><br><span class="line">$ wget http://newmetaverse.org/mvs-download/block-data/mvs-block-data-for-linux.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解压数据包</span></span><br><span class="line">$ tar -xzvf mvs-block-data-for-linux.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行数据拷贝脚本：默认数据目录路径为： ~/.metaverse/mainnet</span></span><br><span class="line"><span class="comment"># 如果您的数据目录不是默认的路径，请将数据目录路径当作参数传入：</span></span><br><span class="line"><span class="comment"># ./copy-block-data.sh PATH_TO_BLOCK_DATA</span></span><br><span class="line">$ ./copy-block-data.sh</span><br></pre></td></tr></table></figure>
+<h5 id="手动方式" class="article-heading"><a href="#手动方式" class="headerlink" title="手动方式"></a>手动方式<a class="article-anchor" href="#手动方式" aria-hidden="true"></a></h5><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 备份老的 mainnet 目录</span></span><br><span class="line">$ mv ~/.metaverse/mainnet ~/.metaverse/mainnet.bak</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重建新的数据库</span></span><br><span class="line"><span class="comment"># 下载 mainnet-linux-height-1473277.tar.gz 区块数据包 (md5sum 为 54c996066d1249eca25e28babc3940b7)</span></span><br><span class="line">$ <span class="built_in">cd</span> ~/.metaverse</span><br><span class="line">$ wget http://newmetaverse.org/mvs-download/block-data/mainnet-linux-height-1473277.tar.gz</span><br><span class="line">$ tar -xzvf mainnet-mainnet-linux-height-1473277.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入账户相关的表(覆盖)</span></span><br><span class="line">$ cp -f ~/.metaverse/mainnet.bak/account_* ~/.metaverse/mainnet/</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新启动 mvsd （以守护进程方式运行）</span></span><br><span class="line">$ ./mvsd -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># 等待同步完成，查看日志</span></span><br><span class="line">$ tail -f ~/.metaverse/debug.log</span><br></pre></td></tr></table></figure>
+<h4 id="Mac-OS" class="article-heading"><a href="#Mac-OS" class="headerlink" title="Mac OS"></a>Mac OS<a class="article-anchor" href="#Mac-OS" aria-hidden="true"></a></h4><h5 id="自动方式（推荐）-1" class="article-heading"><a href="#自动方式（推荐）-1" class="headerlink" title="自动方式（推荐）"></a>自动方式（推荐）<a class="article-anchor" href="#自动方式（推荐）-1" aria-hidden="true"></a></h5><ol>
+<li>打开终端：启动台-&gt;其它-&gt;终端</li>
+<li>执行如下命令：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 下载最新数据包</span></span><br><span class="line">$ wget http://newmetaverse.org/mvs-download/block-data/mvs-block-data-for-mac.tar.gz</span><br><span class="line"><span class="comment"># 解压数据包</span></span><br><span class="line">$ tar -xzvf mvs-block-data-for-linux.tar.gz</span><br><span class="line"><span class="comment"># 执行数据拷贝脚本：默认数据目录路径为： ~/Library/Application Support/Metaverse/mainnet</span></span><br><span class="line"><span class="comment"># 如果您的数据目录不是默认的路径，请将数据目录路径当作参数传入：</span></span><br><span class="line"><span class="comment"># ./copy-block-data.sh PATH_TO_BLOCK_DATA</span></span><br><span class="line">$ ./copy-block-data.sh</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="手动方式-1" class="article-heading"><a href="#手动方式-1" class="headerlink" title="手动方式"></a>手动方式<a class="article-anchor" href="#手动方式-1" aria-hidden="true"></a></h5><ol>
+<li>停止运行钱包程序，升级到<a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">最新版本</a></li>
+<li>在 <code>~/Library/Application Support/Metaverse</code> 目录下新建 <code>account_bak</code> 目录；备份账户信息：拷贝 <code>mainnet</code> 中的账户相关文件到 <code>account_bak</code> 下。这些文件都是以 <code>account_</code> 为前缀，总共拷贝五个文件： <code>account_address_rows</code>, <code>account_address_table</code>, <code>ccount_asset_row</code>, <code>account_asset_table</code> 和 <code>account_table</code>；</li>
+<li>重命名 <code>mainnet</code> 目录为 <code>mainnet_bak</code>；</li>
+<li>下载区块数据包<a href="https://newmetaverse.org/mvs-download/block-data/mainnet-macOSX-height-1308526.tar.gz" target="_blank" rel="noopener">mainnet-macOSX-height-1308526.tar.gz</a>到 <code>~/Library/Application Support/Metaverse</code> 下，并解压到该目录下；</li>
+<li>恢复账户信息：覆盖拷贝 <code>account_bak</code> 下的所有文件到 <code>mainnet</code> 下。</li>
+<li>启动钱包程序，等待同步到最新区块。</li>
+</ol>
+<h4 id="Windows" class="article-heading"><a href="#Windows" class="headerlink" title="Windows"></a>Windows<a class="article-anchor" href="#Windows" aria-hidden="true"></a></h4><h5 id="自动方式（推荐）-2" class="article-heading"><a href="#自动方式（推荐）-2" class="headerlink" title="自动方式（推荐）"></a>自动方式（推荐）<a class="article-anchor" href="#自动方式（推荐）-2" aria-hidden="true"></a></h5><ol>
+<li>下载最新数据包：<a href="http://newmetaverse.org/mvs-download/block-data/mvs-block-data-for-windows.zip" target="_blank" rel="noopener">mvs-block-data-for-windows.zip</a></li>
+<li>解压，然后进入解压后的目录： <code>mvs-block-data-for-windows</code></li>
+<li>执行拷贝数据脚本：  <blockquote>
+<p>如果您的数据目录路径为默认路径： <code>%HOMEPATH%\AppData\Roaming\Metaverse</code>，右击 <code>copy-block-data.ps1</code>，选择菜单 <code>使用 PowerShell 运行</code>。若命令行出现执行策略更改选择菜单：<code>是(Y)</code>、<code>全是(A)</code> 等，请输入 <code>A</code> 回车即可。<br>如果您的数据目录路径不为默认路径：请以管理员身份运行 <code>Window Power Shell</code>，然后输入命令 <code>Set-ExecutionPolicy Unrestricted</code> 回车，在执行策略更改选择菜单：<code>是(Y)</code>、<code>全是(A)</code> 等界面，请输入 <code>A</code> 回车，然后 <code>cd</code> 到解压后的目录，请将数据目录路径当作参数传入脚本执行：<code>copy-block-data.sh PATH_TO_BLOCK_DATA</code></p>
+</blockquote>
+</li>
+</ol>
+<h5 id="手动方式-2" class="article-heading"><a href="#手动方式-2" class="headerlink" title="手动方式"></a>手动方式<a class="article-anchor" href="#手动方式-2" aria-hidden="true"></a></h5><ol>
+<li>停止运行钱包程序，升级到<a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">最新版本</a></li>
+<li>重命名 <code>C:\Users\%USER_NAME%\AppData\Roaming\Metaverse\mainnet</code> 为 <code>C:\Users\%USER_NAME%\AppData\Roaming\Metaverse\mainnet_bak</code></li>
+<li>下载区块数据包<a href="https://newmetaverse.org/mvs-download/block-data/mainnet-windows-height-1475846.zip" target="_blank" rel="noopener">mainnet-windows-height-1475846.zip</a>，保存为 <code>C:\Users\%USER_NAME%\AppData\Roaming\Metaverse\mainnet-windows-height-1475846.zip</code></li>
+<li>解压 <code>mainnet-windows-height-1475846.zip</code></li>
+<li>从 <code>mainnet_bak</code> 目录下拷贝所有以 <code>account_</code> 开头的文件到目录 <code>mainnet</code>下。总共拷贝五个文件： <code>account_address_rows</code>, <code>account_address_table</code>, <code>account_asset_row</code>, <code>account_asset_table</code> 和 <code>account_table</code></li>
+<li>启动钱包程序，等待同步到最新区块。</li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="upgrade-mvs.html" class="article-footer-prev" title="升级钱包"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="testnet.html" class="article-footer-next" title="测试网络"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/docs/backup-account.html';
+  var disqus_title = "如何备份和导入账户信息?";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#备份与导入账户"><span class="toc-text">备份与导入账户</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#备份与导入账户相关表"><span class="toc-text">备份与导入账户相关表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重新同步区块"><span class="toc-text">重新同步区块</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方案一-重新从块高0同步-Linux"><span class="toc-text">方案一 - 重新从块高0同步(Linux)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方案二-重新从块高1270000-同步-Linux"><span class="toc-text">方案二 - 重新从块高1270000+同步(Linux)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Linux"><span class="toc-text">Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#自动方式（推荐）"><span class="toc-text">自动方式（推荐）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手动方式"><span class="toc-text">手动方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mac-OS"><span class="toc-text">Mac OS</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#自动方式（推荐）-1"><span class="toc-text">自动方式（推荐）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手动方式-1"><span class="toc-text">手动方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Windows"><span class="toc-text">Windows</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#自动方式（推荐）-2"><span class="toc-text">自动方式（推荐）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手动方式-2"><span class="toc-text">手动方式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link current">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link">搭建私有链</a><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link current">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link">搭建私有链</a><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/backup-account.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

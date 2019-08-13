@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>API(v1) Usage | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/api/index.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api/index.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api/index.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Please note that API documentation is only valid for MVS FULL NODE.You can refer to Metaverse wiki instead as well. NOTICEStrongly recommends referring to &amp;lt;a href=/api_v2/&amp;gt;API v2 to replace api">
+<meta property="og:type" content="website">
+<meta property="og:title" content="API(v1) Usage">
+<meta property="og:url" content="https://docs.mvs.org/api/index.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Please note that API documentation is only valid for MVS FULL NODE.You can refer to Metaverse wiki instead as well. NOTICEStrongly recommends referring to &amp;lt;a href=/api_v2/&amp;gt;API v2 to replace api">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API(v1) Usage">
+<meta name="twitter:description" content="Please note that API documentation is only valid for MVS FULL NODE.You can refer to Metaverse wiki instead as well. NOTICEStrongly recommends referring to &amp;lt;a href=/api_v2/&amp;gt;API v2 to replace api">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="api/index.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">API(v1) Usage</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/api/index.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>Please note that API documentation is only valid for MVS FULL NODE.<br>You can refer to <a href="https://github.com/mvs-org/metaverse/wiki/Metaverse-API-Call-List" target="_blank" rel="noopener">Metaverse wiki</a> instead as well.</p>
+<h2 id="NOTICE" class="article-heading"><a href="#NOTICE" class="headerlink" title="NOTICE"></a>NOTICE<a class="article-anchor" href="#NOTICE" aria-hidden="true"></a></h2><font color="red" size="4">Strongly recommends referring to &lt;a href=/api_v2/&gt;API v2 to replace api v1.</font>
+
+<p>API v1 has some non-standard JSON-RPC reponse, will confused developers.</p>
+<blockquote>
+<p>We found a boost library issue <a href="https://svn.boost.org/trac10/ticket/9721" target="_blank" rel="noopener">ptree write_json does not conform to JSON standard</a> on json parser.<code>The Boost write_json method puts quotes around all values, not just strings.</code> So We strongly recommend developers to refer to <a href="/api_v2">API-v2:JSON-RPC 2.0</a>.</p>
+</blockquote>
+<h2 id="API-v1-Usage" class="article-heading"><a href="#API-v1-Usage" class="headerlink" title="API(v1) Usage"></a>API(v1) Usage<a class="article-anchor" href="#API-v1-Usage" aria-hidden="true"></a></h2><p>API URI: <code>/rpc</code><br>HTTP Request to local default URL: <code>http://127.0.0.1:8820/rpc</code></p>
+<p><em>please replace ‘$parameter’ with your own parameter as below.</em></p>
+<p>if we use<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./mvs-cli <span class="variable">$command</span> <span class="variable">$param1</span> <span class="variable">$param2</span> ...</span><br></pre></td></tr></table></figure></p>
+<p>that should be equal as below in RPC-CALL case:</p>
+<p>Build Json, then POST to ‘<a href="http://127.0.0.1:8820/rpc&#39;" target="_blank" rel="noopener">http://127.0.0.1:8820/rpc&#39;</a><br><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"method"</span>:<span class="string">"$command"</span>,</span><br><span class="line">    <span class="attr">"params"</span>:[<span class="string">"$param1"</span>, <span class="string">"$param2"</span>, ...]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Obviously, you should use help command for all commands.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># see all commands</span></span><br><span class="line">./mvs-cli <span class="built_in">help</span></span><br><span class="line"><span class="comment"># see help message of this command</span></span><br><span class="line">./mvs-cli <span class="built_in">help</span> <span class="variable">$command</span></span><br></pre></td></tr></table></figure></p>
+<p>Check here for the instance of source codes: <a href="https://github.com/ViewBTC/mvs-exchange-tools" target="_blank" rel="noopener">https://github.com/ViewBTC/mvs-exchange-tools</a> (keep updating).</p>
+<p>Some <a href="http://blog.mvs.live/metaverse-setup-guide-for-service/" target="_blank" rel="noopener">Documentation For Server Setup</a> in Chinese.</p>
+<h2 id="API-v1-Call-List" class="article-heading"><a href="#API-v1-Call-List" class="headerlink" title="API(v1) Call List"></a>API(v1) Call List<a class="article-anchor" href="#API-v1-Call-List" aria-hidden="true"></a></h2><p>Compatibility after v0.7.3(API v2):</p>
+<ul>
+<li>○  : keep same name, compatible in <code>result</code> if convert to json string.</li>
+<li>×  : incompatible in <code>result</code>.</li>
+<li>×× : obliterate.</li>
+<li>newname : rename/alias in API v2, and compatible in <code>result</code> if convert to json string.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Commands</th>
+<th>=&gt;</th>
+<th>New Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#changepasswd">changepasswd</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#deleteaccount">deleteaccount</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#importaccount">importaccount</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#deposit">deposit</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#exportaccountasfile">exportaccountasfile</a></td>
+<td>=&gt;</td>
+<td>dumpkeyfile</td>
+</tr>
+<tr>
+<td><a href="#importaccountfromfile">importaccountfromfile</a></td>
+<td>=&gt;</td>
+<td>importkeyfile</td>
+</tr>
+<tr>
+<td><a href="#getaccount">getaccount</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getbalance">getbalance</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getnewaccount">getnewaccount</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getnewaddress">getnewaddress</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#listaddresses">listaddresses</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#listbalances">listbalances</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#send">send</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#sendfrom">sendfrom</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#sendmore">sendmore</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getwork">getwork</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#setminingaccount">setminingaccount</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#start">start</a></td>
+<td>=&gt;</td>
+<td>startmining</td>
+</tr>
+<tr>
+<td><a href="#stop">stop</a></td>
+<td>=&gt;</td>
+<td>stopmining</td>
+</tr>
+<tr>
+<td><a href="#stopall">stopall</a></td>
+<td>=&gt;</td>
+<td>shutdown</td>
+</tr>
+<tr>
+<td><a href="#submitwork">submitwork</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#fetchheaderext">fetch-header</a></td>
+<td>=&gt;</td>
+<td>getblockheader</td>
+</tr>
+<tr>
+<td><a href="#getbestblockhash">getbestblockhash</a></td>
+<td>=&gt;</td>
+<td>getblockheader</td>
+</tr>
+<tr>
+<td><a href="#getbestblockheader">getbestblockheader</a></td>
+<td>=&gt;</td>
+<td>getblockheader</td>
+</tr>
+<tr>
+<td><a href="#getblock">getblock</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getmemorypool">getmemorypool</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getpeerinfo">getpeerinfo</a></td>
+<td>=&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#getpublickey">getpublickey</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#gettransaction">gettransaction</a></td>
+<td>=&gt;</td>
+<td>gettx</td>
+</tr>
+<tr>
+<td><a href="#listtxs">fetch-tx</a></td>
+<td>=&gt;</td>
+<td>gettx</td>
+</tr>
+<tr>
+<td><a href="#listtxs">listtxs</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#createasset">createasset</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#deleteasset">deleteasset</a></td>
+<td>=&gt;</td>
+<td>deletelocalasset</td>
+</tr>
+<tr>
+<td><a href="#getaccountasset">getaccountasset</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getaddressasset">getaddressasset</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#listassets">listassets</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#issue">issue</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#issuefrom">issuefrom</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#sendasset">sendasset</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#sendassetfrom">sendassetfrom</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#createmultisigtx">createmultisigtx</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#deletemultisig">deletemultisig</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#getnewmultisig">getnewmultisig</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#listmultisig">listmultisig</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#signmultisigtx">signmultisigtx</a></td>
+<td>=&gt;</td>
+<td>○</td>
+</tr>
+<tr>
+<td><a href="#fetch-balance">fetch-balance</a></td>
+<td>=&gt;</td>
+<td>getaddressetp</td>
+</tr>
+<tr>
+<td><a href="#fetch-height">fetch-height</a></td>
+<td>=&gt;</td>
+<td>getheight</td>
+</tr>
+<tr>
+<td><a href="#stopall">stopall</a></td>
+<td>=&gt;</td>
+<td>shutdown</td>
+</tr>
+<tr>
+<td><a href="#stop">stop</a></td>
+<td>=&gt;</td>
+<td>stopmining</td>
+</tr>
+<tr>
+<td><a href="#start">start</a></td>
+<td>=&gt;</td>
+<td>startmining</td>
+</tr>
+<tr>
+<td><a href="#getasset">getasset</a></td>
+<td>=&gt;</td>
+<td>×</td>
+</tr>
+<tr>
+<td><a href="#validateaddress">validateaddress</a></td>
+<td>=&gt;</td>
+<td>×</td>
+</tr>
+<tr>
+<td><a href="#getmininginfo">getmininginfo</a></td>
+<td>=&gt;</td>
+<td>×</td>
+</tr>
+<tr>
+<td><a href="#fetch-public-key">fetch-public-key</a></td>
+<td>=&gt;</td>
+<td>××</td>
+</tr>
+<tr>
+<td><a href="#fetch-public-key">fetch-history</a></td>
+<td>=&gt;</td>
+<td>××</td>
+</tr>
+<tr>
+<td><a href="#xfetchbalance">xfetchbalance</a></td>
+<td>=&gt;</td>
+<td>××</td>
+</tr>
+<tr>
+<td><a href="#xfetchutxo">xfetchutxo</a></td>
+<td>=&gt;</td>
+<td>××</td>
+</tr>
+<tr>
+<td><a href="#fetchheaderext">fetchheaderext</a></td>
+<td>=&gt;</td>
+<td>××</td>
+</tr>
+</tbody>
+</table>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.965Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="blocks.html" class="article-footer-next" title="Blocks"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NOTICE"><span class="toc-text">NOTICE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-v1-Usage"><span class="toc-text">API(v1) Usage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-v1-Call-List"><span class="toc-text">API(v1) Call List</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Introduction</strong><a href="index.html" class="sidebar-link current">Introduction</a><strong class="sidebar-title">Blocks</strong><a href="blocks.html" class="sidebar-link">Blocks</a><strong class="sidebar-title">Account</strong><a href="account.html" class="sidebar-link">Account</a><strong class="sidebar-title">Address</strong><a href="address.html" class="sidebar-link">Address</a><strong class="sidebar-title">Sending ETP</strong><a href="sendetp.html" class="sidebar-link">Sending ETP</a><strong class="sidebar-title">Transaction</strong><a href="transaction.html" class="sidebar-link">Transaction</a><strong class="sidebar-title">Balance</strong><a href="balance.html" class="sidebar-link">Balance</a><strong class="sidebar-title">Asset</strong><a href="asset.html" class="sidebar-link">Asset</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Introduction</strong><a href="index.html" class="mobile-nav-link current">Introduction</a><strong class="mobile-nav-title">Blocks</strong><a href="blocks.html" class="mobile-nav-link">Blocks</a><strong class="mobile-nav-title">Account</strong><a href="account.html" class="mobile-nav-link">Account</a><strong class="mobile-nav-title">Address</strong><a href="address.html" class="mobile-nav-link">Address</a><strong class="mobile-nav-title">Sending ETP</strong><a href="sendetp.html" class="mobile-nav-link">Sending ETP</a><strong class="mobile-nav-title">Transaction</strong><a href="transaction.html" class="mobile-nav-link">Transaction</a><strong class="mobile-nav-title">Balance</strong><a href="balance.html" class="mobile-nav-link">Balance</a><strong class="mobile-nav-title">Asset</strong><a href="asset.html" class="mobile-nav-link">Asset</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="api/index.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

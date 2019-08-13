@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>MIT | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/api_v2/mit.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v2/mit.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v2/mit.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Description API Methods  registermit  registermit  Parameters (optional)   -h or [--help] Get a description and instructions for this command. -c or [--content] The content of MIT, default is empty. -">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MIT">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/api_v2/mit.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Description API Methods  registermit  registermit  Parameters (optional)   -h or [--help] Get a description and instructions for this command. -c or [--content] The content of MIT, default is empty. -">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MIT">
+<meta name="twitter:description" content="Description API Methods  registermit  registermit  Parameters (optional)   -h or [--help] Get a description and instructions for this command. -c or [--content] The content of MIT, default is empty. -">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="api_v2/mit.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">MIT</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/api_v2/mit.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
+<h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
+<ul>
+<li><h3 id="registermit" class="article-heading"><a href="#registermit" class="headerlink" title="registermit"></a><code>registermit</code><a class="article-anchor" href="#registermit" aria-hidden="true"></a></h3><p>  registermit</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-h</code> or <code>[--help]</code> Get a description and instructions for this command.</li>
+<li><code>-c</code> or <code>[--content]</code> The content of MIT, default is empty.</li>
+<li><code>-m</code> or <code>[--mits]</code> List of symbol and content pair. Symbol and content are separated by a ‘:’.</li>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>TODID</code>  Target DID.</li>
+<li><code>SYMBOL</code> Identifier of MIT, optional, default is empty.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"TODID"</span>,</span><br><span class="line">    <span class="string">"SYMBOL"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - </p>
+</li>
+<li><p>Example for single registry</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"registermit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test",</span></span><br><span class="line"><span class="string">        "123456",</span></span><br><span class="line"><span class="string">        "test",</span></span><br><span class="line"><span class="string">        "mit@test",</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "content": "test MIT"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> : </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"b7afabb163c0a671ff37d194fea6b3580f0e5e4e1cb16894bd4eb6c3fc3a745d"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"f84990d724931639cf0ad4533053ec6d9777692af49d61395f335c13836f021d"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 304402204992131b1a5f0f0f4b68715ae9ee3af5c3c089d5d948444a9bd12a2cd0348d1302201496a25c2c572185bc05d20c337569299cf0b74742502806c47e064485aca0ce01 ] [ 0364aa7630296855d0f8bd6bd6fb36d06910c38d69daf7517d59b37d0c35cc0a8c ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                        <span class="string">"content"</span> : <span class="string">"test MIT"</span>,</span><br><span class="line">                        <span class="string">"from_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                        <span class="string">"to_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"mit"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ d9c598f28e989df623e613be9ead3bc8dfaee3f5 ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ d9c598f28e989df623e613be9ead3bc8dfaee3f5 ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">199990000</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"4"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example for batch registry</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"registermit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test",</span></span><br><span class="line"><span class="string">        "123456",</span></span><br><span class="line"><span class="string">        "test",</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "content": "unified content of batch registerring mit.",</span></span><br><span class="line"><span class="string">            "mits" :</span></span><br><span class="line"><span class="string">            [</span></span><br><span class="line"><span class="string">                "BATCH_01@MIT",</span></span><br><span class="line"><span class="string">                "BATCH_02@MIT",</span></span><br><span class="line"><span class="string">                "BATCH_03@MIT:customized content."</span></span><br><span class="line"><span class="string">            ]</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"67c520b7f0b514986c645f35bf116607e6de4cddb3051d38a1ead1228a5009cf"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"94018aff4d4c9c5732486d3108b85e15e59982b65d0ac8964582ed3a2ddfb7ac"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">2</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 304402201fd9b8068df744a02b6e4995c86827e24a126781b81a2598e93401fe3349ab9d02200cf4d3f4b262ca37b6aefef9b8ea9c1759f27cf44cc573688d579b06d7143cd701 ] [ 0351404c07aba6fe1fc78e4bc1a97a9b6f293b0909f1f4ea4eb0ef1b5bca4bf4af ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                        <span class="string">"content"</span> : <span class="string">"unified content of batch registerring mit."</span>,</span><br><span class="line">                        <span class="string">"from_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"BATCH_01@MIT"</span>,</span><br><span class="line">                        <span class="string">"to_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"mit"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ b5eb75b67ccc47363ea623a3c73b2d23c9dd801a ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                        <span class="string">"content"</span> : <span class="string">"unified content of batch registerring mit."</span>,</span><br><span class="line">                        <span class="string">"from_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"BATCH_02@MIT"</span>,</span><br><span class="line">                        <span class="string">"to_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"mit"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ b5eb75b67ccc47363ea623a3c73b2d23c9dd801a ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                        <span class="string">"content"</span> : <span class="string">"customized content."</span>,</span><br><span class="line">                        <span class="string">"from_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"BATCH_03@MIT"</span>,</span><br><span class="line">                        <span class="string">"to_did"</span> : <span class="string">"test"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"mit"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">2</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ b5eb75b67ccc47363ea623a3c73b2d23c9dd801a ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">3</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ b5eb75b67ccc47363ea623a3c73b2d23c9dd801a ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">199980000</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"4"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="transfermit" class="article-heading"><a href="#transfermit" class="headerlink" title="transfermit"></a><code>transfermit</code><a class="article-anchor" href="#transfermit" aria-hidden="true"></a></h3><p>  transfermit</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-h</code> or <code>[--help]</code> Get a description and instructions for this command.</li>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>TODID</code>  Target DID.</li>
+<li><code>SYMBOL</code> Identifier of MIT.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"TODID"</span>,</span><br><span class="line">    <span class="string">"SYMBOL"</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - </p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"transfermit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test",</span></span><br><span class="line"><span class="string">        "123456",</span></span><br><span class="line"><span class="string">        "Alice",</span></span><br><span class="line"><span class="string">        "mit@test"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> : </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"d20d5835404557a2a6f4071969acab98c235ff4af0fe01c8c7eff850b0c2ee76"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"b7afabb163c0a671ff37d194fea6b3580f0e5e4e1cb16894bd4eb6c3fc3a745d"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 30440220525817e37d8b9530838d071a24b82587421347159622fade31d0f5d973ed168502202f8c244aa2911ae4fd006bde66d9a9880a46acae256a744657127bacd971927f01 ] [ 0364aa7630296855d0f8bd6bd6fb36d06910c38d69daf7517d59b37d0c35cc0a8c ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"b7afabb163c0a671ff37d194fea6b3580f0e5e4e1cb16894bd4eb6c3fc3a745d"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">0</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 30440220037abcd5f44fc46820bdab6d6928a33b092b2253e5d1856546a2fe843909ecf0022024835d7b9c1dd2d41e13dc70463adcc3b98047d1ecc86e491e5d6e7a38d7093201 ] [ 0364aa7630296855d0f8bd6bd6fb36d06910c38d69daf7517d59b37d0c35cc0a8c ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MMZAUmJke7f1FEY67dAHUYfmfh2wWC4vFL"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MMZAUmJke7f1FEY67dAHUYfmfh2wWC4vFL"</span>,</span><br><span class="line">                        <span class="string">"from_did"</span> : <span class="string">""</span>,</span><br><span class="line">                        <span class="string">"status"</span> : <span class="string">"transfered"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                        <span class="string">"to_did"</span> : <span class="string">"Alice"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"mit"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ 95c9a5e647870bbc535d83a3c394ef40d298aa46 ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ d9c598f28e989df623e613be9ead3bc8dfaee3f5 ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">199980000</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"4"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="listmits" class="article-heading"><a href="#listmits" class="headerlink" title="listmits"></a><code>listmits</code><a class="article-anchor" href="#listmits" aria-hidden="true"></a></h3><p>  listmits</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-h</code> or <code>[--help]</code> Get a description and instructions for this command.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - </p>
+</li>
+<li><p>Example one</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"listmits"</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"mits"</span> : </span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                <span class="string">"content"</span> : <span class="string">"test MIT"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">13383</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                <span class="string">"time_stamp"</span> : <span class="number">1528181287</span>,</span><br><span class="line">                <span class="string">"to_did"</span> : <span class="string">"test"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example two</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"listmits",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Alice",</span></span><br><span class="line"><span class="string">        "passwd1"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"mits"</span> : </span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MMZAUmJke7f1FEY67dAHUYfmfh2wWC4vFL"</span>,</span><br><span class="line">                <span class="string">"content"</span> : <span class="string">"test MIT"</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"transfered"</span>,</span><br><span class="line">                <span class="string">"symbol"</span> : <span class="string">"mit@test"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="getmit" class="article-heading"><a href="#getmit" class="headerlink" title="getmit"></a><code>getmit</code><a class="article-anchor" href="#getmit" aria-hidden="true"></a></h3><p>  getmit</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-h</code> or <code>[--help]</code> Get a description and instructions for this command.</li>
+<li><code>-c</code> or <code>[--current]</code> Show current status of MIT, default false.</li>
+<li><code>-t</code> or <code>[--trace]</code> Tracing history, default false.</li>
+<li><code>-i</code> or <code>[--index]</code> Page index, default 1.</li>
+<li><code>-l</code> or <code>[--limit]</code> MIT count per page, default 100.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>SYMBOL</code> MIT identifier.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"SYMBOL"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - </p>
+</li>
+<li><p>Example one</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getmit"</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"mits"</span> : </span><br><span class="line">        [</span><br><span class="line">            <span class="string">"mit@test"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example two</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getmit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "mit@test"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">        <span class="string">"content"</span> : <span class="string">"test MIT"</span>,</span><br><span class="line">        <span class="string">"height"</span> : <span class="number">13383</span>,</span><br><span class="line">        <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">        <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">        <span class="string">"time_stamp"</span> : <span class="number">1528181287</span>,</span><br><span class="line">        <span class="string">"to_did"</span> : <span class="string">"test"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example three</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getmit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "mit@test",</span></span><br><span class="line"><span class="string">        "--trace"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"mits"</span> : </span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MMZAUmJke7f1FEY67dAHUYfmfh2wWC4vFL"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">13824</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"transfered"</span>,</span><br><span class="line">                <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                <span class="string">"time_stamp"</span> : <span class="number">1528181361</span>,</span><br><span class="line">                <span class="string">"to_did"</span> : <span class="string">"Alice"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MTkdaNMWvpXDyBGTdmHovvnUosHfSW3B4V"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">13383</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"registered"</span>,</span><br><span class="line">                <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                <span class="string">"time_stamp"</span> : <span class="number">1528181287</span>,</span><br><span class="line">                <span class="string">"to_did"</span> : <span class="string">"test"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Example four</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":26,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getmit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "mit@test",</span></span><br><span class="line"><span class="string">        "--trace",</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "limit": 1,</span></span><br><span class="line"><span class="string">            "index": 1</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">26</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"mits"</span> : </span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MMZAUmJke7f1FEY67dAHUYfmfh2wWC4vFL"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">13824</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"transfered"</span>,</span><br><span class="line">                <span class="string">"symbol"</span> : <span class="string">"mit@test"</span>,</span><br><span class="line">                <span class="string">"time_stamp"</span> : <span class="number">1528181361</span>,</span><br><span class="line">                <span class="string">"to_did"</span> : <span class="string">"Alice"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="identity.html" class="article-footer-prev" title="身份"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Methods"><span class="toc-text">API Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#registermit"><span class="toc-text">registermit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transfermit"><span class="toc-text">transfermit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listmits"><span class="toc-text">listmits</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getmit"><span class="toc-text">getmit</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">账户</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">区块链操作</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">交易</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">资产</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">离线交易</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link current">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">账户</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">区块链操作</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">交易</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">资产</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">离线交易</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link current">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v2/mit.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

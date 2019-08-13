@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Build Private Chains | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/docs/private-chain.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/private-chain.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/private-chain.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Why Build Private ChainPrivate block chains can be tailored to the specific cases of enterprises and their partners, using transparent mechanisms to build trust and improve efficiency. Private block c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Build Private Chains">
+<meta property="og:url" content="https://docs.mvs.org/docs/private-chain.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Why Build Private ChainPrivate block chains can be tailored to the specific cases of enterprises and their partners, using transparent mechanisms to build trust and improve efficiency. Private block c">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Build Private Chains">
+<meta name="twitter:description" content="Why Build Private ChainPrivate block chains can be tailored to the specific cases of enterprises and their partners, using transparent mechanisms to build trust and improve efficiency. Private block c">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/private-chain.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Build Private Chains</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/docs/private-chain.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Why-Build-Private-Chain" class="article-heading"><a href="#Why-Build-Private-Chain" class="headerlink" title="Why Build Private Chain"></a>Why Build Private Chain<a class="article-anchor" href="#Why-Build-Private-Chain" aria-hidden="true"></a></h2><p>Private block chains can be tailored to the specific cases of enterprises and their partners, using transparent mechanisms to build trust and improve efficiency.</p>
+<p>Private block chain is aimed at users in single entity, or users in the same industry alliance, they need transparency between each other, but they need not be transparent to the public.</p>
+<p>Private chain can also be used to simulate testing work. Reduce the difficulty by modifying the source code, you can quickly start from the origin of the chain to mining to get rich. With ETPs in hand you can then test the various types of API interface, such as creating / issue assets, send ETP, use multi signature and so on.</p>
+<p>Of course, you can also implement a more practical private chain with your own needs.</p>
+<p>The following is the way to build the private chain.</p>
+<h2 id="How-To-Build-Private-Chain" class="article-heading"><a href="#How-To-Build-Private-Chain" class="headerlink" title="How To Build Private Chain"></a>How To Build Private Chain<a class="article-anchor" href="#How-To-Build-Private-Chain" aria-hidden="true"></a></h2><h3 id="1-Get-the-Wallet-Software" class="article-heading"><a href="#1-Get-the-Wallet-Software" class="headerlink" title="1. Get the Wallet Software"></a>1. Get the Wallet Software<a class="article-anchor" href="#1-Get-the-Wallet-Software" aria-hidden="true"></a></h3><p><strong>You can build MVS Wallet from the source code</strong></p>
+<p><a href="build-windows.html">Build on windows</a></p>
+<p><a href="build-macosx.html">Build on Macosx</a></p>
+<p><a href="build-linux.html">Build on Linux</a></p>
+<p><strong>off course, you can alse download MVS Wallet binary and setup it directly</strong></p>
+<p><a href="setup-windows.html">Windows setup</a></p>
+<p><a href="setup-macosx.html">Macosx setup</a></p>
+<p><a href="setup-linux.html">Linux setup</a></p>
+<h3 id="2-Modify-Config-Options" class="article-heading"><a href="#2-Modify-Config-Options" class="headerlink" title="2. Modify Config Options"></a>2. Modify Config Options<a class="article-anchor" href="#2-Modify-Config-Options" aria-hidden="true"></a></h3><p>For configuration Options, you can see <a href="options.html">Config Options</a></p>
+<p>With reference to the above document, we can build private chains based on Metaverse by setting configuration files without the need to change the code.</p>
+<p>By modifying the <code>identifier</code>, we can implement different blockchain instances.<br>Developers don’t have to be worried even it runs in the main network mode, because block generation speed is very fast and they can use the CPU to continue mining test.</p>
+<p>Build Private Chain needs run at least two <code>mvsd</code> to get consensus. You’d better run each of them on different computer。<strong>NOTE: the computer should be connectable through network</strong></p>
+<p>The Config files are as the following：</p>
+<p>Config file 1：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[network]</span><br><span class="line">identifier = 1234567890</span><br><span class="line">self = 172.100.0.197:5251</span><br><span class="line">seed = 172.100.1.22:5251</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">log_level = DEBUG</span><br><span class="line">mongoose_listen = 0.0.0.0:8820</span><br><span class="line">websocket_listen = 0.0.0.0:8821</span><br></pre></td></tr></table></figure></p>
+<p>Config file 2：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[network]</span><br><span class="line">identifier = 1234567890</span><br><span class="line">self = 172.100.1.22:5251</span><br><span class="line">seed = 172.100.0.197:5251</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">log_level = DEBUG</span><br><span class="line">mongoose_listen = 0.0.0.0:8820</span><br><span class="line">websocket_listen = 0.0.0.0:8821</span><br></pre></td></tr></table></figure></p>
+<p>NOTE: the two Config files use a same <code>identifier</code>， and set its <code>seed</code> to the other one.</p>
+<h3 id="3-Run-mvsd-to-verify" class="article-heading"><a href="#3-Run-mvsd-to-verify" class="headerlink" title="3. Run mvsd to verify"></a>3. Run mvsd to verify<a class="article-anchor" href="#3-Run-mvsd-to-verify" aria-hidden="true"></a></h3><p>Firstly，Because the configuration file is customized, we need to place it at the default location to make it effective (<em>if the directory does not exist then create it</em>):</p>
+<blockquote>
+<p>Windows   : %HOMEPATH%\AppData\Roaming\Metaverse<br>Apple OSX : ~/Library/Application\ Support/Metaverse<br>Linux/Uinx: ~/.metaverse</p>
+</blockquote>
+<p>Then，run <code>mvsd</code> separately on each computer</p>
+<blockquote>
+<p>./mvsd</p>
+</blockquote>
+<p>The output is something like the following：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">20180124T130912 INFO [server] mvsd version 0.7.3</span><br><span class="line">20180124T130912 INFO [server] ================= startup ==================</span><br><span class="line">20180124T130912 ERROR [server] ================= startup ==================</span><br><span class="line">20180124T130912 FATAL [server] ================= startup ==================</span><br><span class="line">20180124T130912 INFO [server] Using config file: &quot;/home/jowen/.metaverse/mvs.conf&quot;</span><br><span class="line">20180124T130912 INFO [server] Please wait while the server is starting...</span><br><span class="line">20180124T130912 INFO [node] Starting manual session.</span><br><span class="line">20180124T130912 INFO [server] Seeding is complete.</span><br><span class="line">20180124T130912 INFO [http] Http Service listen on 0.0.0.0:8820</span><br><span class="line">20180124T130912 INFO [MONGO] Websocket Service listen on 0.0.0.0:8821</span><br><span class="line">20180124T130912 INFO [node] Node start height is (0).</span><br><span class="line">20180124T130912 INFO [node] Starting inbound session.</span><br><span class="line">20180124T130912 INFO [node] Starting outbound session.</span><br><span class="line">20180124T130912 INFO [server] Bound public query service to tcp://*:9091</span><br><span class="line">20180124T130912 INFO [server] Server is started.</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-Execute-the-client-command-or-request" class="article-heading"><a href="#4-Execute-the-client-command-or-request" class="headerlink" title="4. Execute the client command or request"></a>4. Execute the client command or request<a class="article-anchor" href="#4-Execute-the-client-command-or-request" aria-hidden="true"></a></h3><p>At this point, the private chain has been completed.</p>
+<p>You can call APIs through <code>JSON-RPC</code> or <code>mvs-cli</code>.</p>
+<p>You can also add more computers to participate the private chain, as long as the <code>self</code>, <code>identifier</code> and <code>seed</code> is setted rightly in each Config file.</p>
+<p>The Follwing is some simple examples of API calling, aims to verify the normal state of the private chain.</p>
+<p>For more information about APIs Interface, please see <a href="command-line.html">Command Line Usage</a> and <a href="../api_v2/index.html">API v2 Usage</a></p>
+<p>Get the version information:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getinfo</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"database-version"</span> : <span class="string">"0.6.2"</span>,</span><br><span class="line">	<span class="string">"difficulty"</span> : <span class="string">"1"</span>,</span><br><span class="line">	<span class="string">"hash-rate"</span> : 0,</span><br><span class="line">	<span class="string">"height"</span> : 0,</span><br><span class="line">	<span class="string">"is-mining"</span> : <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"network-assets-count"</span> : 0,</span><br><span class="line">	<span class="string">"peers"</span> : 2,</span><br><span class="line">	<span class="string">"protocol-version"</span> : 70012,</span><br><span class="line">	<span class="string">"testnet"</span> : <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"wallet-account-count"</span> : 1,</span><br><span class="line">	<span class="string">"wallet-version"</span> : <span class="string">"0.7.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Get peer information（If no peer exist, that maybe a configuration or network problem）：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getpeerinfo</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"peers"</span> : </span><br><span class="line">	[</span><br><span class="line">		<span class="string">"172.100.1.22:5251"</span>,</span><br><span class="line">		<span class="string">"172.100.1.22:33146"</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Create account：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getnewaccount test1 passwd1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"default-address"</span> : <span class="string">"MAGRQAbQj2uZMfChXqgpJoXwCkDgfw9ZK1"</span>,</span><br><span class="line">	<span class="string">"mnemonic"</span> : <span class="string">"discover glance limit similar stable comic patient protect media correct sorry capital object foil noise ill beauty teach hole monster half banana enforce lion"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Start mining to make money：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli startmining test1 passwd1</span><br><span class="line">solo mining started at MKWjVNAGSDjhQmUW9VUwcBNGTscYozNopJ</span><br></pre></td></tr></table></figure></p>
+<p>Get the block height（here I use JSON-RPC）：<br><code>We can judge from the zero result that this is a pure private chain just inited</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getheight","params":[],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v2</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span> : 25,</span><br><span class="line">	<span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">	<span class="string">"result"</span> : 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Wait some minutes and get get the block height again:<br>If the result height is not zero now, it means I have succeedded some mining.(<em>NOTE: the mining work needs time, and the validating block work still needs time, so you may wait more longer</em>)<br><code>In order to increase the mining speed, you can decrease the difficulty of mining by modifying source code. This is useful in some situation, like testing Interfaces etc.</code><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getheight","params":[],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v2</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span> : 25,</span><br><span class="line">	<span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">	<span class="string">"result"</span> : 29999</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>OK, when your money is enough, you can use <code>stopmining</code> to stop mining.<br>Stop mining may also need a long time.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli startmining test1 passwd1</span><br></pre></td></tr></table></figure></p>
+<p>And, now you can do more APIs calling which you are intersted in.<br>Wish you a good feeling about <code>Metaverse Wallet</code>.</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.973Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="testnet.html" class="article-footer-prev" title="Testnet"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="setup_mining_pool.html" class="article-footer-next" title="Setup Mining Pool"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Why-Build-Private-Chain"><span class="toc-text">Why Build Private Chain</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#How-To-Build-Private-Chain"><span class="toc-text">How To Build Private Chain</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Get-the-Wallet-Software"><span class="toc-text">1. Get the Wallet Software</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Modify-Config-Options"><span class="toc-text">2. Modify Config Options</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Run-mvsd-to-verify"><span class="toc-text">3. Run mvsd to verify</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Execute-the-client-command-or-request"><span class="toc-text">4. Execute the client command or request</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Get Started</strong><a href="index.html" class="sidebar-link">Quick Start</a><a href="desktop.html" class="sidebar-link">Desktop</a><a href="mobile.html" class="sidebar-link">Mobile</a><a href="mainnet-info.html" class="sidebar-link">Mainnet Information</a><strong class="sidebar-title">Features</strong><a href="features-issue-token.html" class="sidebar-link">Issue Tokens</a><a href="features-transfer-token.html" class="sidebar-link">Transfer Tokens</a><a href="pillars.html" class="sidebar-link">Pillars Features</a><a href="supernova.html" class="sidebar-link">Supernova Features</a><strong class="sidebar-title">Full Node Wallet</strong><a href="introduction.html" class="sidebar-link">Introduction</a><a href="setup-linux.html" class="sidebar-link">Setup on Linux</a><a href="options.html" class="sidebar-link">Start Running mvsd</a><a href="config-file.html" class="sidebar-link">Config File</a><a href="command-line.html" class="sidebar-link">Command-Line</a><a href="reset-mvs.html" class="sidebar-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="sidebar-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="sidebar-link">Backup Account</a><a href="testnet.html" class="sidebar-link">Testnet</a><a href="private-chain.html" class="sidebar-link current">Private Chain</a><a href="setup_mining_pool.html" class="sidebar-link">Setup Mining Pool</a><strong class="sidebar-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="sidebar-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="sidebar-link">Cross Chain Swap</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Get Started</strong><a href="index.html" class="mobile-nav-link">Quick Start</a><a href="desktop.html" class="mobile-nav-link">Desktop</a><a href="mobile.html" class="mobile-nav-link">Mobile</a><a href="mainnet-info.html" class="mobile-nav-link">Mainnet Information</a><strong class="mobile-nav-title">Features</strong><a href="features-issue-token.html" class="mobile-nav-link">Issue Tokens</a><a href="features-transfer-token.html" class="mobile-nav-link">Transfer Tokens</a><a href="pillars.html" class="mobile-nav-link">Pillars Features</a><a href="supernova.html" class="mobile-nav-link">Supernova Features</a><strong class="mobile-nav-title">Full Node Wallet</strong><a href="introduction.html" class="mobile-nav-link">Introduction</a><a href="setup-linux.html" class="mobile-nav-link">Setup on Linux</a><a href="options.html" class="mobile-nav-link">Start Running mvsd</a><a href="config-file.html" class="mobile-nav-link">Config File</a><a href="command-line.html" class="mobile-nav-link">Command-Line</a><a href="reset-mvs.html" class="mobile-nav-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="mobile-nav-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="mobile-nav-link">Backup Account</a><a href="testnet.html" class="mobile-nav-link">Testnet</a><a href="private-chain.html" class="mobile-nav-link current">Private Chain</a><a href="setup_mining_pool.html" class="mobile-nav-link">Setup Mining Pool</a><strong class="mobile-nav-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="mobile-nav-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="mobile-nav-link">Cross Chain Swap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/private-chain.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

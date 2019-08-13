@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Transaction format and signing | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/mvs-transaction-format-and-signing.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/mvs-transaction-format-and-signing.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/mvs-transaction-format-and-signing.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Transaction formatmetaverse transactions are mostly the same as Bitcoin, Only the transaction Output is extended with attachment. ref. https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asci">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Transaction format and signing">
+<meta property="og:url" content="https://docs.mvs.org/developers/mvs-transaction-format-and-signing.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Transaction formatmetaverse transactions are mostly the same as Bitcoin, Only the transaction Output is extended with attachment. ref. https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asci">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Transaction format and signing">
+<meta name="twitter:description" content="Transaction formatmetaverse transactions are mostly the same as Bitcoin, Only the transaction Output is extended with attachment. ref. https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asci">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/mvs-transaction-format-and-signing.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Transaction format and signing</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/mvs-transaction-format-and-signing.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="Transaction-format" class="article-heading"><a href="#Transaction-format" class="headerlink" title="Transaction format"></a>Transaction format<a class="article-anchor" href="#Transaction-format" aria-hidden="true"></a></h1><p>metaverse transactions are mostly the same as <code>Bitcoin</code>, Only the transaction Output is extended with attachment.</p>
+<p>ref. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transactions" target="_blank" rel="noopener">https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transactions</a></p>
+<h2 id="Transaction" class="article-heading"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction<a class="article-anchor" href="#Transaction" aria-hidden="true"></a></h2><p>Exactly the same as <code>Bitcoin</code></p>
+<ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint32_t version;</span><br><span class="line">uint32_t locktime;</span><br><span class="line">input::list inputs;</span><br><span class="line">output::list outputs;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>transaction version</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 : null version</span><br><span class="line">1 : first version</span><br><span class="line">2 : check output script</span><br><span class="line">3 : nova special testnet transaction (only for some tx can&apos;t pass validation)</span><br><span class="line">4 : nova transaction</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>Genesis transaction</code> version is recommend to 0.<br><code>Coinbase transaction</code> version is recommend to 1.<br><code>Coinstake transaction</code> version is recommend to 2.<br><code>All the other transactions&#39;</code> version are recommend to the latest version (at present 4). </p>
+<p>NOTICE:</p>
+<blockquote>
+<ul>
+<li>Do not use the transaction version to judge the transaction’s kind.<br>For example, use version 0 to judge a transaction is a genesis transaction,<br>or use version 1 to judge a transaction is a coinbase transaction.</li>
+</ul>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<ul>
+<li>If a transaction version &gt;= 2, then the validation will check if all its outputs script pattern is standard. If has unkown script pattern, the transaction can not pass validation.</li>
+</ul>
+</blockquote>
+</blockquote>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void transaction::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_4_bytes_little_endian(version);</span><br><span class="line">    sink.write_variable_uint_little_endian(inputs.size());</span><br><span class="line"></span><br><span class="line">    for (const auto&amp; input: inputs)</span><br><span class="line">        input.to_data(sink);</span><br><span class="line"></span><br><span class="line">    sink.write_variable_uint_little_endian(outputs.size());</span><br><span class="line"></span><br><span class="line">    for (const auto&amp; output: outputs)</span><br><span class="line">        output.to_data(sink);</span><br><span class="line"></span><br><span class="line">    sink.write_4_bytes_little_endian(locktime);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Transaction-Input" class="article-heading"><a href="#Transaction-Input" class="headerlink" title="Transaction Input"></a>Transaction Input<a class="article-anchor" href="#Transaction-Input" aria-hidden="true"></a></h2><p>Exactly the same as <code>Bitcoin</code></p>
+<p>ref. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transaction-inputs" target="_blank" rel="noopener">https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transaction-inputs</a></p>
+<ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hash_digest hash; // 32 bytes</span><br><span class="line">uint32_t index;</span><br><span class="line">chain::script script;</span><br><span class="line">uint32_t sequence;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void input::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_hash(hash);</span><br><span class="line">    sink.write_4_bytes_little_endian(index);</span><br><span class="line">    script.to_data(sink, true);</span><br><span class="line">    sink.write_4_bytes_little_endian(sequence);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Transaction-Output" class="article-heading"><a href="#Transaction-Output" class="headerlink" title="Transaction Output"></a>Transaction Output<a class="article-anchor" href="#Transaction-Output" aria-hidden="true"></a></h2><p>Mostly the same as <code>Bitcoin</code>.<br>Extent with an attachment data for metaverse extended functions (Asset, Cert, DID, MIT, etc).</p>
+<p>Please see <a href="mvs-transaction-format-and-signing.html#Output-attachment">Output-attachment</a> for more info.</p>
+<ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint64_t value;</span><br><span class="line">chain::script script;</span><br><span class="line">chain::attachment attachment; // Extended field</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sink.write_8_bytes_little_endian(value);</span><br><span class="line">script.to_data(sink, true);</span><br><span class="line">attachment.to_data(sink);</span><br></pre></td></tr></table></figure>
+<h2 id="Script" class="article-heading"><a href="#Script" class="headerlink" title="Script"></a>Script<a class="article-anchor" href="#Script" aria-hidden="true"></a></h2><p>Almost the same as <code>Bitcoin</code></p>
+<p>ref. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transaction-scripts-and-script-language" target="_blank" rel="noopener">https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#transaction-scripts-and-script-language</a></p>
+<p>Except the following difference:</p>
+<ul>
+<li>operation code</li>
+</ul>
+<blockquote>
+<p>OP_CHECKATTENUATIONVERIFY has op code of 178 (<strong>newly added for Asset lock</strong>)<br>OP_CHECKSEQUENCEVERIFY has op code of 179 (<strong>while Bitcoin is 178</strong>)</p>
+</blockquote>
+<ul>
+<li>script pattern</li>
+</ul>
+<blockquote>
+<p>add <code>pay_blackhole_address</code> (<strong>for Burn transaction</strong>)<br>add <code>pay_key_hash_with_attenuation_model</code> (<strong>for Asset lock transaction</strong>)</p>
+</blockquote>
+<hr>
+<ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">operation::stack operations; // vector of operation</span><br><span class="line"></span><br><span class="line">struct operation &#123;</span><br><span class="line">    opcode code;</span><br><span class="line">    std::vector&lt;uint8_t&gt; data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// prefix is true in signing</span><br><span class="line">void script::to_data(writer&amp; sink, bool prefix) const</span><br><span class="line">&#123;</span><br><span class="line">    if (prefix)</span><br><span class="line">        sink.write_variable_uint_little_endian(satoshi_content_size());</span><br><span class="line"></span><br><span class="line">    if ((operations.size() &gt; 0) &amp;&amp; (operations[0].code == opcode::raw_data)) &#123;</span><br><span class="line">        operations[0].to_data(sink);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        for (const auto&amp; op: operations)</span><br><span class="line">            op.to_data(sink);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Output-attachment" class="article-heading"><a href="#Output-attachment" class="headerlink" title="Output attachment"></a>Output attachment<a class="article-anchor" href="#Output-attachment" aria-hidden="true"></a></h2><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint32_t version;</span><br><span class="line">uint32_t type;</span><br><span class="line">std::string todid;</span><br><span class="line">std::string fromdid;</span><br><span class="line">boost::variant&lt;</span><br><span class="line">    etp,</span><br><span class="line">    etp_award, // unused</span><br><span class="line">    asset,</span><br><span class="line">    blockchain_message,</span><br><span class="line">    did,</span><br><span class="line">    asset_cert,</span><br><span class="line">    asset_mit</span><br><span class="line">&gt; attach;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>attachment version</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1   : normal</span><br><span class="line">207 : did related</span><br></pre></td></tr></table></figure>
+<ul>
+<li>attachment type</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">0 : etp</span><br><span class="line">1 : etp_award // unused</span><br><span class="line">2 : asset</span><br><span class="line">3 : message</span><br><span class="line">4 : did</span><br><span class="line">5 : asset_cert</span><br><span class="line">6 : asset_mit</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void attachment::to_data_t(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_4_bytes_little_endian(version);</span><br><span class="line">    sink.write_4_bytes_little_endian(type);</span><br><span class="line">    if (version == 207) &#123;</span><br><span class="line">        sink.write_string(todid);</span><br><span class="line">        sink.write_string(fromdid);</span><br><span class="line">    &#125;</span><br><span class="line">    attach.to_data(sink); // visit boost::variant</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="etp-attachment" class="article-heading"><a href="#etp-attachment" class="headerlink" title="etp attachment"></a><code>etp</code> attachment<a class="article-anchor" href="#etp-attachment" aria-hidden="true"></a></h3><p>Empty.<br>Nothing to serialize.</p>
+<h3 id="asset-attachment" class="article-heading"><a href="#asset-attachment" class="headerlink" title="asset attachment"></a><code>asset</code> attachment<a class="article-anchor" href="#asset-attachment" aria-hidden="true"></a></h3><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint32_t status; // 1 for issue, 2 for transfer</span><br><span class="line">boost::variant&lt;asset_detail, asset_transfer&gt; data;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void asset::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_4_bytes_little_endian(status);</span><br><span class="line">    data.to_data(sink); // visit boost::variant</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-asset-detail" class="article-heading"><a href="#1-asset-detail" class="headerlink" title="1. asset_detail"></a>1. <code>asset_detail</code><a class="article-anchor" href="#1-asset-detail" aria-hidden="true"></a></h4><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">std::string symbol;      // &lt; 64 bytes</span><br><span class="line">uint64_t maximum_supply;</span><br><span class="line">uint8_t decimal_number;</span><br><span class="line">uint8_t secondaryissue_threshold;</span><br><span class="line">uint8_t unused2;</span><br><span class="line">uint8_t unused3;</span><br><span class="line">std::string issuer;      // &lt; 64 bytes</span><br><span class="line">std::string address;     // &lt; 64 bytes</span><br><span class="line">std::string description; // &lt; 64 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void asset_detail::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_string(symbol);</span><br><span class="line">    sink.write_8_bytes_little_endian(maximum_supply);</span><br><span class="line">    sink.write_byte(decimal_number);</span><br><span class="line">    sink.write_byte(secondaryissue_threshold);</span><br><span class="line">    sink.write_byte(unused2);</span><br><span class="line">    sink.write_byte(unused3);</span><br><span class="line">    sink.write_string(issuer);</span><br><span class="line">    sink.write_string(address);</span><br><span class="line">    sink.write_string(description);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-asset-transfer" class="article-heading"><a href="#2-asset-transfer" class="headerlink" title="2. asset_transfer"></a>2. <code>asset_transfer</code><a class="article-anchor" href="#2-asset-transfer" aria-hidden="true"></a></h4><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">std::string symbol; // &lt; 64 bytes</span><br><span class="line">uint64_t quantity;  // = 8 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void asset_transfer::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_string(symbol);</span><br><span class="line">    sink.write_8_bytes_little_endian(quantity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="blockchain-message-attachment" class="article-heading"><a href="#blockchain-message-attachment" class="headerlink" title="blockchain_message attachment"></a><code>blockchain_message</code> attachment<a class="article-anchor" href="#blockchain-message-attachment" aria-hidden="true"></a></h3><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">std::string content; // &lt; 253 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void message::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_string(content);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="did-attachment" class="article-heading"><a href="#did-attachment" class="headerlink" title="did attachment"></a><code>did</code> attachment<a class="article-anchor" href="#did-attachment" aria-hidden="true"></a></h3><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint32_t status;     // 1 for register, 2 for transfer</span><br><span class="line">std::string symbol;  // &lt; 64 bytes</span><br><span class="line">std::string address; // &lt; 64 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void did::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_4_bytes_little_endian(status);</span><br><span class="line">    sink.write_string(symbol);</span><br><span class="line">    sink.write_string(address);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="asset-cert-attachment" class="article-heading"><a href="#asset-cert-attachment" class="headerlink" title="asset_cert attachment"></a><code>asset_cert</code> attachment<a class="article-anchor" href="#asset-cert-attachment" aria-hidden="true"></a></h3><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">std::string symbol;   // &lt; 64 bytes</span><br><span class="line">std::string owner;    // &lt; 64 bytes</span><br><span class="line">std::string address;  // &lt; 64 bytes</span><br><span class="line">uint32_t cert_type;   // = 4 bytes</span><br><span class="line">uint8_t status;       // = 1 byte</span><br><span class="line">std::string content;  // &lt; 64 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>cert type</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1 : issue</span><br><span class="line">2 : domain</span><br><span class="line">3 : naming</span><br><span class="line">0x60000004 : mining</span><br><span class="line">5 : witness</span><br><span class="line"></span><br><span class="line">0x80000000 : marriage</span><br><span class="line">0x80000001 : kyc</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void asset_cert::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_string(symbol);</span><br><span class="line">    sink.write_string(owner);</span><br><span class="line">    sink.write_string(address);</span><br><span class="line">    sink.write_4_bytes_little_endian(cert_type);</span><br><span class="line">    sink.write_byte(status);</span><br><span class="line"></span><br><span class="line">    if (has_content()) &#123; // only write in issuing *mining* asset cert</span><br><span class="line">        sink.write_string(content);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="asset-mit-attachment" class="article-heading"><a href="#asset-mit-attachment" class="headerlink" title="asset_mit attachment"></a><code>asset_mit</code> attachment<a class="article-anchor" href="#asset-mit-attachment" aria-hidden="true"></a></h3><ul>
+<li>struct</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">uint8_t status.      // 1 for register, 2 for transfer</span><br><span class="line">std::string symbol;  // &lt; 64 bytes</span><br><span class="line">std::string address; // &lt; 64 bytes</span><br><span class="line">std::string content; // &lt; 256 bytes</span><br></pre></td></tr></table></figure>
+<ul>
+<li>serialization</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void asset_mit::to_data(writer&amp; sink) const</span><br><span class="line">&#123;</span><br><span class="line">    sink.write_byte(status);</span><br><span class="line">    sink.write_string(symbol);</span><br><span class="line">    sink.write_string(address);</span><br><span class="line"></span><br><span class="line">    if (is_register_status()) &#123; // don&apos;t write in transfer case</span><br><span class="line">        sink.write_string(content);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="Transaction-signing" class="article-heading"><a href="#Transaction-signing" class="headerlink" title="Transaction signing"></a>Transaction signing<a class="article-anchor" href="#Transaction-signing" aria-hidden="true"></a></h1><p>Exactly the same as <code>Bitcoin</code></p>
+<p>ref. <a href="https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#digital-signatures-ecdsa" target="_blank" rel="noopener">https://github.com/bitcoinbook/bitcoinbook/blob/develop/ch06.asciidoc#digital-signatures-ecdsa</a></p>
+<h2 id="Signing-use-RPC-API" class="article-heading"><a href="#Signing-use-RPC-API" class="headerlink" title="Signing use RPC API"></a>Signing use RPC API<a class="article-anchor" href="#Signing-use-RPC-API" aria-hidden="true"></a></h2><p>First install and run a metaverse full node.<br>ref. <a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">https://mvs.org/wallet.html</a> and <a href="https://docs.mvs.org/docs/">https://docs.mvs.org/docs/</a></p>
+<p>ref. <a href="https://docs.mvs.org/api_v3/rawtx.html">https://docs.mvs.org/api_v3/rawtx.html</a></p>
+<ul>
+<li><p>use <code>createrawtx</code> to create metaverse raw transaction</p>
+</li>
+<li><p>use <code>decoderawtx</code> to decode raw transaction to json string</p>
+</li>
+<li><p>use <code>signrawtx</code> to sign raw transaction</p>
+</li>
+<li><p>use <code>sendrawtx</code> to broadcast signed transaction</p>
+</li>
+</ul>
+<p><em>You can combine the above APIs to check and verify your own implementation of creating and signing metaverse transaction.</em></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="p2p-network.html" class="article-footer-prev" title="P2P network"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="utxo-and-script.html" class="article-footer-next" title="UTXO and script"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transaction-format"><span class="toc-text">Transaction format</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction"><span class="toc-text">Transaction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction-Input"><span class="toc-text">Transaction Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Transaction-Output"><span class="toc-text">Transaction Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Script"><span class="toc-text">Script</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-attachment"><span class="toc-text">Output attachment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#etp-attachment"><span class="toc-text">etp attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asset-attachment"><span class="toc-text">asset attachment</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-asset-detail"><span class="toc-text">1. asset_detail</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-asset-transfer"><span class="toc-text">2. asset_transfer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#blockchain-message-attachment"><span class="toc-text">blockchain_message attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#did-attachment"><span class="toc-text">did attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asset-cert-attachment"><span class="toc-text">asset_cert attachment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asset-mit-attachment"><span class="toc-text">asset_mit attachment</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Transaction-signing"><span class="toc-text">Transaction signing</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Signing-use-RPC-API"><span class="toc-text">Signing use RPC API</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link current">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link current">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/mvs-transaction-format-and-signing.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

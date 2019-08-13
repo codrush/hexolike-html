@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>数字身份微服务 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/baas/baas-did.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/baas/baas-did.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/baas/baas-did.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="概要 数字身份微服务提供 API 接口以方便交易所为用户注册数字身份，并绑定到用户钱包。 交易所也可以参照本文档中的设计自己实现同样的功能。涉及到的command:  getnewaddressregisterdiddidchangeaddressgetdidgetpublickeygetnewmultisigsendrawtxsend    以上命令的详细文档可以查看API文档。 用例 以下用例">
+<meta property="og:type" content="website">
+<meta property="og:title" content="数字身份微服务">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/baas/baas-did.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="概要 数字身份微服务提供 API 接口以方便交易所为用户注册数字身份，并绑定到用户钱包。 交易所也可以参照本文档中的设计自己实现同样的功能。涉及到的command:  getnewaddressregisterdiddidchangeaddressgetdidgetpublickeygetnewmultisigsendrawtxsend    以上命令的详细文档可以查看API文档。 用例 以下用例">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数字身份微服务">
+<meta name="twitter:description" content="概要 数字身份微服务提供 API 接口以方便交易所为用户注册数字身份，并绑定到用户钱包。 交易所也可以参照本文档中的设计自己实现同样的功能。涉及到的command:  getnewaddressregisterdiddidchangeaddressgetdidgetpublickeygetnewmultisigsendrawtxsend    以上命令的详细文档可以查看API文档。 用例 以下用例">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="baas/baas-did.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">数字身份微服务</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/baas/baas-did.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="概要" class="article-heading"><a href="#概要" class="headerlink" title="概要"></a>概要<a class="article-anchor" href="#概要" aria-hidden="true"></a></h2><hr>
+<p>数字身份微服务提供 <code>API</code> 接口以方便交易所为用户注册数字身份，并绑定到用户钱包。</p>
+<p>交易所也可以参照本文档中的设计自己实现同样的功能。涉及到的<code>command</code>:</p>
+<blockquote>
+<p>getnewaddress<br>registerdid<br>didchangeaddress<br>getdid<br>getpublickey<br>getnewmultisig<br>sendrawtx<br>send  </p>
+</blockquote>
+<p>以上命令的详细文档可以查看<a href="https://docs.mvs.org/zh-cn/api_v2/">API文档</a>。</p>
+<h2 id="用例" class="article-heading"><a href="#用例" class="headerlink" title="用例"></a>用例<a class="article-anchor" href="#用例" aria-hidden="true"></a></h2><hr>
+<p>以下用例场景涉及到两个角色：交易所和用户 <code>Alice</code>。</p>
+<h3 id="一，用户申请登记数字身份" class="article-heading"><a href="#一，用户申请登记数字身份" class="headerlink" title="一，用户申请登记数字身份"></a>一，用户申请登记数字身份<a class="article-anchor" href="#一，用户申请登记数字身份" aria-hidden="true"></a></h3><p><code>Alice</code> 通过交易所的交互界面申请登记名为 <code>Alias@Alice</code> 的数字身份。</p>
+<h3 id="二，交易所登记数字身份" class="article-heading"><a href="#二，交易所登记数字身份" class="headerlink" title="二，交易所登记数字身份"></a>二，交易所登记数字身份<a class="article-anchor" href="#二，交易所登记数字身份" aria-hidden="true"></a></h3><p>交易所使用自己的 <code>MVS</code> 账户用命令 <code>getnewaddress</code> 生成新的地址，然后通过命令 <code>registerdid</code> 将名为 <code>Alias@Alice</code> 的数字身份绑定到该地址。</p>
+<h3 id="三，用户绑定数字身份到自己的钱包" class="article-heading"><a href="#三，用户绑定数字身份到自己的钱包" class="headerlink" title="三，用户绑定数字身份到自己的钱包"></a>三，用户绑定数字身份到自己的钱包<a class="article-anchor" href="#三，用户绑定数字身份到自己的钱包" aria-hidden="true"></a></h3><ol>
+<li><p>生成多重签名地址<br><code>Alice</code> 和交易所通过命令 <code>getpublickey</code> 获取各自账号下某个地址的公钥，并交换公钥。然后各自通过命令 <code>getnewmultisig</code> 使用公钥信息生成 <code>m:n</code> 为 <code>1:2</code> 的相同多重签名地址 <code>multisig_address</code>。交易所</p>
+</li>
+<li><p>交易所转出数字身份到多重签名地址<br>交易所通过命令 <code>didchangeaddress</code> 创建将数字身份 <code>Alias@Alice</code> 转出到多重签名地址 <code>multisig_address</code> 的交易，并使用命令 <code>sendrawtx</code> 广播交易。</p>
+</li>
+<li><p>用户转入数字身份到钱包地址<br><code>Alice</code> 通过命令 <code>didchangeaddress</code> 创建将数字身份 <code>Alias@Alice</code> 转入到钱包地址的交易，并使用命令 <code>sendrawtx</code> 广播交易。</p>
+</li>
+<li><p>确认数字身份<br>交易所或者 <code>Alice</code> 通过命令 <code>getdid</code> 可以查看数字身份 <code>Alias@Alice</code> 的历史记录确认。</p>
+</li>
+</ol>
+<h2 id="数字身份微服务" class="article-heading"><a href="#数字身份微服务" class="headerlink" title="数字身份微服务"></a>数字身份微服务<a class="article-anchor" href="#数字身份微服务" aria-hidden="true"></a></h2><hr>
+<p>为了简化交易所的工作，数字身份微服务对以上业务进行了封装，提供了便利的接口。</p>
+<ol>
+<li><p>交易所登记数字身份<br>交易所使用自己的 <code>MVS</code> 账户用命令 <code>getnewaddress</code> 生成新的地址，然后通过命令 <code>registerdid</code> 将用户请求的数字身份绑定到该地址。然后交易所将用户在交易所的帐户ID，登记的数字身份名称以及绑定的地址通过数字身份微服务接口 <code>savedid</code> 保存起来。</p>
+</li>
+<li><p>交易所生成多重签名地址<br>当用户申请转出数字身份到用户钱包时，交易所用用户在交易所的帐户ID通过数字身份微服务接口 <code>querydid</code> 获得数字身份名称以及绑定的地址。</p>
+</li>
+<li><p>交易所通过命令 <code>getpublickey</code> 获取绑定地址的公钥，并将该公钥出示给用户，同时要求用户输入用户地址的公钥。然后通过命令 <code>getnewmultisig</code> 使用公钥信息生成 <code>m:n</code> 为 <code>1:2</code> 的多重签名地址。</p>
+</li>
+<li><p>交易所转出数字身份到多重签名地址<br>交易所通过命令 <code>didchangeaddress</code> 创建将数字身份转出到多重签名地址的交易，并使用命令 <code>sendrawtx</code> 广播交易。</p>
+</li>
+</ol>
+<h2 id="实现" class="article-heading"><a href="#实现" class="headerlink" title="实现"></a>实现<a class="article-anchor" href="#实现" aria-hidden="true"></a></h2><hr>
+<p>根据上面的用例，下面详细地描述了各命令的调用过程。</p>
+<h3 id="一，用户申请登记数字身份-1" class="article-heading"><a href="#一，用户申请登记数字身份-1" class="headerlink" title="一，用户申请登记数字身份"></a>一，用户申请登记数字身份<a class="article-anchor" href="#一，用户申请登记数字身份-1" aria-hidden="true"></a></h3><p><code>Alice</code> 通过交易所的交互界面申请登记名为 <code>Alias@Alice</code> 的数字身份。</p>
+<h3 id="二，交易所登记数字身份-1" class="article-heading"><a href="#二，交易所登记数字身份-1" class="headerlink" title="二，交易所登记数字身份"></a>二，交易所登记数字身份<a class="article-anchor" href="#二，交易所登记数字身份-1" aria-hidden="true"></a></h3><ol>
+<li><p>交易所使用自己的 <code>MVS</code> 账户用命令 <code>getnewaddress</code> 生成新的地址用于登记用户的数字身份。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "id":8, </span></span><br><span class="line"><span class="string">    "method":"getnewaddress",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "number": 1</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">8</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"addresses"</span> : </span><br><span class="line">        [</span><br><span class="line">            <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交易所向该地址转入 <code>100000000</code> 聪（<code>1 ETP</code>）作为后续登记数字身份的手续费。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"send",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        "MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj",</span></span><br><span class="line"><span class="string">        "100000000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 略...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交易所通过命令 <code>registerdid</code> 将名为 <code>Alias@Alice</code> 的数字身份绑定到该地址。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"registerdid",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        "MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj",</span></span><br><span class="line"><span class="string">        "Alias@Alice"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> : </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"c350ab69320dc07f7157ae53f82b12c0a0fabafd0c9a381591de22cd24401b7f"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"9a3e19510089fdc14dd3f0a5e8d252b9271dddfbc41651936bac6c406b8ad15c"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">0</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 304402205f2b347ded297c384f4b28187d41abafd46f254fbac18f856d5e7337f8e83ef202206775b25a9f5820689dae59df0789e7fd5787a68238914e0ac70504d47e1ad0ba01 ] [ 031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321 ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">                        <span class="string">"symbol"</span> : <span class="string">"Alias@Alice"</span>,</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"did-register"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ 89d56e08bdbcfe40eb7f3b34fe21253669c828b1 ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">0</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"MGqHvbaH9wzdr6oUDFz4S1HptjoKQcjRve"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> : </span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ 61fde3bd4e6955c99b16de2d71e2a369888a1c0b ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">80000000</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"4"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交易所将用户在交易所的帐户ID，登记的数字身份名称以及绑定的地址通过数字身份微服务接口 <code>savedid</code> 保存起来。</p>
+</li>
+</ol>
+<h3 id="三，用户绑定数字身份到自己的钱包-1" class="article-heading"><a href="#三，用户绑定数字身份到自己的钱包-1" class="headerlink" title="三，用户绑定数字身份到自己的钱包"></a>三，用户绑定数字身份到自己的钱包<a class="article-anchor" href="#三，用户绑定数字身份到自己的钱包-1" aria-hidden="true"></a></h3><ol>
+<li><p><code>Alice</code> 通过交易所交互页面申请绑定数字身份到自己的钱包。交易所用 <code>Alice</code> 在交易所的帐户ID通过数字身份微服务接口 <code>querydid</code> 获得数字身份名称 <code>Alias@Alice</code> 以及绑定的地址 <code>MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj</code>。</p>
+</li>
+<li><p>交易所通过命令 <code>getpublickey</code> 获取绑定的地址的公钥 <code>031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321</code>，然后通过交互页面展示给 <code>Alice</code>， <code>Alice</code> 记录下该公钥用于后续生成多重签名地址。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getpublickey",</span></span><br><span class="line"><span class="string">    "id":5,</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        "MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">5</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">        <span class="string">"public-key"</span> : <span class="string">"031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Alice</code> 通过钱包获取账户下某个可以使用的地址 <code>MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF</code> 以及对应的公钥 <code>0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a</code>，并通过交互页面将该公钥提交给交易所。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getpublickey",</span></span><br><span class="line"><span class="string">    "id":5,</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Alice", </span></span><br><span class="line"><span class="string">        "alicepwd", </span></span><br><span class="line"><span class="string">        "MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">5</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF"</span>,</span><br><span class="line">        <span class="string">"public-key"</span> : <span class="string">"0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成多重签名地址<br>至此，交易所和 <code>Alice</code> 双方都获得了对方的公钥，因此交易所和 <code>Alice</code> 各自通过命令 <code>getnewmultisig</code> 使用公钥信息生成 <code>m:n</code> 为 <code>1:2</code> 的相同多重签名地址 <code>multisig_address</code>。  </p>
+<ul>
+<li><p>交易所生成多重签名地址 <code>35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF</code>：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":7,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getnewmultisig",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "publickey": [</span></span><br><span class="line"><span class="string">                "0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line"><span class="string">            ],</span></span><br><span class="line"><span class="string">            "selfpublickey": "031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321",</span></span><br><span class="line"><span class="string">            "signaturenum": 1,</span></span><br><span class="line"><span class="string">            "publickeynum": 2</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">7</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF"</span>,</span><br><span class="line">        <span class="string">"description"</span> : <span class="string">""</span>,</span><br><span class="line">        <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"m"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"multisig-script"</span> : <span class="string">"1 [ 031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321 ]  [ 0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a ] 2 checkmultisig"</span>,</span><br><span class="line">        <span class="string">"n"</span> : <span class="number">2</span>,</span><br><span class="line">        <span class="string">"public-keys"</span> : </span><br><span class="line">        [</span><br><span class="line">            <span class="string">"031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span>,</span><br><span class="line">            <span class="string">"0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"self-publickey"</span> : <span class="string">"031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Alice</code> 生成多重签名地址 <code>35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF</code>：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":7,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getnewmultisig",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Alice", </span></span><br><span class="line"><span class="string">        "alicepwd", </span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "publickey": [</span></span><br><span class="line"><span class="string">                "031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span></span><br><span class="line"><span class="string">            ],</span></span><br><span class="line"><span class="string">            "selfpublickey": "0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a",</span></span><br><span class="line"><span class="string">            "signaturenum": 1,</span></span><br><span class="line"><span class="string">            "publickeynum": 2</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">7</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF"</span>,</span><br><span class="line">        <span class="string">"description"</span> : <span class="string">""</span>,</span><br><span class="line">        <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"m"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"multisig-script"</span> : <span class="string">"1 [ 031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321 ]  [ 0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a ] 2 checkmultisig"</span>,</span><br><span class="line">        <span class="string">"n"</span> : <span class="number">2</span>,</span><br><span class="line">        <span class="string">"public-keys"</span> : </span><br><span class="line">        [</span><br><span class="line">            <span class="string">"031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span>,</span><br><span class="line">            <span class="string">"0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"self-publickey"</span> : <span class="string">"0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>交易所转出数字身份到多重签名地址  </p>
+<ul>
+<li><p>交易所向多重签名地址 <code>35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF</code>转入 <code>10000</code> 聪（<code>0.0001 ETP</code>） 作为后续转出数字身份的手续费。  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"send",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        "35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF",</span></span><br><span class="line"><span class="string">        "10000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 略...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交易所通过命令 <code>didchangeaddress</code> 创建将数字身份 <code>Alias@Alice</code> 转出到多重签名地址 <code>35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF</code> 的交易，然后使用命令 <code>sendrawtx</code> 广播交易。  </p>
+</li>
+<li><p>交易所创建转出数字身份的多重签名交易：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"didchangeaddress",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Exchange", </span></span><br><span class="line"><span class="string">        "exchangepwd", </span></span><br><span class="line"><span class="string">        "35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF",</span></span><br><span class="line"><span class="string">        "Alias@Alice"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : <span class="string">"0400000002c3acf1058e8ae5341fed5b944fe86b83edecbadc5d386e6a968af6eff6378ae7000000009300483045022100c1cbb2235c057e3fac37d4884a3929009336978d5a1feba27acad3012d7e1f550220009a6385d42d28964ccc85c0416aa448933213875901c64695ac7e70b79f3c51014c475121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a52aeffffffff7f1b4024cd22de9115389a0cfdbafaa0c0122bf853ae57717fc00d3269ab50c3000000006b483045022100f88ea6c345e1164e7bc2331ea11bf0bb795ad104b02b1da394d976751de378ba02203f02e841e27aae877ff1bcd22fd72737586539e3d40e3451661ac32ab686e7690121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321ffffffff01000000000000000017a9142a74a23b4ed1bb90f575e73c0208106d37eb653a870100000004000000020000000b416c69617340416c6963652233355a573254465468614b3936447a775277726671355352483275377a664b54434600000000"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>交易所广播多重签名交易：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"sendrawtx",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "0400000002c3acf1058e8ae5341fed5b944fe86b83edecbadc5d386e6a968af6eff6378ae7000000009300483045022100c1cbb2235c057e3fac37d4884a3929009336978d5a1feba27acad3012d7e1f550220009a6385d42d28964ccc85c0416aa448933213875901c64695ac7e70b79f3c51014c475121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a52aeffffffff7f1b4024cd22de9115389a0cfdbafaa0c0122bf853ae57717fc00d3269ab50c3000000006b483045022100f88ea6c345e1164e7bc2331ea11bf0bb795ad104b02b1da394d976751de378ba02203f02e841e27aae877ff1bcd22fd72737586539e3d40e3451661ac32ab686e7690121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321ffffffff01000000000000000017a9142a74a23b4ed1bb90f575e73c0208106d37eb653a870100000004000000020000000b416c69617340416c6963652233355a573254465468614b3936447a775277726671355352483275377a664b54434600000000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"hash"</span> : <span class="string">"a981e820071c852710c05bdb70ec2da0da0d877575947aedbcf3ff1d3b7f56c9"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>用户转入数字身份到钱包地址<br><code>Alice</code> 通过钱包用命令 <code>didchangeaddress</code> 创建将数字身份 <code>Alias@Alice</code> 转入到钱包地址 <code>MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF</code>的交易，并使用命令 <code>sendrawtx</code> 广播交易。  </p>
+<ul>
+<li><p><code>Alice</code> 创建转入数字身份的多重签名交易：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"didchangeaddress",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "Alice", </span></span><br><span class="line"><span class="string">        "alicepwd", </span></span><br><span class="line"><span class="string">        "MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF",</span></span><br><span class="line"><span class="string">        "Alias@Alice"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : <span class="string">"0400000002c9567f3b1dfff3bced7a947575870ddaa02dec70db5bc01027851c0720e881a9000000009300483045022100adb80306458db15f8e82108f92a3ecf9d0dd221f89386b1d006a09b88dba243c022007a5198bb84f203b6a91bc2fcc7fd5413cfc0e7982dabdc89feb2f3a5cf3405c014c475121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a52aeffffffffb6a654253b99292f7ce585fc718c0e28dbe730c79dded3eb373f9b51ce9ddd0e000000006a47304402205beb823ab2395e8ceecd1595327f3d1f8fe9bec12e6d1e71df94acf29d168bf502204152096109155468fd6f501e5494ac947fba2e7f313ec2b398e6b3aec5eeb59701210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0affffffff0200000000000000001976a914cfc2bcbdc96854fe00dbe86db689fd1ea918bdd888ac0100000004000000020000000b416c69617340416c696365224d53716850697065415a3155613947664e6242693635525064543778346948767746f07be111000000001976a914cfc2bcbdc96854fe00dbe86db689fd1ea918bdd888ac010000000000000000000000"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>Alice</code> 广播多重签名交易：  </p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"sendrawtx",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "0400000002c9567f3b1dfff3bced7a947575870ddaa02dec70db5bc01027851c0720e881a9000000009300483045022100adb80306458db15f8e82108f92a3ecf9d0dd221f89386b1d006a09b88dba243c022007a5198bb84f203b6a91bc2fcc7fd5413cfc0e7982dabdc89feb2f3a5cf3405c014c475121031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a52aeffffffffb6a654253b99292f7ce585fc718c0e28dbe730c79dded3eb373f9b51ce9ddd0e000000006a47304402205beb823ab2395e8ceecd1595327f3d1f8fe9bec12e6d1e71df94acf29d168bf502204152096109155468fd6f501e5494ac947fba2e7f313ec2b398e6b3aec5eeb59701210344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0affffffff0200000000000000001976a914cfc2bcbdc96854fe00dbe86db689fd1ea918bdd888ac0100000004000000020000000b416c69617340416c696365224d53716850697065415a3155613947664e6242693635525064543778346948767746f07be111000000001976a914cfc2bcbdc96854fe00dbe86db689fd1ea918bdd888ac010000000000000000000000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"hash"</span> : <span class="string">"efbd03e1e25fb7b5a4b153bda5f7fe34bc1a8028f751ee14c93d3a398fa71d8d"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>确认数字身份<br>交易所或者 <code>Alice</code> 通过命令 <code>getdid</code> 可以查看数字身份 <code>Alias@Alice</code> 的历史记录确认。</p>
+ <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getdid",</span></span><br><span class="line"><span class="string">    "id":42,</span></span><br><span class="line"><span class="string">    "params":["Alias@Alice"]</span></span><br><span class="line"><span class="string">&#125;'</span>  http:<span class="comment">//127.0.0.1:8820/rpc/v2/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">42</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"addresses"</span> : </span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MSqhPipeAZ1Ua9GfNbBi65RPdT7x4iHvwF"</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"current"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"35ZW2TFThaK96DzwRwrfq5SRH2u7zfKTCF"</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">                <span class="string">"status"</span> : <span class="string">"history"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"did"</span> : <span class="string">"Alias@Alice"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="使用-mvs-rpc-python-实现" class="article-heading"><a href="#使用-mvs-rpc-python-实现" class="headerlink" title="使用 mvs_rpc_python 实现"></a>使用 mvs_rpc_python 实现<a class="article-anchor" href="#使用-mvs-rpc-python-实现" aria-hidden="true"></a></h2><hr>
+<p>完整代码请访问 <a href="https://github.com/mvshub/mvs_rpc_python/blob/master/tests/exchange_register_avatar.py" target="_blank" rel="noopener">exchange_register_avatar</a>.  </p>
+<ul>
+<li><p>关键代码：</p>
+  <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">account_name = <span class="string">'Exchange'</span>       <span class="comment"># account name of exchange</span></span><br><span class="line">account_pwd = <span class="string">'exchangepwd'</span>     <span class="comment"># password of account</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    print(<span class="string">'Exchange register evatar example'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># register DID</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># get DID from user</span></span><br><span class="line">    did = input(<span class="string">'Please input the name of DID:'</span>)</span><br><span class="line">    print(<span class="string">'user want to register DID: &#123;&#125;'</span>.format(did))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># generate new address</span></span><br><span class="line">    address = generate_new_address(account_name, account_pwd)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> == address:</span><br><span class="line">        print(<span class="string">'Failed to generate new address'</span>)</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    print(<span class="string">"generate a new address: &#123;&#125;"</span>.format(address))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># send 1 ETP to the new address</span></span><br><span class="line">    errmsg = send_etp(account_name, account_pwd, address, <span class="number">100000000</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> != errmsg:</span><br><span class="line">        print(<span class="string">"Failed to send ETP to &#123;&#125;. error: &#123;&#125;"</span>.format(address, errmsg))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># register DID to the new address</span></span><br><span class="line">    errmsg = register_did(account_name, account_pwd, address, did)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> != errmsg:</span><br><span class="line">        print(<span class="string">"Failed to register DID &#123;&#125; to &#123;&#125;. error: &#123;&#125;"</span>.format(did, address, errmsg))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> wait_mining(did, <span class="keyword">lambda</span> x : get_did(x) == <span class="literal">None</span>):</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"** Successfully registered did &#123;&#125; to &#123;&#125;\n"</span>.format(did, address))</span><br><span class="line"></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line">    <span class="comment"># transfer DID</span></span><br><span class="line">    <span class="comment">#===========================================================================</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># get public key from user</span></span><br><span class="line">    user_public_key = input(<span class="string">"Please input user's public key:"</span>)</span><br><span class="line">    print(<span class="string">"User's public key: &#123;&#125;"</span>.format(user_public_key))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># get public key of the new address</span></span><br><span class="line">    self_public_key = get_public_key(account_name, account_pwd, address)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> == address:</span><br><span class="line">        print(<span class="string">'Failed to get public key from address &#123;&#125;'</span>.format(address))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    print(<span class="string">"the public key of the address: &#123;&#125;"</span>.format(self_public_key))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># generate multisig address</span></span><br><span class="line">    multisig_address = generate_multisig_address(</span><br><span class="line">        account_name, account_pwd, self_public_key, user_public_key)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> == multisig_address:</span><br><span class="line">        print(<span class="string">'Failed to generate multisig address &#123;&#125;'</span>.format(address))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line">    print(<span class="string">"generate a multisig address: &#123;&#125;"</span>.format(multisig_address))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># send 0.0001 ETP to the multisig address</span></span><br><span class="line">    print(<span class="string">"sending etp to multisig address"</span>)</span><br><span class="line">    errmsg = send_etp(account_name, account_pwd, multisig_address, <span class="number">10000</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> != errmsg:</span><br><span class="line">        print(<span class="string">"Failed to send ETP to &#123;&#125;. error: &#123;&#125;"</span>.format(address, errmsg))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> wait_mining(multisig_address, <span class="keyword">lambda</span> x : get_etp(multisig_address) == <span class="number">0</span>):</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># transfer DID to the multisig address</span></span><br><span class="line">    print(<span class="string">"transfering did to multisig address"</span>)</span><br><span class="line">    rawtx = transfer_did(account_name, account_pwd, multisig_address, did)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> == rawtx:</span><br><span class="line">        print(<span class="string">"Failed to transfer DID &#123;&#125; to &#123;&#125;.\nerror: &#123;&#125;"</span>.format(did, multisig_address, errmsg))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    errmsg = broadcast_rawtx(rawtx)</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">None</span> != errmsg:</span><br><span class="line">        print(<span class="string">"Failed to broadcast rawtx &#123;&#125;. error: &#123;&#125;"</span>.format(rawtx, errmsg))</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> wait_mining([did, multisig_address], <span class="keyword">lambda</span> x : get_did(x[<span class="number">0</span>])[<span class="number">0</span>][<span class="string">'address'</span>] != x[<span class="number">1</span>]):</span><br><span class="line">        sys.exit(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"** Successfully transfered did &#123;&#125; to &#123;&#125;"</span>.format(did, multisig_address))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例输出：</p>
+  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Exchange register evatar example</span><br><span class="line">Please input the name <span class="keyword">of</span> DID:<span class="string">'avatar01@Alice'</span></span><br><span class="line">user want to register DID: avatar01@Alice</span><br><span class="line">generate a <span class="keyword">new</span> address: MUfeU351P7ipuUFJcotzQzDesKHHpuiFpA</span><br><span class="line">wait <span class="keyword">for</span> miner to package</span><br><span class="line">** Successfully registered did avatar01@Alice to MUfeU351P7ipuUFJcotzQzDesKHHpuiFpA</span><br><span class="line"></span><br><span class="line">Please input user<span class="string">'s public key:"0344befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a"</span></span><br><span class="line"><span class="string">User'</span>s public key: <span class="number">0344</span>befcd59670651a6441c00ef26caa104bab8ff9e5ec3f6e9b65bac9194cad0a</span><br><span class="line">the public key <span class="keyword">of</span> the address: <span class="number">034354</span>fb24938a6b061341e9fdae6b35e3391958c52dccdfc27213ae3ae68288b7</span><br><span class="line">generate a multisig address: <span class="number">3</span>H62VSQPshYgxmDqCUbyZcaPCenLfJQrUH</span><br><span class="line">sending etp to multisig address</span><br><span class="line">wait <span class="keyword">for</span> miner to package</span><br><span class="line">transfering did to multisig address</span><br><span class="line">wait <span class="keyword">for</span> miner to package</span><br><span class="line">** Successfully transfered did avatar01@Alice to <span class="number">3</span>H62VSQPshYgxmDqCUbyZcaPCenLfJQrUH</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="sdk.html" class="article-footer-prev" title="SDKs"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/baas/baas-did.html';
+  var disqus_title = "数字身份微服务";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#概要"><span class="toc-text">概要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用例"><span class="toc-text">用例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，用户申请登记数字身份"><span class="toc-text">一，用户申请登记数字身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，交易所登记数字身份"><span class="toc-text">二，交易所登记数字身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三，用户绑定数字身份到自己的钱包"><span class="toc-text">三，用户绑定数字身份到自己的钱包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数字身份微服务"><span class="toc-text">数字身份微服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实现"><span class="toc-text">实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，用户申请登记数字身份-1"><span class="toc-text">一，用户申请登记数字身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，交易所登记数字身份-1"><span class="toc-text">二，交易所登记数字身份</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三，用户绑定数字身份到自己的钱包-1"><span class="toc-text">三，用户绑定数字身份到自己的钱包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用-mvs-rpc-python-实现"><span class="toc-text">使用 mvs_rpc_python 实现</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">介绍</strong><a href="index.html" class="sidebar-link">介绍</a><strong class="sidebar-title">SDKs</strong><a href="sdk.html" class="sidebar-link">SDKs</a><strong class="sidebar-title">微服务</strong><a href="baas-did.html" class="sidebar-link current">数字身份</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">介绍</strong><a href="index.html" class="mobile-nav-link">介绍</a><strong class="mobile-nav-title">SDKs</strong><a href="sdk.html" class="mobile-nav-link">SDKs</a><strong class="mobile-nav-title">微服务</strong><a href="baas-did.html" class="mobile-nav-link current">数字身份</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="baas/baas-did.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

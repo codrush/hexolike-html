@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>rawtx | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/api_v2/rawtx.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v2/rawtx.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v2/rawtx.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -d or [--deposit]       Deposits support [7, 30, 90, 182, 365] days. defaluts to 7 days -f or [--fee]           Transaction">
+<meta property="og:type" content="website">
+<meta property="og:title" content="rawtx">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/api_v2/rawtx.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -d or [--deposit]       Deposits support [7, 30, 90, 182, 365] days. defaluts to 7 days -f or [--fee]           Transaction">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rawtx">
+<meta name="twitter:description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -d or [--deposit]       Deposits support [7, 30, 90, 182, 365] days. defaluts to 7 days -f or [--fee]           Transaction">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="api_v2/rawtx.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">rawtx</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/api_v2/rawtx.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
+<h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
+<ul>
+<li><h3 id="createrawtx" class="article-heading"><a href="#createrawtx" class="headerlink" title="createrawtx"></a><code>createrawtx</code><a class="article-anchor" href="#createrawtx" aria-hidden="true"></a></h3><p>  createrawtx</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>-d</code> or <code>[--deposit]</code>       Deposits support [7, 30, 90, 182, 365] days. defaluts to 7 days</li>
+<li><code>-f</code> or <code>[--fee]</code>           Transaction fee. defaults to 10000 ETP bits</li>
+<li><code>-h</code> or <code>[--help]</code>          Get a description and instructions for this command.</li>
+<li><code>-i</code> or <code>[--message]</code>       Message/Information attached to this transaction</li>
+<li><code>-m</code> or <code>[--mychange]</code>      Mychange to this address, includes etp and asset change</li>
+<li><code>-n</code> or <code>[--symbol]</code>        asset name, not specify this option for etp tx</li>
+<li><code>-r</code> or <code>[--receivers]</code>     Send to [address:amount]. amount is asset number if sybol option specified</li>
+<li><code>-s</code> or <code>[--senders]</code>       Send from addresses</li>
+<li><code>-t</code> or <code>[--type]</code>          Transaction type. 0 – transfer etp, 1 – deposit etp, 3 – transfer asset, 6 – just only send message</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>hex</code> - The Base16 transaction.</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v2 -X POST --data '&#123;"jsonrpc":"2.0","method":"createrawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[&#123;<span class="string">"type"</span>:<span class="string">"3"</span>, <span class="string">"senders"</span>:<span class="string">"tCrRWkDBZQTqp3AdZc39DSMJ8FremrTinj"</span>, <span class="string">"receivers"</span>:<span class="string">"t7M89JNHrVn3TwNDq2HTGbTMmCXCXQNhqr:100"</span>, <span class="string">"symbol"</span>:<span class="string">"RMB"</span>&#125;],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" :</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "hex" : "02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e180000000000ffffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="signrawtx" class="article-heading"><a href="#signrawtx" class="headerlink" title="signrawtx"></a><code>signrawtx</code><a class="article-anchor" href="#signrawtx" aria-hidden="true"></a></h3><p>  signrawtx</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code>  Account name required.</li>
+<li><code>ACCOUNTAUTH</code>  Account password(authorization) required.</li>
+<li><code>TRANSACTION</code>  The input Base16 transaction to sign.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params: [</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"TRANSACTION"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>hash</code> - transaction hash</li>
+<li><code>hex</code> - The Base16 transaction.</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v2  -X POST --data '&#123;"jsonrpc":"2.0","method":"signrawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[<span class="string">"test10"</span>, <span class="string">"123456"</span>, <span class="string">"02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e180000000000ffffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span>],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" :</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "hash" : "cb1906fee17d72a4bc71cfdb5b0e0f66d7a5067fd941e74cd703367d384821ff",</span></span><br><span class="line"><span class="string">        "hex" : "02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e18000000006b483045022100a59159cc8d3018899815e3189893c81b741166a7ee6e69cd5b04f989afe498e50220364a7b0a6ec0a0276e2019f372003b1fb88cb087791c368bb29bdff514ebb0ca012103046e1c2777cfa064932a2f4c12f8dd307c1702c9cd77d14c48daf134627e355effffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>}</p>
+<hr>
+<ul>
+<li><h3 id="decoderawtx" class="article-heading"><a href="#decoderawtx" class="headerlink" title="decoderawtx"></a><code>decoderawtx</code><a class="article-anchor" href="#decoderawtx" aria-hidden="true"></a></h3><ul>
+<li>Arguments (positional):</li>
+</ul>
+<ol>
+<li><code>TRANSACTION</code> The input Base16 transaction to sign.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params: [</span><br><span class="line">    <span class="string">"TRANSACTION"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>transaction</code> - transaction object</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v2  -X POST --data '&#123;"jsonrpc":"2.0","method":"decoderawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[<span class="string">"02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e18000000006b483045022100a59159cc8d3018899815e3189893c81b741166a7ee6e69cd5b04f989afe498e50220364a7b0a6ec0a0276e2019f372003b1fb88cb087791c368bb29bdff514ebb0ca012103046e1c2777cfa064932a2f4c12f8dd307c1702c9cd77d14c48daf134627e355effffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span>],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" :</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "transaction" :</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "hash" : "cb1906fee17d72a4bc71cfdb5b0e0f66d7a5067fd941e74cd703367d384821ff",</span></span><br><span class="line"><span class="string">            "inputs" :</span></span><br><span class="line"><span class="string">            [</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    "address" : "tCrRWkDBZQTqp3AdZc39DSMJ8FremrTinj",</span></span><br><span class="line"><span class="string">                    "previous_output" :</span></span><br><span class="line"><span class="string">                    &#123;</span></span><br><span class="line"><span class="string">                        "hash" : "181ebfb6236a279be0839726e115ff698cbcd36ff2111ea7134ec224fcb31c1b",</span></span><br><span class="line"><span class="string">                        "index" : 0</span></span><br><span class="line"><span class="string">                    &#125;,</span></span><br><span class="line"><span class="string">                    "script" : "[ 3045022100a59159cc8d3018899815e3189893c81b741166a7ee6e69cd5b04f989afe498e50220364a7b0a6ec0a0276e2019f372003b1fb88cb087791c368bb29bdff514ebb0ca01 ] [ 03046e1c2777cfa064932a2f4c12f8dd307c1702c9cd77d14c48daf134627e355e ]",</span></span><br><span class="line"><span class="string">                    "sequence" : 4294967295</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            ],</span></span><br><span class="line"><span class="string">            "lock_time" : "0",</span></span><br><span class="line"><span class="string">            "outputs" :</span></span><br><span class="line"><span class="string">            [</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    "address" : "t7M89JNHrVn3TwNDq2HTGbTMmCXCXQNhqr",</span></span><br><span class="line"><span class="string">                    "attachment" :</span></span><br><span class="line"><span class="string">                    &#123;</span></span><br><span class="line"><span class="string">                        "type" : "etp"</span></span><br><span class="line"><span class="string">                    &#125;,</span></span><br><span class="line"><span class="string">                    "index" : 0,</span></span><br><span class="line"><span class="string">                    "locked_height_range" : 0,</span></span><br><span class="line"><span class="string">                    "script" : "dup hash160 [ 04a31ae84a152ca773728761b7260726d8aeff8c ] equalverify checksig",</span></span><br><span class="line"><span class="string">                    "value" : 100</span></span><br><span class="line"><span class="string">                &#125;,</span></span><br><span class="line"><span class="string">                &#123;</span></span><br><span class="line"><span class="string">                    "address" : "tCrRWkDBZQTqp3AdZc39DSMJ8FremrTinj",</span></span><br><span class="line"><span class="string">                    "attachment" :</span></span><br><span class="line"><span class="string">                    &#123;</span></span><br><span class="line"><span class="string">                        "type" : "etp"</span></span><br><span class="line"><span class="string">                    &#125;,</span></span><br><span class="line"><span class="string">                    "index" : 1,</span></span><br><span class="line"><span class="string">                    "locked_height_range" : 0,</span></span><br><span class="line"><span class="string">                    "script" : "dup hash160 [ 41064be4875b7a3608a891173540e534d4b89b6f ] equalverify checksig",</span></span><br><span class="line"><span class="string">                    "value" : 299989900</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            ],</span></span><br><span class="line"><span class="string">            "version" : "2"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="sendrawtx" class="article-heading"><a href="#sendrawtx" class="headerlink" title="sendrawtx"></a><code>sendrawtx</code><a class="article-anchor" href="#sendrawtx" aria-hidden="true"></a></h3><ul>
+<li>Options (named):</li>
+</ul>
+<ol>
+<li><code>-h</code> or <code>[--help]</code>          Get a description and instructions for this command.</li>
+<li><code>-f</code> or <code>[--fee]</code>           The max tx fee. default_value 10 etp</li>
+</ol>
+<ul>
+<li>Arguments (positional):</li>
+</ul>
+<ol>
+<li><code>TRANSACTION</code> The input Base16 transaction to broadcast.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"TRANSACTION"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc  -X POST --data '&#123;"jsonrpc":"2.0","method":"sendrawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[<span class="string">"02000000016164c4ccd70b57a9d7b956d63bf0d0c9bccb72cfaba49891fa9e833adacb65a401000000db00473044022042ccd72c3ce0f7bc34d4507964d6442877165e9efd8c45ca1b3f2721331f48f102200e5c1402d2775e87d258aa60feac3d79b2ba377e6665104196ad9ca75dc1c30b01483045022100b78987209417d81ffad5d45719e8a78a5730b6b8e22b98c73b6ca927a001fe6b022004b48edf88370fa001ae9423561762cbdd489b619ab82fcab64852e08358c7b0014c4752210200e5782241ce24af725f2e823dfcc325101cec604e422566ba5ce4ca4bd5bc8c2103046e1c2777cfa064932a2f4c12f8dd307c1702c9cd77d14c48daf134627e355e52aeffffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac0100000000000000b83701000000000017a91409594fe3a84e3de95831d2474ca3ca29d2f9053d87010000000000000000000000"</span>],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" :</span></span><br><span class="line"><span class="string">    &#123;</span></span><br><span class="line"><span class="string">        "hash" : "aedd4bdf49a688cdfd23c056848149568a198f8088ac5e15fc38418dc429ae2a"</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="multisig.html" class="article-footer-prev" title="多重签名"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="identity.html" class="article-footer-next" title="身份"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Methods"><span class="toc-text">API Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#createrawtx"><span class="toc-text">createrawtx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#signrawtx"><span class="toc-text">signrawtx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#decoderawtx"><span class="toc-text">decoderawtx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sendrawtx"><span class="toc-text">sendrawtx</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">账户</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">区块链操作</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">交易</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">资产</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link current">离线交易</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">账户</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">区块链操作</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">交易</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">资产</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link current">离线交易</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v2/rawtx.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>跨链置换操作指南 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/cross-chain-swap.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="功能简介跨链置换服务可以实现以太坊ERC20资产与元界MST资产的相互置换。 绑定以太坊地址与元界数字身份或地址获取地址绑定交易数据myetpwallet 轻钱包 打开 myetpwallet，选择菜单 资产置换  选择 以太坊 -&amp;gt; 元界 一栏  选择要绑定到的数字身份或地址，生成交易数据，然后拷贝交易数据   全节点钱包 进入地址页面，选择要绑定的数字身份或地址，点击链接到以太坊地址">
+<meta property="og:type" content="website">
+<meta property="og:title" content="跨链置换操作指南">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="功能简介跨链置换服务可以实现以太坊ERC20资产与元界MST资产的相互置换。 绑定以太坊地址与元界数字身份或地址获取地址绑定交易数据myetpwallet 轻钱包 打开 myetpwallet，选择菜单 资产置换  选择 以太坊 -&amp;gt; 元界 一栏  选择要绑定到的数字身份或地址，生成交易数据，然后拷贝交易数据   全节点钱包 进入地址页面，选择要绑定的数字身份或地址，点击链接到以太坊地址">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://i.imgur.com/EfC5mcs.png">
+<meta property="og:image" content="https://i.imgur.com/i6Ah4Dh.png">
+<meta property="og:image" content="https://i.imgur.com/yiIXBix.png">
+<meta property="og:image" content="https://i.imgur.com/u4Y0olL.png">
+<meta property="og:image" content="https://i.imgur.com/dJysCc1.png">
+<meta property="og:image" content="https://i.imgur.com/k9obn5H.png">
+<meta property="og:image" content="https://i.imgur.com/v3Saf2d.jpg">
+<meta property="og:image" content="https://i.imgur.com/B86L7ys.png">
+<meta property="og:image" content="https://i.imgur.com/FGxvQOq.jpg">
+<meta property="og:image" content="https://i.imgur.com/BnpEmme.png">
+<meta property="og:image" content="https://i.imgur.com/3zA6i3r.png">
+<meta property="og:image" content="https://i.imgur.com/VGWoeyb.png">
+<meta property="og:image" content="https://i.imgur.com/nSr3Wrr.png">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨链置换操作指南">
+<meta name="twitter:description" content="功能简介跨链置换服务可以实现以太坊ERC20资产与元界MST资产的相互置换。 绑定以太坊地址与元界数字身份或地址获取地址绑定交易数据myetpwallet 轻钱包 打开 myetpwallet，选择菜单 资产置换  选择 以太坊 -&amp;gt; 元界 一栏  选择要绑定到的数字身份或地址，生成交易数据，然后拷贝交易数据   全节点钱包 进入地址页面，选择要绑定的数字身份或地址，点击链接到以太坊地址">
+<meta name="twitter:image" content="https://i.imgur.com/EfC5mcs.png">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/cross-chain-swap.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">跨链置换操作指南</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/cross-chain-swap.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="功能简介" class="article-heading"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介<a class="article-anchor" href="#功能简介" aria-hidden="true"></a></h2><p>跨链置换服务可以实现以太坊<code>ERC20</code>资产与元界<code>MST</code>资产的相互置换。</p>
+<h2 id="绑定以太坊地址与元界数字身份或地址" class="article-heading"><a href="#绑定以太坊地址与元界数字身份或地址" class="headerlink" title="绑定以太坊地址与元界数字身份或地址"></a>绑定以太坊地址与元界数字身份或地址<a class="article-anchor" href="#绑定以太坊地址与元界数字身份或地址" aria-hidden="true"></a></h2><h3 id="获取地址绑定交易数据" class="article-heading"><a href="#获取地址绑定交易数据" class="headerlink" title="获取地址绑定交易数据"></a>获取地址绑定交易数据<a class="article-anchor" href="#获取地址绑定交易数据" aria-hidden="true"></a></h3><h4 id="myetpwallet-轻钱包" class="article-heading"><a href="#myetpwallet-轻钱包" class="headerlink" title="myetpwallet 轻钱包"></a><code>myetpwallet</code> 轻钱包<a class="article-anchor" href="#myetpwallet-轻钱包" aria-hidden="true"></a></h4><ol>
+<li><p>打开 <code>myetpwallet</code>，选择菜单 <code>资产置换</code><br><img src="https://i.imgur.com/EfC5mcs.png" alt="资产置换"></p>
+</li>
+<li><p>选择 <code>以太坊 -&gt; 元界</code> 一栏<br><img src="https://i.imgur.com/i6Ah4Dh.png" alt="以太坊元界"></p>
+</li>
+<li><p>选择要绑定到的数字身份或地址，生成交易数据，然后拷贝交易数据<br><img src="https://i.imgur.com/yiIXBix.png" alt="拷贝交易数据"></p>
+</li>
+</ol>
+<h4 id="全节点钱包" class="article-heading"><a href="#全节点钱包" class="headerlink" title="全节点钱包"></a>全节点钱包<a class="article-anchor" href="#全节点钱包" aria-hidden="true"></a></h4><ol>
+<li><p>进入地址页面，选择要绑定的数字身份或地址，点击<code>链接到以太坊地址</code><br><img src="https://i.imgur.com/u4Y0olL.png" alt="链接到以太坊地址"></p>
+</li>
+<li><p>点击<code>生成数据</code><br><img src="https://i.imgur.com/dJysCc1.png" alt="生成数据"></p>
+</li>
+<li><p>点击<code>拷贝数据</code><br><img src="https://i.imgur.com/k9obn5H.png" alt="拷贝数据"></p>
+</li>
+</ol>
+<h3 id="执行地址绑定合约" class="article-heading"><a href="#执行地址绑定合约" class="headerlink" title="执行地址绑定合约"></a>执行地址绑定合约<a class="article-anchor" href="#执行地址绑定合约" aria-hidden="true"></a></h3><ol>
+<li><p>打开支持附加交易数据的以太坊钱包，如 <a href="https://www.myetherwallet.com/" target="_blank" rel="noopener"><code>myetherwallet</code></a> 或 <a href="https://token.im/" target="_blank" rel="noopener"><code>imtoken</code></a>，发起 ETH 转账交易。</p>
+</li>
+<li><p>点击<code>高级选项</code>，将前面拷贝的交易数据粘贴到<code>十六进制数据</code>一栏中。<br><img src="https://i.imgur.com/v3Saf2d.jpg" alt="绑定以太坊地址与元界的数字身份"></p>
+</li>
+<li><p>转账地址填写地址绑定智能合约的地址：<code>0xa52b0a032139e6303b86cfeb0bb9ae780a610354</code>，可在元界钱包上拷贝该地址。<br><img src="https://i.imgur.com/B86L7ys.png" alt="拷贝地址"></p>
+</li>
+<li><p>转账数量填写：<code>0</code></p>
+</li>
+<li><p>然后点击<code>下一步</code>完成转账交易。 </p>
+</li>
+</ol>
+<p>该交易用于建立以太坊地址与元界的数字身份或者钱包地址之间的绑定映射。</p>
+<h2 id="将以太坊资产置换为元界MST资产" class="article-heading"><a href="#将以太坊资产置换为元界MST资产" class="headerlink" title="将以太坊资产置换为元界MST资产"></a>将以太坊资产置换为元界<code>MST</code>资产<a class="article-anchor" href="#将以太坊资产置换为元界MST资产" aria-hidden="true"></a></h2><h3 id="向元界资产置换的以太坊地址转账ERC20资产" class="article-heading"><a href="#向元界资产置换的以太坊地址转账ERC20资产" class="headerlink" title="向元界资产置换的以太坊地址转账ERC20资产"></a>向元界资产置换的以太坊地址转账<code>ERC20</code>资产<a class="article-anchor" href="#向元界资产置换的以太坊地址转账ERC20资产" aria-hidden="true"></a></h3><p>打开以太坊钱包，选择要置换的<code>ERC20</code>资产，向元界资产置换的以太坊地址：<code>0xc1e5fd24fa2b4a3581335fc3f2850f717dd09c86</code>，发起一笔转账交易。<br><img src="https://i.imgur.com/FGxvQOq.jpg" alt="向元界资产置换的以太坊地址转账`ERC20`资产"></p>
+<h3 id="查询" class="article-heading"><a href="#查询" class="headerlink" title="查询"></a>查询<a class="article-anchor" href="#查询" aria-hidden="true"></a></h3><p>请耐心等待置换操作完成，该操作涉及两个链，因此需要等待的时间较长。您可以在 <a href="https://www.myetpwallet.com/" target="_blank" rel="noopener"><code>myetpwallet</code></a> 钱包或在<a href="https://explorer.mvs.org/avatar" target="_blank" rel="noopener">区块链浏览器</a>上查看置换完成的<code>MST</code>资产，该<code>MST</code>资产默认以<code>ERC20.</code>为前缀。</p>
+<h2 id="将元界MST资产置换为以太坊资产" class="article-heading"><a href="#将元界MST资产置换为以太坊资产" class="headerlink" title="将元界MST资产置换为以太坊资产"></a>将元界<code>MST</code>资产置换为以太坊资产<a class="article-anchor" href="#将元界MST资产置换为以太坊资产" aria-hidden="true"></a></h2><h3 id="myetpwallet-轻钱包-1" class="article-heading"><a href="#myetpwallet-轻钱包-1" class="headerlink" title="myetpwallet 轻钱包"></a><code>myetpwallet</code> 轻钱包<a class="article-anchor" href="#myetpwallet-轻钱包-1" aria-hidden="true"></a></h3><ol>
+<li><p>在主界面上选择要置换的元界 <code>MST</code> 资产，点击 <code>置换</code>。<br><img src="https://i.imgur.com/BnpEmme.png" alt="选择资产"></p>
+</li>
+<li><p>填写要置换的资产数量，接收置换资产的以太坊地址。置换操作的手续费为 <code>1 ETP</code>。<br><img src="https://i.imgur.com/3zA6i3r.png" alt="转账资产"></p>
+</li>
+</ol>
+<h3 id="全节点钱包-1" class="article-heading"><a href="#全节点钱包-1" class="headerlink" title="全节点钱包"></a>全节点钱包<a class="article-anchor" href="#全节点钱包-1" aria-hidden="true"></a></h3><ol>
+<li><p>在主界面上选择要置换的元界 <code>MST</code> 资产，点击转账。<br><img src="https://i.imgur.com/VGWoeyb.png" alt="选择资产"></p>
+</li>
+<li><p>在转账界面中选择选项 <code>我愿意将MST资产置换为等值的ERC20代币</code>，填写要置换的资产数量，接收置换资产的以太坊地址。置换操作的手续费为 <code>1 ETP</code>。<br><img src="https://i.imgur.com/nSr3Wrr.png" alt="转账资产"></p>
+</li>
+</ol>
+<h2 id="将以太坊-ETH-置换为元界-ETP" class="article-heading"><a href="#将以太坊-ETH-置换为元界-ETP" class="headerlink" title="将以太坊 ETH 置换为元界 ETP"></a>将以太坊 <code>ETH</code> 置换为元界 <code>ETP</code><a class="article-anchor" href="#将以太坊-ETH-置换为元界-ETP" aria-hidden="true"></a></h2><h3 id="向元界资产置换的以太坊地址转账-ETH" class="article-heading"><a href="#向元界资产置换的以太坊地址转账-ETH" class="headerlink" title="向元界资产置换的以太坊地址转账 ETH"></a>向元界资产置换的以太坊地址转账 <code>ETH</code><a class="article-anchor" href="#向元界资产置换的以太坊地址转账-ETH" aria-hidden="true"></a></h3><p>打开以太坊钱包，向元界资产置换的以太坊地址：<code>0xc1e5fd24fa2b4a3581335fc3f2850f717dd09c86</code>，发起一笔 <code>ETH</code> 转账交易。</p>
+<h3 id="查询-1" class="article-heading"><a href="#查询-1" class="headerlink" title="查询"></a>查询<a class="article-anchor" href="#查询-1" aria-hidden="true"></a></h3><p>请耐心等待置换操作完成，该操作涉及两个链，因此需要等待的时间较长。您可以在 <a href="https://www.myetpwallet.com/" target="_blank" rel="noopener"><code>myetpwallet</code></a> 钱包或在<a href="https://explorer.mvs.org/avatar" target="_blank" rel="noopener">区块链浏览器</a>上查看置换完成的 <code>ETP</code>。该笔 <code>ETP</code> 置换交易会附带如下格式的消息：<code>[兑换汇率，兑换数量，ETH，对应的以太坊置换交易]</code>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;address&quot; : &quot;MBkcJ6YsnG1G97tFJuBcytDxfk5F8hCp2g&quot;,</span><br><span class="line">	&quot;attachment&quot; : </span><br><span class="line">	&#123;</span><br><span class="line">		&quot;content&quot; : &quot;[\&quot;68.82119539759908\&quot;, \&quot;0.0000099\&quot;, \&quot;ETH\&quot;, \&quot;0x2872875c7b08ec0786309864207f883d3e9f609a232a3cb7c53ec7d0a9e87099\&quot;]&quot;,</span><br><span class="line">		&quot;type&quot; : &quot;message&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;index&quot; : 2,</span><br><span class="line">	&quot;locked_height_range&quot; : 0,</span><br><span class="line">	&quot;script&quot; : &quot;dup hash160 [ 34f4acd8ee7551fd5558c6dc60c0a6160a1f2119 ] equalverify checksig&quot;,</span><br><span class="line">	&quot;value&quot; : 0</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="注意" class="article-heading"><a href="#注意" class="headerlink" title="注意"></a>注意<a class="article-anchor" href="#注意" aria-hidden="true"></a></h3><p>目前仅支持将 <code>ETH</code> 置换为元界 <code>ETP</code>，不支持将 <code>ETP</code> 置换为 <code>ETH</code> 。每一次兑换最多允许兑换 <code>20</code> 个 <code>ETH</code>。</p>
+<table>
+<thead>
+<tr>
+<th>ETH兑换数量</th>
+<th>手续费率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;= 1</td>
+<td>2.0%</td>
+</tr>
+<tr>
+<td>&lt;= 5</td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td>&lt;= 10</td>
+<td>3.0%</td>
+</tr>
+<tr>
+<td>&lt;= 15</td>
+<td>3.5%</td>
+</tr>
+<tr>
+<td>&lt;= 20</td>
+<td>4.0%</td>
+</tr>
+</tbody>
+</table>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="mpc1-upgrade-manual.html" class="article-footer-prev" title="MPC1升级手册"><i class="fa fa-chevron-left"></i><span>上一页</span></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html';
+  var disqus_title = "跨链置换操作指南";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#功能简介"><span class="toc-text">功能简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#绑定以太坊地址与元界数字身份或地址"><span class="toc-text">绑定以太坊地址与元界数字身份或地址</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取地址绑定交易数据"><span class="toc-text">获取地址绑定交易数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#myetpwallet-轻钱包"><span class="toc-text">myetpwallet 轻钱包</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#全节点钱包"><span class="toc-text">全节点钱包</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#执行地址绑定合约"><span class="toc-text">执行地址绑定合约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将以太坊资产置换为元界MST资产"><span class="toc-text">将以太坊资产置换为元界MST资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#向元界资产置换的以太坊地址转账ERC20资产"><span class="toc-text">向元界资产置换的以太坊地址转账ERC20资产</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将元界MST资产置换为以太坊资产"><span class="toc-text">将元界MST资产置换为以太坊资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#myetpwallet-轻钱包-1"><span class="toc-text">myetpwallet 轻钱包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全节点钱包-1"><span class="toc-text">全节点钱包</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将以太坊-ETH-置换为元界-ETP"><span class="toc-text">将以太坊 ETH 置换为元界 ETP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#向元界资产置换的以太坊地址转账-ETH"><span class="toc-text">向元界资产置换的以太坊地址转账 ETH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#查询-1"><span class="toc-text">查询</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link">搭建私有链</a><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link current">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link">搭建私有链</a><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link current">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/cross-chain-swap.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

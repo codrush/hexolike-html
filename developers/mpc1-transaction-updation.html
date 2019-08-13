@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Transaction updation in MPC1 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/mpc1-transaction-updation.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/mpc1-transaction-updation.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/mpc1-transaction-updation.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Transaction updation in MPC1The follow examples can be found on testnet explorer. PoS BlockA valid PoS block’s block_version is 2 and has blocksig field on it’s block header. A PoS block at least has">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Transaction updation in MPC1">
+<meta property="og:url" content="https://docs.mvs.org/developers/mpc1-transaction-updation.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Transaction updation in MPC1The follow examples can be found on testnet explorer. PoS BlockA valid PoS block’s block_version is 2 and has blocksig field on it’s block header. A PoS block at least has">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Transaction updation in MPC1">
+<meta name="twitter:description" content="Transaction updation in MPC1The follow examples can be found on testnet explorer. PoS BlockA valid PoS block’s block_version is 2 and has blocksig field on it’s block header. A PoS block at least has">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/mpc1-transaction-updation.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Transaction updation in MPC1</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/mpc1-transaction-updation.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="Transaction-updation-in-MPC1" class="article-heading"><a href="#Transaction-updation-in-MPC1" class="headerlink" title="Transaction updation in MPC1"></a>Transaction updation in MPC1<a class="article-anchor" href="#Transaction-updation-in-MPC1" aria-hidden="true"></a></h1><p>The follow examples can be found on <a href="https://explorer-testnet.mvs.org" target="_blank" rel="noopener">testnet explorer</a>.</p>
+<h2 id="PoS-Block" class="article-heading"><a href="#PoS-Block" class="headerlink" title="PoS Block"></a>PoS Block<a class="article-anchor" href="#PoS-Block" aria-hidden="true"></a></h2><p>A valid <code>PoS</code> block’s <code>block_version</code> is 2 and has <code>blocksig</code> field on it’s block header. A <code>PoS</code> block at least has two transactions. One is <code>coinbase</code>  and the other is <code>coinstake</code>。</p>
+<ul>
+<li><code>coinbase</code>: same as <code>coinbase</code> of <code>PoW</code> block, its <code>outputs</code> include the mining reward.   </li>
+<li><code>coinstake</code>: <code>inputs</code> is the stake of <code>PoS</code> and the first output is null.  </li>
+</ul>
+<p>Example：<br><code>PoS</code> Block <a href="https://explorer-testnet.mvs.org/blk/1019574" target="_blank" rel="noopener"><code>1019574</code></a> on testnet:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;bits&quot; : &quot;2760509629&quot;,</span><br><span class="line">    &quot;blocksig&quot; : &quot;38869496671253c154656992695dddabfdc565f5a94c288fc1924969a9fcba07531d86a879b37d85a43f8bdf5318ee2f9b471477c7983e44ea5e2fcad2a0eb2f&quot;,</span><br><span class="line">    &quot;hash&quot; : &quot;590fe4d061df5c02544b3b01b67b76c9170c9778e8e910f490e1a597f2a98b23&quot;,</span><br><span class="line">    &quot;merkle_tree_hash&quot; : &quot;5604e4303aa63ad85f89008da4c73871cbc2fc5f7b27db218827af2e52763687&quot;,</span><br><span class="line">    &quot;mixhash&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;nonce&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;number&quot; : 1019574,</span><br><span class="line">    &quot;previous_block_hash&quot; : &quot;1be1e752fc1f2d3b2eaf306a17027abd0f5402c6064a6c04ffd595445c81fc86&quot;,</span><br><span class="line">    &quot;timestamp&quot; : 1548214357,</span><br><span class="line">    &quot;transaction_count&quot; : 2,</span><br><span class="line">    &quot;transactions&quot; : </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;hash&quot; : &quot;0ca5c0e285c180256b44eae94d570fc67366c52ed4fa62a4dd9e9c07e3eddc99&quot;,</span><br><span class="line">            &quot;inputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">                        &quot;index&quot; : 4294967295</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ b68e0f ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 0</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">            &quot;outputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 0,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 4f4e6201241b25f48183dda03f63229fecd2ba4d ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 10754578</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;version&quot; : &quot;1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;hash&quot; : &quot;c246e71b06e75c7d56b7120fda9c8344c45b0aaf4922e8bea8c7ff50b7e79d8e&quot;,</span><br><span class="line">            &quot;inputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;64337595f1a9538fffca3b892cd1bf0a69910ae505f5735533be778a39f54904&quot;,</span><br><span class="line">                        &quot;index&quot; : 1</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 304402205ea27de31e85621d36e5f40aee3cce42639d81059910f2a8f58320f0413ad60d022066747e91635f9b95823d67175b7f5ba3b4e594265f58003fba736fc2ffbd808201 ] [ 026bd7e6d504f3737b930f9fc222dc519c147fb0f0a8ac0216458b637cab25427c ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 4294967295</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;e5438e1991d84b2d5ccdfd7f78a04b2c19cb46edcea2a8a3a7cd4dab7e9c404d&quot;,</span><br><span class="line">                        &quot;index&quot; : 0</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 30450221008731b85098d0ee77556e5f0c9a2429b73148a90b315fb4f9233a72fa239792dc022047972f648ca3ace381cca830687c06aa3e384d13d23fc1e60380ce4581cf01f901 ] [ 026bd7e6d504f3737b930f9fc222dc519c147fb0f0a8ac0216458b637cab25427c ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 4294967295</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">            &quot;outputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;coinstake&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 0,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;&quot;,</span><br><span class="line">                    &quot;value&quot; : 0</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 1,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 4f4e6201241b25f48183dda03f63229fecd2ba4d ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 100032829764</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;version&quot; : &quot;1&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot; : 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>This <code>PoS</code> block has two transations:</p>
+<ul>
+<li>The first is <code>coinbase</code>. Its hash is <code>0ca5c0e285c180256b44eae94d570fc67366c52ed4fa62a4dd9e9c07e3eddc99</code>;   </li>
+<li>The second is <code>coinstake</code>. Its hash is <code>c246e71b06e75c7d56b7120fda9c8344c45b0aaf4922e8bea8c7ff50b7e79d8e</code>.  </li>
+</ul>
+<h2 id="PoS-Genesis-Block" class="article-heading"><a href="#PoS-Genesis-Block" class="headerlink" title="PoS Genesis Block"></a>PoS Genesis Block<a class="article-anchor" href="#PoS-Genesis-Block" aria-hidden="true"></a></h2><p><code>PoS</code> genesis block is a <code>PoS</code> block. It has <code>coinbase</code> and <code>coinstake</code> too. Beside it has the third transation <code>PoS</code> genesis transation. <code>PoS</code> genesis transation includes the reward for <code>PoS</code> genesis block and 23 <code>witness</code> certificates which are sent to foundation of Metaverse.</p>
+<p>Example:<br><code>PoS</code> genesis block on testnet is block <a href="https://explorer-testnet.mvs.org/blk/991505" target="_blank" rel="noopener"><code>991505</code></a>:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;bits&quot; : &quot;1000000&quot;,</span><br><span class="line">    &quot;blocksig&quot; : &quot;08a0040c78daa152c7fc55ac8bbde0276815af1ffdd341aa2bd03dbfe99c8bdcae94272a8b60088bff75558932ad6070ccb93b62c2f462fab8c4def64e45ee5b&quot;,</span><br><span class="line">    &quot;hash&quot; : &quot;37d4536c18a46116de359680301b09ba267c7ab9deffd3b7794aaa857ab42e14&quot;,</span><br><span class="line">    &quot;merkle_tree_hash&quot; : &quot;56fbbba222565d8fe7c6278be8e1ca5a97c67e29aa2d058989356e22a1bb25c5&quot;,</span><br><span class="line">    &quot;mixhash&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;nonce&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;number&quot; : 991505,</span><br><span class="line">    &quot;previous_block_hash&quot; : &quot;1b8fc39f70983da89aebad22f3ee7354257e57f10efe292abc880d8704c7cd91&quot;,</span><br><span class="line">    &quot;timestamp&quot; : 1547629552,</span><br><span class="line">    &quot;transaction_count&quot; : 3,</span><br><span class="line">    &quot;transactions&quot; : </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;hash&quot; : &quot;e7a25724eccc05fb5f36d14c6e851037dd9e3c9f5002853c2e623e7a64b790f8&quot;,</span><br><span class="line">            &quot;inputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">                        &quot;index&quot; : 4294967295</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 11210f ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 0</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">            &quot;outputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 0,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 4f4e6201241b25f48183dda03f63229fecd2ba4d ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 11320608</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;version&quot; : &quot;1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;hash&quot; : &quot;21ab6dca066b6a7cdbaa71f4564f6979b9484b86c387885d91126a03f54949fc&quot;,</span><br><span class="line">            &quot;inputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;88f86937cffa9f9cdf55a14dc154dd5534690d1a86981d83f49a8386a7fde34f&quot;,</span><br><span class="line">                        &quot;index&quot; : 0</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 3045022100ab835030425bd60173c9e3e5cbb7818fab48260f69cfa32ff5a528cb70160a4002202aa01254275f1117cbc21d396cd6c1202d0d480c13c0d68804291cf41b32cd2b01 ] [ 026bd7e6d504f3737b930f9fc222dc519c147fb0f0a8ac0216458b637cab25427c ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 4294967295</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;88f86937cffa9f9cdf55a14dc154dd5534690d1a86981d83f49a8386a7fde34f&quot;,</span><br><span class="line">                        &quot;index&quot; : 1</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 30440220746ca6690f75a5e3f7da75b6afdd6eae33174ce3acc47ea0d7d4eeb67de2960002202b8b62f96cea12dd0a136f349c31258b09784d8fa24ee14cd668cd0fde5f8da401 ] [ 026bd7e6d504f3737b930f9fc222dc519c147fb0f0a8ac0216458b637cab25427c ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 4294967295</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">            &quot;outputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;coinstake&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 0,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;&quot;,</span><br><span class="line">                    &quot;value&quot; : 0</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tE9wL5d8YK94JgMHrV8HvK5pwb7tAqdHmn&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 1,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 4f4e6201241b25f48183dda03f63229fecd2ba4d ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 120776443211</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;version&quot; : &quot;1&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;hash&quot; : &quot;9a71d084b472468421012b1c4a25ef3e2e42d2712069d2a447a7befaab92bcad&quot;,</span><br><span class="line">            &quot;inputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;previous_output&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;hash&quot; : &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,</span><br><span class="line">                        &quot;index&quot; : 4294967295</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;script&quot; : &quot;[ 004100b8087f00007420506f532061742020a900b8087f0000404200b8087f0000b04100 ]&quot;,</span><br><span class="line">                    &quot;sequence&quot; : 0</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">            &quot;outputs&quot; : </span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tBELxsiiaMVGQcY2Apf7hmzAaipD4YWTTj&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 0,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 2f3b65f87fa30c7fc1b5e2919daf0aad0e42b074 ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 1726452600000000</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tBELxsiiaMVGQcY2Apf7hmzAaipD4YWTTj&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;address&quot; : &quot;tBELxsiiaMVGQcY2Apf7hmzAaipD4YWTTj&quot;,</span><br><span class="line">                        &quot;cert&quot; : &quot;witness&quot;,</span><br><span class="line">                        &quot;owner&quot; : &quot;yoyo&quot;,</span><br><span class="line">                        &quot;symbol&quot; : &quot;MVS.WITNESS.1&quot;,</span><br><span class="line">                        &quot;type&quot; : &quot;asset-cert&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 1,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 2f3b65f87fa30c7fc1b5e2919daf0aad0e42b074 ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 0</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    // skip other witness certificates...</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;address&quot; : &quot;tBELxsiiaMVGQcY2Apf7hmzAaipD4YWTTj&quot;,</span><br><span class="line">                    &quot;attachment&quot; : </span><br><span class="line">                    &#123;</span><br><span class="line">                        &quot;address&quot; : &quot;tBELxsiiaMVGQcY2Apf7hmzAaipD4YWTTj&quot;,</span><br><span class="line">                        &quot;cert&quot; : &quot;witness&quot;,</span><br><span class="line">                        &quot;owner&quot; : &quot;yoyo&quot;,</span><br><span class="line">                        &quot;symbol&quot; : &quot;MVS.WITNESS.23&quot;,</span><br><span class="line">                        &quot;type&quot; : &quot;asset-cert&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;index&quot; : 23,</span><br><span class="line">                    &quot;locked_height_range&quot; : 0,</span><br><span class="line">                    &quot;script&quot; : &quot;dup hash160 [ 2f3b65f87fa30c7fc1b5e2919daf0aad0e42b074 ] equalverify checksig&quot;,</span><br><span class="line">                    &quot;value&quot; : 0</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;version&quot; : &quot;0&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot; : 2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>PoS</code> genesis block has three transations:</p>
+<ul>
+<li>The first is <code>coinbase</code> and its hash is <a href="https://explorer-testnet.mvs.org/tx/e7a25724eccc05fb5f36d14c6e851037dd9e3c9f5002853c2e623e7a64b790f8" target="_blank" rel="noopener"><code>e7a25724eccc05fb5f36d14c6e851037dd9e3c9f5002853c2e623e7a64b790f8</code></a>；  </li>
+<li>The second is <code>coinstake</code> and its hash is <a href="https://explorer-testnet.mvs.org/tx/21ab6dca066b6a7cdbaa71f4564f6979b9484b86c387885d91126a03f54949fc" target="_blank" rel="noopener"><code>21ab6dca066b6a7cdbaa71f4564f6979b9484b86c387885d91126a03f54949fc</code></a>；</li>
+<li>The third is <code>PoS</code> genesis transation and its hash is <a href="https://explorer-testnet.mvs.org/tx/9a71d084b472468421012b1c4a25ef3e2e42d2712069d2a447a7befaab92bcad" target="_blank" rel="noopener"><code>9a71d084b472468421012b1c4a25ef3e2e42d2712069d2a447a7befaab92bcad</code></a>；</li>
+</ul>
+<h2 id="Relative-lock-time-RLT-transation" class="article-heading"><a href="#Relative-lock-time-RLT-transation" class="headerlink" title="Relative lock-time (RLT) transation"></a>Relative lock-time (RLT) transation<a class="article-anchor" href="#Relative-lock-time-RLT-transation" aria-hidden="true"></a></h2><p>Metaverse implements Relative lock-time (RLT) defined in <a href="https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki" target="_blank" rel="noopener">BIP112</a>. The script of RLT transation contains op code <code>CHECKSEQUENCEVERIFY</code> <strong>(which uses NOP4 (=179) instead of NOP3 (=178) because NOP3 is used for another extented operation <code>CHECKATTENUATIONVERIFY</code> in metaverse, please notice this difference from Bitcoin.)</strong>.</p>
+<p>Example:<br>RLT transation <a href="https://explorer-testnet.mvs.org/tx/2912621cb70244d878ed0594d1bf841191d5323347cad76b3126085220692702" target="_blank" rel="noopener">2912621cb70244d878ed0594d1bf841191d5323347cad76b3126085220692702</a> locks <code>1000 ETP</code> for <code>10000000</code> height. You can found op code ‘checksequenceverify’ on its script field.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;hash&quot; : &quot;2912621cb70244d878ed0594d1bf841191d5323347cad76b3126085220692702&quot;,</span><br><span class="line">    &quot;inputs&quot; : </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;address&quot; : &quot;t76YL2e4CQ17rY9SrrL3LSuNRrRr9b2iAk&quot;,</span><br><span class="line">            &quot;previous_output&quot; : </span><br><span class="line">            &#123;</span><br><span class="line">                &quot;hash&quot; : &quot;b3fdd7ef0fb5b765a94d1ad5849789430d7ac03ee62c35c7912a2cdbde43a22b&quot;,</span><br><span class="line">                &quot;index&quot; : 2</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;script&quot; : &quot;[ 3044022043a54fb6d713a4fa56728f0bf7c7a39e291ced7a7a8ff27267b8f86712391cf40220453e2c5e0bfbb96cd5c60e63bdac5fb9a09ae3983f801c776584bb892d72154701 ] [ 02efe188fa25406d3662fcf372cb28a31473827c5d3e01a411b1c7515b1550e917 ]&quot;,</span><br><span class="line">            &quot;sequence&quot; : 4294967295</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;outputs&quot; : </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;address&quot; : &quot;t76YL2e4CQ17rY9SrrL3LSuNRrRr9b2iAk&quot;,</span><br><span class="line">            &quot;attachment&quot; : </span><br><span class="line">            &#123;</span><br><span class="line">                &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;index&quot; : 0,</span><br><span class="line">            &quot;locked_height_range&quot; : 0,</span><br><span class="line">            &quot;script&quot; : &quot;[ 80969800 ] checksequenceverify drop dup hash160 [ 01e10de596cc7067f098bc854eec51644d5704e1 ] equalverify checksig&quot;,</span><br><span class="line">            &quot;value&quot; : 100000000000</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            &quot;address&quot; : &quot;t76YL2e4CQ17rY9SrrL3LSuNRrRr9b2iAk&quot;,</span><br><span class="line">            &quot;attachment&quot; : </span><br><span class="line">            &#123;</span><br><span class="line">                &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;index&quot; : 1,</span><br><span class="line">            &quot;locked_height_range&quot; : 0,</span><br><span class="line">            &quot;script&quot; : &quot;dup hash160 [ 01e10de596cc7067f098bc854eec51644d5704e1 ] equalverify checksig&quot;,</span><br><span class="line">            &quot;value&quot; : 19899990000</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot; : &quot;4&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="cross-chain.html" class="article-footer-prev" title="Cross chain swap"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="plugin-cli.html" class="article-footer-next" title="Plugin CLI"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/developers/mpc1-transaction-updation.html';
+  var disqus_title = "Transaction updation in MPC1";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Transaction-updation-in-MPC1"><span class="toc-text">Transaction updation in MPC1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PoS-Block"><span class="toc-text">PoS Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PoS-Genesis-Block"><span class="toc-text">PoS Genesis Block</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Relative-lock-time-RLT-transation"><span class="toc-text">Relative lock-time (RLT) transation</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link current">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link current">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/mpc1-transaction-updation.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

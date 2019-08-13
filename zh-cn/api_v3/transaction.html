@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>transaction | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/api_v3/transaction.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v3/transaction.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v3/transaction.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Description API Methods  gettx  get transaction  Parameters (optional)   json    use json format or not, default is true, that is ‘–json=true’   Parameters (positional)   HASH The Base16 transaction h">
+<meta property="og:type" content="website">
+<meta property="og:title" content="transaction">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/api_v3/transaction.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Description API Methods  gettx  get transaction  Parameters (optional)   json    use json format or not, default is true, that is ‘–json=true’   Parameters (positional)   HASH The Base16 transaction h">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="transaction">
+<meta name="twitter:description" content="Description API Methods  gettx  get transaction  Parameters (optional)   json    use json format or not, default is true, that is ‘–json=true’   Parameters (positional)   HASH The Base16 transaction h">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="api_v3/transaction.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">transaction</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/api_v3/transaction.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
+<h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
+<ul>
+<li><h3 id="gettx" class="article-heading"><a href="#gettx" class="headerlink" title="gettx"></a><code>gettx</code><a class="article-anchor" href="#gettx" aria-hidden="true"></a></h3><p>  get transaction</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>json</code>    use json format or not, default is true, that is ‘–json=true’</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>HASH</code> The Base16 transaction hash of the transaction to get. If not specified the transaction hash is read from STDIN.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"HASH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - get the transaction</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">   <span class="comment">// Request</span></span><br><span class="line">   curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"gettx",</span></span><br><span class="line"><span class="string">   "params":["18908d2035f40a9d4f1e07c1a3f16ace0882afbd31a7dfa3176843dd620abe9d"],"id":31&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">31</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"hash"</span> : <span class="string">"18908d2035f40a9d4f1e07c1a3f16ace0882afbd31a7dfa3176843dd620abe9d"</span>,</span><br><span class="line">        <span class="string">"height"</span> : <span class="number">953885</span>,</span><br><span class="line">        <span class="string">"inputs"</span> :</span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MPVYH9GQGZkJc4rZ4ZEx9bnV1mpa3M4whw"</span>,</span><br><span class="line">                <span class="string">"previous_output"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"hash"</span> : <span class="string">"f8989c69d31fb89b5e12b3db77001c7b5efe5ff80b145c54c9796dc177b66fde"</span>,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">"script"</span> : <span class="string">"[ 3044022043f451073b3d4a9b6143b57528b948e65dc36b0b7cd858649cbe75b8ca75a0100220210d7e7c8228de201fd638018fe387aba5be5fa03a273c352a762e9afcc62f5201 ] [ 03983bb61d98bb5dad52704c7af2307206a5f32e281568951f5f61951e48fca4e0 ]"</span>,</span><br><span class="line">                <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MPVYH9GQGZkJc4rZ4ZEx9bnV1mpa3M4whw"</span>,</span><br><span class="line">                <span class="string">"previous_output"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"hash"</span> : <span class="string">"aab42e1405074db7ce6ed42cfdc5e82c955c8cd6c567b85da2cd134a34a37e49"</span>,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">"script"</span> : <span class="string">"[ 3045022100a9ccdb9b2b2d22cd178e9d7ef52b6ebcffeace08a0ea2f190ef0a972dc6df0eb022038478d7c32f8af6cc5dda18f3c56d2b0cf0c5bc700173f592e6ed2123dd3513101 ] [ 03983bb61d98bb5dad52704c7af2307206a5f32e281568951f5f61951e48fca4e0 ]"</span>,</span><br><span class="line">                <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">        <span class="string">"outputs"</span> :</span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MKqn6gE6UomFfX9HfYiapYr458Lt4wfLiH"</span>,</span><br><span class="line">                <span class="string">"attachment"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                <span class="string">"script"</span> : <span class="string">"dup hash160 [ 82fdc906c8859ee8e404be293f4c72178a389342 ] equalverify checksig"</span>,</span><br><span class="line">                <span class="string">"value"</span> : <span class="number">100013238</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"address"</span> : <span class="string">"MPVYH9GQGZkJc4rZ4ZEx9bnV1mpa3M4whw"</span>,</span><br><span class="line">                <span class="string">"attachment"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                &#125;,</span><br><span class="line">                <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                <span class="string">"script"</span> : <span class="string">"dup hash160 [ ab0a6ee4f60b83219661ed326c9751a7119689b1 ] equalverify checksig"</span>,</span><br><span class="line">                <span class="string">"value"</span> : <span class="number">20839206</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="listtxs" class="article-heading"><a href="#listtxs" class="headerlink" title="listtxs"></a><code>listtxs</code><a class="article-anchor" href="#listtxs" aria-hidden="true"></a></h3><p>  List transactions details of this account.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-a</code> or <code>[--address]</code> Address.</li>
+<li><code>-e</code> or <code>[--height]</code> Get tx according height. eg: -e start-height:end-height will return tx between [start-height, end-height)</li>
+<li><code>-i</code> or <code>[--index]</code> Page index.</li>
+<li><code>-l</code> or <code>[--limit]</code> Transaction count per page.</li>
+<li><code>-s</code> or <code>[--symbol]</code> Asset symbol.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - return transactions</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">   <span class="comment">// Request</span></span><br><span class="line">   curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"listtxs",</span></span><br><span class="line"><span class="string">   "params":["chenhao", "chenhaopassword",&#123;"height":"919599:920046"&#125;],"id":31&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line">   <span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">31</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"current_page"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"total_page"</span> : <span class="number">1</span>,</span><br><span class="line">        <span class="string">"transaction_count"</span> : <span class="number">5</span>,</span><br><span class="line">        <span class="string">"transactions"</span> :</span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"direction"</span> : <span class="string">"send"</span>,</span><br><span class="line">                <span class="string">"hash"</span> : <span class="string">"ab0171faab87b6d9c59594290f14c2d697c83282ad22d74f6570dbf111145d7f"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">920045</span>,</span><br><span class="line">                <span class="string">"inputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"[ 3044022046a59624186f1ad8c02511b49f2e55ec289228d2cb05398979dbf293385a0ebe02201ea44c39ab8d1d56faf70dce35b7f327b147ff31ad3370025024a9e5a4f2eef201 ] [ 02d7a8d34992289c0c6865386502e2e507cf6c5c18762b18d52ac3c968ecc8f663 ]"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"outputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MCHW3fxKYoCJWWU1g8z2kifb82t3BvAWNh"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">20000000000</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ 301a31d2e18aec13e32967c6af011138e50f49df ] equalverify checksig"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">35099948644</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e20a6312ddf0715d7c1cbb00ab91d8cd7b44862c ] equalverify checksig"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"timestamp"</span> : <span class="number">1517645530</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"direction"</span> : <span class="string">"send"</span>,</span><br><span class="line">                <span class="string">"hash"</span> : <span class="string">"c4220bcc529c1bf13f1e38967834550fc07082cc1e03991314a200e513807d6c"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">919624</span>,</span><br><span class="line">                <span class="string">"inputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"[ 3044022000ee885212184956575256a9c06c4f679523ba292a157fb998838bb18eefd19b022061e496d08f30fde7b33c909df96f9b3c42bc86251afa302774eaa6c3b02fc0ea01 ] [ 02d7a8d34992289c0c6865386502e2e507cf6c5c18762b18d52ac3c968ecc8f663 ]"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"outputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MMV59KXgVkuceP4BGc8T8thn93gRXbTFdV"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">15000000000</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ 950387d28bd76529bbdd403925969817cdb392c5 ] equalverify checksig"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">55099958644</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e20a6312ddf0715d7c1cbb00ab91d8cd7b44862c ] equalverify checksig"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"timestamp"</span> : <span class="number">1517631170</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"direction"</span> : <span class="string">"send"</span>,</span><br><span class="line">                <span class="string">"hash"</span> : <span class="string">"c7133738c4de94e6b4a36dd4f3f7962fca7a85b5c1ccd9760fc74054d04a4183"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">919618</span>,</span><br><span class="line">                <span class="string">"inputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"[ 304402206e44e2795021307a6f953fe60e365e197f52ed7ad758c4cf837fcb6782fe0fdb022019f0da6dd1ea432dee73fccddc19064fce6b0f37e8b3f9bcaf41dd0867e808ab01 ] [ 02d7a8d34992289c0c6865386502e2e507cf6c5c18762b18d52ac3c968ecc8f663 ]"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"outputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MVdZ8z77BSCsY7xEy5cRqLzRLXUXa3xq5h"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">70000000000</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ ee5f3ba0e887433b0ad12680d135b65f48f9e1d8 ] equalverify checksig"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">70099968644</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e20a6312ddf0715d7c1cbb00ab91d8cd7b44862c ] equalverify checksig"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"timestamp"</span> : <span class="number">1517631009</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"direction"</span> : <span class="string">"send"</span>,</span><br><span class="line">                <span class="string">"hash"</span> : <span class="string">"6a461a212182aadc723dab8f2486a25bf5213534ad0927ddc838f481c1d0bac7"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">919609</span>,</span><br><span class="line">                <span class="string">"inputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"[ 30440220170b12db7f3471416460eb9254dacaee76de06fee37e93806d36645d92f715e0022049f3252bf26333a4a8ee1fe75ad93c41244d312fec9a3d51dbacbf7ca805cee601 ] [ 02d7a8d34992289c0c6865386502e2e507cf6c5c18762b18d52ac3c968ecc8f663 ]"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"outputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUhsQpKGUVvsf1BNsf4xThrN3iWncP5nzA"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">40000000000</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e43806444753a7804961ec7cdbfd8bafd25bb037 ] equalverify checksig"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">140099978644</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e20a6312ddf0715d7c1cbb00ab91d8cd7b44862c ] equalverify checksig"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"timestamp"</span> : <span class="number">1517630810</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"direction"</span> : <span class="string">"send"</span>,</span><br><span class="line">                <span class="string">"hash"</span> : <span class="string">"aefffc1c52786d8ba278727448608e3325e91b6eef2d7b7f452c1184e42fd730"</span>,</span><br><span class="line">                <span class="string">"height"</span> : <span class="number">919599</span>,</span><br><span class="line">                <span class="string">"inputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"[ 30440220620b7afe9483a4c809e70786096c7cb62901b5308ac7afaf90d46808397fd8a4022014a5e180db28c78b4012d678ca5896385a47fea54cb64c31affc300af72735e601 ] [ 02d7a8d34992289c0c6865386502e2e507cf6c5c18762b18d52ac3c968ecc8f663 ]"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"outputs"</span> :</span><br><span class="line">                [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MDGr9HfS8ramoiXQ5jJUe6THTJypbqwtqL"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">30000000000</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ 3af2ae30896bebafa32e338662b20e91061b2250 ] equalverify checksig"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"address"</span> : <span class="string">"MUWMPV8GdY7m32JeMCwsstVEj76G7TTy76"</span>,</span><br><span class="line">                        <span class="string">"attachment"</span> :</span><br><span class="line">                        &#123;</span><br><span class="line">                            <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                        &#125;,</span><br><span class="line">                        <span class="string">"etp_value"</span> : <span class="number">180099988644</span>,</span><br><span class="line">                        <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                        <span class="string">"own"</span> : <span class="literal">true</span>,</span><br><span class="line">                        <span class="string">"script"</span> : <span class="string">"dup hash160 [ e20a6312ddf0715d7c1cbb00ab91d8cd7b44862c ] equalverify checksig"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"timestamp"</span> : <span class="number">1517630478</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="etp.html" class="article-footer-prev" title="ETP"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="asset.html" class="article-footer-next" title="资产"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Methods"><span class="toc-text">API Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gettx"><span class="toc-text">gettx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listtxs"><span class="toc-text">listtxs</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">账户</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">区块链操作</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link current">交易</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">资产</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">离线交易</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">账户</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">区块链操作</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link current">交易</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">资产</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">离线交易</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v3/transaction.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

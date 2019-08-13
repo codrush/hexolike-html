@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>MST Multi-signature | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/developers/da-multi-sig.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/da-multi-sig.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/da-multi-sig.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="简介多重签名交易需要多个密钥持有者的签名才能通过验证。可以简单的理解为，一笔交易需要得到多个人的授权才能完成。这样能提高数字资产的安全性，并基于此构建复杂有趣的应用场景。 多重签名技术的原理并不是很复杂，但它增加了第三方的介入保障，可以实现现实场景中需要第三方介入的很多的应用场景。与传统的第三方介入不同的是，这个介入必须是交易之前就提前确定好的，而事后是不能进行改变的。 如果一个地址只能由一个私钥">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MST Multi-signature">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/developers/da-multi-sig.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="简介多重签名交易需要多个密钥持有者的签名才能通过验证。可以简单的理解为，一笔交易需要得到多个人的授权才能完成。这样能提高数字资产的安全性，并基于此构建复杂有趣的应用场景。 多重签名技术的原理并不是很复杂，但它增加了第三方的介入保障，可以实现现实场景中需要第三方介入的很多的应用场景。与传统的第三方介入不同的是，这个介入必须是交易之前就提前确定好的，而事后是不能进行改变的。 如果一个地址只能由一个私钥">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MST Multi-signature">
+<meta name="twitter:description" content="简介多重签名交易需要多个密钥持有者的签名才能通过验证。可以简单的理解为，一笔交易需要得到多个人的授权才能完成。这样能提高数字资产的安全性，并基于此构建复杂有趣的应用场景。 多重签名技术的原理并不是很复杂，但它增加了第三方的介入保障，可以实现现实场景中需要第三方介入的很多的应用场景。与传统的第三方介入不同的是，这个介入必须是交易之前就提前确定好的，而事后是不能进行改变的。 如果一个地址只能由一个私钥">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="developers/da-multi-sig.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">MST Multi-signature</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/developers/da-multi-sig.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="简介" class="article-heading"><a href="#简介" class="headerlink" title="简介"></a>简介<a class="article-anchor" href="#简介" aria-hidden="true"></a></h2><p>多重签名交易需要多个密钥持有者的签名才能通过验证。可以简单的理解为，一笔交易需要得到多个人的授权才能完成。这样能提高数字资产的安全性，并基于此构建复杂有趣的应用场景。</p>
+<p>多重签名技术的原理并不是很复杂，但它增加了第三方的介入保障，可以实现现实场景中需要第三方介入的很多的应用场景。与传统的第三方介入不同的是，这个介入必须是交易之前就提前确定好的，而事后是不能进行改变的。</p>
+<p>如果一个地址只能由一个私钥签名和支付，表现形式就是 <code>1/1</code>；而多重签名的表现形式是 <code>m/n</code>，也就是说一共 <code>n</code> 个私钥可以给一个账户签名，而当 <code>m</code> 个地址签名时，就可以支付一笔交易。所以，<code>m</code> 一定是小于等于 <code>n</code> 的。</p>
+<p>示例：</p>
+<blockquote>
+<p>多重签名 <code>2/3</code>，表示 <code>3</code> 个人拥有签名权，只要有两个人签名就可以完成这笔交易；<br>多重签名 <code>1/2</code>，表示 <code>2</code> 个人拥有签名权，只要有一个人签名就可以完成这笔交易。</p>
+</blockquote>
+<h2 id="使用流程" class="article-heading"><a href="#使用流程" class="headerlink" title="使用流程"></a>使用流程<a class="article-anchor" href="#使用流程" aria-hidden="true"></a></h2><ol>
+<li>每一个参与者通过 <code>getpublickey</code> 获得某个地址的公钥，该公钥对应的私钥用于签名随后创建的多重签名交易，并把该公钥告知其他所有参与者；</li>
+<li>每一个参与者各自通过 <code>getnewmultisig</code> 使用自己的公钥创建签名约束条件相同（即相同的m，n以及公钥列表）的多重签名，得到相同的以3开头的多重签名地址：“支付到脚本哈希”模式 <code>P2SH（Pay-to-Script-Hash）</code>；</li>
+<li>某个参与者通过 <code>createmultisigtx</code> 使用多重签名地址发起一笔多重签名交易；可以使用 <code>decoderawtx</code> 命令查看该交易详情；</li>
+<li>m个参与者依次通过 <code>signmultisigtx</code> 对多重签名交易进行签名，每一个参与者通过链下的方式从前一个签名参与者获得已部分签名的交易；</li>
+<li>通过 <code>sendrawtx</code> 广播拥有足够多签名的多重签名交易。</li>
+</ol>
+<h2 id="支持多重签名的命令" class="article-heading"><a href="#支持多重签名的命令" class="headerlink" title="支持多重签名的命令"></a>支持多重签名的命令<a class="article-anchor" href="#支持多重签名的命令" aria-hidden="true"></a></h2><p>以下命令与多重签名相关或支持多重签名：</p>
+<blockquote>
+<p><a href="/zh-cn/multisig.html#getpublickey">getpublickey</a><br><a href="/zh-cn/multisig.html#getnewmultisig">getnewmultisig</a><br><a href="/zh-cn/multisig.html#listmultisig">listmultisig</a><br><a href="/zh-cn/multisig.html#deletemultisig">deletemultisig</a><br><a href="/zh-cn/multisig.html#createmultisigtx">createmultisigtx</a><br><a href="/zh-cn/multisig.html#signmultisigtx">signmultisigtx</a><br><a href="/zh-cn/rawtx.html#sendrawtx">sendrawtx</a><br><a href="/zh-cn/rawtx.html#decoderawtx">decoderawtx</a>  </p>
+</blockquote>
+<blockquote>
+<p><a href="/zh-cn/identity.html#registerdid">registerdid</a><br><a href="/zh-cn/identity.html#didchangeaddress">didchangeaddress</a><br><a href="/zh-cn/asset.html#transfercert">transfercert</a><br><a href="/zh-cn/mit.html#transfermit">transfermit</a>  </p>
+</blockquote>
+<h2 id="示例" class="article-heading"><a href="#示例" class="headerlink" title="示例"></a>示例<a class="article-anchor" href="#示例" aria-hidden="true"></a></h2><p>该示例涉及到三个账户：<code>Alice</code>，<code>Bob</code> 以及 <code>Cindy</code>。多重签名命令使用手册请参考<a href="/zh-cn/api_v3/multisig.html">API_v3_multisig</a>。</p>
+<h3 id="1-获取和传播公钥" class="article-heading"><a href="#1-获取和传播公钥" class="headerlink" title="1. 获取和传播公钥"></a>1. 获取和传播公钥<a class="article-anchor" href="#1-获取和传播公钥" aria-hidden="true"></a></h3><p>每一个参与者通过 <code>getpublickey</code> 获得某个地址的公钥，该公钥对应的私钥用于签名随后创建的多重签名交易，并把该公钥告知其他所有参与者。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Alice 获取公钥</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getpublickey Alice A123456 &quot;MCJ6vpdCYsVD34XFC22fhqDLfHo7ZtnyM2&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;address&quot; : &quot;MCJ6vpdCYsVD34XFC22fhqDLfHo7ZtnyM2&quot;,</span><br><span class="line">  &quot;public-key&quot; : &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Bob 获取公钥</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getpublickey Bob B123456 MHaKHUFwAdcszvQarCmn1Rkq2uRoPQjZwm</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;address&quot; : &quot;MHaKHUFwAdcszvQarCmn1Rkq2uRoPQjZwm&quot;,</span><br><span class="line">  &quot;public-key&quot; : &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// Cindy 获取公钥</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getpublickey Cindy C123456 MKXa7mtzNaGCEF9vM2sUmmTS93iDpHYd4m</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;address&quot; : &quot;MKXa7mtzNaGCEF9vM2sUmmTS93iDpHYd4m&quot;,</span><br><span class="line">  &quot;public-key&quot; : &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-创建多重签名" class="article-heading"><a href="#2-创建多重签名" class="headerlink" title="2. 创建多重签名"></a>2. 创建多重签名<a class="article-anchor" href="#2-创建多重签名" aria-hidden="true"></a></h3><p>每一个参与者各自通过 <code>getnewmultisig</code> 使用自己的公钥创建签名约束条件相同（即相同的<code>m</code>，<code>n</code>以及公钥列表）的多重签名，得到相同的以<code>3</code>开头的多重签名地址。</p>
+<p>范例中每一个参与者通过 <code>-s</code> 指定自己的公钥以及 <code>-k</code> 指定其他参与者的公钥创建 <code>m:n</code> 为 <code>2:3</code> 的多重签名，得到相同的多重签名地址<code>&quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;</code><br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Alice 创建多重签名</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getnewmultisig Alice A123456 -m 2 -n 3 -s &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot; -k &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot; -k &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot; -d &quot;multisig test&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">  &quot;description&quot; : &quot;multisig test&quot;,</span><br><span class="line">  &quot;index&quot; : 1,</span><br><span class="line">  &quot;m&quot; : 2,</span><br><span class="line">  &quot;multisig-script&quot; : &quot;2 [ 02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9 ]  [ 03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e ]  [ 03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02 ] 3 checkmultisig&quot;,</span><br><span class="line">  &quot;n&quot; : 3,</span><br><span class="line">  &quot;public-keys&quot; : </span><br><span class="line">  [</span><br><span class="line">    &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot;,</span><br><span class="line">    &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot;,</span><br><span class="line">    &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;self-publickey&quot; : &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Bob 创建多重签名</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getnewmultisig Bob B123456 -m 2 -n 3 -s &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot; -k &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot; -k &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot; -d &quot;multisig test&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">  &quot;description&quot; : &quot;multisig test&quot;,</span><br><span class="line">  &quot;index&quot; : 1,</span><br><span class="line">  &quot;m&quot; : 2,</span><br><span class="line">  &quot;multisig-script&quot; : &quot;2 [ 02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9 ]  [ 03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e ]  [ 03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02 ] 3 checkmultisig&quot;,</span><br><span class="line">  &quot;n&quot; : 3,</span><br><span class="line">  &quot;public-keys&quot; : </span><br><span class="line">  [</span><br><span class="line">    &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot;,</span><br><span class="line">    &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot;,</span><br><span class="line">    &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;self-publickey&quot; : &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">// Cindy 创建多重签名</span><br><span class="line">命令：</span><br><span class="line">$ ./mvs-cli getnewmultisig Cindy C123456 -m 2 -n 3 -s &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot; -k &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot; -k &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot; -d &quot;multisig test&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">   &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">   &quot;description&quot; : &quot;&quot;,</span><br><span class="line">   &quot;index&quot; : 1,</span><br><span class="line">   &quot;m&quot; : 2,</span><br><span class="line">   &quot;multisig-script&quot; : &quot;2 [ 02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9 ]  [ 03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e ]  [ 03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02 ] 3 checkmultisig&quot;,</span><br><span class="line">   &quot;n&quot; : 3,</span><br><span class="line">   &quot;public-keys&quot; : </span><br><span class="line">   [</span><br><span class="line">     &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot;,</span><br><span class="line">     &quot;03d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e&quot;,</span><br><span class="line">     &quot;03f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e02&quot;</span><br><span class="line">   ],</span><br><span class="line">   &quot;self-publickey&quot; : &quot;02729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b9&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-往多重签名地址发送币" class="article-heading"><a href="#3-往多重签名地址发送币" class="headerlink" title="3. 往多重签名地址发送币"></a>3. 往多重签名地址发送币<a class="article-anchor" href="#3-往多重签名地址发送币" aria-hidden="true"></a></h3><p>参与者按照合同需求往创建的多重签名地址上发送虚拟货币。</p>
+<h3 id="4-发起多重签名交易" class="article-heading"><a href="#4-发起多重签名交易" class="headerlink" title="4. 发起多重签名交易"></a>4. 发起多重签名交易<a class="article-anchor" href="#4-发起多重签名交易" aria-hidden="true"></a></h3><p>某个参与者通过 <code>createmultisigtx</code> 使用多重签名地址发起一笔多重签名交易；可以使用 <code>decoderawtx</code> 命令查看该交易详情。<br>范例中 Cindy 发起一笔从多重签名地址转账 <code>3344</code>个虚拟币的交易。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvs-cli createmultisigtx Cindy C123456 39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR MHaKHUFwAdcszvQarCmn1Rkq2uRoPQjZwm 3344</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000b500483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000</span><br></pre></td></tr></table></figure></p>
+<p>通过 <code>decoderawtx</code> 查看该交易详情：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvs-cli decoderawtx &quot;02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000b500483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;transaction&quot; : </span><br><span class="line">  &#123;</span><br><span class="line">    &quot;hash&quot; : &quot;69c044be3c137f0bb34908be257acbb8157877bc57976a25881ed942384a9a61&quot;,</span><br><span class="line">    &quot;inputs&quot; : </span><br><span class="line">    [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">        &quot;previous_output&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;hash&quot; : &quot;4c8de46d4b5a8356229ebd16b95fdcd2407f45fab0bc53753844d10431715364&quot;,</span><br><span class="line">          &quot;index&quot; : 0</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;script&quot; : &quot;zero [ 3045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e301 ] [ 522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253ae ]&quot;,</span><br><span class="line">        &quot;sequence&quot; : 4294967295</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;outputs&quot; : </span><br><span class="line">    [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;MHaKHUFwAdcszvQarCmn1Rkq2uRoPQjZwm&quot;,</span><br><span class="line">        &quot;attachment&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;index&quot; : 0,</span><br><span class="line">        &quot;locked_height_range&quot; : 0,</span><br><span class="line">        &quot;script&quot; : &quot;dup hash160 [ 6a20e940e8d7be0a49c598e91fa79c8b36e53535 ] equalverify checksig&quot;,</span><br><span class="line">        &quot;value&quot; : 3344</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">        &quot;attachment&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;index&quot; : 1,</span><br><span class="line">        &quot;locked_height_range&quot; : 0,</span><br><span class="line">        &quot;script&quot; : &quot;hash160 [ 57e1a19e5ee4c0065f8fd76b0351fa145e44435a ] equal&quot;,</span><br><span class="line">        &quot;value&quot; : 130000</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot; : &quot;2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>注意观察输出中的 <code>transaction:inputs:script</code> 项，该项中存放签名详细，格式为：<code>[zero 签名1 签名2 ... 签名m 多重签名交易的endorsement]</code>。从元界区块链命令<code>createmultisigtx</code>命令输出的交易信息看，脚本中只包含一个签名，也就是多重签名交易创建者的签名默认就包含在内了。</p>
+<h3 id="5-参与者签名" class="article-heading"><a href="#5-参与者签名" class="headerlink" title="5. 参与者签名"></a>5. 参与者签名<a class="article-anchor" href="#5-参与者签名" aria-hidden="true"></a></h3><p>其他参与者依次通过 <code>signmultisigtx</code> 对多重签名交易进行签名，每一个参与者通过链下的方式从前一个签名参与者获得已部分签名的交易。</p>
+<p>由于元界区块链命令 <code>createmultisigtx</code>  默认包含交易创建者的签名，因此这里只需要其它 <code>m -1</code> 个参与者的签名即可。用户 <code>Alice</code> 从用户 <code>Cindy</code> 处获得 <code>createmultisigtx</code> 创建的 <code>raw</code> 交易信息，以此作为输入进行签名：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvs-cli signmultisigtx Alice A123456 &quot;02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000b500483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">    &quot;rawtx&quot; : &quot;02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000fdfd0000483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014730440220018b6a113d89de18b6c3c7090758cf9e4ca24e7762a2796b872bf6d2d1015b96022046b4518aa9451e617dff9467db7fe0c0d45811d0884faed51e343fec2c4579ff014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里依然通过 <code>decoderawtx</code> 查看该交易详情：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">命令：</span><br><span class="line">$ ./mvs-cli decoderawtx &quot;02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000fdfd0000483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014730440220018b6a113d89de18b6c3c7090758cf9e4ca24e7762a2796b872bf6d2d1015b96022046b4518aa9451e617dff9467db7fe0c0d45811d0884faed51e343fec2c4579ff014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000&quot;</span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">&#123;</span><br><span class="line">  &quot;transaction&quot; : </span><br><span class="line">  &#123;</span><br><span class="line">    &quot;hash&quot; : &quot;d791b2e0ca6eeb9b5521766b051d54f3659c775dceb39c478ebd0a549bb6d2b4&quot;,</span><br><span class="line">    &quot;inputs&quot; : </span><br><span class="line">    [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">        &quot;previous_output&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;hash&quot; : &quot;4c8de46d4b5a8356229ebd16b95fdcd2407f45fab0bc53753844d10431715364&quot;,</span><br><span class="line">          &quot;index&quot; : 0</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;script&quot; : &quot;zero [ 3045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e301 ] [ 30440220018b6a113d89de18b6c3c7090758cf9e4ca24e7762a2796b872bf6d2d1015b96022046b4518aa9451e617dff9467db7fe0c0d45811d0884faed51e343fec2c4579ff01 ] [ 522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253ae ]&quot;,</span><br><span class="line">        &quot;sequence&quot; : 4294967295</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;lock_time&quot; : &quot;0&quot;,</span><br><span class="line">    &quot;outputs&quot; : </span><br><span class="line">    [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;MHaKHUFwAdcszvQarCmn1Rkq2uRoPQjZwm&quot;,</span><br><span class="line">        &quot;attachment&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;index&quot; : 0,</span><br><span class="line">        &quot;locked_height_range&quot; : 0,</span><br><span class="line">        &quot;script&quot; : &quot;dup hash160 [ 6a20e940e8d7be0a49c598e91fa79c8b36e53535 ] equalverify checksig&quot;,</span><br><span class="line">        &quot;value&quot; : 3344</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;address&quot; : &quot;39hh1NY9xyTKzawD8zFKXgXa7XBwqck6BR&quot;,</span><br><span class="line">        &quot;attachment&quot; : </span><br><span class="line">        &#123;</span><br><span class="line">          &quot;type&quot; : &quot;etp&quot;</span><br><span class="line">        &#125;,</span><br><span class="line">        &quot;index&quot; : 1,</span><br><span class="line">        &quot;locked_height_range&quot; : 0,</span><br><span class="line">        &quot;script&quot; : &quot;hash160 [ 57e1a19e5ee4c0065f8fd76b0351fa145e44435a ] equal&quot;,</span><br><span class="line">        &quot;value&quot; : 130000</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;version&quot; : &quot;2&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>对比前一次交易输出中的 <code>transaction:inputs:script</code> 项，可以看到签名脚本项目中多了用户 <code>Alice</code> 的签名。</p>
+<h3 id="6-广播交易" class="article-heading"><a href="#6-广播交易" class="headerlink" title="6. 广播交易"></a>6. 广播交易<a class="article-anchor" href="#6-广播交易" aria-hidden="true"></a></h3><p>通过 <code>sendrawtx</code> 广播拥有足够多签名的多重签名交易。<br>范例中 <code>m:n</code> 为 <code>2:3</code>，也就是说只需要 <code>3</code> 个签名中的 <code>2</code> 个进行签名，交易即可通过验证，现在用户 <code>Cindy</code> 以及 <code>Alice</code> 都进行了签名，因此可以广播用户 <code>Alice</code> 签名之后的 <code>raw</code> 交易，发送到链上让矿工们去打包验证该交易。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli sendrawtx  &quot;02000000016453713104d144387553bcb0fa457f40d2dc5fb916bd9e2256835a4b6de48d4c00000000fdfd0000483045022100cbfdda943648344dc03fd92a905072082af93dfd4f166e3d1bb258e3437069790220321ee22c6a2543392909e21cd347d009a6d32173c23700424b45b4592d4075e3014730440220018b6a113d89de18b6c3c7090758cf9e4ca24e7762a2796b872bf6d2d1015b96022046b4518aa9451e617dff9467db7fe0c0d45811d0884faed51e343fec2c4579ff014c69522102729cae0c16009f44440f306b76fafb7a7d2503741a619c15b41ff927c1afd6b92103d29f0b96f332e50d6014cb91c334214ecb8caf2881a97e7d944bdf4e5fd6a39e2103f97e079ccae21e1ee65d5ee64e5c27d7d6ce9a867cec75e9736ad5f258329e0253aeffffffff02100d0000000000001976a9146a20e940e8d7be0a49c598e91fa79c8b36e5353588ac0100000000000000d0fb01000000000017a91457e1a19e5ee4c0065f8fd76b0351fa145e44435a87010000000000000000000000&quot;</span><br></pre></td></tr></table></figure></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="da-attenuation.html" class="article-footer-prev" title="MST曲线发行"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="da-certification.html" class="article-footer-next" title="MST的资产证书"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/developers/da-multi-sig.html';
+  var disqus_title = "MST Multi-signature";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用流程"><span class="toc-text">使用流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#支持多重签名的命令"><span class="toc-text">支持多重签名的命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例"><span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-获取和传播公钥"><span class="toc-text">1. 获取和传播公钥</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-创建多重签名"><span class="toc-text">2. 创建多重签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-往多重签名地址发送币"><span class="toc-text">3. 往多重签名地址发送币</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-发起多重签名交易"><span class="toc-text">4. 发起多重签名交易</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-参与者签名"><span class="toc-text">5. 参与者签名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-广播交易"><span class="toc-text">6. 广播交易</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开发者文档概览</strong><a href="index.html" class="sidebar-link">介绍</a><a href="mvs-whitepaper.html" class="sidebar-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">简版数字身份白皮书</a><a href="build-mvs.html" class="sidebar-link">编译元界全节点钱包</a><strong class="sidebar-title">数字资产-MST</strong><a href="da-index.html" class="sidebar-link">介绍</a><a href="da-issue.html" class="sidebar-link">发行MST</a><a href="da-secondary-issue.html" class="sidebar-link">MST多次增发</a><a href="da-attenuation.html" class="sidebar-link">MST曲线发行</a><a href="da-multi-sig.html" class="sidebar-link current">MST的多重签名</a><a href="da-certification.html" class="sidebar-link">MST的资产证书</a><a href="da-burn.html" class="sidebar-link">MST数量销毁</a><a href="da-programmable.html" class="sidebar-link">可编程MST</a><strong class="sidebar-title">数字资产-MIT</strong><a href="mit-index.html" class="sidebar-link">MIT 介绍</a><a href="mit-register.html" class="sidebar-link">MIT 登记</a><a href="mit-transfer.html" class="sidebar-link">MIT 转移</a><a href="mit-query.html" class="sidebar-link">MIT 查询</a><strong class="sidebar-title">数字身份-Avatar</strong><a href="di-index.html" class="sidebar-link">DID 介绍</a><a href="di-register.html" class="sidebar-link">DID 注册</a><a href="di-transfer.html" class="sidebar-link">DID 转移</a><a href="di-query.html" class="sidebar-link">DID 查询</a><a href="di-send.html" class="sidebar-link">DID 发送交易</a><strong class="sidebar-title">技术概览</strong><a href="account-model.html" class="sidebar-link">账户模型</a><a href="consensus-and-mining.html" class="sidebar-link">共识与挖矿</a><a href="database.html" class="sidebar-link">高性能数据库</a><a href="httpserver.html" class="sidebar-link">Httpserver</a><a href="p2p-network.html" class="sidebar-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">交易格式和签名</a><a href="utxo-and-script.html" class="sidebar-link">utxo与script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO的限制条件</a><a href="cross-chain.html" class="sidebar-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开发者文档概览</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="mvs-whitepaper.html" class="mobile-nav-link">简版白皮书</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">简版数字身份白皮书</a><a href="build-mvs.html" class="mobile-nav-link">编译元界全节点钱包</a><strong class="mobile-nav-title">数字资产-MST</strong><a href="da-index.html" class="mobile-nav-link">介绍</a><a href="da-issue.html" class="mobile-nav-link">发行MST</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST多次增发</a><a href="da-attenuation.html" class="mobile-nav-link">MST曲线发行</a><a href="da-multi-sig.html" class="mobile-nav-link current">MST的多重签名</a><a href="da-certification.html" class="mobile-nav-link">MST的资产证书</a><a href="da-burn.html" class="mobile-nav-link">MST数量销毁</a><a href="da-programmable.html" class="mobile-nav-link">可编程MST</a><strong class="mobile-nav-title">数字资产-MIT</strong><a href="mit-index.html" class="mobile-nav-link">MIT 介绍</a><a href="mit-register.html" class="mobile-nav-link">MIT 登记</a><a href="mit-transfer.html" class="mobile-nav-link">MIT 转移</a><a href="mit-query.html" class="mobile-nav-link">MIT 查询</a><strong class="mobile-nav-title">数字身份-Avatar</strong><a href="di-index.html" class="mobile-nav-link">DID 介绍</a><a href="di-register.html" class="mobile-nav-link">DID 注册</a><a href="di-transfer.html" class="mobile-nav-link">DID 转移</a><a href="di-query.html" class="mobile-nav-link">DID 查询</a><a href="di-send.html" class="mobile-nav-link">DID 发送交易</a><strong class="mobile-nav-title">技术概览</strong><a href="account-model.html" class="mobile-nav-link">账户模型</a><a href="consensus-and-mining.html" class="mobile-nav-link">共识与挖矿</a><a href="database.html" class="mobile-nav-link">高性能数据库</a><a href="httpserver.html" class="mobile-nav-link">Httpserver</a><a href="p2p-network.html" class="mobile-nav-link">p2p网络</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">交易格式和签名</a><a href="utxo-and-script.html" class="mobile-nav-link">utxo与script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO的限制条件</a><a href="cross-chain.html" class="mobile-nav-link">跨链置换</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 交易更新说明</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/da-multi-sig.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

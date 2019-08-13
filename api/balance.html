@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Balance | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/api/balance.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api/balance.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api/balance.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="DescriptionWe display amount with integer bits in metaverse command-line/RPC call case. Example:ETP bits (8 times 0)&amp;#123;    &amp;quot;total-confirmed&amp;quot;: &amp;quot;200000001&amp;quot;, // 2.0000001 ETP    &amp;q">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Balance">
+<meta property="og:url" content="https://docs.mvs.org/api/balance.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="DescriptionWe display amount with integer bits in metaverse command-line/RPC call case. Example:ETP bits (8 times 0)&amp;#123;    &amp;quot;total-confirmed&amp;quot;: &amp;quot;200000001&amp;quot;, // 2.0000001 ETP    &amp;q">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Balance">
+<meta name="twitter:description" content="DescriptionWe display amount with integer bits in metaverse command-line/RPC call case. Example:ETP bits (8 times 0)&amp;#123;    &amp;quot;total-confirmed&amp;quot;: &amp;quot;200000001&amp;quot;, // 2.0000001 ETP    &amp;q">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="api/balance.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Balance</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/api/balance.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h3 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h3><p>We display amount with integer bits in metaverse command-line/RPC call case.</p>
+<p>Example:<br>ETP bits (8 times 0)<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;total-confirmed&quot;: &quot;200000001&quot;, // 2.0000001 ETP</span><br><span class="line">    &quot;total-received&quot;: &quot;1000000000&quot;, // 10 ETP</span><br><span class="line">    &quot;total-unspent&quot;: &quot;112345678&quot;, // 1.12345678 ETP</span><br><span class="line">    &quot;total-frozen&quot;: &quot;0&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>MVS.ZDC bits (6 times 0)<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;total-confirmed&quot;: &quot;200000001&quot;, // 200.000001 MVS.ZDC</span><br><span class="line">    &quot;total-received&quot;: &quot;1000000000&quot;, // 1000 MVS.ZDC</span><br><span class="line">    &quot;total-unspent&quot;: &quot;112345678&quot;, // 112.345678 MVS.ZD</span><br><span class="line">    &quot;total-frozen&quot;: &quot;0&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="getbalance" class="article-heading"><a href="#getbalance" class="headerlink" title="getbalance"></a>getbalance<a class="article-anchor" href="#getbalance" aria-hidden="true"></a></h3><p>Show total-balance of this account.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">./mvs-cli getbalance chenhao chenhao</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"total-confirmed"</span>: <span class="string">"6059875918900"</span>,</span><br><span class="line">    <span class="attr">"total-received"</span>: <span class="string">"6181075918900"</span>,</span><br><span class="line">    <span class="attr">"total-unspent"</span>: <span class="string">"6059875918900"</span>,</span><br><span class="line">    <span class="attr">"total-frozen"</span>: <span class="string">"0"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="listbalances" class="article-heading"><a href="#listbalances" class="headerlink" title="listbalances"></a>listbalances<a class="article-anchor" href="#listbalances" aria-hidden="true"></a></h3><p>list balance of each address of this account.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./mvs-cli listbalances chenhao chenhao</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"balances"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tPpZzPL99rLqYZpfn4ZdCXHinzDg8ZY3Kp"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"318060000000"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"318060000000"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"318060000000"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tDufUbYv2Ga8ReRYmqjvsM7u56br3XTqcr"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"3803175000000"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"3803175000000"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"3803175000000"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tCYULUfAkFixcnWWRrpEx7uEUX7HiveXyf"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"1411200000000"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"1411200000000"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"1411200000000"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tMHMVgcc1FPLcLeXVkzL4zQpuEdJSn3MGp"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"1000958900"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"1000958900"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"1000958900"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tMe7kzY2riAPh7cNDgr97choBkbNnQPu1y"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"499980000"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"499980000"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"499980000"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"balance"</span>: &#123;</span><br><span class="line">                <span class="attr">"address"</span>: <span class="string">"tVfAVefMQ2xifDyW5fNqRbH7qSxpuUDypt"</span>,</span><br><span class="line">                <span class="attr">"confirmed"</span>: <span class="string">"131299990000"</span>,</span><br><span class="line">                <span class="attr">"received"</span>: <span class="string">"252499990000"</span>,</span><br><span class="line">                <span class="attr">"unspent"</span>: <span class="string">"131299990000"</span>,</span><br><span class="line">                <span class="attr">"frozen"</span>: <span class="string">"0"</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="fetch-balance" class="article-heading"><a href="#fetch-balance" class="headerlink" title="fetch-balance"></a>fetch-balance<a class="article-anchor" href="#fetch-balance" aria-hidden="true"></a></h3><p>see balance of any address of whole network.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./mvs-cli fetch-balance tPpZzPL99rLqYZpfn4ZdCXHinzDg8ZY3Kp</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"balance"</span>: &#123;</span><br><span class="line">        <span class="attr">"address"</span>: <span class="string">"tPpZzPL99rLqYZpfn4ZdCXHinzDg8ZY3Kp"</span>,</span><br><span class="line">        <span class="attr">"confirmed"</span>: <span class="string">"318060000000"</span>,</span><br><span class="line">        <span class="attr">"received"</span>: <span class="string">"318060000000"</span>,</span><br><span class="line">        <span class="attr">"unspent"</span>: <span class="string">"318060000000"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.965Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="transaction.html" class="article-footer-prev" title="Transaction"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="asset.html" class="article-footer-next" title="Asset"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getbalance"><span class="toc-text">getbalance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listbalances"><span class="toc-text">listbalances</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fetch-balance"><span class="toc-text">fetch-balance</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Introduction</strong><a href="index.html" class="sidebar-link">Introduction</a><strong class="sidebar-title">Blocks</strong><a href="blocks.html" class="sidebar-link">Blocks</a><strong class="sidebar-title">Account</strong><a href="account.html" class="sidebar-link">Account</a><strong class="sidebar-title">Address</strong><a href="address.html" class="sidebar-link">Address</a><strong class="sidebar-title">Sending ETP</strong><a href="sendetp.html" class="sidebar-link">Sending ETP</a><strong class="sidebar-title">Transaction</strong><a href="transaction.html" class="sidebar-link">Transaction</a><strong class="sidebar-title">Balance</strong><a href="balance.html" class="sidebar-link current">Balance</a><strong class="sidebar-title">Asset</strong><a href="asset.html" class="sidebar-link">Asset</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Introduction</strong><a href="index.html" class="mobile-nav-link">Introduction</a><strong class="mobile-nav-title">Blocks</strong><a href="blocks.html" class="mobile-nav-link">Blocks</a><strong class="mobile-nav-title">Account</strong><a href="account.html" class="mobile-nav-link">Account</a><strong class="mobile-nav-title">Address</strong><a href="address.html" class="mobile-nav-link">Address</a><strong class="mobile-nav-title">Sending ETP</strong><a href="sendetp.html" class="mobile-nav-link">Sending ETP</a><strong class="mobile-nav-title">Transaction</strong><a href="transaction.html" class="mobile-nav-link">Transaction</a><strong class="mobile-nav-title">Balance</strong><a href="balance.html" class="mobile-nav-link current">Balance</a><strong class="mobile-nav-title">Asset</strong><a href="asset.html" class="mobile-nav-link">Asset</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="api/balance.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

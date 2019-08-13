@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Configuration file - mvs.conf | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/docs/config-file.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/config-file.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/config-file.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="mvs.conf commonGet config files from https://github.com/mvs-org/metaverse/tree/master/etc:  mvs.conf - mainnet configuration file mvs-test.conf - testnet configuration file mvs-full-setting-template.c">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Configuration file - mvs.conf">
+<meta property="og:url" content="https://docs.mvs.org/docs/config-file.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="mvs.conf commonGet config files from https://github.com/mvs-org/metaverse/tree/master/etc:  mvs.conf - mainnet configuration file mvs-test.conf - testnet configuration file mvs-full-setting-template.c">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Configuration file - mvs.conf">
+<meta name="twitter:description" content="mvs.conf commonGet config files from https://github.com/mvs-org/metaverse/tree/master/etc:  mvs.conf - mainnet configuration file mvs-test.conf - testnet configuration file mvs-full-setting-template.c">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/config-file.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Configuration file - mvs.conf</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/docs/config-file.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="mvs-conf-common" class="article-heading"><a href="#mvs-conf-common" class="headerlink" title="mvs.conf common"></a>mvs.conf common<a class="article-anchor" href="#mvs-conf-common" aria-hidden="true"></a></h2><p>Get config files from <a href="https://github.com/mvs-org/metaverse/tree/master/etc" target="_blank" rel="noopener">https://github.com/mvs-org/metaverse/tree/master/etc</a>:</p>
+<ul>
+<li><code>mvs.conf</code> - mainnet configuration file</li>
+<li><code>mvs-test.conf</code> - testnet configuration file</li>
+<li><code>mvs-full-setting-template.conf</code>  - template for all parameters. </li>
+</ul>
+<p>The default work path for mvs.conf is as follows:</p>
+<ul>
+<li>Windows   : <code>%HOMEPATH%\AppData\Roaming\Metaverse</code></li>
+<li>Apple OSX : <code>~/Library/Application\ Support/Metaverse</code></li>
+<li>Linux/Uinx: <code>~/.metaverse</code></li>
+</ul>
+<h2 id="mvs-conf-example" class="article-heading"><a href="#mvs-conf-example" class="headerlink" title="mvs.conf example"></a>mvs.conf example<a class="article-anchor" href="#mvs-conf-example" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mvs configuration in common usage in MAINNET</span></span><br><span class="line"></span><br><span class="line">[network]</span><br><span class="line"><span class="comment"># The port for incoming connections, defaults to 5251 (15251 for testnet).</span></span><br><span class="line">inbound_port = 5251</span><br><span class="line"><span class="comment"># The target number of incoming network connections, defaults to 8.</span></span><br><span class="line">inbound_connections = 256</span><br><span class="line"><span class="comment"># The target number of outgoing network connections, defaults to 8.</span></span><br><span class="line">outbound_connections = 32</span><br><span class="line"><span class="comment"># The cached peer hosts when startup</span></span><br><span class="line">hosts_file = hosts.cache</span><br><span class="line"><span class="comment"># The debug log file path, defaults to 'debug.log'.</span></span><br><span class="line">debug_file = debug.log</span><br><span class="line"><span class="comment"># The error log file path, defaults to 'error.log'.</span></span><br><span class="line">error_file = error.log</span><br><span class="line"><span class="comment"># The advertised public address of this node, defaults to none.</span></span><br><span class="line"><span class="comment"># self = your_own_public_ip_address:port</span></span><br><span class="line"><span class="comment"># IP address to disallow as a peer, multiple entries allowed.</span></span><br><span class="line">blacklist = 127.0.0.1</span><br><span class="line"><span class="comment"># Persistent host:port channels, multiple entries allowed.</span></span><br><span class="line">peer = seed.getmvs.org:5251</span><br><span class="line"></span><br><span class="line">[database]</span><br><span class="line"><span class="comment"># The blockchain database directory, defaults to 'mainnet' of below default path.</span></span><br><span class="line"><span class="comment"># Windows   : %HOMEPATH%\AppData\Roaming\Metaverse</span></span><br><span class="line"><span class="comment"># Apple OSX : ~/Library/Application\ Support/Metaverse</span></span><br><span class="line"><span class="comment"># Linux/Uinx: ~/.metaverse</span></span><br><span class="line"><span class="comment"># Eg:</span></span><br><span class="line"><span class="comment"># directory = D:\MVS\ChainData\Metaverse</span></span><br><span class="line"><span class="comment"># directory = /var/local/Metaverse</span></span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line"><span class="comment"># The maximum number of query worker threads per endpoint, defaults to 1.</span></span><br><span class="line">query_workers = 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># local http RPC call listen port</span></span><br><span class="line">mongoose_listen = 127.0.0.1:8820</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write service requests to the log, defaults to false.</span></span><br><span class="line">log_level = DEBUG</span><br></pre></td></tr></table></figure>
+<h2 id="mvs-test-conf-example" class="article-heading"><a href="#mvs-test-conf-example" class="headerlink" title="mvs-test.conf example"></a>mvs-test.conf example<a class="article-anchor" href="#mvs-test-conf-example" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mvs configuration in common usage for TESTNET</span></span><br><span class="line"></span><br><span class="line">[network]</span><br><span class="line"><span class="comment"># The port for incoming connections, defaults to 5251 (15251 for testnet).</span></span><br><span class="line">inbound_port = 15251</span><br><span class="line"><span class="comment"># The target number of incoming network connections, defaults to 8.</span></span><br><span class="line">inbound_connections = 32</span><br><span class="line"><span class="comment"># The target number of outgoing network connections, defaults to 8.</span></span><br><span class="line">outbound_connections = 8</span><br><span class="line"><span class="comment"># The cached peer hosts when startup</span></span><br><span class="line">hosts_file = hosts-test.cache</span><br><span class="line"><span class="comment"># The debug log file path, defaults to 'debug.log'.</span></span><br><span class="line">debug_file = debug.log</span><br><span class="line"><span class="comment"># The error log file path, defaults to 'error.log'.</span></span><br><span class="line">error_file = error.log</span><br><span class="line"><span class="comment"># The advertised public address of this node, defaults to none.</span></span><br><span class="line"><span class="comment"># self = your_own_public_ip_address:port</span></span><br><span class="line"><span class="comment"># IP address to disallow as a peer, multiple entries allowed.</span></span><br><span class="line">blacklist = 127.0.0.1</span><br><span class="line"><span class="comment"># Persistent host:port channels, multiple entries allowed.</span></span><br><span class="line"><span class="comment"># peer = aisa.mvs.live:15251</span></span><br><span class="line"></span><br><span class="line">[database]</span><br><span class="line"><span class="comment"># The blockchain database directory, defaults to 'mainnet' of below default path.</span></span><br><span class="line"><span class="comment"># Windows   : %HOMEPATH%\AppData\Roaming\Metaverse</span></span><br><span class="line"><span class="comment"># Apple OSX : ~/Library/Application\ Support/Metaverse</span></span><br><span class="line"><span class="comment"># Linux/Uinx: ~/.metaverse</span></span><br><span class="line"><span class="comment"># Eg:</span></span><br><span class="line"><span class="comment"># directory = D:\MVS\ChainData\Metaverse</span></span><br><span class="line"><span class="comment"># directory = /var/local/Metaverse</span></span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line"><span class="comment"># The maximum number of query worker threads per endpoint, defaults to 1.</span></span><br><span class="line">query_workers = 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># local http RPC call listen port</span></span><br><span class="line">mongoose_listen = 127.0.0.1:8820</span><br><span class="line"></span><br><span class="line"><span class="comment"># Write service requests to the log, defaults to false.</span></span><br><span class="line">log_level = DEBUG</span><br></pre></td></tr></table></figure>
+<h2 id="mvs-full-setting-template-conf" class="article-heading"><a href="#mvs-full-setting-template-conf" class="headerlink" title="mvs-full-setting-template.conf"></a>mvs-full-setting-template.conf<a class="article-anchor" href="#mvs-full-setting-template-conf" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># mvs configuration file exmaple</span></span><br><span class="line"></span><br><span class="line">[blockchain]</span><br><span class="line"><span class="comment"># The maximum number of orphan blocks in the pool, defaults to 50.</span></span><br><span class="line">block_pool_capacity = &lt;value&gt;</span><br><span class="line"><span class="comment"># A hash:height checkpoint, multiple entries allowed.</span></span><br><span class="line">checkpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum number of transactions in the pool, defaults to 2000.</span></span><br><span class="line">transaction_pool_capacity = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enforce consistency between the pool and the blockchain, defaults to false.</span></span><br><span class="line">transaction_pool_consistency = &lt;value&gt;</span><br><span class="line"><span class="comment"># Use testnet rules for determination of work required, defaults to false.</span></span><br><span class="line">use_testnet_rules = &lt;value&gt;</span><br><span class="line"></span><br><span class="line">[database]</span><br><span class="line"><span class="comment"># The blockchain database directory, defaults to 'mainnet'.</span></span><br><span class="line">directory = &lt;value&gt;</span><br><span class="line"><span class="comment"># The lower limit of spend indexing, defaults to 0.</span></span><br><span class="line">history_start_height = &lt;value&gt;</span><br><span class="line"><span class="comment"># The lower limit of stealth indexing, defaults to 350000.</span></span><br><span class="line">stealth_start_height = &lt;value&gt;</span><br><span class="line"></span><br><span class="line">[network]</span><br><span class="line"><span class="comment"># IP address to disallow as a peer, multiple entries allowed.</span></span><br><span class="line">blacklist = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum age limit for an outbound connection, defaults to 1440.</span></span><br><span class="line">channel_expiration_minutes = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum time limit for obtaining seed addresses, defaults to 30.</span></span><br><span class="line">channel_germination_seconds = &lt;value&gt;</span><br><span class="line"><span class="comment"># The time limit to complete the connection handshake, defaults to 30.</span></span><br><span class="line">channel_handshake_seconds = &lt;value&gt;</span><br><span class="line"><span class="comment"># The time between ping messages, defaults to 5.</span></span><br><span class="line">channel_heartbeat_minutes = &lt;value&gt;</span><br><span class="line"><span class="comment"># The inactivity time limit for any connection, defaults to 30.</span></span><br><span class="line">channel_inactivity_minutes = &lt;value&gt;</span><br><span class="line"><span class="comment"># The number of concurrent attempts to estalish one connection, defaults to 5.</span></span><br><span class="line">connect_batch_size = &lt;value&gt;</span><br><span class="line"><span class="comment"># The time limit for connection establishment, defaults to 5.</span></span><br><span class="line">connect_timeout_seconds = &lt;value&gt;</span><br><span class="line"><span class="comment"># The debug log file path, defaults to 'debug.log'.</span></span><br><span class="line">debug_file = &lt;value&gt;</span><br><span class="line"><span class="comment"># The error log file path, defaults to 'error.log'.</span></span><br><span class="line">error_file = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum number of peer hosts in the pool, defaults to 1000.</span></span><br><span class="line">host_pool_capacity = &lt;value&gt;</span><br><span class="line"><span class="comment"># The peer hosts cache file path, defaults to 'hosts.cache'.</span></span><br><span class="line">hosts_file = &lt;value&gt;</span><br><span class="line"><span class="comment"># The magic number for message headers, defaults to 0x6d73766d.</span></span><br><span class="line">identifier = &lt;value&gt;</span><br><span class="line"><span class="comment"># The target number of incoming network connections, defaults to 8.</span></span><br><span class="line">inbound_connections = &lt;value&gt;</span><br><span class="line"><span class="comment"># The port for incoming connections, defaults to 5251.</span></span><br><span class="line">inbound_port = &lt;value&gt;</span><br><span class="line"><span class="comment"># The attempt limit for manual connection establishment, defaults to 0 (forever).</span></span><br><span class="line">manual_attempt_limit = &lt;value&gt;</span><br><span class="line"><span class="comment"># The target number of outgoing network connections, defaults to 8.</span></span><br><span class="line">outbound_connections = &lt;value&gt;</span><br><span class="line"><span class="comment"># Persistent host:port channels, multiple entries allowed.</span></span><br><span class="line">peer = &lt;value&gt;</span><br><span class="line"><span class="comment"># The network protocol version, defaults to 70012.</span></span><br><span class="line">protocol = &lt;value&gt;</span><br><span class="line"><span class="comment"># Request that peers relay transactions, defaults to true.</span></span><br><span class="line">relay_transactions = &lt;value&gt;</span><br><span class="line"><span class="comment"># A seed node for initializing the host pool, multiple entries allowed.</span></span><br><span class="line">seed = &lt;value&gt;</span><br><span class="line"><span class="comment"># The advertised public address of this node, defaults to none.</span></span><br><span class="line">self = &lt;value&gt;</span><br><span class="line"><span class="comment"># The minimum number of threads in the application threadpool, defaults to 50.</span></span><br><span class="line">threads = &lt;value&gt;</span><br><span class="line"></span><br><span class="line">[node]</span><br><span class="line"><span class="comment"># The time limit for block receipt during initial block download, defaults to 5.</span></span><br><span class="line">block_timeout_seconds = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum number of connections for initial block download, defaults to 8.</span></span><br><span class="line">download_connections = &lt;value&gt;</span><br><span class="line"><span class="comment"># Refresh the transaction pool on reorganization and channel start, defaults to true.</span></span><br><span class="line">transaction_pool_refresh = &lt;value&gt;</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line"><span class="comment"># Whether wallet needs administrator to execute non-account commands(shutdown/getinfo...), defaults to false.</span></span><br><span class="line">administrator_required = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enable the block publishing service, defaults to false.</span></span><br><span class="line">block_service_enabled = &lt;value&gt;</span><br><span class="line"><span class="comment"># Allowed client IP address, multiple entries allowed.</span></span><br><span class="line">client_address = &lt;value&gt;</span><br><span class="line"><span class="comment"># Allowed Z85-encoded public key of the client, multiple entries allowed.</span></span><br><span class="line">client_public_key = &lt;value&gt;</span><br><span class="line"><span class="comment"># The heartbeat interval, defaults to 5.</span></span><br><span class="line">heartbeat_interval_seconds = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enable the heartbeat service, defaults to false.</span></span><br><span class="line">heartbeat_service_enabled = &lt;value&gt;</span><br><span class="line"><span class="comment"># Setup log level of debug log in level [TRACE,DEBUG,INFO], defaults to DEBUG.</span></span><br><span class="line">log_level = &lt;value&gt;</span><br><span class="line"><span class="comment"># The listening port for mongoose(Json-RPC), defaults to 127.0.0.1:8820.</span></span><br><span class="line">mongoose_listen = &lt;value&gt;</span><br><span class="line"><span class="comment"># The public block publishing endpoint, defaults to 'tcp://*:9093'.</span></span><br><span class="line">public_block_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The public heartbeat endpoint, defaults to 'tcp://*:9092'.</span></span><br><span class="line">public_heartbeat_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The public query endpoint, defaults to 'tcp://*:9091'.</span></span><br><span class="line">public_query_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The public transaction publishing endpoint, defaults to 'tcp://*:9094'.</span></span><br><span class="line">public_transaction_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enable the query service, defaults to true.</span></span><br><span class="line">query_service_enabled = &lt;value&gt;</span><br><span class="line"><span class="comment"># The number of query worker threads per endpoint, defaults to 1.</span></span><br><span class="line">query_workers = &lt;value&gt;</span><br><span class="line"><span class="comment"># The secure block publishing endpoint, defaults to 'tcp://*:9083'.</span></span><br><span class="line">secure_block_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The secure heartbeat endpoint, defaults to 'tcp://*:9082'.</span></span><br><span class="line">secure_heartbeat_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># Disable public endpoints, defaults to false.</span></span><br><span class="line">secure_only = &lt;value&gt;</span><br><span class="line"><span class="comment"># The secure query endpoint, defaults to 'tcp://*:9081'.</span></span><br><span class="line">secure_query_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The secure transaction publishing endpoint, defaults to 'tcp://*:9084'.</span></span><br><span class="line">secure_transaction_endpoint = &lt;value&gt;</span><br><span class="line"><span class="comment"># The Z85-encoded private key of the server, enables secure endpoints.</span></span><br><span class="line">server_private_key = &lt;value&gt;</span><br><span class="line"><span class="comment"># The subscription expiration time, defaults to 10.</span></span><br><span class="line">subscription_expiration_minutes = &lt;value&gt;</span><br><span class="line"><span class="comment"># The maximum number of subscriptions, defaults to 100000000.</span></span><br><span class="line">subscription_limit = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enable the transaction publishing service, defaults to false.</span></span><br><span class="line">transaction_service_enabled = &lt;value&gt;</span><br><span class="line"><span class="comment"># The listening port for websocket pub/sub service, defaults to 127.0.0.1:8821.</span></span><br><span class="line">websocket_listen = &lt;value&gt;</span><br><span class="line"><span class="comment"># Enable the websocket pub/sub service, defaults to false.</span></span><br><span class="line">websocket_service_enabled = &lt;value&gt;</span><br></pre></td></tr></table></figure>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="options.html" class="article-footer-prev" title="Start Running mvsd"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="command-line.html" class="article-footer-next" title="Command-Line"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#mvs-conf-common"><span class="toc-text">mvs.conf common</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mvs-conf-example"><span class="toc-text">mvs.conf example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mvs-test-conf-example"><span class="toc-text">mvs-test.conf example</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mvs-full-setting-template-conf"><span class="toc-text">mvs-full-setting-template.conf</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Get Started</strong><a href="index.html" class="sidebar-link">Quick Start</a><a href="desktop.html" class="sidebar-link">Desktop</a><a href="mobile.html" class="sidebar-link">Mobile</a><a href="mainnet-info.html" class="sidebar-link">Mainnet Information</a><strong class="sidebar-title">Features</strong><a href="features-issue-token.html" class="sidebar-link">Issue Tokens</a><a href="features-transfer-token.html" class="sidebar-link">Transfer Tokens</a><a href="pillars.html" class="sidebar-link">Pillars Features</a><a href="supernova.html" class="sidebar-link">Supernova Features</a><strong class="sidebar-title">Full Node Wallet</strong><a href="introduction.html" class="sidebar-link">Introduction</a><a href="setup-linux.html" class="sidebar-link">Setup on Linux</a><a href="options.html" class="sidebar-link">Start Running mvsd</a><a href="config-file.html" class="sidebar-link current">Config File</a><a href="command-line.html" class="sidebar-link">Command-Line</a><a href="reset-mvs.html" class="sidebar-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="sidebar-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="sidebar-link">Backup Account</a><a href="testnet.html" class="sidebar-link">Testnet</a><a href="private-chain.html" class="sidebar-link">Private Chain</a><a href="setup_mining_pool.html" class="sidebar-link">Setup Mining Pool</a><strong class="sidebar-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="sidebar-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="sidebar-link">Cross Chain Swap</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Get Started</strong><a href="index.html" class="mobile-nav-link">Quick Start</a><a href="desktop.html" class="mobile-nav-link">Desktop</a><a href="mobile.html" class="mobile-nav-link">Mobile</a><a href="mainnet-info.html" class="mobile-nav-link">Mainnet Information</a><strong class="mobile-nav-title">Features</strong><a href="features-issue-token.html" class="mobile-nav-link">Issue Tokens</a><a href="features-transfer-token.html" class="mobile-nav-link">Transfer Tokens</a><a href="pillars.html" class="mobile-nav-link">Pillars Features</a><a href="supernova.html" class="mobile-nav-link">Supernova Features</a><strong class="mobile-nav-title">Full Node Wallet</strong><a href="introduction.html" class="mobile-nav-link">Introduction</a><a href="setup-linux.html" class="mobile-nav-link">Setup on Linux</a><a href="options.html" class="mobile-nav-link">Start Running mvsd</a><a href="config-file.html" class="mobile-nav-link current">Config File</a><a href="command-line.html" class="mobile-nav-link">Command-Line</a><a href="reset-mvs.html" class="mobile-nav-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="mobile-nav-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="mobile-nav-link">Backup Account</a><a href="testnet.html" class="mobile-nav-link">Testnet</a><a href="private-chain.html" class="mobile-nav-link">Private Chain</a><a href="setup_mining_pool.html" class="mobile-nav-link">Setup Mining Pool</a><strong class="mobile-nav-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="mobile-nav-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="mobile-nav-link">Cross Chain Swap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/config-file.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

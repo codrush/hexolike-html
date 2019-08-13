@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>搭建私有链 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/private-chain.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/private-chain.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/private-chain.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="搭建私有链目的私有区块链可以根据企业及其合作伙伴的具体案例来量身定制，利用透明机制来建立信任并提高效率。 私有区块链针对的是单一实体内的用户，或者在同一个行业联盟内的用户，他们彼此之间需要透明，但没必要对公众透明。 私有链也可用于一些模拟测试工作，通过修改源码降低挖矿难度，可以较快从起源链开始白手起家挖矿致富，从而有ETP在手去测试各类接口，例如创建/发布资产，转账，多重签名等等。 当然你也可以结">
+<meta property="og:type" content="website">
+<meta property="og:title" content="搭建私有链">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/private-chain.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="搭建私有链目的私有区块链可以根据企业及其合作伙伴的具体案例来量身定制，利用透明机制来建立信任并提高效率。 私有区块链针对的是单一实体内的用户，或者在同一个行业联盟内的用户，他们彼此之间需要透明，但没必要对公众透明。 私有链也可用于一些模拟测试工作，通过修改源码降低挖矿难度，可以较快从起源链开始白手起家挖矿致富，从而有ETP在手去测试各类接口，例如创建/发布资产，转账，多重签名等等。 当然你也可以结">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建私有链">
+<meta name="twitter:description" content="搭建私有链目的私有区块链可以根据企业及其合作伙伴的具体案例来量身定制，利用透明机制来建立信任并提高效率。 私有区块链针对的是单一实体内的用户，或者在同一个行业联盟内的用户，他们彼此之间需要透明，但没必要对公众透明。 私有链也可用于一些模拟测试工作，通过修改源码降低挖矿难度，可以较快从起源链开始白手起家挖矿致富，从而有ETP在手去测试各类接口，例如创建/发布资产，转账，多重签名等等。 当然你也可以结">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/private-chain.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">搭建私有链</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/private-chain.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="搭建私有链目的" class="article-heading"><a href="#搭建私有链目的" class="headerlink" title="搭建私有链目的"></a>搭建私有链目的<a class="article-anchor" href="#搭建私有链目的" aria-hidden="true"></a></h2><p>私有区块链可以根据企业及其合作伙伴的具体案例来量身定制，利用透明机制来建立信任并提高效率。</p>
+<p>私有区块链针对的是单一实体内的用户，或者在同一个行业联盟内的用户，他们彼此之间需要透明，但没必要对公众透明。</p>
+<p>私有链也可用于一些模拟测试工作，通过修改源码降低挖矿难度，可以较快从起源链开始白手起家挖矿致富，从而有ETP在手去测试各类接口，例如创建/发布资产，转账，多重签名等等。</p>
+<p>当然你也可以结合自己的需求实现更有实际意义的私有链。</p>
+<p>下面就来谈私有链的搭建方法。</p>
+<h2 id="搭建私有链步骤" class="article-heading"><a href="#搭建私有链步骤" class="headerlink" title="搭建私有链步骤"></a>搭建私有链步骤<a class="article-anchor" href="#搭建私有链步骤" aria-hidden="true"></a></h2><h3 id="1-获取钱包软件" class="article-heading"><a href="#1-获取钱包软件" class="headerlink" title="1. 获取钱包软件"></a>1. 获取钱包软件<a class="article-anchor" href="#1-获取钱包软件" aria-hidden="true"></a></h3><p><strong>你可以从源码编译</strong></p>
+<p><a href="build-windows.html">Windows编译</a></p>
+<p><a href="build-macosx.html">Macosx编译</a></p>
+<p><a href="build-linux.html">Linux编译</a></p>
+<p><strong>当然，你也可以直接下载二进制安装包</strong></p>
+<p><a href="setup-windows.html">Windows安装</a></p>
+<p><a href="setup-macosx.html">Macosx安装</a></p>
+<p><a href="setup-linux.html">Linux安装</a></p>
+<h3 id="2-修改配置" class="article-heading"><a href="#2-修改配置" class="headerlink" title="2. 修改配置"></a>2. 修改配置<a class="article-anchor" href="#2-修改配置" aria-hidden="true"></a></h3><p>关于配置项说明，可以参看<a href="options.html">配置选项</a></p>
+<p>参照上述文档，我们可以通过配置配置文件，搭建基于元界的私有链，而不必改动代码。</p>
+<p>通过修改 <code>identifier</code> 为不同的值，我们即可实现不同的区块链实例。<br>即使是以主网模式运行，开发者也不必担心，主网的出块速度也是很快的，可以使用CPU挖矿继续测试。</p>
+<p>搭建私有链至少需要运行两个<code>mvsd</code>进行共识，最好是在两台电脑各自运行一个。<strong>注意电脑之间的网络是互通的。</strong>以下是两个程序的配置文件：</p>
+<p>配置文件一：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[network]</span><br><span class="line">identifier = 1234567890</span><br><span class="line">self = 172.100.0.197:5251</span><br><span class="line">seed = 172.100.1.22:5251</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">log_level = DEBUG</span><br><span class="line">mongoose_listen = 0.0.0.0:8820</span><br><span class="line">websocket_listen = 0.0.0.0:8821</span><br></pre></td></tr></table></figure></p>
+<p>配置文件二：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[network]</span><br><span class="line">identifier = 1234567890</span><br><span class="line">self = 172.100.1.22:5251</span><br><span class="line">seed = 172.100.0.197:5251</span><br><span class="line"></span><br><span class="line">[server]</span><br><span class="line">log_level = DEBUG</span><br><span class="line">mongoose_listen = 0.0.0.0:8820</span><br><span class="line">websocket_listen = 0.0.0.0:8821</span><br></pre></td></tr></table></figure></p>
+<p>注意，两个程序使用同一个 <code>identifier</code>， 互为彼此的 <code>seed</code>，这样就可以在两者之间进行共识同步了。</p>
+<h3 id="3-运行程序验证效果" class="article-heading"><a href="#3-运行程序验证效果" class="headerlink" title="3. 运行程序验证效果"></a>3. 运行程序验证效果<a class="article-anchor" href="#3-运行程序验证效果" aria-hidden="true"></a></h3><p>首先，由于配置文件是自己定制的，所以需要将其放置在默认位置处（目录不存在则创建之）:</p>
+<blockquote>
+<p>Windows   : %HOMEPATH%\AppData\Roaming\Metaverse<br>Apple OSX : ~/Library/Application\ Support/Metaverse<br>Linux/Uinx: ~/.metaverse</p>
+</blockquote>
+<p>然后，在两台机器上分别启动 <code>mvsd</code> 程序：</p>
+<blockquote>
+<p>./mvsd</p>
+</blockquote>
+<p>程序运行输出：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">20180124T130912 INFO [server] mvsd version 0.7.3</span><br><span class="line">20180124T130912 INFO [server] ================= startup ==================</span><br><span class="line">20180124T130912 ERROR [server] ================= startup ==================</span><br><span class="line">20180124T130912 FATAL [server] ================= startup ==================</span><br><span class="line">20180124T130912 INFO [server] Using config file: &quot;/home/jowen/.metaverse/mvs.conf&quot;</span><br><span class="line">20180124T130912 INFO [server] Please wait while the server is starting...</span><br><span class="line">20180124T130912 INFO [node] Starting manual session.</span><br><span class="line">20180124T130912 INFO [server] Seeding is complete.</span><br><span class="line">20180124T130912 INFO [http] Http Service listen on 0.0.0.0:8820</span><br><span class="line">20180124T130912 INFO [MONGO] Websocket Service listen on 0.0.0.0:8821</span><br><span class="line">20180124T130912 INFO [node] Node start height is (0).</span><br><span class="line">20180124T130912 INFO [node] Starting inbound session.</span><br><span class="line">20180124T130912 INFO [node] Starting outbound session.</span><br><span class="line">20180124T130912 INFO [server] Bound public query service to tcp://*:9091</span><br><span class="line">20180124T130912 INFO [server] Server is started.</span><br></pre></td></tr></table></figure></p>
+<h3 id="4-执行客户端命令" class="article-heading"><a href="#4-执行客户端命令" class="headerlink" title="4. 执行客户端命令"></a>4. 执行客户端命令<a class="article-anchor" href="#4-执行客户端命令" aria-hidden="true"></a></h3><p>至此，私有链已经搭建完成，可以通过 <code>JSON-RPC</code> 或者 <code>mvs-cli</code> 进行接口调用了。两台电脑可以看成是两个独立的帐户参与方，当然你也可以继续添加电脑参与进来，只要配置文件中的 <code>self</code>, <code>identifier</code> 和 <code>seed</code> 设置正确，<strong>并且电脑之间是可以互连的</strong>就行。</p>
+<p>以下是一些简单的接口调用，更多是为了辅助验证私有链状态正常。<br>更多接口说明请参见：<a href="command-line.html">命令行使用</a> 和 <a href="../api_v2/index.html">API v2 Usage</a></p>
+<p>获取版本信息：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getinfo</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"database-version"</span> : <span class="string">"0.6.2"</span>,</span><br><span class="line">	<span class="string">"difficulty"</span> : <span class="string">"1"</span>,</span><br><span class="line">	<span class="string">"hash-rate"</span> : 0,</span><br><span class="line">	<span class="string">"height"</span> : 0,</span><br><span class="line">	<span class="string">"is-mining"</span> : <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"network-assets-count"</span> : 0,</span><br><span class="line">	<span class="string">"peers"</span> : 2,</span><br><span class="line">	<span class="string">"protocol-version"</span> : 70012,</span><br><span class="line">	<span class="string">"testnet"</span> : <span class="literal">false</span>,</span><br><span class="line">	<span class="string">"wallet-account-count"</span> : 1,</span><br><span class="line">	<span class="string">"wallet-version"</span> : <span class="string">"0.7.3"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>获取peer信息（如果没有则可能配置或者网络有问题）：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getpeerinfo</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"peers"</span> : </span><br><span class="line">	[</span><br><span class="line">		<span class="string">"172.100.1.22:5251"</span>,</span><br><span class="line">		<span class="string">"172.100.1.22:33146"</span></span><br><span class="line">	]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>创建新账户：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli getnewaccount test1 passwd1</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"default-address"</span> : <span class="string">"MAGRQAbQj2uZMfChXqgpJoXwCkDgfw9ZK1"</span>,</span><br><span class="line">	<span class="string">"mnemonic"</span> : <span class="string">"discover glance limit similar stable comic patient protect media correct sorry capital object foil noise ill beauty teach hole monster half banana enforce lion"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>开始挖矿赚钱：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli startmining test1 passwd1</span><br><span class="line">solo mining started at MKWjVNAGSDjhQmUW9VUwcBNGTscYozNopJ</span><br></pre></td></tr></table></figure></p>
+<p>获取区块高度（注意到没有，这里我使用了JSON-RPC）：<br>块高为0说明当前是起源块，是纯净的私有链。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getheight","params":[],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v2</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span> : 25,</span><br><span class="line">	<span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">	<span class="string">"result"</span> : 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>等待一段时间，再次获取块高：<br>当块高不为0时，说明已经挖到矿了。注意，挖矿需要时间，验证区块也需要时间。<br>所以在接口测试时可以通过修改源码降低挖矿难度，从而提升挖矿速度。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getheight","params":[],"id":25&#125;'</span> http://127.0.0.1:8820/rpc/v2</span><br><span class="line">&#123;</span><br><span class="line">	<span class="string">"id"</span> : 25,</span><br><span class="line">	<span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">	<span class="string">"result"</span> : 29999</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>当挖到足够多矿时则通过 <code>stopmining</code> 停止挖矿，停止挖矿有时需要更长时间。<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN bin]$ ./mvs-cli startmining test1 passwd1</span><br></pre></td></tr></table></figure></p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="testnet.html" class="article-footer-prev" title="测试网络"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="setup_mining_pool.html" class="article-footer-next" title="搭建简易矿池"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建私有链目的"><span class="toc-text">搭建私有链目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搭建私有链步骤"><span class="toc-text">搭建私有链步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-获取钱包软件"><span class="toc-text">1. 获取钱包软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-修改配置"><span class="toc-text">2. 修改配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-运行程序验证效果"><span class="toc-text">3. 运行程序验证效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-执行客户端命令"><span class="toc-text">4. 执行客户端命令</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link current">搭建私有链</a><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link current">搭建私有链</a><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/private-chain.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

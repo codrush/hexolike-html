@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>元界智能资产(MST)使用说明 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/assets-operations.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/assets-operations.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/assets-operations.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="MST 新增特性 MST 介绍 MST 新增特性 - 发行 MST 新增特性 - 增发 MST 新增特性 - 条件释放 MST 新增特性 - 多重签名 MST 新增特性 - 域名和证书 MST 新增特性 - 销毁   以下为 v0.8.0 之前的 MST 功能，以及 v0.8.0 对这些功能的扩展。 前提简述这里主要介绍资产相关的命令行操作，其它的命令可以参考 Command-line 首先，你要">
+<meta property="og:type" content="website">
+<meta property="og:title" content="元界智能资产(MST)使用说明">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/assets-operations.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="MST 新增特性 MST 介绍 MST 新增特性 - 发行 MST 新增特性 - 增发 MST 新增特性 - 条件释放 MST 新增特性 - 多重签名 MST 新增特性 - 域名和证书 MST 新增特性 - 销毁   以下为 v0.8.0 之前的 MST 功能，以及 v0.8.0 对这些功能的扩展。 前提简述这里主要介绍资产相关的命令行操作，其它的命令可以参考 Command-line 首先，你要">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="元界智能资产(MST)使用说明">
+<meta name="twitter:description" content="MST 新增特性 MST 介绍 MST 新增特性 - 发行 MST 新增特性 - 增发 MST 新增特性 - 条件释放 MST 新增特性 - 多重签名 MST 新增特性 - 域名和证书 MST 新增特性 - 销毁   以下为 v0.8.0 之前的 MST 功能，以及 v0.8.0 对这些功能的扩展。 前提简述这里主要介绍资产相关的命令行操作，其它的命令可以参考 Command-line 首先，你要">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/assets-operations.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">元界智能资产(MST)使用说明</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/assets-operations.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="MST-新增特性" class="article-heading"><a href="#MST-新增特性" class="headerlink" title="MST 新增特性"></a>MST 新增特性<a class="article-anchor" href="#MST-新增特性" aria-hidden="true"></a></h2><ol start="0">
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-index.html">MST 介绍</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-issue.html">MST 新增特性 - 发行</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-secondary-issue.html">MST 新增特性 - 增发</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-attenuation.html">MST 新增特性 - 条件释放</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-multi-sig.html">MST 新增特性 - 多重签名</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-certification.html">MST 新增特性 - 域名和证书</a></li>
+<li><a href="https://docs.mvs.org/zh-cn/developers/da-burn.html">MST 新增特性 - 销毁</a></li>
+</ol>
+<hr>
+<p>以下为 v0.8.0 之前的 MST 功能，以及 v0.8.0 对这些功能的扩展。</p>
+<h2 id="前提简述" class="article-heading"><a href="#前提简述" class="headerlink" title="前提简述"></a>前提简述<a class="article-anchor" href="#前提简述" aria-hidden="true"></a></h2><p>这里主要介绍资产相关的命令行操作，其它的命令可以参考 <a href="/zh-cn/docs/command-line.html">Command-line</a></p>
+<p>首先，你要有帐户和数字身份(did)，可以通过 <code>&quot;mvs-cli getnewaccount 帐户名 密码&quot;</code> 和 <code>&quot;mvs-cli issuedid 帐户名 密码 测试地址 测试did&quot;</code> 生成，<strong>生成后切记妥善保存主私钥（mnemonic-key）</strong>。</p>
+<p><strong>为了方便，下文中我统一使用帐户名为 <code>test1</code>，密码为 <code>passwd1</code>，测试did为<code>testdid</code>，地址为<code>测试地址</code>，您在参考时请修改为自己的帐户名和密码，同时注意使用正确的地址。</strong></p>
+<p>有了帐户，如果要发布或发送资产等，你还得确保该帐号下有 ETP 交手续费。可以通过 <code>&quot;mvs-cli getbalance test1 passwd1&quot;</code> 查询帐户总余额详情，也可以通过 <code>&quot;mvs-cli listbalances test1 passwd1&quot;</code> 查询帐户里各个地址下的余额。</p>
+<p>所有命令都可以通过 <code>help</code> 查询帮助，例如使用 <code>&quot;mvs-cli help createasset&quot;</code> 或者 <code>&quot;mvs-cli createasset -h&quot;</code> 查询命令 <code>createasset</code> 的帮助。</p>
+<h2 id="创建资产" class="article-heading"><a href="#创建资产" class="headerlink" title="创建资产"></a>创建资产<a class="article-anchor" href="#创建资产" aria-hidden="true"></a></h2><h3 id="createasset" class="article-heading"><a href="#createasset" class="headerlink" title="createasset"></a>createasset<a class="article-anchor" href="#createasset" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Usage:</span><br><span class="line">mvs-cli createasset [-h] --symbol value --volume value</span><br><span class="line">[--description value] [--issuer value] [--decimalnumber value]</span><br><span class="line">[--rate value] ACCOUNTNAME ACCOUNTAUTH</span><br><span class="line"></span><br><span class="line">选项:</span><br><span class="line">-h [--<span class="built_in">help</span>]          获取帮助。</span><br><span class="line">-d [--description]   资产描述,默认为空。</span><br><span class="line">-i [--issuer]        资产发布人的did。</span><br><span class="line">-n [--decimalnumber] 小数位数，默认为0。</span><br><span class="line">-r [--rate]          资产增发阈值，默认为0。合法取值范围为 -1 到 100，</span><br><span class="line">                     其中 -1 表示可任意增发，0 表示永不增发，</span><br><span class="line">                     1 到 100 表示需要资产持有百分比超过指定阈值才可增发。</span><br><span class="line">-s [--symbol]        资产符号，全网惟一。</span><br><span class="line">-v [--volume]        资产发行总量。</span><br><span class="line"></span><br><span class="line">位置参数:</span><br><span class="line">ACCOUNTNAME          帐户名，必须提供。</span><br><span class="line">ACCOUNTAUTH          帐户密码，必须提供。</span><br><span class="line"></span><br><span class="line">示例：</span><br><span class="line">$ mvs-cli createasset --symbol MVS.TST --volume 1000000000000 --description <span class="string">"testing asset of MVS"</span> --issuer testdid --decimalnumber 8 --rate 30 test1 passwd1</span><br></pre></td></tr></table></figure>
+<p><strong>注：”-r [–rate]” 为新增参数(v0.8.0)，用于资产增发验证。</strong></p>
+<p><strong>注：小数位数（decimalnumber）的意义很重要，请勿必理解。从开发者角度来看，其作用是去除在交易中使用浮点数，命令中全部使用整数以提高运算效率和精度。从普通用户角度来看，其作用是设定最小交易单位，例如当小数位数为8时，最小单位为<code>聪</code>，此时在命令中使用的数值都是以<code>聪</code>为单位的。当小数位数为其它值时，情况类似。如果您觉得这样不太符合您的思维方式，您可以使用默认值0即可。</strong></p>
+<h3 id="扩展功能-v0-8-0" class="article-heading"><a href="#扩展功能-v0-8-0" class="headerlink" title="扩展功能 (v0.8.0)"></a>扩展功能 (v0.8.0)<a class="article-anchor" href="#扩展功能-v0-8-0" aria-hidden="true"></a></h3><ol>
+<li><code>-r [--rate]</code> 为新增参数，用于<strong>增发</strong>的一个验证条件.<br>参考 <a href="https://docs.mvs.org/zh-cn/developers/da-secondary-issue.html">MST 新增特性 - 增发</a></li>
+<li><code>-i [--issuer]</code> 限制发行者必须是数字身份.<br>参考 <a href="https://docs.mvs.org/zh-cn/developers/di-index.html">数字身份 (Avatar)</a></li>
+</ol>
+<h2 id="查询资产" class="article-heading"><a href="#查询资产" class="headerlink" title="查询资产"></a>查询资产<a class="article-anchor" href="#查询资产" aria-hidden="true"></a></h2><p>资产有几种状态：<code>&quot;unissued&quot;</code>，<code>&quot;issued&quot;</code>，<code>&quot;unspent&quot;</code>，分别表示 <code>“未发布”</code>，<code>“已发布”</code>，<code>“未花费”</code>。</p>
+<h3 id="getaccountasset" class="article-heading"><a href="#getaccountasset" class="headerlink" title="getaccountasset"></a>getaccountasset<a class="article-anchor" href="#getaccountasset" aria-hidden="true"></a></h3><p>根据帐户获取资产，包含未发布资产。返回结果中含有资产的地址信息。<br><strong>注： 如果指定了 SYMBOL 参数，则返回指定 SYMBOL 的资产；否则返回该账户下所有的资产。</strong><br><strong>输出资产的数量是各个地址下所有资产数量的总和，按地址进行汇总计算。</strong><br><strong>本命令不输出未发布的资产。</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mvs-cli getaccountasset test1 passwd1</span><br></pre></td></tr></table></figure></p>
+<h3 id="getaddressasset" class="article-heading"><a href="#getaddressasset" class="headerlink" title="getaddressasset"></a>getaddressasset<a class="article-anchor" href="#getaddressasset" aria-hidden="true"></a></h3><p>根据地址获取<strong>已成功发布</strong>资产<br><strong>输出资产的数量是该地址下所有资产数量的总和。</strong><br><strong>本命令不输出未发布的资产。</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mvs-cli getaddressasset MKWjVNAGSDjhQmUW9VUwcBNGTscYozNopJ</span><br></pre></td></tr></table></figure></p>
+<h3 id="listassets" class="article-heading"><a href="#listassets" class="headerlink" title="listassets"></a>listassets<a class="article-anchor" href="#listassets" aria-hidden="true"></a></h3><p>获取全网资产或指定帐户资产总计<br><strong>注： 如果没有指定账户，则列出所有全网已发布的资产。否则列出指定账户下的所有资产（包括未发布的本地资产）。</strong><br><strong>输出资产的数量是所有资产数量的总和，已发布资产和未发布资产分别列出，按账户求和。</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有已成功发布的资产</span></span><br><span class="line">$ mvs-cli listassets</span><br><span class="line"><span class="comment"># 列出指定帐户的资产，包含未发布资产。返回结果中不含资产地址信息。</span></span><br><span class="line">$ mvs-cli listassets test1 passwd1</span><br></pre></td></tr></table></figure></p>
+<h3 id="getasset" class="article-heading"><a href="#getasset" class="headerlink" title="getasset"></a>getasset<a class="article-anchor" href="#getasset" aria-hidden="true"></a></h3><p>获取<strong>已成功发布</strong>的资产<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 获取所有已成功发布的资产符号列表</span></span><br><span class="line">$ mvs-cli getasset</span><br><span class="line"><span class="comment"># 获取已成功发布的指定资产符号的资产</span></span><br><span class="line">$ mvs-cli getasset MVS.TST</span><br></pre></td></tr></table></figure></p>
+<h3 id="扩展功能-v0-8-0-1" class="article-heading"><a href="#扩展功能-v0-8-0-1" class="headerlink" title="扩展功能 (v0.8.0)"></a>扩展功能 (v0.8.0)<a class="article-anchor" href="#扩展功能-v0-8-0-1" aria-hidden="true"></a></h3><ol>
+<li><code>listassets</code>, <code>getasset</code>, <code>getaddressasset</code> and <code>getaccountasset</code> 有一个 <code>--cert</code> 选项用于获取资产证书。</li>
+</ol>
+<h2 id="删除本地资产-未发布的资产" class="article-heading"><a href="#删除本地资产-未发布的资产" class="headerlink" title="删除本地资产(未发布的资产)"></a>删除本地资产(未发布的资产)<a class="article-anchor" href="#删除本地资产-未发布的资产" aria-hidden="true"></a></h2><h3 id="deletelocalasset" class="article-heading"><a href="#deletelocalasset" class="headerlink" title="deletelocalasset"></a>deletelocalasset<a class="article-anchor" href="#deletelocalasset" aria-hidden="true"></a></h3><p>删除本地资产，也即还没发布的资产。<strong>注：资产一经发布，则不能删除了。</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 临时创建一个本地资产，再将其删除。</span></span><br><span class="line">$ mvs-cli createasset --symbol MVS.TST2 --volume 10000 --description <span class="string">"temp testing asset of MVS"</span> --issuer testdid --decimalnumber 0 test1 passwd1</span><br><span class="line">$ mvs-cli deletelocalasset --symbol MVS.TST2 test1 passwd1</span><br></pre></td></tr></table></figure></p>
+<h2 id="发布资产" class="article-heading"><a href="#发布资产" class="headerlink" title="发布资产"></a>发布资产<a class="article-anchor" href="#发布资产" aria-hidden="true"></a></h2><p><strong>注：已经发布的资产不能再次发布，再次发布会报错”validate transaction failure”</strong></p>
+<h3 id="issue" class="article-heading"><a href="#issue" class="headerlink" title="issue"></a>issue<a class="article-anchor" href="#issue" aria-hidden="true"></a></h3><p>该命令所需三个参数依次为：帐户名，密码，资产符号<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mvs-cli issue test1 passwd1 MVS.TST</span><br></pre></td></tr></table></figure></p>
+<p>可以通过选项 <code>&quot;--fee 整数值&quot;</code> 设定发布资产的手续费，默认为10ETP。手续费多的话可能矿工们更愿意将此次交易打包进区块中去，交易确认的时间可能会更短一些。一般使用默认值即可。</p>
+<h3 id="扩展功能-v0-8-0-2" class="article-heading"><a href="#扩展功能-v0-8-0-2" class="headerlink" title="扩展功能 (v0.8.0)"></a>扩展功能 (v0.8.0)<a class="article-anchor" href="#扩展功能-v0-8-0-2" aria-hidden="true"></a></h3><ol>
+<li>可以通过 <code>-m [--model]</code> 参数指定条件释放模型<br>参考 <a href="https://docs.mvs.org/zh-cn/developers/da-attenuation.html">MST 新增特性 - 条件释放</a></li>
+<li>发布资产时会自动颁发一些相应的证书<br>参考 <a href="https://docs.mvs.org/zh-cn/developers/da-certification.html">MST 新增特性 - 域名和证书</a></li>
+</ol>
+<h2 id="发送资产" class="article-heading"><a href="#发送资产" class="headerlink" title="发送资产"></a>发送资产<a class="article-anchor" href="#发送资产" aria-hidden="true"></a></h2><p><strong>注：资产需要发布后才能发送</strong></p>
+<h3 id="sendasset" class="article-heading"><a href="#sendasset" class="headerlink" title="sendasset"></a>sendasset<a class="article-anchor" href="#sendasset" aria-hidden="true"></a></h3><p>该命令所需五个参数依次为：帐户名，密码，接收地址，资产符号，发送数量<br><strong>注： 只能指定接收地址, 不需指定发送地址</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mvs-cli sendasset test1 passwd1 MQTAjXoteFzzZoWpNEamG88gf5b82z6o9Q MVS.TST 100</span><br></pre></td></tr></table></figure></p>
+<h3 id="sendassetfrom" class="article-heading"><a href="#sendassetfrom" class="headerlink" title="sendassetfrom"></a>sendassetfrom<a class="article-anchor" href="#sendassetfrom" aria-hidden="true"></a></h3><p>该命令所需六个参数依次为：帐户名，密码，发送地址，接收地址，资产符号，发送数量<br><strong>注： 手续费从发送地址扣除</strong><br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ mvs-cli sendassetfrom test1 passwd1 MKWjVNAGSDjhQmUW9VUwcBNGTscYozNopJ MQTAjXoteFzzZoWpNEamG88gf5b82z6o9Q MVS.TST 900</span><br></pre></td></tr></table></figure></p>
+<p>以上两个命令均可以通过选项 <code>&quot;--fee 整数值&quot;</code> 设定发送资产的手续费，默认为10000ETP bits(也即0.0001ETP)。手续费多的话可能矿工们更愿意将此次交易打包进区块中去，交易确认的时间可能会更短一些。一般使用默认值即可。</p>
+<h3 id="扩展功能-v0-8-0-3" class="article-heading"><a href="#扩展功能-v0-8-0-3" class="headerlink" title="扩展功能 (v0.8.0)"></a>扩展功能 (v0.8.0)<a class="article-anchor" href="#扩展功能-v0-8-0-3" aria-hidden="true"></a></h3><ol>
+<li>可以通过 <code>-m [--model]</code> 参数指定条件释放模型<br>参考 <a href="https://docs.mvs.org/zh-cn/developers/da-attenuation.html">MST 新增特性 - 条件释放</a></li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="recognize-fronzen-ETP-transaction-outputs.html" class="article-footer-prev" title="识别冻结的ETP"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="mpc1-upgrade-manual.html" class="article-footer-next" title="MPC1升级手册"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#MST-新增特性"><span class="toc-text">MST 新增特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前提简述"><span class="toc-text">前提简述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建资产"><span class="toc-text">创建资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#createasset"><span class="toc-text">createasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展功能-v0-8-0"><span class="toc-text">扩展功能 (v0.8.0)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询资产"><span class="toc-text">查询资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getaccountasset"><span class="toc-text">getaccountasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getaddressasset"><span class="toc-text">getaddressasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listassets"><span class="toc-text">listassets</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getasset"><span class="toc-text">getasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展功能-v0-8-0-1"><span class="toc-text">扩展功能 (v0.8.0)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除本地资产-未发布的资产"><span class="toc-text">删除本地资产(未发布的资产)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#deletelocalasset"><span class="toc-text">deletelocalasset</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布资产"><span class="toc-text">发布资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#issue"><span class="toc-text">issue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展功能-v0-8-0-2"><span class="toc-text">扩展功能 (v0.8.0)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送资产"><span class="toc-text">发送资产</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sendasset"><span class="toc-text">sendasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sendassetfrom"><span class="toc-text">sendassetfrom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展功能-v0-8-0-3"><span class="toc-text">扩展功能 (v0.8.0)</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link">搭建私有链</a><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link current">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link">搭建私有链</a><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link current">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/assets-operations.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

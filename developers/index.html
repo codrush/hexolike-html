@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Tech-Overview of MVS | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/index.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/index.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/index.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="SummaryThe official implementation of MVS full node is libbitcoin based, it means Metaverse is more close to bitcoin standard. However, here are these differences:  self-defining UTXO based smart toke">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tech-Overview of MVS">
+<meta property="og:url" content="https://docs.mvs.org/developers/index.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="SummaryThe official implementation of MVS full node is libbitcoin based, it means Metaverse is more close to bitcoin standard. However, here are these differences:  self-defining UTXO based smart toke">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://docs.mvs.org/zh-cn/developers/images/ledger-struct.png">
+<meta property="og:image" content="https://docs.mvs.org/zh-cn/developers/images/mvs-architecture.png">
+<meta property="og:image" content="https://docs.mvs.org/zh-cn/developers/images/mvs-libraries.png">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tech-Overview of MVS">
+<meta name="twitter:description" content="SummaryThe official implementation of MVS full node is libbitcoin based, it means Metaverse is more close to bitcoin standard. However, here are these differences:  self-defining UTXO based smart toke">
+<meta name="twitter:image" content="https://docs.mvs.org/zh-cn/developers/images/ledger-struct.png">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/index.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Tech-Overview of MVS</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/index.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Summary" class="article-heading"><a href="#Summary" class="headerlink" title="Summary"></a>Summary<a class="article-anchor" href="#Summary" aria-hidden="true"></a></h2><p>The official implementation of MVS full node is <a href="https://github.com/libbitcoin" target="_blank" rel="noopener">libbitcoin</a> based, it means Metaverse is more close to bitcoin standard.</p>
+<p>However, here are these differences:</p>
+<ol>
+<li>self-defining UTXO based smart tokens, which means users can issue their own token like what bitcoin does without any programming experience.</li>
+<li>self-defining UTXO based digital identity, aim to build a digital credit system through MVS blockchain.</li>
+</ol>
+<p>As for Bitcoin, all UTXO only serves Bitcoin, but it does not restrict that the type of token must be specified. Thus, we extended this model design. We added the attachment field in the output which provides type extensions of MST so that all MST can have the same level of technical features as bitcoin without having to fork bitcoins to create their own tokens.</p>
+<h2 id="UTXO-Extensions" class="article-heading"><a href="#UTXO-Extensions" class="headerlink" title="UTXO Extensions"></a>UTXO Extensions<a class="article-anchor" href="#UTXO-Extensions" aria-hidden="true"></a></h2><p><img src="/zh-cn/developers/images/ledger-struct.png" alt><br>TO be written… </p>
+<h2 id="Modifications" class="article-heading"><a href="#Modifications" class="headerlink" title="Modifications"></a>Modifications<a class="article-anchor" href="#Modifications" aria-hidden="true"></a></h2><p>MVS is using <a href="https://github.com/ethereum/ethash" target="_blank" rel="noopener">ETHASH</a> which is actived on Ethererum mainnet for mining.<br>The JSON-RPC Server is based on <a href="https://github.com/cesanta/mongoose" target="_blank" rel="noopener">mongoose</a>, which is a lignt embedded HTTP server.<br>To be listed… </p>
+<h2 id="Full-Node-Architecture" class="article-heading"><a href="#Full-Node-Architecture" class="headerlink" title="Full Node Architecture"></a>Full Node Architecture<a class="article-anchor" href="#Full-Node-Architecture" aria-hidden="true"></a></h2><p><img src="/zh-cn/developers/images/mvs-architecture.png" alt><br>TO be written… </p>
+<h2 id="Compiling-dependency" class="article-heading"><a href="#Compiling-dependency" class="headerlink" title="Compiling dependency"></a>Compiling dependency<a class="article-anchor" href="#Compiling-dependency" aria-hidden="true"></a></h2><p><img src="/zh-cn/developers/images/mvs-libraries.png" alt></p>
+<p>We intergrated 9 libbitcoin modules： <a href="https://github.com/libbitcoin/libbitcoin" target="_blank" rel="noopener">libbitcoin</a>, <a href="https://github.com/libbitcoin/libbitcoin-explorer" target="_blank" rel="noopener">libbitcoin-explorer</a>, <a href="https://github.com/libbitcoin/libbitcoin-database" target="_blank" rel="noopener">libbitcoin-database</a>, <a href="https://github.com/libbitcoin/libbitcoin-blockchain" target="_blank" rel="noopener">libbitcoin-blockchain</a>, <a href="https://github.com/libbitcoin/libbitcoin-server" target="_blank" rel="noopener">libbitcoin-server</a>, <a href="https://github.com/libbitcoin/libbitcoin-network" target="_blank" rel="noopener">libbitcoin-network</a>, <a href="https://github.com/libbitcoin/libbitcoin-protocol" target="_blank" rel="noopener">libbitcoin-protocol</a>, <a href="https://github.com/libbitcoin/libbitcoin-node" target="_blank" rel="noopener">libbitcoin-node</a>, <a href="https://github.com/libbitcoin/libbitcoin-consensus" target="_blank" rel="noopener">libbitcoin-consensus</a>, into MVS full node with libbitcoin v2.</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="mvs-whitepaper.html" class="article-footer-next" title="Brief MVS whitepaper"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/developers/index.html';
+  var disqus_title = "Tech-Overview of MVS";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-text">Summary</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UTXO-Extensions"><span class="toc-text">UTXO Extensions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modifications"><span class="toc-text">Modifications</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Full-Node-Architecture"><span class="toc-text">Full Node Architecture</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Compiling-dependency"><span class="toc-text">Compiling dependency</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link current">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link current">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/index.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

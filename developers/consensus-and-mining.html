@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>元界的共识算法与挖矿 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/consensus-and-mining.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/consensus-and-mining.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/consensus-and-mining.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="元界的共识算法与挖矿1 介绍元界是一个公有区块链，在第一阶段用工作量证明机制(POW)达成网络共识。POW机制会选取最大工作量的链作为有效链。元界网络去中心化共识由所有节点进行以下独立的几个运算相互作用产生：  每个独立全节点依据规则对每个交易验证。 挖矿节点把这些交易独立打包进新块，通过POW工作量算法计算锻造出新块。 每个节点对新区块进行校验，并依据最大工作量选择新区块组装链。  2 挖矿算法">
+<meta property="og:type" content="website">
+<meta property="og:title" content="元界的共识算法与挖矿">
+<meta property="og:url" content="https://docs.mvs.org/developers/consensus-and-mining.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="元界的共识算法与挖矿1 介绍元界是一个公有区块链，在第一阶段用工作量证明机制(POW)达成网络共识。POW机制会选取最大工作量的链作为有效链。元界网络去中心化共识由所有节点进行以下独立的几个运算相互作用产生：  每个独立全节点依据规则对每个交易验证。 挖矿节点把这些交易独立打包进新块，通过POW工作量算法计算锻造出新块。 每个节点对新区块进行校验，并依据最大工作量选择新区块组装链。  2 挖矿算法">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="元界的共识算法与挖矿">
+<meta name="twitter:description" content="元界的共识算法与挖矿1 介绍元界是一个公有区块链，在第一阶段用工作量证明机制(POW)达成网络共识。POW机制会选取最大工作量的链作为有效链。元界网络去中心化共识由所有节点进行以下独立的几个运算相互作用产生：  每个独立全节点依据规则对每个交易验证。 挖矿节点把这些交易独立打包进新块，通过POW工作量算法计算锻造出新块。 每个节点对新区块进行校验，并依据最大工作量选择新区块组装链。  2 挖矿算法">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/consensus-and-mining.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">元界的共识算法与挖矿</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/consensus-and-mining.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="元界的共识算法与挖矿" class="article-heading"><a href="#元界的共识算法与挖矿" class="headerlink" title="元界的共识算法与挖矿"></a>元界的共识算法与挖矿<a class="article-anchor" href="#元界的共识算法与挖矿" aria-hidden="true"></a></h1><h1 id="1-介绍" class="article-heading"><a href="#1-介绍" class="headerlink" title="1 介绍"></a>1 介绍<a class="article-anchor" href="#1-介绍" aria-hidden="true"></a></h1><p>元界是一个公有区块链，在第一阶段用工作量证明机制(POW)达成网络共识。POW机制会选取最大工作量的链作为有效链。元界网络去中心化共识由所有节点进行以下独立的几个运算相互作用产生：</p>
+<ul>
+<li>每个独立全节点依据规则对每个交易验证。</li>
+<li>挖矿节点把这些交易独立打包进新块，通过POW工作量算法计算锻造出新块。</li>
+<li>每个节点对新区块进行校验，并依据最大工作量选择新区块组装链。</li>
+</ul>
+<h1 id="2-挖矿算法" class="article-heading"><a href="#2-挖矿算法" class="headerlink" title="2 挖矿算法"></a>2 挖矿算法<a class="article-anchor" href="#2-挖矿算法" aria-hidden="true"></a></h1><p>元界采用了Ethash作为POW算法。Ethash是一种改良版本Dagger-Hashimoto算法。在元界区块中存有难度值，Ethash算法会通过穷举法找到一个随机数，使得结果小于难度阈值。这个随机值作为工作量计算结果保存在区块中。在Ethash中由于输出结果是平均分布的，所以穷举法是最好的方法的，寻找这样的随机数的平均时间完全取决于难度阈值的调整。Ethash算法是一个对I/O位宽要求高，内存需求大的算法,这样可以抵御矿机ASIC化。</p>
+<h2 id="2-1-Ethash介绍" class="article-heading"><a href="#2-1-Ethash介绍" class="headerlink" title="2.1  Ethash介绍"></a>2.1  Ethash介绍<a class="article-anchor" href="#2-1-Ethash介绍" aria-hidden="true"></a></h2><p>Ethash算法流程如下：</p>
+<ol>
+<li>根据区块高度计算出一个seed，每30000个块调整一次seed。</li>
+<li>从seed生成出一个16MB的伪随机数据缓存,一般给非全节点钱包使用。</li>
+<li>从伪随机数据缓存，生成一个DAG数据集,这个文件随着块高线性增长,每30000个块调整一次。一般全节点或者旷工节点使用DAG数据集。</li>
+<li>挖矿计算就是从DAG数据集中抓取数据并且做哈希运算。但是仅根据16MB的伪随机数据缓存就可以验证挖矿结果。</li>
+</ol>
+<p>数据集生成与挖矿计算示例Python代码参考<a href="https://github.com/ethereum/wiki/wiki/Ethash" target="_blank" rel="noopener">https://github.com/ethereum/wiki/wiki/Ethash</a></p>
+<h2 id="2-2-难度调整" class="article-heading"><a href="#2-2-难度调整" class="headerlink" title="2.2 难度调整"></a>2.2 难度调整<a class="article-anchor" href="#2-2-难度调整" aria-hidden="true"></a></h2><p>难度是限制合格解的空间,达到控制平均出块需要计算的次数,从而达到控制出块时间。ETP难度以单个区块进行调整，可以非常迅速的适应算力的变化。每次调整都是在上一个区块难度基础上进行调整，使得区块难度不会出现跳变，从而出现算力“暴击”的问题。计算一个区块难度时需要以下几个参数：上一块难度 _parent.bits， 上一块时间戳 _parent.timestamp,当前块时间戳_bi.timestamp。如果出块间隔大于设定时间，当前块难度difficulty=  _parent.bits - (_parent.bits/1024)；反之则difficulty=  _parent.bits + (_parent.bits/1024)。</p>
+<h1 id="3-挖矿奖励" class="article-heading"><a href="#3-挖矿奖励" class="headerlink" title="3 挖矿奖励"></a>3 挖矿奖励<a class="article-anchor" href="#3-挖矿奖励" aria-hidden="true"></a></h1><p>在元界网络早期,节点数目总量不足，网络系统的安全存在隐患。元界网络采用类经济奖励方式给挖矿节点分配ETP。矿工锻造出来一个区块奖励如下：</p>
+<ol>
+<li><p>Coinbase奖励，Coinbase奖励从初始开始是3 ETP，块高每增长50万块，Coinbase奖励的ETP数目会减少5%。</p>
+</li>
+<li><p>区块包含的交易手续费和资产发行手续费。</p>
+</li>
+</ol>
+<p>未来随着元界项目平稳运作，块高到达一定数值，POW的挖矿奖励会逐渐减少，元界将切换到改良的DPOS共识算法上面。</p>
+<h1 id="4-挖矿JSON-RPC-API" class="article-heading"><a href="#4-挖矿JSON-RPC-API" class="headerlink" title="4  挖矿JSON-RPC-API"></a>4  挖矿JSON-RPC-API<a class="article-anchor" href="#4-挖矿JSON-RPC-API" aria-hidden="true"></a></h1><p>外部挖矿程序与元界主节点钱包通过rpc请求进行通信。元界钱包提供了setmininginfo,getwork和submitwork等rpc api.详细使用方法可以参考API文档。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="account-model.html" class="article-footer-prev" title="Account model"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="database.html" class="article-footer-next" title="Database"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/developers/consensus-and-mining.html';
+  var disqus_title = "元界的共识算法与挖矿";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#元界的共识算法与挖矿"><span class="toc-text">元界的共识算法与挖矿</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-介绍"><span class="toc-text">1 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-挖矿算法"><span class="toc-text">2 挖矿算法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Ethash介绍"><span class="toc-text">2.1  Ethash介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-难度调整"><span class="toc-text">2.2 难度调整</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-挖矿奖励"><span class="toc-text">3 挖矿奖励</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-挖矿JSON-RPC-API"><span class="toc-text">4  挖矿JSON-RPC-API</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link current">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link current">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/consensus-and-mining.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Metaverse Docs</title>
+  
+  <subtitle>The New Reality</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://docs.mvs.org/"/>
+  <updated>2019-08-13T16:15:40.131Z</updated>
+  <id>https://docs.mvs.org/</id>
+  
+  <author>
+    <name>MVS Core Developers</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Wallet MPC1(v0.9.0) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2019/02/13/metaverse-wallet-mpc1-v0-9-0-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2019/02/13/metaverse-wallet-mpc1-v0-9-0-releasenotes/</id>
+    <published>2019-02-13T00:00:00.000Z</published>
+    <updated>2019-08-13T16:15:40.131Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CAUTION"><a href="#CAUTION" class="headerlink" title="CAUTION"></a>CAUTION</h2><p>MPC1 is a hard-fork version which upgrades MVS mainnet protocol, new features will be actived at height <strong>1,924,000</strong>.<br>After height 1,924,000, if you do not upgrade (only full-node, Desktop/Linux), MVS wallet no blocks synchronizing.<br>Please refer to <a href="https://docs.mvs.org/docs/mpc1-upgrade-manual.html">Manual of upgrading to MPC1</a></p><font color="#FF0000"> <b><br>After wallet program upgraded, please waiting for synchronizing to the latest height, DO NOT EXIT.<br>当钱包程序升级以后，请等待区块同步到最新，请勿直接退出；<br></b></font><h2 id="Metaverse-Full-Node-Wallet-0-9-0-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-9-0-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.9.0 Release Notes"></a>Metaverse Full Node Wallet 0.9.0 Release Notes</h2><h3 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h3><ol><li>Supports PoW &amp; PoS</li><li>Supports MST mining</li><li>Supports <a href="https://github.com/bitcoin/bips/blob/master/bip-0065.mediawiki" target="_blank" rel="noopener">BIP65</a>.</li><li>Supports <a href="https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki" target="_blank" rel="noopener">BIP68</a>.</li><li>Supports <a href="https://github.com/bitcoin/bips/blob/master/bip-0112.mediawiki" target="_blank" rel="noopener">BIP112</a>.</li><li>Add new cli commands: lock, getlocked, getstakeinfo.</li><li>Improve listassets to query cert by type.</li></ol><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech &amp; Bugfix"></a>Tech &amp; Bugfix</h3><ol><li><a href="https://github.com/mvs-org/metaverse/issues/336" target="_blank" rel="noopener">Custom config file</a></li><li><a href="https://github.com/mvs-org/metaverse/issues/325" target="_blank" rel="noopener">Mining difficulty adjustment</a></li><li>Remove deposit.</li></ol><h3 id="PoS-amp-MST-Mining"><a href="#PoS-amp-MST-Mining" class="headerlink" title="PoS &amp; MST Mining"></a>PoS &amp; MST Mining</h3><p>Please refer to <a href="https://docs.mvs.org/docs/pillars.html">PoS &amp; MST Mining</a></p><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;CAUTION&quot;&gt;&lt;a href=&quot;#CAUTION&quot; class=&quot;headerlink&quot; title=&quot;CAUTION&quot;&gt;&lt;/a&gt;CAUTION&lt;/h2&gt;&lt;p&gt;MPC1 is a hard-fork version which upgrades MVS mai
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.5) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/12/18/metaverse-wallet-supernova-v0-8-5-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/12/18/metaverse-wallet-supernova-v0-8-5-releasenotes/</id>
+    <published>2018-12-18T00:00:00.000Z</published>
+    <updated>2019-08-13T16:15:16.034Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-8-5-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-5-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.5 Release Notes"></a>Metaverse Full Node Wallet 0.8.5 Release Notes</h2><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><h4 id="Fullnode-mvsd"><a href="#Fullnode-mvsd" class="headerlink" title="Fullnode-mvsd"></a>Fullnode-mvsd</h4><ol><li>Update createnewaccount to generate new address/private-key/wif.</li><li>Update createrawtx to specify utxo.</li><li>Update signrawtx to sign with private-key or wif.</li><li>Update getaddressetp to return utxos.</li><li>Add new cli command: popblock.</li><li>Update cache policy of host.cache.</li><li>Improve startup flow.</li><li>Implement absolute timelocks: nLocktime and CLTV.</li><li>Implement relative timelocks: nSequence and CSV.</li><li>Avatar is supported on most cli commands.</li></ol><h3 id="Download-Wallet"><a href="#Download-Wallet" class="headerlink" title="Download Wallet"></a>Download Wallet</h3><p><a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">Download Wallet</a></p><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-8-5-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-8-5-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.4) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/09/26/metaverse-wallet-supernova-v0-8-4-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/09/26/metaverse-wallet-supernova-v0-8-4-releasenotes/</id>
+    <published>2018-09-26T00:00:00.000Z</published>
+    <updated>2019-08-13T16:15:02.121Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-8-4-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-4-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.4 Release Notes"></a>Metaverse Full Node Wallet 0.8.4 Release Notes</h2><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><h4 id="Fullnode-mvsd"><a href="#Fullnode-mvsd" class="headerlink" title="Fullnode-mvsd"></a>Fullnode-mvsd</h4><ol><li>Fix or implement following issues: <a href="https://github.com/mvs-org/metaverse/issues/331" target="_blank" rel="noopener">331</a>, <a href="https://github.com/mvs-org/metaverse/issues/322" target="_blank" rel="noopener">322</a></li></ol><h3 id="Download-Wallet"><a href="#Download-Wallet" class="headerlink" title="Download Wallet"></a>Download Wallet</h3><p><a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">Download Wallet</a></p><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-8-4-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-8-4-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.3) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/08/30/metaverse-wallet-supernova-v0-8-3-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/08/30/metaverse-wallet-supernova-v0-8-3-releasenotes/</id>
+    <published>2018-08-30T00:00:00.000Z</published>
+    <updated>2019-08-13T16:14:42.373Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-8-3-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-3-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.3 Release Notes"></a>Metaverse Full Node Wallet 0.8.3 Release Notes</h2><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><h4 id="Fullnode-mvsd"><a href="#Fullnode-mvsd" class="headerlink" title="Fullnode-mvsd"></a>Fullnode-mvsd</h4><ol><li>Support swap tokens between ERC20 tokens and MST, <a href="https://docs.mvs.org/docs/cross-chain-swap.html">manual</a>.</li><li>Support burn cert and MIT.</li><li>Support two new kind of certificate: marriage and KYC.</li><li>Support memo when sending asset by cli-command.</li><li>Support query deposited asset by cli-command.</li><li>Support websocket API, related issues:<a href="https://github.com/mvs-org/metaverse/issues/276" target="_blank" rel="noopener">276</a>, <a href="https://github.com/mvs-org/metaverse/issues/321" target="_blank" rel="noopener">321</a>.</li><li>Fix or implement following issues: <a href="https://github.com/mvs-org/metaverse/issues/311" target="_blank" rel="noopener">311</a>, <a href="https://github.com/mvs-org/metaverse/issues/313" target="_blank" rel="noopener">313</a></li></ol><h4 id="Fullnode-Frontend"><a href="#Fullnode-Frontend" class="headerlink" title="Fullnode-Frontend"></a>Fullnode-Frontend</h4><ol><li>Add “Link Ethereum and Metaverse addresses” page</li><li>Add “Swap” option in Transfer MST for compatible MST</li><li>Add pagination of All Avatars list</li><li>Improve Transaction history pagination </li></ol><h3 id="Download-Wallet"><a href="#Download-Wallet" class="headerlink" title="Download Wallet"></a>Download Wallet</h3><p><a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">Download Wallet</a></p><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-8-3-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-8-3-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.2) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/07/17/metaverse-wallet-supernova-v0-8-2-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/07/17/metaverse-wallet-supernova-v0-8-2-releasenotes/</id>
+    <published>2018-07-17T00:00:00.000Z</published>
+    <updated>2019-08-13T16:14:24.852Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-8-2-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-2-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.2 Release Notes"></a>Metaverse Full Node Wallet 0.8.2 Release Notes</h2><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><ol><li>Release <a href="https://docs.mvs.org/zh-cn/api_v3/">APIV3</a>.</li><li>Fix or implement following issues: <a href="https://github.com/mvs-org/metaverse/issues/225" target="_blank" rel="noopener">225</a>,<a href="https://github.com/mvs-org/metaverse/issues/234" target="_blank" rel="noopener">234</a>, <a href="https://github.com/mvs-org/metaverse/issues/235" target="_blank" rel="noopener">235</a>, <a href="https://github.com/mvs-org/metaverse/issues/236" target="_blank" rel="noopener">236</a>, <a href="https://github.com/mvs-org/metaverse/issues/237" target="_blank" rel="noopener">237</a>, <a href="https://github.com/mvs-org/metaverse/issues/313" target="_blank" rel="noopener">313</a> and <a href="https://github.com/mvs-org/metaverse/issues/316" target="_blank" rel="noopener">316</a>.</li><li>Fix bug of data synchronization. </li><li>Release RPC SDKs: <a href="https://github.com/mvshub/mvs_rpc_dotnet" target="_blank" rel="noopener">.Net SDK</a>, <a href="https://github.com/mvshub/mvs_rpc_go" target="_blank" rel="noopener">Go SDK</a> and <a href="https://github.com/mvshub/mvs_rpc_python" target="_blank" rel="noopener">Python SDK</a></li><li>Add new Avatar, MST and MIT logos.</li></ol><h3 id="Download-Wallet"><a href="#Download-Wallet" class="headerlink" title="Download Wallet"></a>Download Wallet</h3><p><a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">Download Wallet</a></p><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-8-2-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-8-2-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.1) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/06/23/metaverse-wallet-supernova-v0-8-1-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/06/23/metaverse-wallet-supernova-v0-8-1-releasenotes/</id>
+    <published>2018-06-23T00:00:00.000Z</published>
+    <updated>2019-08-13T16:14:06.043Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-8-1-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-1-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.1 Release Notes"></a>Metaverse Full Node Wallet 0.8.1 Release Notes</h2><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><ol><li><a href="https://github.com/mvs-org/metaverse/issues/297" target="_blank" rel="noopener">Commands issue fix</a></li><li>Fix bug of data synchronization.</li><li>Fix bug of mvsd blocks.</li></ol><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-8-1-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-8-1-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet SuperNova(v0.8.0) Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/06/07/metaverse-wallet-supernova-v0-8-0-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/06/07/metaverse-wallet-supernova-v0-8-0-releasenotes/</id>
+    <published>2018-06-07T00:00:00.000Z</published>
+    <updated>2019-08-13T16:13:57.019Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="CAUTION"><a href="#CAUTION" class="headerlink" title="CAUTION"></a>CAUTION</h2><p>SuperNova is a hard-fork version which upgrades MVS mainnet protocol, new features will be actived at height <strong>1,270,000</strong>.<br>After height 1,270,000, if you do not upgrade (only full-node, Desktop/Linux), MVS wallet no blocks synchronizing.</p><font color="#FF0000"> <b><br>After wallet program upgraded, please waiting for synchronizing to the latest height, DO NOT EXIT.<br>当钱包程序升级以后，请等待区块同步到最新，请勿直接退出；<br></b></font><h2 id="Metaverse-Full-Node-Wallet-0-8-0-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-8-0-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.8.0 Release Notes"></a>Metaverse Full Node Wallet 0.8.0 Release Notes</h2><h3 id="New-Features"><a href="#New-Features" class="headerlink" title="New Features"></a>New Features</h3><ol><li><a href="https://docs.mvs.org/developers/da-issue.html">New digital asset(MST) features - Issuance</a></li><li><a href="https://docs.mvs.org/developers/da-secondary-issue.html">New digital asset(MST) features - SecondaryIssue</a></li><li><a href="https://docs.mvs.org/developers/da-attenuation.html">New digital asset(MST) features - Conditional Offering</a></li><li><a href="https://docs.mvs.org/developers/da-multi-sig.html">New digital asset(MST) features - Multi-signature</a></li><li><a href="https://docs.mvs.org/developers/da-certification.html">New digital asset(MST) features - Domain-name And Certification</a></li><li><a href="https://docs.mvs.org/developers/da-burn.html">New digital asset(MST) features - Burn</a></li><li><a href="https://docs.mvs.org/developers/di-index.html">Digital identity(Avatar) - Display</a></li><li><a href="https://docs.mvs.org/developers/di-register.html">Digital identity(Avatar) - Register&amp;Bind</a></li><li><a href="https://docs.mvs.org/developers/di-transfer.html">Digital identity(Avatar) - Change</a></li><li><a href="https://docs.mvs.org/developers/di-send.html">Digital identity(Avatar) - Send</a></li><li><a href="https://docs.mvs.org/developers/di-query.html">Digital identity(Avatar) - Query</a></li><li><a href="https://docs.mvs.org/developers/mit-index.html">New digital asset(MIT) - Metaverse Identifiable Token</a></li><li><a href="https://docs.mvs.org/developers/mit-register.html">New digital asset(MIT) - Register</a></li><li><a href="https://docs.mvs.org/developers/mit-transfer.html">New digital asset(MIT) - Transfer</a></li><li><a href="https://docs.mvs.org/developers/mit-query.html">New digital asset(MIT) - Display</a></li><li><a href="https://github.com/mvs-org/metaverse/issues/248" target="_blank" rel="noopener">Share private-key by QRCODE between lightwallet and full node wallet</a></li><li>Lightwallet mainnet upgrade</li><li>Explorer mainnet upgrade</li></ol><h3 id="Tech-amp-Bugfix"><a href="#Tech-amp-Bugfix" class="headerlink" title="Tech&amp;Bugfix"></a>Tech&amp;Bugfix</h3><ol><li><a href="https://github.com/mvs-org/metaverse/issues/292" target="_blank" rel="noopener">Commands issue fix</a></li><li><a href="https://github.com/mvs-org/metaverse/issues/271" target="_blank" rel="noopener">Network sync blocking when hosts.cache polluted</a></li><li><a href="https://github.com/mvs-org/metaverse/issues/290" target="_blank" rel="noopener">Wallet security enhancement</a></li><li><a href="https://github.com/mvs-org/metaverse/issues/268" target="_blank" rel="noopener">Same APIs as Ethererum’s for MVS miners</a></li><li><a href="https://github.com/mvs-org/metaverse/issues" target="_blank" rel="noopener">Other issues more</a></li><li>Add JSON-RPC test-tools</li><li>Performance improvement</li><li>User experience enhancement</li><li>Full-node stability enhancement</li><li>Lightwallet/explorer/testnet upgrade &amp; maintenance</li></ol><h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>If you have any issue, please contact us.<br>Thank you for your continuous support!<br>Metaverse Dev Team.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;CAUTION&quot;&gt;&lt;a href=&quot;#CAUTION&quot; class=&quot;headerlink&quot; title=&quot;CAUTION&quot;&gt;&lt;/a&gt;CAUTION&lt;/h2&gt;&lt;p&gt;SuperNova is a hard-fork version which upgrades MV
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Wallet v0.7.4 Release Notes</title>
+    <link href="https://docs.mvs.org/news/2018/02/13/metaverse-wallet-v0-7-4-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2018/02/13/metaverse-wallet-v0-7-4-releasenotes/</id>
+    <published>2018-02-13T00:00:00.000Z</published>
+    <updated>2019-08-13T16:16:40.301Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Metaverse-Full-Node-Wallet-0-7-4-Release-Notes"><a href="#Metaverse-Full-Node-Wallet-0-7-4-Release-Notes" class="headerlink" title="Metaverse Full Node Wallet 0.7.4 Release Notes"></a>Metaverse Full Node Wallet 0.7.4 Release Notes</h2><ol><li><p>UPnP supporting, the Wallet run in LAN can also provide service to external WAN nodes.</p></li><li><p>Add progress bar ro show the status of synchronization at the Wallet home page.</p></li><li><p>Add more notifications, status information and prompt messages to make Wallet more user friendly.</p></li><li><p>Other optimizations.</p></li><li><p>Performance improvement.</p></li></ol><p>Download：<a href="https://mvs.org#download" target="_blank" rel="noopener">https://mvs.org</a></p><hr><h3 id="The-following-are-some-screenshot-pictures-about-Wallet-Updates"><a href="#The-following-are-some-screenshot-pictures-about-Wallet-Updates" class="headerlink" title="The following are some screenshot pictures about Wallet Updates"></a>The following are some screenshot pictures about Wallet Updates</h3><ol><li><p>Update introduction information at wallet login page.<br><img src="/images/metaverse-wallet-v0.7.4-releasenotes-1.png" alt></p></li><li><p>Other modifications to make Wallet more user friendly.<br><img src="/images/metaverse-wallet-v0.7.4-releasenotes-2.png" alt></p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Metaverse-Full-Node-Wallet-0-7-4-Release-Notes&quot;&gt;&lt;a href=&quot;#Metaverse-Full-Node-Wallet-0-7-4-Release-Notes&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MVS History ReleaseNotes</title>
+    <link href="https://docs.mvs.org/news/2017/10/20/history-releasenotes/"/>
+    <id>https://docs.mvs.org/news/2017/10/20/history-releasenotes/</id>
+    <published>2017-10-20T00:00:00.000Z</published>
+    <updated>2019-06-21T08:07:18.965Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="0-7-5版本更新如下"><a href="#0-7-5版本更新如下" class="headerlink" title="0.7.5版本更新如下"></a>0.7.5版本更新如下</h3><hr><p>Since Beijing time 3.15 11AM ~ 3.16 8PM, MVS mainnet was under <code>future blocktime attack</code>, MVS mainnet got separated.<br>Attacker wrote future blocktime into each block, that caused mining difficulty drop down, then he/she controled MVS mainnet through selfish-mining.<br>So we decided to hard-fork at height 1030000.</p><p>MVS mainnet hard-fork already actived successfully on the safty longest chain.<br>explorer.mvs.org, lightwallet works well.<br>Please download wallet v0.7.5 to support this hard-fork to defend potential <code>future blocktime attack</code>.</p><p><img src="/images/metaverse-wallet-v0.7.5-releasenotes-1.png" alt></p><p>After upgrade to v0.7.5, your wallet may be in 2 cases.</p><h2 id="CASE-1-current-height-under-1030000"><a href="#CASE-1-current-height-under-1030000" class="headerlink" title="CASE 1 - current height under 1030000"></a>CASE 1 - current height under 1030000</h2><p>open v0.7.5 wallet, check current height.<br>Then leave it alone, waiting for may 1 hour, see whether wallet height close to the height of <a href="https://explorer.mvs.org" target="_blank" rel="noopener">https://explorer.mvs.org</a>.</p><h2 id="CASE-2-current-height-over-1030000"><a href="#CASE-2-current-height-over-1030000" class="headerlink" title="CASE 2 - current height over 1030000"></a>CASE 2 - current height over 1030000</h2><p>That means you may in attacker’s chain. need re-sync by below tools.</p><ol><li><p>Stop mvsd, if running.</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ pkill -9 mvsd</span><br></pre></td></tr></table></figure></li><li><p>Download fix-tool from here, Linux only.</p><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ wget  http://sfo.newmetaverse.org/mvs-download/mvs-popblocks-tool.tar.gz</span><br><span class="line">$ tar -xzvf mvs-popblocks-tool.tar.gz</span><br></pre></td></tr></table></figure></li><li><p>Execute pop tool.</p></li></ol><p>Example：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[jowen@JOWEN popblocks]$ ls</span><br><span class="line">mvs-cli  mvsd-popblock  popblock.sh</span><br><span class="line">[jowen@JOWEN popblocks]$ ./popblock.sh </span><br><span class="line">step 1: start to run ./mvsd-popblock</span><br><span class="line">sleep 5 seconds to wait ./mvsd-popblock start completed</span><br><span class="line">please input the start height to pop from.</span><br><span class="line">eg, if specified 1000000, then all blocks with height greater than or equal to 1000000 will be poped out.</span><br><span class="line"></span><br><span class="line">the current height is</span><br><span class="line">&#123;</span><br><span class="line">   &quot;id&quot; : 1,</span><br><span class="line">   &quot;jsonrpc&quot; : &quot;2.0&quot;,</span><br><span class="line">   &quot;result&quot; : 1031285</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">please input the height to pop from :1030000</span><br><span class="line"></span><br><span class="line">sending popblock request</span><br><span class="line">&#123;</span><br><span class="line">   &quot;id&quot; : 1,</span><br><span class="line">   &quot;jsonrpc&quot; : &quot;2.0&quot;,</span><br><span class="line">   &quot;result&quot; : null</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">popblock finished</span><br><span class="line">the block height now is</span><br><span class="line">&#123;</span><br><span class="line">   &quot;id&quot; : 1,</span><br><span class="line">   &quot;jsonrpc&quot; : &quot;2.0&quot;,</span><br><span class="line">   &quot;result&quot; : 1029999</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">kill mvsd-popblock and exit</span><br><span class="line">sending SIGTERM to mvsd.</span><br><span class="line">[jowen@JOWEN popblocks]$</span><br></pre></td></tr></table></figure></p><h3 id="0-7-3版本更新如下"><a href="#0-7-3版本更新如下" class="headerlink" title="0.7.3版本更新如下"></a>0.7.3版本更新如下</h3><hr><ol><li>Provides developers standard JSON-RPC 2.0 call with URI: <code>/rpc/v2</code>. Refers to <a href="/api_v2/">API v2</a>.</li><li>Compatible API calls on version older than v0.7.3 with URI: <code>/rpc/</code>.</li><li>Other optimizations.</li><li>Performance improvement.</li></ol><h3 id="0-7-2版本更新如下"><a href="#0-7-2版本更新如下" class="headerlink" title="0.7.2版本更新如下"></a>0.7.2版本更新如下</h3><hr><ol><li>Added an offline transaction signing function. This function is unavailable through the MVSD GUI; It is only available for createrawtx/ signrawtx/ decoderawtx/ sendrawtx RPC calls.</li><li>Accounts are no longer created when users input incorrect mnemonic words.</li><li>Network performance optimization</li><li>Users are no longer given a time estimate when using the freezing function. Instead, the period required to unlock one’s deposit is displayed in blocks. </li><li>Optimized performance of the getnewaddress RPC call. Irrelevant to the MVSD GUI.</li><li>Added “locked_height_range” fields during transaction output of RPC calls to distinguish freezing transactions</li><li>Fixed peer connection problem in the configuration file</li><li>Display transaction message on homepage</li><li>Users must now type in their backup words (mnemonic passphrase) upon registration to confirm that they have made a backup.</li><li>Fixed WebSocket in the “advanced” function on the Internet Explorer browser</li><li>Optimized the UI</li></ol><h3 id="0-7-1版本更新如下"><a href="#0-7-1版本更新如下" class="headerlink" title="0.7.1版本更新如下"></a>0.7.1版本更新如下</h3><hr><ol><li>Fix the problem that some users can’t deposit ETP;</li><li>Add the functionality that miners could independently determine the mining fees;</li><li>Add the functionality of multi-signature;</li><li>Fix the problem that the wallet can’t connect background procedures occasionally;</li><li>Display the block height of the ETP (estimated value) maturity for deposit function;</li><li>Improve performance of wallet.</li><li>Improve user experience.</li></ol><h3 id="0-7-0版本更新如下"><a href="#0-7-0版本更新如下" class="headerlink" title="0.7.0版本更新如下"></a>0.7.0版本更新如下</h3><hr><p>1.界面重新设计，全新钱包UI</p><p>2.重构多重签名命令，优化输出方式 </p><p>3.扩展send命令，发送交易时携带附加信息</p><p>4.新增账户高级备份，账户可导出到加密文件</p><p>5.优化getaccountasset命令，在资产信息中增加该资产数量及其所附属地址信息</p><p>6.优化listtxs命令提升执行性能并支持分页查看</p><p>7.优化日志系统，限制log file占用磁盘空间大小</p><p>8.优化钱包安装程序，新增程序后台运行功能</p><p>9.新增钱包程序在安装过程中初始化数据库功能</p><p>10.新增带块数据库的安装包，减少钱包同步时间</p><h3 id="0-6-10版本更新如下"><a href="#0-6-10版本更新如下" class="headerlink" title="0.6.10版本更新如下"></a>0.6.10版本更新如下</h3><hr><p>1.增加多重签名功能</p><p>2.本地数据库无缝升级，无须进行多余的网络同步</p><p>3.查询性能优化</p><p>4.修复window下中文路径名导致钱包异常退出的问题</p><p>5.window环境工程整理</p><p>6.window环境增加dump文件用以反馈问题</p><p>7.增加启动选项–datadir用于人工指定区块数据存放目录</p><p>8.优化网络流量</p><p>9.修复交易发送失败</p><p>10.统一rpc异常接口</p><p>11.修复linux各个系列的兼容性问题</p><p>12.修复在更换版本之后帐号密码不匹配的问题</p><h4 id="注意事项："><a href="#注意事项：" class="headerlink" title="注意事项："></a>注意事项：</h4><p>1.使用0.6.9版本linux平台的钱包需要备份私钥并删除数据重新同步</p><p>2.在centos平台下编译的也需要进行如上操作</p><p>3.使用钱包rpc的用户需要对rpc接口异常返回结果需要注意，此处有升级</p><p>4.window用户在钱包客户端崩溃时可提供dump文件</p><p>本次发布为升级级别，针对钱包BUG作修正和功能性增强，最新版本请至官网 <a href="http://mvs.org" target="_blank" rel="noopener">http://mvs.org</a> 下载。</p><p>以上,<br>元界核心开发和运营团队</p><h2 id="0-6-9-版本更新如下"><a href="#0-6-9-版本更新如下" class="headerlink" title="0.6.9 版本更新如下: "></a>0.6.9 版本更新如下: </h2><ol><li>发行资产新增指定小数位数(最小交易单位)的功能；</li><li>新增交易添加附加备注信息；</li><li>性能和网络同步优化；</li><li>修复数据库交易索引碰撞的问题；</li><li>页面修复资产转移交易显示的问题；</li><li>其他一些非功能性修改；</li></ol><p>有关增加资产发行小数位数：<br>1)区块链已有资产发行总量默认小数位为0个，即全部为整数；<br>2)ETP转移不受任何影响；<br>3)若想使用资产转移收发含小数位数量的资产，请使用0.6.9版本。<br>4)若更新后浏览器不显示新版本，OSX请使用command+shift+R 更新缓存， Windows 请使用ctrl+F5更新缓存即可；</p><p>本次发布为升级级别，针对钱包BUG作修正和功能性增强，本地数据库重建索引会自动更新数据库(需重新同步区块)，请耐心等待。<br>最新版本请至官网 <a href="http://mvs.org" target="_blank" rel="noopener">http://mvs.org</a> 下载。</p><h2 id="0-6-8-版本更新如下"><a href="#0-6-8-版本更新如下" class="headerlink" title="0.6.8 版本更新如下: "></a>0.6.8 版本更新如下: </h2><ol><li>前端页面增加显示交易HASH</li><li>前端页面增加指定从地址发送etp的功能</li><li>修复资产发行冻结过多ETP的问题</li><li>前端页面增加显示全网已发行资产</li><li>增加指定块高checkpoint</li><li>listtxs命令按时间排序,并修复按地址查询的bug</li><li>sendmore命令增加指定找零地址</li><li>移除忘记密码的功能</li><li>其他一些非功能性修改.</li></ol><p>0.6.8b 版本更新如下: </p><ol><li>回退:找零随机布局到交易体</li><li>前端页面功能修复</li></ol><p>0.6.8c 版本更新如下: </p><ol><li>修复前端页面无法转移资产的BUG</li></ol><p>Linux 下载地址:<a href="http://newmetaverse.org/mvs-download/mvs068c-linux-x86_64.zip" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs068c-linux-x86_64.zip</a><br>OSX   下载地址:<a href="http://newmetaverse.org/mvs-download/mvs068c-OSX-x86_64.zip" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs068c-OSX-x86_64.zip</a><br>Windows下载地址:<a href="http://newmetaverse.org/mvs-download/mvs068c-win64.zip" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs068c-win64.zip</a></p><p>本次发布为补丁级别，针对程序BUG作修正和功能性增强，不需要重新同步块数据。</p><h2 id="0-6-7-版本更新如下："><a href="#0-6-7-版本更新如下：" class="headerlink" title="0.6.7 版本更新如下："></a>0.6.7 版本更新如下：</h2><ol><li>一些性能问题修正；</li><li>减小同步区块时产生的log；</li><li>增加deposit到指定地址的功能；</li><li>其他一些已知问题。</li></ol><p>本次发布为补丁级别，针对程序BUG作修正和功能性增强，不涉及任何账户数据迁移。<br>最新版本请至官网 <a href="http://mvs.live" target="_blank" rel="noopener">http://mvs.live</a>下载。</p><h2 id="0-6-6-版本更新如下"><a href="#0-6-6-版本更新如下" class="headerlink" title="0.6.6 版本更新如下:"></a>0.6.6 版本更新如下:</h2><ol><li>增加gettransaction命令，命令输入为transaction hash，返回该hash所对应的transaction信息以及该transaction所在的块高。</li><li>修改listtx命令，修改后该命令会默认返回account的100条交易记录而不是返回account的所有记录</li><li>增加utxo限制，若一个地址的utxo中含有资产，则该utxo所包含的etp是不能参与etp-&gt;etp的交易，只能用于资产交易</li><li>增加etp借用功能。转移资产时，若一个地址上的etp不足支付交易费，则从该account上的其他etp充足的地址上借取etp以完成资产转移交易。</li><li>修改WebUI中的一些文字提示，让其更友好。</li><li>增加WebUI的错误提示内容；</li></ol><p>Linux 下载地址:<a href="http://newmetaverse.org/mvs-download/mvs066-linux-x86_64.tar.gz" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs066-linux-x86_64.tar.gz</a><br>OSX   下载地址:<a href="http://newmetaverse.org/mvs-download/mvs066-OSX-x86_64.tar.gz" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs066-OSX-x86_64.tar.gz</a></p><p>本次发布为补丁级别，针对程序BUG作修正和功能性增强，不涉及任何账户数据迁移。<br>最新版本请至官网 <a href="http://mvs.live" target="_blank" rel="noopener">http://mvs.live</a> 下载。</p><h2 id="0-6-5-版本更新如下"><a href="#0-6-5-版本更新如下" class="headerlink" title="0.6.5 版本更新如下:"></a>0.6.5 版本更新如下:</h2><p>一些已知问题修正。<br>Linux 下载地址:<a href="http://newmetaverse.org/mvs-download/mvs065-linux-x86_64.tar.gz" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs065-linux-x86_64.tar.gz</a><br>OSX   下载地址:<a href="http://newmetaverse.org/mvs-download/mvs065-OSX-x86_64.tar.gz" target="_blank" rel="noopener">http://newmetaverse.org/mvs-download/mvs065-OSX-x86_64.tar.gz</a></p><p>本次发布为补丁级别，针对程序BUG作修正和功能性增强，不涉及任何账户数据迁移。<br>最新版本请至官网 <a href="http://mvs.live" target="_blank" rel="noopener">http://mvs.live</a> 下载。</p><h2 id="0-6-4-版本更新如下"><a href="#0-6-4-版本更新如下" class="headerlink" title="0.6.4 版本更新如下:"></a>0.6.4 版本更新如下:</h2><p>一些已知问题修正。</p><p>本次发布为补丁级别，针对程序BUG作修正和功能性增强，需要重新同步块数据。<br>最新版本请至官网 <a href="http://mvs.live" target="_blank" rel="noopener">http://mvs.live</a> 下载。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;0-7-5版本更新如下&quot;&gt;&lt;a href=&quot;#0-7-5版本更新如下&quot; class=&quot;headerlink&quot; title=&quot;0.7.5版本更新如下&quot;&gt;&lt;/a&gt;0.7.5版本更新如下&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;Since Beijing time 3.15 11AM 
+      
+    
+    </summary>
+    
+      <category term="ReleaseNotes" scheme="https://docs.mvs.org/categories/ReleaseNotes/"/>
+    
+    
+      <category term="Metaverse" scheme="https://docs.mvs.org/tags/Metaverse/"/>
+    
+  </entry>
+  
+</feed>

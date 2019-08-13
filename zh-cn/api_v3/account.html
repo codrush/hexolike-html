@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>account | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/api_v3/account.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v3/account.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v3/account.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Description API Methods  getnewaccount  Generate a new account from this wallet if account is specified.  Generate a new address and private key if account is not specified.  Parameters (optional)   -">
+<meta property="og:type" content="website">
+<meta property="og:title" content="account">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/api_v3/account.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Description API Methods  getnewaccount  Generate a new account from this wallet if account is specified.  Generate a new address and private key if account is not specified.  Parameters (optional)   -">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="account">
+<meta name="twitter:description" content="Description API Methods  getnewaccount  Generate a new account from this wallet if account is specified.  Generate a new address and private key if account is not specified.  Parameters (optional)   -">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="api_v3/account.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">account</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/api_v3/account.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
+<h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
+<ul>
+<li><h3 id="getnewaccount" class="article-heading"><a href="#getnewaccount" class="headerlink" title="getnewaccount"></a><code>getnewaccount</code><a class="article-anchor" href="#getnewaccount" aria-hidden="true"></a></h3><p>  Generate a new account from this wallet if account is specified.<br>  Generate a new address and private key if account is not specified.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-l</code> or <code>[--language]</code> Options are ‘en’, ‘es’, ‘ja’, ‘zh_Hans’, ‘zh_Hant’ and ‘any’, defaults to ‘en’.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name, default “”.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization, default “”.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> - </li>
+</ul>
+<ol>
+<li><code>mnemonic</code> - the master private key of your account</li>
+<li><code>default_address</code> - address of the account</li>
+</ol>
+<ul>
+<li>Example: generate a new account<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getnewaccount",</span></span><br><span class="line"><span class="string">"params":["test", "123456", &#123;"language": "en"&#125;],"id":7&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">7</span>, </span><br><span class="line">    <span class="string">"result"</span>: &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"test"</span>,</span><br><span class="line">        <span class="string">"mnemonic"</span>: <span class="string">"actor slam shove essence person between lucky harsh myself hole tomorrow sausage buddy young kitten motor traffic rare wisdom month payment drill vanish oval"</span>, </span><br><span class="line">        <span class="string">"addresses"</span>: </span><br><span class="line">        [</span><br><span class="line">            <span class="string">"MDtdyESeZB73RCYR1G4b7443ModzGwYWrF"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>* Example: generate a new address and private key.
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getnewaccount",</span></span><br><span class="line"><span class="string">"params":[&#123;"language": "en"&#125;],"id":7&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">7</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"MLycTCqV9BiQrfnRPxi6AFBLC7m1cG6btQ"</span>,</span><br><span class="line">        <span class="string">"mnemonic"</span> : <span class="string">"deal elite opinion exhaust shop usage habit hard muscle glimpse want matter brain shoot uncle insect corn glare depth asthma move input person pill"</span>,</span><br><span class="line">        <span class="string">"private_key"</span> : <span class="string">"76fb26353250f00529c51362411a517b4d005d72fe33e5ccea28eaab3b33f8ac"</span>,</span><br><span class="line">        <span class="string">"public_key"</span> : <span class="string">"03643ceeab22462641c5259bfcb7a7898b23b9fbbf5360eb35b3df86eba24522c9"</span>,</span><br><span class="line">        <span class="string">"wif"</span> : <span class="string">"L1CzdkB3f2gRS2NtZUe2fGubzGMYZAWPqbyXNiKC7c9w9Z6F6gHC"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</code></pre><hr>
+<ul>
+<li><h3 id="getnewaddress" class="article-heading"><a href="#getnewaddress" class="headerlink" title="getnewaddress"></a><code>getnewaddress</code><a class="article-anchor" href="#getnewaddress" aria-hidden="true"></a></h3><p>  Generate new address for this account.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-n</code> or <code>[--number]</code> The address count.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Array</code> - return a list of new address</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getnewaddress",</span></span><br><span class="line"><span class="string">"params":["test", "123456", &#123;"number": 2&#125;],"id":8&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">8</span>, </span><br><span class="line">    <span class="string">"result"</span>: [</span><br><span class="line">        <span class="string">"MM6VxRZ9b1GzbapkVCnWwqo3gbe5sDgf9G"</span>, </span><br><span class="line">        <span class="string">"MDuwgNWVp4rHGLcDRro7joees9Z75s9o9X"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="listaddresses" class="article-heading"><a href="#listaddresses" class="headerlink" title="listaddresses"></a><code>listaddresses</code><a class="article-anchor" href="#listaddresses" aria-hidden="true"></a></h3><p>  List available addresses of this account.</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Array</code> - return the list of generated address</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"listaddresses",</span></span><br><span class="line"><span class="string">"params":["test", "123456"],"id":11&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">11</span>, </span><br><span class="line">    <span class="string">"result"</span>: [</span><br><span class="line">        <span class="string">"MBVDxEdhpyA1SvAnFhRxuUmsh5TsaURieV"</span>, </span><br><span class="line">        <span class="string">"MEhwjsxeqVwPzWFqxzAPcFqnh3HSdgUuS2"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="validateaddress" class="article-heading"><a href="#validateaddress" class="headerlink" title="validateaddress"></a><code>validateaddress</code><a class="article-anchor" href="#validateaddress" aria-hidden="true"></a></h3><p>  validate address</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ADDRESS</code> address<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ADDRESS"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>address_type</code> - address type</li>
+<li><code>is_valid</code> - the address is valid or not</li>
+<li><code>message</code> - message like “valid address”</li>
+<li><code>testnet</code> - if the address is in test-net</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"validateaddress",</span></span><br><span class="line"><span class="string">"params":["MEhwjsxeqVwPzWFqxzAPcFqnh3HSdgUuS2"],"id":16&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">16</span>, </span><br><span class="line">    <span class="string">"result"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address_type"</span> : <span class="string">"p2kh(test-net)"</span>,</span><br><span class="line">        <span class="string">"is_valid"</span> : <span class="literal">true</span>,</span><br><span class="line">        <span class="string">"message"</span> : <span class="string">"valid address "</span>,</span><br><span class="line">        <span class="string">"testnet"</span> : <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="importaccount" class="article-heading"><a href="#importaccount" class="headerlink" title="importaccount"></a><code>importaccount</code><a class="article-anchor" href="#importaccount" aria-hidden="true"></a></h3><p>  importaccount</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-i</code> or <code>[--hd_index]</code> Teh HD index for the account.</li>
+<li><code>-l</code> or <code>[--language]</code> The language identifier of the dictionary of the mnemonic. Options are ‘en’, ‘es’, ‘ja’, ‘zh_Hans’, ‘zh_Hant’ and ‘any’, defaults to ‘any’.</li>
+<li><code>-n</code> or <code>[--accountname]</code> Account name.</li>
+<li><code>-p</code> or <code>[--password]</code> Account password.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>WORD</code> The set of words that that make up the mnemonic. If not specified the words are read from STDIN.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"WORD"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> - </li>
+</ul>
+<ol>
+<li><code>name</code> - account name.</li>
+<li><code>mnemonic</code> - master private key</li>
+<li><code>addresses</code> - address list</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"importaccount",</span></span><br><span class="line"><span class="string">"params":["mother ride despair impose degree truck pet scrub mind art brain galaxy sadness cover crater waste arrest invest hip crush loan brisk pave cheap",</span></span><br><span class="line"><span class="string">&#123;"accountname":"test","password":"123456","hd_index":3,"language":"en"&#125;],"id":9&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">9</span>, </span><br><span class="line">    <span class="string">"result"</span>: &#123;</span><br><span class="line">        <span class="string">"mnemonic"</span>: <span class="string">"mother ride despair impose degree truck pet scrub mind art brain galaxy sadness cover crater waste arrest invest hip crush loan brisk pave cheap"</span>, </span><br><span class="line">        <span class="string">"addresses"</span>: [</span><br><span class="line">            <span class="string">"MBVDxEdhpyA1SvAnFhRxuUmsh5TsaURieV"</span>, </span><br><span class="line">            <span class="string">"MEhwjsxeqVwPzWFqxzAPcFqnh3HSdgUuS2"</span>, </span><br><span class="line">            <span class="string">"MS9m8zpVPkDYAXhmeHmhE3TgJugP3zHtAL"</span></span><br><span class="line">        ], </span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"test"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="importkeyfile" class="article-heading"><a href="#importkeyfile" class="headerlink" title="importkeyfile"></a><code>importkeyfile</code><a class="article-anchor" href="#importkeyfile" aria-hidden="true"></a></h3><p>  import account from file</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization. This is also used to decrypt the keyfile.</li>
+<li><code>FILE</code> key file path.</li>
+<li><code>FILECONTENT</code> key file content. This will omit the <code>FILE</code> argument if specified.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"FILE"</span>,</span><br><span class="line">    <span class="string">"FILECONTENT"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>null</code> - </p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// import key file by file path</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"importkeyfile",</span></span><br><span class="line"><span class="string">"params":["test", "123456", "~/.metaverse/mvs-test.json"],"id":10&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">10</span>, </span><br><span class="line">    <span class="string">"result"</span>: <span class="literal">null</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="dumpkeyfile" class="article-heading"><a href="#dumpkeyfile" class="headerlink" title="dumpkeyfile"></a><code>dumpkeyfile</code><a class="article-anchor" href="#dumpkeyfile" aria-hidden="true"></a></h3><p>  export account as file, file name is <code>mvs_keystore_$accountname.json</code>.</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization. This is also used to encrypt the keyfile.</li>
+<li><code>LASTWORD</code> The last word of your master private-key phrase.</li>
+<li><code>DESTINATION</code> account info storage file directory, <strong>optional, default to ~/.metaverse/mvs-htmls/keys/</strong><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>, </span><br><span class="line">    <span class="string">"LASTWORD"</span>, </span><br><span class="line">    <span class="string">"DESTINATION"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>String</code> - </p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"dumpkeyfile",</span></span><br><span class="line"><span class="string">"params":["test", "123456", "lastword", "~/.metaverse/"],"id":4&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">4</span>, </span><br><span class="line">    <span class="string">"result"</span>: <span class="string">"~/.metaverse/mvs_keystore_test.json"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="changepasswd" class="article-heading"><a href="#changepasswd" class="headerlink" title="changepasswd"></a><code>changepasswd</code><a class="article-anchor" href="#changepasswd" aria-hidden="true"></a></h3><p>  changepasswd</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-p</code> or <code>[--password]</code> New password/authorization.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span> </span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>name</code> - account name</li>
+<li><code>status</code> - operation status</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"changepasswd",</span></span><br><span class="line"><span class="string">"params":["test", "123456", &#123;"password": "test123456"&#125;],"id":1&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">1</span>, </span><br><span class="line">    <span class="string">"result"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"test"</span>,</span><br><span class="line">        <span class="string">"status"</span>: <span class="string">"changed successfully"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="deleteaccount" class="article-heading"><a href="#deleteaccount" class="headerlink" title="deleteaccount"></a><code>deleteaccount</code><a class="article-anchor" href="#deleteaccount" aria-hidden="true"></a></h3><p>  deleteaccount</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>LASTWORD</code> The last word of your private-key phrase.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>, </span><br><span class="line">    <span class="string">"LASTWORD"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> -</li>
+</ul>
+<ol>
+<li><code>name</code> - account name</li>
+<li><code>status</code> - operation status</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"deleteaccount",</span></span><br><span class="line"><span class="string">"params":["test", "123456", "lastword"],"id":2&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">2</span>, </span><br><span class="line">    <span class="string">"result"</span>:</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"test"</span>,</span><br><span class="line">        <span class="string">"status"</span>: <span class="string">"removed successfully"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="getaccount" class="article-heading"><a href="#getaccount" class="headerlink" title="getaccount"></a><code>getaccount</code><a class="article-anchor" href="#getaccount" aria-hidden="true"></a></h3><p>  Show account details</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>LASTWORD</code> The last word of your master private-key phrase.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>, </span><br><span class="line">    <span class="string">"LASTWORD"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> - </li>
+</ul>
+<ol>
+<li><code>name</code> - account name</li>
+<li><code>mnemonic</code> - master private key</li>
+<li><code>address_count</code> - addresses created</li>
+<li><code>user_status</code> - 0:locked, 2: normal</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;"jsonrpc":"2.0","method":"getaccount",</span></span><br><span class="line"><span class="string">"params":["test", "123456", "lastword"],"id":5&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>, </span><br><span class="line">    <span class="string">"id"</span>: <span class="number">5</span>, </span><br><span class="line">    <span class="string">"result"</span>: &#123;</span><br><span class="line">        <span class="string">"name"</span>: <span class="string">"test"</span>, </span><br><span class="line">        <span class="string">"mnemonic"</span>: <span class="string">"mother ride despair impose degree truck pet scrub mind art brain galaxy sadness cover crater waste arrest invest hip crush loan brisk pave cheap"</span>, </span><br><span class="line">        <span class="string">"address_count"</span>: <span class="string">"2"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="getpublickey" class="article-heading"><a href="#getpublickey" class="headerlink" title="getpublickey"></a><code>getpublickey</code><a class="article-anchor" href="#getpublickey" aria-hidden="true"></a></h3><p>  Show public key of address<br>  If wallet version &gt;= 0.9.0, the ADDRESS paramenter can be Did/Address/Publickey/PrivateKey(WIF).</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>ADDRESS</code> Address.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>, </span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>, </span><br><span class="line">    <span class="string">"ADDRESS"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - string</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getpublickey",</span></span><br><span class="line"><span class="string">    "id":5,</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test", </span></span><br><span class="line"><span class="string">        "123456", </span></span><br><span class="line"><span class="string">        "MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">5</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"address"</span> : <span class="string">"MLTxV5JAu5sFhQmJYNRmPuu31CkNWrF5rj"</span>,</span><br><span class="line">        <span class="string">"public_key"</span> : <span class="string">"031c7ac7f12a05ea4952289801fa52142aa421f11efe8ab7090fb823562156a321"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="block.html" class="article-footer-prev" title="区块"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="blockchain.html" class="article-footer-next" title="区块链操作"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Methods"><span class="toc-text">API Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getnewaccount"><span class="toc-text">getnewaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getnewaddress"><span class="toc-text">getnewaddress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listaddresses"><span class="toc-text">listaddresses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#validateaddress"><span class="toc-text">validateaddress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#importaccount"><span class="toc-text">importaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#importkeyfile"><span class="toc-text">importkeyfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dumpkeyfile"><span class="toc-text">dumpkeyfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#changepasswd"><span class="toc-text">changepasswd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deleteaccount"><span class="toc-text">deleteaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getaccount"><span class="toc-text">getaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getpublickey"><span class="toc-text">getpublickey</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link current">账户</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">区块链操作</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">交易</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">资产</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">离线交易</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link current">账户</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">区块链操作</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">交易</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">资产</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">离线交易</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v3/account.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

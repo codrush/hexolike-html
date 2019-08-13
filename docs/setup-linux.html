@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Installation for linux | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/docs/setup-linux.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/setup-linux.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/setup-linux.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Please download the latest wallet installation package from Metaverse’s official website https://mvs.org/wallet.html. The wallet is now support Linux 64 bit system. At least 10 GB of free disk space i">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Installation for linux">
+<meta property="og:url" content="https://docs.mvs.org/docs/setup-linux.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Please download the latest wallet installation package from Metaverse’s official website https://mvs.org/wallet.html. The wallet is now support Linux 64 bit system. At least 10 GB of free disk space i">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Installation for linux">
+<meta name="twitter:description" content="Please download the latest wallet installation package from Metaverse’s official website https://mvs.org/wallet.html. The wallet is now support Linux 64 bit system. At least 10 GB of free disk space i">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/setup-linux.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Installation for linux</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/docs/setup-linux.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>Please download the latest wallet installation package from Metaverse’s official website <a href="https://mvs.org/wallet.html" target="_blank" rel="noopener">https://mvs.org/wallet.html</a>. The wallet is now support Linux 64 bit system. At least 10 GB of free disk space is required for the installation.</p>
+<p><strong>Take version v0.8.4 as an example.</strong></p>
+<h2 id="Download-and-unzip" class="article-heading"><a href="#Download-and-unzip" class="headerlink" title="Download and unzip"></a>Download and unzip<a class="article-anchor" href="#Download-and-unzip" aria-hidden="true"></a></h2><p>Download standard versions<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># for tarballs</span></span><br><span class="line">wget https://s3-us-west-1.amazonaws.com/wallet.mvs.org/download/mvs-linux-x86_64-v0.8.4.tar.gz</span><br><span class="line">tar -zxf mvs-linux-x86_64-v0.8.4.tar.gz</span><br></pre></td></tr></table></figure></p>
+<h2 id="Install-standard-versions" class="article-heading"><a href="#Install-standard-versions" class="headerlink" title="Install standard versions"></a>Install standard versions<a class="article-anchor" href="#Install-standard-versions" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> mvs-linux-x86_64-v0.8.4</span><br><span class="line">./mvs-install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="Run" class="article-heading"><a href="#Run" class="headerlink" title="Run"></a>Run<a class="article-anchor" href="#Run" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># run 'mvsd', waiting for block synchronized. Get lastes block height from &lt;https://explorer.mvs.org&gt;.</span></span><br><span class="line"><span class="comment"># option '-d' run as daemon mode</span></span><br><span class="line">mvsd -d</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get helps from mvsd</span></span><br><span class="line">mvsd --<span class="built_in">help</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get helps from mvs-cli</span></span><br><span class="line">mvs-cli <span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="Download-database-package-to-reduces-the-time-required-for-initial-block-syncing" class="article-heading"><a href="#Download-database-package-to-reduces-the-time-required-for-initial-block-syncing" class="headerlink" title="Download database package to reduces the time required for initial block syncing"></a>Download database package to reduces the time required for initial block syncing<a class="article-anchor" href="#Download-database-package-to-reduces-the-time-required-for-initial-block-syncing" aria-hidden="true"></a></h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Download database package</span></span><br><span class="line">$ wget http://newmetaverse.org/mvs-download/block-data/mvs-block-data-for-linux.tar.gz</span><br><span class="line"></span><br><span class="line">$ tar -xzvf mvs-block-data-for-linux.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># The default path of database folder is ~/.metaverse/mainnet</span></span><br><span class="line"><span class="comment"># Please specify PATH_TO_BLOCK_DATA to your customized database folder.</span></span><br><span class="line"><span class="comment"># ./copy-block-data.sh PATH_TO_BLOCK_DATA</span></span><br><span class="line">$ ./copy-block-data.sh</span><br></pre></td></tr></table></figure>
+<h2 id="Get-started" class="article-heading"><a href="#Get-started" class="headerlink" title="Get started"></a>Get started<a class="article-anchor" href="#Get-started" aria-hidden="true"></a></h2><ol>
+<li>Run mvs-cli in terminal.<br> More mvs-cli usage information please see <a href="command-line.html#mvs-cli-usage">mvs-cli usage</a></li>
+<li>Access wallet on browser.<br> Default URL is <code>127.0.0.1:8820</code> (specified by <code>mongoose_listen</code> vaule in <code>mvs.conf</code>)<br> More configuration information please see <a href="config-file.html">Config file</a></li>
+</ol>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.973Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="introduction.html" class="article-footer-prev" title="Introduction"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="options.html" class="article-footer-next" title="Start Running mvsd"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Download-and-unzip"><span class="toc-text">Download and unzip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-standard-versions"><span class="toc-text">Install standard versions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Run"><span class="toc-text">Run</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Download-database-package-to-reduces-the-time-required-for-initial-block-syncing"><span class="toc-text">Download database package to reduces the time required for initial block syncing</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Get-started"><span class="toc-text">Get started</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Get Started</strong><a href="index.html" class="sidebar-link">Quick Start</a><a href="desktop.html" class="sidebar-link">Desktop</a><a href="mobile.html" class="sidebar-link">Mobile</a><a href="mainnet-info.html" class="sidebar-link">Mainnet Information</a><strong class="sidebar-title">Features</strong><a href="features-issue-token.html" class="sidebar-link">Issue Tokens</a><a href="features-transfer-token.html" class="sidebar-link">Transfer Tokens</a><a href="pillars.html" class="sidebar-link">Pillars Features</a><a href="supernova.html" class="sidebar-link">Supernova Features</a><strong class="sidebar-title">Full Node Wallet</strong><a href="introduction.html" class="sidebar-link">Introduction</a><a href="setup-linux.html" class="sidebar-link current">Setup on Linux</a><a href="options.html" class="sidebar-link">Start Running mvsd</a><a href="config-file.html" class="sidebar-link">Config File</a><a href="command-line.html" class="sidebar-link">Command-Line</a><a href="reset-mvs.html" class="sidebar-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="sidebar-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="sidebar-link">Backup Account</a><a href="testnet.html" class="sidebar-link">Testnet</a><a href="private-chain.html" class="sidebar-link">Private Chain</a><a href="setup_mining_pool.html" class="sidebar-link">Setup Mining Pool</a><strong class="sidebar-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="sidebar-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="sidebar-link">Cross Chain Swap</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Get Started</strong><a href="index.html" class="mobile-nav-link">Quick Start</a><a href="desktop.html" class="mobile-nav-link">Desktop</a><a href="mobile.html" class="mobile-nav-link">Mobile</a><a href="mainnet-info.html" class="mobile-nav-link">Mainnet Information</a><strong class="mobile-nav-title">Features</strong><a href="features-issue-token.html" class="mobile-nav-link">Issue Tokens</a><a href="features-transfer-token.html" class="mobile-nav-link">Transfer Tokens</a><a href="pillars.html" class="mobile-nav-link">Pillars Features</a><a href="supernova.html" class="mobile-nav-link">Supernova Features</a><strong class="mobile-nav-title">Full Node Wallet</strong><a href="introduction.html" class="mobile-nav-link">Introduction</a><a href="setup-linux.html" class="mobile-nav-link current">Setup on Linux</a><a href="options.html" class="mobile-nav-link">Start Running mvsd</a><a href="config-file.html" class="mobile-nav-link">Config File</a><a href="command-line.html" class="mobile-nav-link">Command-Line</a><a href="reset-mvs.html" class="mobile-nav-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="mobile-nav-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="mobile-nav-link">Backup Account</a><a href="testnet.html" class="mobile-nav-link">Testnet</a><a href="private-chain.html" class="mobile-nav-link">Private Chain</a><a href="setup_mining_pool.html" class="mobile-nav-link">Setup Mining Pool</a><strong class="mobile-nav-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="mobile-nav-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="mobile-nav-link">Cross Chain Swap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/setup-linux.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>API v3 VS v2 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/api_v3/v3-VS-v2.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v3/v3-VS-v2.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v3/v3-VS-v2.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="This documentation lists differences between API.v3 and API.v2. If you are interested in more basic usage of Metaverse, please refer to the docs instead. Compatiblity for API v2, please refers to API">
+<meta property="og:type" content="website">
+<meta property="og:title" content="API v3 VS v2">
+<meta property="og:url" content="https://docs.mvs.org/api_v3/v3-VS-v2.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="This documentation lists differences between API.v3 and API.v2. If you are interested in more basic usage of Metaverse, please refer to the docs instead. Compatiblity for API v2, please refers to API">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="API v3 VS v2">
+<meta name="twitter:description" content="This documentation lists differences between API.v3 and API.v2. If you are interested in more basic usage of Metaverse, please refer to the docs instead. Compatiblity for API v2, please refers to API">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="api_v3/v3-VS-v2.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">API v3 VS v2</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/api_v3/v3-VS-v2.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <p>This documentation lists differences between <strong>API.v3</strong> and <strong>API.v2</strong>. If you are interested in more basic usage of Metaverse, please refer to the <a href="../docs">docs</a> instead.</p>
+<p>Compatiblity for API v2, please refers to <a href="/api_v2">API v2</a>.<br>Compatiblity for API v1, please refers to <a href="/api">API v1</a>.</p>
+<h2 id="Common" class="article-heading"><a href="#Common" class="headerlink" title="Common"></a>Common<a class="article-anchor" href="#Common" aria-hidden="true"></a></h2><p>API v3 returns object itself as <code>result</code> field of response not a dictionary of <code>name : object</code>.</p>
+<h3 id="transaction-object" class="article-heading"><a href="#transaction-object" class="headerlink" title="transaction object"></a>transaction object<a class="article-anchor" href="#transaction-object" aria-hidden="true"></a></h3><p>API v3 returns a transaction object while API v2 return a dictionary of <code>transaction : object</code>. </p>
+<p>Following commands are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>burn</code></td>
+<td><a href="../api_v3/asset.html#burn">v3</a></td>
+<td><a href="../api_v2/asset.html#burn">v2</a></td>
+</tr>
+<tr>
+<td><code>decoderawtx</code></td>
+<td><a href="../api_v3/rawtx.html#decoderawtx">v3</a></td>
+<td><a href="../api_v2/rawtx.html#decoderawtx">v2</a></td>
+</tr>
+<tr>
+<td><code>deposit</code></td>
+<td><a href="../api_v3/etp.html#deposit">v3</a></td>
+<td><a href="../api_v2/etp.html#deposit">v2</a></td>
+</tr>
+<tr>
+<td><code>didchangeaddress</code></td>
+<td><a href="../api_v3/identity.html#didchangeaddress">v3</a></td>
+<td><a href="../api_v2/identity.html#didchangeaddress">v2</a></td>
+</tr>
+<tr>
+<td><code>didsend</code></td>
+<td><a href="../api_v3/etp.html#send">v3</a></td>
+<td><a href="../api_v2/identity.html#didsend">v2</a></td>
+</tr>
+<tr>
+<td><code>didsendfrom</code></td>
+<td><a href="../api_v3/etp.html#sendfrom">v3</a></td>
+<td><a href="../api_v2/identity.html#didsendfrom">v2</a></td>
+</tr>
+<tr>
+<td><code>didsendmore</code></td>
+<td><a href="../api_v3/etp.html#sendmore">v3</a></td>
+<td><a href="../api_v2/identity.html#didsendmore">v2</a></td>
+</tr>
+<tr>
+<td><code>didsendasset</code></td>
+<td><a href="../api_v3/asset.html#sendasset">v3</a></td>
+<td><a href="../api_v2/identity.html#didsendasset">v2</a></td>
+</tr>
+<tr>
+<td><code>didsendassetfrom</code></td>
+<td><a href="../api_v3/asset.html#sendassetfrom">v3</a></td>
+<td><a href="../api_v2/identity.html#didsendassetfrom">v2</a></td>
+</tr>
+<tr>
+<td><code>issue</code></td>
+<td><a href="../api_v3/asset.html#issue">v3</a></td>
+<td><a href="../api_v2/asset.html#issue">v2</a></td>
+</tr>
+<tr>
+<td><code>issuecert</code></td>
+<td><a href="../api_v3/asset.html#issuecert">v3</a></td>
+<td><a href="../api_v2/asset.html#issuecert">v2</a></td>
+</tr>
+<tr>
+<td><code>transfercert</code></td>
+<td><a href="../api_v3/asset.html#transfercert">v3</a></td>
+<td><a href="../api_v2/asset.html#transfercert">v2</a></td>
+</tr>
+<tr>
+<td><code>transfermit</code></td>
+<td><a href="../api_v3/mit.html#transfermit">v3</a></td>
+<td><a href="../api_v2/mit.html#transfermit">v2</a></td>
+</tr>
+<tr>
+<td><code>registerdid</code></td>
+<td><a href="../api_v3/identity.html#registerdid">v3</a></td>
+<td><a href="../api_v2/identity.html#registerdid">v2</a></td>
+</tr>
+<tr>
+<td><code>registermit</code></td>
+<td><a href="../api_v3/mit.html#registermit">v3</a></td>
+<td><a href="../api_v2/mit.html#registermit">v2</a></td>
+</tr>
+<tr>
+<td><code>secondaryissue</code></td>
+<td><a href="../api_v3/asset.html#secondaryissue">v3</a></td>
+<td><a href="../api_v2/asset.html#secondaryissue">v2</a></td>
+</tr>
+<tr>
+<td><code>send</code></td>
+<td><a href="../api_v3/etp.html#send">v3</a></td>
+<td><a href="../api_v2/etp.html#send">v2</a></td>
+</tr>
+<tr>
+<td><code>sendasset</code></td>
+<td><a href="../api_v3/asset.html#sendasset">v3</a></td>
+<td><a href="../api_v2/asset.html#sendasset">v2</a></td>
+</tr>
+<tr>
+<td><code>sendassetfrom</code></td>
+<td><a href="../api_v3/asset.html#sendassetfrom">v3</a></td>
+<td><a href="../api_v2/asset.html#sendassetfrom">v2</a></td>
+</tr>
+<tr>
+<td><code>sendfrom</code></td>
+<td><a href="../api_v3/etp.html#sendfrom">v3</a></td>
+<td><a href="../api_v2/etp.html#sendfrom">v2</a></td>
+</tr>
+<tr>
+<td><code>sendmore</code></td>
+<td><a href="../api_v3/etp.html#sendmore">v3</a></td>
+<td><a href="../api_v2/etp.html#sendmore">v2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="asset-object" class="article-heading"><a href="#asset-object" class="headerlink" title="asset object"></a>asset object<a class="article-anchor" href="#asset-object" aria-hidden="true"></a></h3><p>API v3 returns a asset object while API v2 return a dictionary of <code>asset : object</code>. </p>
+<p>Following commands are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createasset</code></td>
+<td><a href="../api_v3/asset.html#createasset">v3</a></td>
+<td><a href="../api_v2/asset.html#createasset">v2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="list-object" class="article-heading"><a href="#list-object" class="headerlink" title="list object"></a>list object<a class="article-anchor" href="#list-object" aria-hidden="true"></a></h3><p>API v3 returns a list of object while API v2 return a dictionary of <code>name : list of object</code>. </p>
+<p>Following commands are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>listmultisig</code></td>
+<td><a href="../api_v3/multisig.html#listmultisig">v3</a></td>
+<td><a href="../api_v2/multisig.html#listmultisig">v2</a></td>
+</tr>
+<tr>
+<td><code>getaccountasset</code></td>
+<td><a href="../api_v3/asset.html#getaccountasset">v3</a></td>
+<td><a href="../api_v2/asset.html#getaccountasset">v2</a></td>
+</tr>
+<tr>
+<td><code>getaddressasset</code></td>
+<td><a href="../api_v3/asset.html#getaddressasset">v3</a></td>
+<td><a href="../api_v2/asset.html#getaddressasset">v2</a></td>
+</tr>
+<tr>
+<td><code>getasset</code></td>
+<td><a href="../api_v3/asset.html#getasset">v3</a></td>
+<td><a href="../api_v2/asset.html#getasset">v2</a></td>
+</tr>
+<tr>
+<td><code>listassets</code></td>
+<td><a href="../api_v3/asset.html#listassets">v3</a></td>
+<td><a href="../api_v2/asset.html#listassets">v2</a></td>
+</tr>
+<tr>
+<td><code>getnewaddress</code></td>
+<td><a href="../api_v3/account.html#getnewaddress">v3</a></td>
+<td><a href="../api_v2/account.html#getnewaddress">v2</a></td>
+</tr>
+<tr>
+<td><code>listaddresses</code></td>
+<td><a href="../api_v3/account.html#listaddresses">v3</a></td>
+<td><a href="../api_v2/account.html#listaddresses">v2</a></td>
+</tr>
+<tr>
+<td><code>listbalances</code></td>
+<td><a href="../api_v3/etp.html#listbalances">v3</a></td>
+<td><a href="../api_v2/etp.html#listbalances">v2</a></td>
+</tr>
+<tr>
+<td><code>listdids</code></td>
+<td><a href="../api_v3/identity.html#listdids">v3</a></td>
+<td><a href="../api_v2/identity.html#listdids">v2</a></td>
+</tr>
+<tr>
+<td><code>listmits</code></td>
+<td><a href="../api_v3/mit.html#listmits">v3</a></td>
+<td><a href="../api_v2/mit.html#listmits">v2</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="string-object" class="article-heading"><a href="#string-object" class="headerlink" title="string object"></a>string object<a class="article-anchor" href="#string-object" aria-hidden="true"></a></h3><p>API v3 returns a string object while API v2 return a dictionary of <code>name : string object</code>. </p>
+<p>Following commands are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createrawtx</code></td>
+<td><a href="../api_v3/rawtx.html#createrawtx">v3</a></td>
+<td><a href="../api_v2/rawtx.html#createrawtx">v2</a></td>
+</tr>
+<tr>
+<td><code>sendrawtx</code></td>
+<td><a href="../api_v3/rawtx.html#sendrawtx">v3</a></td>
+<td><a href="../api_v2/rawtx.html#sendrawtx">v2</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Replace-with" class="article-heading"><a href="#Replace-with" class="headerlink" title="Replace - with _"></a>Replace <code>-</code> with <code>_</code><a class="article-anchor" href="#Replace-with" aria-hidden="true"></a></h2><p>API v3 replaces <code>-</code> with <code>_</code> in the field name of response.</p>
+<p>Following field names are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deletemultisig</code></td>
+<td><a href="../api_v3/multisig.html#deletemultisig">v3</a></td>
+<td><a href="../api_v2/multisig.html#deletemultisig">v2</a></td>
+</tr>
+<tr>
+<td><code>listmultisig</code></td>
+<td><a href="../api_v3/multisig.html#listmultisig">v3</a></td>
+<td><a href="../api_v2/multisig.html#listmultisig">v2</a></td>
+</tr>
+<tr>
+<td><code>getaccount</code></td>
+<td><a href="../api_v3/account.html#getaccount">v3</a></td>
+<td><a href="../api_v2/account.html#getaccount">v2</a></td>
+</tr>
+<tr>
+<td><code>getbalance</code></td>
+<td><a href="../api_v3/etp.html#getbalance">v3</a></td>
+<td><a href="../api_v2/etp.html#getbalance">v2</a></td>
+</tr>
+<tr>
+<td><code>getinfo</code></td>
+<td><a href="../api_v3/blockchain.html#getinfo">v3</a></td>
+<td><a href="../api_v2/blockchain.html#getinfo">v2</a></td>
+</tr>
+<tr>
+<td><code>getnewmultisig</code></td>
+<td><a href="../api_v3/multisig.html#getnewmultisig">v3</a></td>
+<td><a href="../api_v2/multisig.html#getnewmultisig">v2</a></td>
+</tr>
+<tr>
+<td><code>getpublickey</code></td>
+<td><a href="../api_v3/multisig.html#getpublickey">v3</a></td>
+<td><a href="../api_v2/multisig.html#getpublickey">v2</a></td>
+</tr>
+<tr>
+<td><code>validateaddress</code></td>
+<td><a href="../api_v3/account.html#validateaddress">v3</a></td>
+<td><a href="../api_v2/account.html#validateaddress">v2</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Changes-some-fields" class="article-heading"><a href="#Changes-some-fields" class="headerlink" title="Changes some fields"></a>Changes some fields<a class="article-anchor" href="#Changes-some-fields" aria-hidden="true"></a></h2><p>API v3 changes some fields of command.</p>
+<h3 id="getaccount" class="article-heading"><a href="#getaccount" class="headerlink" title="getaccount"></a>getaccount<a class="article-anchor" href="#getaccount" aria-hidden="true"></a></h3><p><a href="../api_v3/account.html#getaccount">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"address_count"</span>,</span><br><span class="line">    <span class="string">"mnemonic"</span>,</span><br><span class="line">    <span class="string">"name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/account.html#getaccount">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"address-count"</span>,</span><br><span class="line">    <span class="string">"mnemonic-key"</span>,</span><br><span class="line">    <span class="string">"name"</span>,</span><br><span class="line">    <span class="string">"user-status"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="getnewaccount" class="article-heading"><a href="#getnewaccount" class="headerlink" title="getnewaccount"></a>getnewaccount<a class="article-anchor" href="#getnewaccount" aria-hidden="true"></a></h3><p><a href="../api_v3/account.html#getnewaccount">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"addresses"</span>,</span><br><span class="line">    <span class="string">"mnemonic"</span>,</span><br><span class="line">    <span class="string">"name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/account.html#getnewaccount">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"default-address"</span>,</span><br><span class="line">    <span class="string">"mnemonic"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="getblock" class="article-heading"><a href="#getblock" class="headerlink" title="getblock"></a>getblock<a class="article-anchor" href="#getblock" aria-hidden="true"></a></h3><p><a href="../api_v3/block.html#getblock">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"bits"</span>,</span><br><span class="line">    <span class="string">"hash"</span>,</span><br><span class="line">    <span class="string">"merkle_tree_hash"</span>,</span><br><span class="line">    <span class="string">"mixhash"</span>,</span><br><span class="line">    <span class="string">"nonce"</span>,</span><br><span class="line">    <span class="string">"number"</span>,</span><br><span class="line">    <span class="string">"previous_block_hash"</span>,</span><br><span class="line">    <span class="string">"timestamp"</span>,</span><br><span class="line">    <span class="string">"transaction_count"</span>,</span><br><span class="line">    <span class="string">"transactions"</span>,</span><br><span class="line">    <span class="string">"version"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/block.html#getblock">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"header"</span>,</span><br><span class="line">    <span class="string">"txs"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="deletelocalasset" class="article-heading"><a href="#deletelocalasset" class="headerlink" title="deletelocalasset"></a>deletelocalasset<a class="article-anchor" href="#deletelocalasset" aria-hidden="true"></a></h3><p><a href="../api_v3/asset.html#deletelocalasset">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"status"</span>,</span><br><span class="line">    <span class="string">"symbol"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/asset.html#deletelocalasset">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"operate"</span>,</span><br><span class="line">    <span class="string">"result"</span>,</span><br><span class="line">    <span class="string">"symbol"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="importaccount" class="article-heading"><a href="#importaccount" class="headerlink" title="importaccount"></a>importaccount<a class="article-anchor" href="#importaccount" aria-hidden="true"></a></h3><p><a href="../api_v3/account.html#importaccount">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"addresses"</span>,</span><br><span class="line">    <span class="string">"mnemonic"</span>,</span><br><span class="line">    <span class="string">"name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/account.html#importaccount">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"addresses"</span>,</span><br><span class="line">    <span class="string">"hd_index"</span>,</span><br><span class="line">    <span class="string">"mnemonic"</span>,</span><br><span class="line">    <span class="string">"name"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="signrawtx" class="article-heading"><a href="#signrawtx" class="headerlink" title="signrawtx"></a>signrawtx<a class="article-anchor" href="#signrawtx" aria-hidden="true"></a></h3><p><a href="../api_v3/rawtx.html#signrawtx">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"hash"</span>,</span><br><span class="line">    <span class="string">"rawtx"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/rawtx.html#signrawtx">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"hash"</span>,</span><br><span class="line">    <span class="string">"hex"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="signmultisigtx" class="article-heading"><a href="#signmultisigtx" class="headerlink" title="signmultisigtx"></a>signmultisigtx<a class="article-anchor" href="#signmultisigtx" aria-hidden="true"></a></h3><p><a href="../api_v3/rawtx.html#signmultisigtx">v3</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"hash"</span>,</span><br><span class="line">    <span class="string">"rawtx"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><a href="../api_v2/rawtx.html#signmultisigtx">v2</a><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"hex"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Change-name-of-field" class="article-heading"><a href="#Change-name-of-field" class="headerlink" title="Change name of field"></a>Change name of field<a class="article-anchor" href="#Change-name-of-field" aria-hidden="true"></a></h2><h3 id="API-v3-replaces-time-stamp-with-timestamp" class="article-heading"><a href="#API-v3-replaces-time-stamp-with-timestamp" class="headerlink" title="API v3 replaces time_stamp with timestamp."></a>API v3 replaces <code>time_stamp</code> with <code>timestamp</code>.<a class="article-anchor" href="#API-v3-replaces-time-stamp-with-timestamp" aria-hidden="true"></a></h3><p>Following commands are affected.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>API v3</th>
+<th>API v2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getblock</code></td>
+<td><a href="../api_v3/block.html#getblock">v3</a></td>
+<td><a href="../api_v2/block.html#getblock">v2</a></td>
+</tr>
+<tr>
+<td><code>getblockheader</code></td>
+<td><a href="../api_v3/block.html#getblockheader">v3</a></td>
+<td><a href="../api_v2/block.html#getblockheader">v2</a></td>
+</tr>
+<tr>
+<td><code>getmit</code></td>
+<td><a href="../api_v3/mit.html#getmit">v3</a></td>
+<td><a href="../api_v2/mit.html#getmit">v2</a></td>
+</tr>
+</tbody>
+</table>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="index.html" class="article-footer-next" title="Introduction"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Common"><span class="toc-text">Common</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#transaction-object"><span class="toc-text">transaction object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#asset-object"><span class="toc-text">asset object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list-object"><span class="toc-text">list object</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#string-object"><span class="toc-text">string object</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Replace-with"><span class="toc-text">Replace - with _</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Changes-some-fields"><span class="toc-text">Changes some fields</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getaccount"><span class="toc-text">getaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getnewaccount"><span class="toc-text">getnewaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#getblock"><span class="toc-text">getblock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deletelocalasset"><span class="toc-text">deletelocalasset</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#importaccount"><span class="toc-text">importaccount</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#signrawtx"><span class="toc-text">signrawtx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#signmultisigtx"><span class="toc-text">signmultisigtx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Change-name-of-field"><span class="toc-text">Change name of field</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#API-v3-replaces-time-stamp-with-timestamp"><span class="toc-text">API v3 replaces time_stamp with timestamp.</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">Block</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">Account</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">Blockchain</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">Transaction</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">Asset</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">Multi-signature</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">RawTx</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">Identity</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">Block</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">Account</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">Blockchain</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">Transaction</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">Asset</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">Multi-signature</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">RawTx</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">Identity</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v3/v3-VS-v2.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

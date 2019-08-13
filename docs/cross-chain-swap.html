@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Cross-chain Token Swap Instruction | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/docs/cross-chain-swap.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/cross-chain-swap.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Function introductionCross-chain service enables to swap assets between Ethereum ERC20 tokens and equivalent Metaverse MST. Link Ethereum with Metaverse Avatar or addressGet transaction data of addres">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cross-chain Token Swap Instruction">
+<meta property="og:url" content="https://docs.mvs.org/docs/cross-chain-swap.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Function introductionCross-chain service enables to swap assets between Ethereum ERC20 tokens and equivalent Metaverse MST. Link Ethereum with Metaverse Avatar or addressGet transaction data of addres">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/O1nctxI.png">
+<meta property="og:image" content="https://i.imgur.com/Z6AQugc.png">
+<meta property="og:image" content="https://i.imgur.com/P7P1zjq.png">
+<meta property="og:image" content="https://i.imgur.com/VassbtZ.png">
+<meta property="og:image" content="https://i.imgur.com/TRFpo1R.png">
+<meta property="og:image" content="https://i.imgur.com/oY35rZq.png">
+<meta property="og:image" content="https://i.imgur.com/e5AacIV.jpg">
+<meta property="og:image" content="https://i.imgur.com/SeYKrHt.png">
+<meta property="og:image" content="https://i.imgur.com/EEageNY.jpg">
+<meta property="og:image" content="https://i.imgur.com/Poe3tzx.png">
+<meta property="og:image" content="https://i.imgur.com/Poe3tzx.png">
+<meta property="og:image" content="https://i.imgur.com/ocwQjsf.png">
+<meta property="og:image" content="https://i.imgur.com/quGQeU7.png">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.973Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cross-chain Token Swap Instruction">
+<meta name="twitter:description" content="Function introductionCross-chain service enables to swap assets between Ethereum ERC20 tokens and equivalent Metaverse MST. Link Ethereum with Metaverse Avatar or addressGet transaction data of addres">
+<meta name="twitter:image" content="https://i.imgur.com/O1nctxI.png">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/cross-chain-swap.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Cross-chain Token Swap Instruction</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/docs/cross-chain-swap.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Function-introduction" class="article-heading"><a href="#Function-introduction" class="headerlink" title="Function introduction"></a>Function introduction<a class="article-anchor" href="#Function-introduction" aria-hidden="true"></a></h2><p>Cross-chain service enables to swap assets between Ethereum <code>ERC20</code> tokens and equivalent Metaverse <code>MST</code>.</p>
+<h2 id="Link-Ethereum-with-Metaverse-Avatar-or-address" class="article-heading"><a href="#Link-Ethereum-with-Metaverse-Avatar-or-address" class="headerlink" title="Link Ethereum with Metaverse Avatar or address"></a>Link Ethereum with Metaverse Avatar or address<a class="article-anchor" href="#Link-Ethereum-with-Metaverse-Avatar-or-address" aria-hidden="true"></a></h2><h3 id="Get-transaction-data-of-address-to-be-linked" class="article-heading"><a href="#Get-transaction-data-of-address-to-be-linked" class="headerlink" title="Get transaction data of address to be linked"></a>Get transaction data of address to be linked<a class="article-anchor" href="#Get-transaction-data-of-address-to-be-linked" aria-hidden="true"></a></h3><h4 id="Light-wallet-myetpwallet" class="article-heading"><a href="#Light-wallet-myetpwallet" class="headerlink" title="Light wallet myetpwallet"></a>Light wallet myetpwallet<a class="article-anchor" href="#Light-wallet-myetpwallet" aria-hidden="true"></a></h4><ol>
+<li><p>Open menu, Click <code>Ethereum bridge</code><br><img src="https://i.imgur.com/O1nctxI.png" alt="Link to Ethereum address"></p>
+</li>
+<li><p>Click tab <code>Ethereum -&gt; Metaverse</code><br><img src="https://i.imgur.com/Z6AQugc.png" alt="Generate data"></p>
+</li>
+<li><p>Choose the avatar or address to be linked, and copy the generated raw data<br><img src="https://i.imgur.com/P7P1zjq.png" alt="Choose avatar or address"></p>
+</li>
+</ol>
+<h4 id="Full-node-wallet" class="article-heading"><a href="#Full-node-wallet" class="headerlink" title="Full-node wallet"></a>Full-node wallet<a class="article-anchor" href="#Full-node-wallet" aria-hidden="true"></a></h4><ol>
+<li><p>Open the address page and choose the Avatar or address to be linked; Click <code>Link to Ethereum</code><br><img src="https://i.imgur.com/VassbtZ.png" alt="Link to Ethereum address"></p>
+</li>
+<li><p>Click <code>Generate data</code><br><img src="https://i.imgur.com/TRFpo1R.png" alt="Generate data"></p>
+</li>
+<li><p>Click <code>Copy data</code><br><img src="https://i.imgur.com/oY35rZq.png" alt="Copy data"></p>
+</li>
+</ol>
+<h3 id="Execute-the-smart-contract-to-link-Ethereum-address-with-Metaverse-avatar-or-address" class="article-heading"><a href="#Execute-the-smart-contract-to-link-Ethereum-address-with-Metaverse-avatar-or-address" class="headerlink" title="Execute the smart contract to link Ethereum address with Metaverse avatar or address"></a>Execute the smart contract to link Ethereum address with Metaverse avatar or address<a class="article-anchor" href="#Execute-the-smart-contract-to-link-Ethereum-address-with-Metaverse-avatar-or-address" aria-hidden="true"></a></h3><ol>
+<li><p>Open Ethereum wallet which supports sending raw transaction data, such as <a href="https://www.myetherwallet.com/" target="_blank" rel="noopener"><code>myetherwallet</code></a> or <a href="https://token.im/" target="_blank" rel="noopener"><code>imtoken</code></a>，and start a ETP transferring transaction. </p>
+</li>
+<li><p>Click <code>Advance</code> options，paste the copied data to <code>hex raw data</code> field.<br><img src="https://i.imgur.com/e5AacIV.jpg" alt="Link Ethereum address with Metaverse Avatar"></p>
+</li>
+<li><p>The recipient address should be the address of binding ETP address contract：<code>0xa52b0a032139e6303b86cfeb0bb9ae780a610354</code>. You can copy this address from Metaverse wallet.<br><img src="https://i.imgur.com/SeYKrHt.png" alt="Copy address of binding ETP address contract"></p>
+</li>
+<li><p>The value to send is ：<code>0 ether</code></p>
+</li>
+<li><p>Then click <code>Next</code> to finish the transaction. </p>
+</li>
+</ol>
+<h2 id="Swap-from-Ethereum-ERC20-token-to-Metaverse-MST" class="article-heading"><a href="#Swap-from-Ethereum-ERC20-token-to-Metaverse-MST" class="headerlink" title="Swap from Ethereum ERC20 token to Metaverse MST"></a>Swap from Ethereum ERC20 token to Metaverse <code>MST</code><a class="article-anchor" href="#Swap-from-Ethereum-ERC20-token-to-Metaverse-MST" aria-hidden="true"></a></h2><h3 id="Send-ERC20-token-to-the-Ethereum-address-of-ETP-Swap-center" class="article-heading"><a href="#Send-ERC20-token-to-the-Ethereum-address-of-ETP-Swap-center" class="headerlink" title="Send ERC20 token to the Ethereum address of ETP-Swap center"></a>Send <code>ERC20</code> token to the Ethereum address of ETP-Swap center<a class="article-anchor" href="#Send-ERC20-token-to-the-Ethereum-address-of-ETP-Swap-center" aria-hidden="true"></a></h3><p>Open Ethereum wallet and choose the <code>ERC20</code> token to be swapped and send them to the Ethereum address of ETP-Swap center: <code>0xc1e5fd24fa2b4a3581335fc3f2850f717dd09c86</code>.<br><img src="https://i.imgur.com/EEageNY.jpg" alt="Send `ERC20` token to the Ethereum address of ETP-Swap center"></p>
+<h3 id="Query" class="article-heading"><a href="#Query" class="headerlink" title="Query"></a>Query<a class="article-anchor" href="#Query" aria-hidden="true"></a></h3><p>Please be patient and wait for the token swap. It takes a little bit longer time to process transactions on two chains. You could query the swapped MST assets in the <a href="https://www.myetpwallet.com/" target="_blank" rel="noopener"><code>myetpwallet</code></a> or <a href="https://explorer.mvs.org/avatar" target="_blank" rel="noopener">blockchain explorer</a> and the name of this <code>MST</code> starts with <code>ERC20.</code> by default.</p>
+<h2 id="Swap-from-Metaverse-MST-to-Ethereum-ERC20-token" class="article-heading"><a href="#Swap-from-Metaverse-MST-to-Ethereum-ERC20-token" class="headerlink" title="Swap from Metaverse MST to Ethereum ERC20 token"></a>Swap from Metaverse <code>MST</code> to Ethereum <code>ERC20</code> token<a class="article-anchor" href="#Swap-from-Metaverse-MST-to-Ethereum-ERC20-token" aria-hidden="true"></a></h2><h3 id="Light-wallet-myetpwallet-1" class="article-heading"><a href="#Light-wallet-myetpwallet-1" class="headerlink" title="Light wallet myetpwallet"></a>Light wallet myetpwallet<a class="article-anchor" href="#Light-wallet-myetpwallet-1" aria-hidden="true"></a></h3><ol>
+<li><p>Choose the <code>MST</code> to be swapped and click <code>Swap</code><br><img src="https://i.imgur.com/Poe3tzx.png" alt="Choose MST"></p>
+</li>
+<li><p>Fill the swap amount and the recipient Ethereum address. The fee of swaping token is <code>1 ETP</code>.<br><img src="https://i.imgur.com/Poe3tzx.png" alt="Swap asset"></p>
+</li>
+</ol>
+<h3 id="Full-node-wallet-1" class="article-heading"><a href="#Full-node-wallet-1" class="headerlink" title="Full-node wallet"></a>Full-node wallet<a class="article-anchor" href="#Full-node-wallet-1" aria-hidden="true"></a></h3><ol>
+<li><p>Choose the <code>MST</code> to be swapped and click <code>Transfer</code><br><img src="https://i.imgur.com/ocwQjsf.png" alt="Choose MST"></p>
+</li>
+<li><p>Choose <code>I want to swap this MST to its ERC20 equivalent</code> on the transfer page and fill the swap amount and the recipient Ethereum address. The fee of swaping token is <code>1 ETP</code>.<br><img src="https://i.imgur.com/quGQeU7.png" alt="Swap asset"></p>
+</li>
+</ol>
+<h2 id="Swap-from-Ethereum-ETH-to-Metaverse-ETP" class="article-heading"><a href="#Swap-from-Ethereum-ETH-to-Metaverse-ETP" class="headerlink" title="Swap from Ethereum ETH to Metaverse ETP"></a>Swap from Ethereum <code>ETH</code> to Metaverse <code>ETP</code><a class="article-anchor" href="#Swap-from-Ethereum-ETH-to-Metaverse-ETP" aria-hidden="true"></a></h2><h3 id="Send-ETH-to-the-Ethereum-address-of-ETP-Swap-center" class="article-heading"><a href="#Send-ETH-to-the-Ethereum-address-of-ETP-Swap-center" class="headerlink" title="Send ETH to the Ethereum address of ETP-Swap center"></a>Send <code>ETH</code> to the Ethereum address of ETP-Swap center<a class="article-anchor" href="#Send-ETH-to-the-Ethereum-address-of-ETP-Swap-center" aria-hidden="true"></a></h3><p>Open Ethereum wallet and send <code>ETH</code> to the Ethereum address of ETP-Swap center: <code>0xc1e5fd24fa2b4a3581335fc3f2850f717dd09c86</code>.</p>
+<h3 id="Query-1" class="article-heading"><a href="#Query-1" class="headerlink" title="Query"></a>Query<a class="article-anchor" href="#Query-1" aria-hidden="true"></a></h3><p>Please be patient and wait for the token swap. It takes a little bit longer time to process transactions on two chains. You could query the swapped <code>ETP</code> in the <a href="https://www.myetpwallet.com/" target="_blank" rel="noopener"><code>myetpwallet</code></a> or <a href="https://explorer.mvs.org/avatar" target="_blank" rel="noopener">blockchain explorer</a>. The swapped <code>ETP</code> transcation has message attachment with format ‘[exchange rate, amount, ETH, ETH transation hash]’</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;address&quot; : &quot;MBkcJ6YsnG1G97tFJuBcytDxfk5F8hCp2g&quot;,</span><br><span class="line">	&quot;attachment&quot; : </span><br><span class="line">	&#123;</span><br><span class="line">		&quot;content&quot; : &quot;[\&quot;68.82119539759908\&quot;, \&quot;0.0000099\&quot;, \&quot;ETH\&quot;, \&quot;0x2872875c7b08ec0786309864207f883d3e9f609a232a3cb7c53ec7d0a9e87099\&quot;]&quot;,</span><br><span class="line">		&quot;type&quot; : &quot;message&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	&quot;index&quot; : 2,</span><br><span class="line">	&quot;locked_height_range&quot; : 0,</span><br><span class="line">	&quot;script&quot; : &quot;dup hash160 [ 34f4acd8ee7551fd5558c6dc60c0a6160a1f2119 ] equalverify checksig&quot;,</span><br><span class="line">	&quot;value&quot; : 0</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="Notes" class="article-heading"><a href="#Notes" class="headerlink" title="Notes"></a>Notes<a class="article-anchor" href="#Notes" aria-hidden="true"></a></h3><p>For now we support swap from Ethereum <code>ETH</code> to Metaverse <code>ETP</code> only. The maximum amount of <code>ETH</code> to be swapped each time is 20.</p>
+<table>
+<thead>
+<tr>
+<th>Amount of ETH</th>
+<th>Swap Fee rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt;= 1</td>
+<td>2.0%</td>
+</tr>
+<tr>
+<td>&lt;= 5</td>
+<td>2.5%</td>
+</tr>
+<tr>
+<td>&lt;= 10</td>
+<td>3.0%</td>
+</tr>
+<tr>
+<td>&lt;= 15</td>
+<td>3.5%</td>
+</tr>
+<tr>
+<td>&lt;= 20</td>
+<td>4.0%</td>
+</tr>
+</tbody>
+</table>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.973Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="mpc1-upgrade-manual.html" class="article-footer-prev" title="MPC1 Upgrade Manual"><i class="fa fa-chevron-left"></i><span>Prev</span></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/docs/cross-chain-swap.html';
+  var disqus_title = "Cross-chain Token Swap Instruction";
+  var disqus_config = function(){
+    this.language = 'en';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Function-introduction"><span class="toc-text">Function introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Link-Ethereum-with-Metaverse-Avatar-or-address"><span class="toc-text">Link Ethereum with Metaverse Avatar or address</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Get-transaction-data-of-address-to-be-linked"><span class="toc-text">Get transaction data of address to be linked</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Light-wallet-myetpwallet"><span class="toc-text">Light wallet myetpwallet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Full-node-wallet"><span class="toc-text">Full-node wallet</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Execute-the-smart-contract-to-link-Ethereum-address-with-Metaverse-avatar-or-address"><span class="toc-text">Execute the smart contract to link Ethereum address with Metaverse avatar or address</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap-from-Ethereum-ERC20-token-to-Metaverse-MST"><span class="toc-text">Swap from Ethereum ERC20 token to Metaverse MST</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Send-ERC20-token-to-the-Ethereum-address-of-ETP-Swap-center"><span class="toc-text">Send ERC20 token to the Ethereum address of ETP-Swap center</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Query"><span class="toc-text">Query</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap-from-Metaverse-MST-to-Ethereum-ERC20-token"><span class="toc-text">Swap from Metaverse MST to Ethereum ERC20 token</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Light-wallet-myetpwallet-1"><span class="toc-text">Light wallet myetpwallet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Full-node-wallet-1"><span class="toc-text">Full-node wallet</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swap-from-Ethereum-ETH-to-Metaverse-ETP"><span class="toc-text">Swap from Ethereum ETH to Metaverse ETP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Send-ETH-to-the-Ethereum-address-of-ETP-Swap-center"><span class="toc-text">Send ETH to the Ethereum address of ETP-Swap center</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Query-1"><span class="toc-text">Query</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Notes"><span class="toc-text">Notes</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Get Started</strong><a href="index.html" class="sidebar-link">Quick Start</a><a href="desktop.html" class="sidebar-link">Desktop</a><a href="mobile.html" class="sidebar-link">Mobile</a><a href="mainnet-info.html" class="sidebar-link">Mainnet Information</a><strong class="sidebar-title">Features</strong><a href="features-issue-token.html" class="sidebar-link">Issue Tokens</a><a href="features-transfer-token.html" class="sidebar-link">Transfer Tokens</a><a href="pillars.html" class="sidebar-link">Pillars Features</a><a href="supernova.html" class="sidebar-link">Supernova Features</a><strong class="sidebar-title">Full Node Wallet</strong><a href="introduction.html" class="sidebar-link">Introduction</a><a href="setup-linux.html" class="sidebar-link">Setup on Linux</a><a href="options.html" class="sidebar-link">Start Running mvsd</a><a href="config-file.html" class="sidebar-link">Config File</a><a href="command-line.html" class="sidebar-link">Command-Line</a><a href="reset-mvs.html" class="sidebar-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="sidebar-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="sidebar-link">Backup Account</a><a href="testnet.html" class="sidebar-link">Testnet</a><a href="private-chain.html" class="sidebar-link">Private Chain</a><a href="setup_mining_pool.html" class="sidebar-link">Setup Mining Pool</a><strong class="sidebar-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="sidebar-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="sidebar-link current">Cross Chain Swap</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Get Started</strong><a href="index.html" class="mobile-nav-link">Quick Start</a><a href="desktop.html" class="mobile-nav-link">Desktop</a><a href="mobile.html" class="mobile-nav-link">Mobile</a><a href="mainnet-info.html" class="mobile-nav-link">Mainnet Information</a><strong class="mobile-nav-title">Features</strong><a href="features-issue-token.html" class="mobile-nav-link">Issue Tokens</a><a href="features-transfer-token.html" class="mobile-nav-link">Transfer Tokens</a><a href="pillars.html" class="mobile-nav-link">Pillars Features</a><a href="supernova.html" class="mobile-nav-link">Supernova Features</a><strong class="mobile-nav-title">Full Node Wallet</strong><a href="introduction.html" class="mobile-nav-link">Introduction</a><a href="setup-linux.html" class="mobile-nav-link">Setup on Linux</a><a href="options.html" class="mobile-nav-link">Start Running mvsd</a><a href="config-file.html" class="mobile-nav-link">Config File</a><a href="command-line.html" class="mobile-nav-link">Command-Line</a><a href="reset-mvs.html" class="mobile-nav-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="mobile-nav-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="mobile-nav-link">Backup Account</a><a href="testnet.html" class="mobile-nav-link">Testnet</a><a href="private-chain.html" class="mobile-nav-link">Private Chain</a><a href="setup_mining_pool.html" class="mobile-nav-link">Setup Mining Pool</a><strong class="mobile-nav-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="mobile-nav-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="mobile-nav-link current">Cross Chain Swap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/cross-chain-swap.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

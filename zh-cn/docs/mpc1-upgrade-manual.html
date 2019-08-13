@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>MPC1 升级手册 | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/mpc1-upgrade-manual.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="MPC1 升级手册MPC1 版钱包实现了 PoW &amp;amp; PoS 混合共识与 MST 挖矿等新特性。在 MPC1 版钱包启用之后，使用老版本钱包发布的交易有可能不能在 MPC1 版钱包中通过验证，因此元界决定基于 MPC1 版进行硬分叉，分叉时间在第 1924000 个区块高度，大约在2019年2月28日。 什么是硬分叉？ 硬分叉是对元界底层协议的改变，创建新的规则，完善整个系统。协议改变在某">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MPC1 升级手册">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="MPC1 升级手册MPC1 版钱包实现了 PoW &amp;amp; PoS 混合共识与 MST 挖矿等新特性。在 MPC1 版钱包启用之后，使用老版本钱包发布的交易有可能不能在 MPC1 版钱包中通过验证，因此元界决定基于 MPC1 版进行硬分叉，分叉时间在第 1924000 个区块高度，大约在2019年2月28日。 什么是硬分叉？ 硬分叉是对元界底层协议的改变，创建新的规则，完善整个系统。协议改变在某">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MPC1 升级手册">
+<meta name="twitter:description" content="MPC1 升级手册MPC1 版钱包实现了 PoW &amp;amp; PoS 混合共识与 MST 挖矿等新特性。在 MPC1 版钱包启用之后，使用老版本钱包发布的交易有可能不能在 MPC1 版钱包中通过验证，因此元界决定基于 MPC1 版进行硬分叉，分叉时间在第 1924000 个区块高度，大约在2019年2月28日。 什么是硬分叉？ 硬分叉是对元界底层协议的改变，创建新的规则，完善整个系统。协议改变在某">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/mpc1-upgrade-manual.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">MPC1 升级手册</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/mpc1-upgrade-manual.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="MPC1-升级手册" class="article-heading"><a href="#MPC1-升级手册" class="headerlink" title="MPC1 升级手册"></a>MPC1 升级手册<a class="article-anchor" href="#MPC1-升级手册" aria-hidden="true"></a></h1><p><code>MPC1</code> 版钱包实现了 <code>PoW &amp; PoS</code> 混合共识与 MST 挖矿等新特性。在 <code>MPC1</code> 版钱包启用之后，使用老版本钱包发布的交易有可能不能在 <code>MPC1</code> 版钱包中通过验证，因此元界决定基于 <code>MPC1</code> 版进行硬分叉，分叉时间在第 1924000 个区块高度，大约在2019年2月28日。</p>
+<p>什么是硬分叉？</p>
+<p>硬分叉是对元界底层协议的改变，创建新的规则，完善整个系统。协议改变在某个特定区块上被激活。所有的元界客户端都需要升级，否则将停留在遵循旧规则的老链上。</p>
+<p>请按照如下说明进行升级操作。</p>
+<p><strong>注意: 请在操作前备份好您所有账户的主私钥助记符（即注册账户时生成的24个单词）</strong></p>
+<h2 id="普通用户" class="article-heading"><a href="#普通用户" class="headerlink" title="普通用户"></a>普通用户<a class="article-anchor" href="#普通用户" aria-hidden="true"></a></h2><ol>
+<li>您只需卸载旧版桌面钱包，然后下载安装<a href="https://mvs.org/wallet.html" target="_blank" rel="noopener"><code>MPC1 v0.9.0</code></a>新钱包即可。</li>
+<li>注意安装后首次运行请等待几分钟同步至最新区块高。</li>
+</ol>
+<h2 id="平台升级" class="article-heading"><a href="#平台升级" class="headerlink" title="平台升级"></a>平台升级<a class="article-anchor" href="#平台升级" aria-hidden="true"></a></h2><h3 id="备份-可选" class="article-heading"><a href="#备份-可选" class="headerlink" title="备份(可选)"></a>备份(可选)<a class="article-anchor" href="#备份-可选" aria-hidden="true"></a></h3><p>使用命令 <code>dumpkeyfile</code> 命令备份账户信息。<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli dumpkeyfile account_name password last_word path_of_backup_keyfile</span><br><span class="line">$ ./mvs-cli importkeyfile account_name password path_of_backup_keyfile</span><br></pre></td></tr></table></figure></p>
+<p>参考文档 <a href="https://docs.mvs.org/zh-cn/docs/backup-account.html">备份账户</a>。</p>
+<h3 id="升级" class="article-heading"><a href="#升级" class="headerlink" title="升级"></a>升级<a class="article-anchor" href="#升级" aria-hidden="true"></a></h3><p>停止运行当前钱包程序并卸载，然后下载并安装 <code>MPC1</code> 版钱包程序。</p>
+<ol>
+<li><p>下载</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># 找到您对应的操作系统，例如Linux平台：</span><br><span class="line">$ wget http://newmetaverse.org/mvs-download/mvs-linux-x86_64-v0.9.0.tar.gz</span><br><span class="line">$ tar -zxf mvs-linux-x86_64-v0.9.0.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装  </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd mvs-linux-x86_64-v0.9.0</span><br><span class="line">$ ./mvs-install.sh</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>参考<a href="https://docs.mvs.org/zh-cn/docs/setup-linux.html">https://docs.mvs.org/zh-cn/docs/setup-linux.html</a></p>
+<h3 id="同步" class="article-heading"><a href="#同步" class="headerlink" title="同步"></a>同步<a class="article-anchor" href="#同步" aria-hidden="true"></a></h3><p>运行全节点钱包，同步区块数据，然后使用命令 <code>getinfo</code> 查看钱包状态。<br><strong>安装后首次运行，请不要直接退出程序，请等待同步区块到最新!</strong></p>
+<h3 id="MPC1-交易更新说明" class="article-heading"><a href="#MPC1-交易更新说明" class="headerlink" title="MPC1 交易更新说明"></a>MPC1 交易更新说明<a class="article-anchor" href="#MPC1-交易更新说明" aria-hidden="true"></a></h3><p>MPC1 新增了一些交易构造，如果您在项目中需要自己解析交易，请阅读<a href="https://docs.mvs.org/zh-cn/developers/mpc1-transaction-updation.html">MPC1 新增交易说明</a>。</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <a href="assets-operations.html" class="article-footer-prev" title="元界MST使用说明"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="cross-chain-swap.html" class="article-footer-next" title="跨链置换"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+<section id="comments">
+  <div id="disqus_thread"></div>
+</section>
+<script>
+  var disqus_shortname = 'docs-mvs-org';
+  var disqus_url = 'https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html';
+  var disqus_title = "MPC1 升级手册";
+  var disqus_config = function(){
+    this.language = 'zh';
+  };
+  (function(){
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'https://go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MPC1-升级手册"><span class="toc-text">MPC1 升级手册</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#普通用户"><span class="toc-text">普通用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#平台升级"><span class="toc-text">平台升级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#备份-可选"><span class="toc-text">备份(可选)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#升级"><span class="toc-text">升级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步"><span class="toc-text">同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MPC1-交易更新说明"><span class="toc-text">MPC1 交易更新说明</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link">搭建私有链</a><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link current">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link">搭建私有链</a><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link current">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/mpc1-upgrade-manual.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'cdea7d4e47d84f6145b77e7f68689f35',
+  indexName: 'hexo_zh-cn',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

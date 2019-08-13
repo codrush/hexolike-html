@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Metaverser Digital Identity (brief) | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/developers/mvs-avatar-whitepaper.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/developers/mvs-avatar-whitepaper.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/developers/mvs-avatar-whitepaper.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="The Essence of Digital Identity  Digital Identities in Metaverse are unique because their modules are embedded in Metaverse’s protocols and supporting applications have been developed for them. Users">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metaverser Digital Identity (brief)">
+<meta property="og:url" content="https://docs.mvs.org/developers/mvs-avatar-whitepaper.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="The Essence of Digital Identity  Digital Identities in Metaverse are unique because their modules are embedded in Metaverse’s protocols and supporting applications have been developed for them. Users">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Metaverser Digital Identity (brief)">
+<meta name="twitter:description" content="The Essence of Digital Identity  Digital Identities in Metaverse are unique because their modules are embedded in Metaverse’s protocols and supporting applications have been developed for them. Users">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="developers/mvs-avatar-whitepaper.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Metaverser Digital Identity (brief)</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/developers/mvs-avatar-whitepaper.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="The-Essence-of-Digital-Identity" class="article-heading"><a href="#The-Essence-of-Digital-Identity" class="headerlink" title="The Essence of Digital Identity"></a>The Essence of Digital Identity<a class="article-anchor" href="#The-Essence-of-Digital-Identity" aria-hidden="true"></a></h2><p>  Digital Identities in Metaverse are unique because their modules are embedded in Metaverse’s protocols and supporting applications have been developed for them. Users have a defined autonomous identity - they are in full control of their identities, and hence need not rely on any central entity or third party for identity verification. They can create, sign, and verify claims and make transactions, while other people who interact with users can help the user prove their identities. In addition, users with autonomous digital identities can selectively<br>disclose their information.<br>  Digital identities are an integral part of the virtual world and can take many forms, such as that of individuals or value intermediaries (institutions and entities).  Therefore, individuals can have different digital identities in different scenarios (workplace or other places), but all in fact will be supported by their true identities.</p>
+<h2 id="Use-Cases" class="article-heading"><a href="#Use-Cases" class="headerlink" title="Use Cases"></a>Use Cases<a class="article-anchor" href="#Use-Cases" aria-hidden="true"></a></h2><p>  There are many use cases for identity systems embedded within a blockchain<br>protocol.<br>  If a person owns multiple digital identities and wants to open an account at Bank B, then he can indicate that he has already had an account at Bank A. Because of this, Bank B will authorize him to open an account at their bank. This use case can be replicated at multiple banks within the same legal jurisdiction.  In addition, digital identity is also applicable in the field of digital rights. Digital assets that are issued by a digital identity and possess multiple credentials will be more valuable in the market, thereby facilitating the transfer of different types of value other than from encrypted digital currencies. End users will be able to use their digital identity to claim copyrights and other assets. Apart from authorizing certification information, users can also authorize others to access their private data (such as reputation and credit data).</p>
+<h2 id="The-Operating-Procedure-of-Digital-Identities" class="article-heading"><a href="#The-Operating-Procedure-of-Digital-Identities" class="headerlink" title="The Operating Procedure of Digital Identities"></a>The Operating Procedure of Digital Identities<a class="article-anchor" href="#The-Operating-Procedure-of-Digital-Identities" aria-hidden="true"></a></h2><ul>
+<li><p><strong>Creation</strong><br>Any user can create a digital identity and bind it with his/her master private key.  If a user creates a digital identity but does not bind it to any master private key, this DID will be regarded as an unauthenticated account and will not be able to access to any of its functionalities or applications.  Master private key holders who have registered their asset on the Metaverse blockchain can also choose not to bind any digital identities. Users must take initiative, because Metaverse does not automatically create digital identities for any user. The decision to bind a DID lies with the master private key’s holder.</p>
+</li>
+<li><p><strong>Verification</strong><br>Profiles can provide effective chains of proof that demonstrate objective facts of any specified digital identity. For users, they first need to prove that a digital identity belongs to them by binding the transaction to the DID (since the transaction domain contains DID information).</p>
+</li>
+<li><p><strong>Authorization</strong><br>First, we should clarify the situations that would require authorization: authorization is often related to transactions. Assume A requests to inspect B’s digital identity information (asset information) before providing any services.  There are two possibilities:</p>
+</li>
+</ul>
+<ol>
+<li>B has large amounts of assets on-chain, more than 1 million ETP. B can simply disclose his asset information to A.</li>
+<li>B has few on-chain assets, but many off-chain assets. The traditional approach is for B to convert assets to ETP for authorization. Currently, Metaverse recommends that users issue their assets and get them verified by an Oracle, after which they will be registered as valid assets belonging to one’s digital identity.</li>
+</ol>
+<ul>
+<li><p>Authorization process:<br>A sends a request to B which triggers a script that verifies the asset information of the target account, then sends A’s encrypted result back. B is unable to know which result contains information corresponding to the asset verification.  Additionally, the initial request is also encrypted. Thus, B does not know the specific request of A, only what information was requested. Personal transaction and asset records can be accessed after permission is given on8 chain, but the basic principle remains unchanged.  Personal customized fields are similar to assets that undergo Oracle authentication (information that has not been approved by an Oracle can still be authorized, but this is not recommended).  If the personal customized field contains nonpublic information such as mailbox and phone numbers, no Oracle authentication is required. However, if the information is certified (such as schooling records), then Oracle authentication<br>will be required.</p>
+</li>
+<li><p>Authentication process:<br>The authentication of personal customized information An Oracle’s data-feed is used for endorsement. An Oracle is introduced as a third party and publishes all Profiles on the blockchain for public inquiry and supervision. Oracles are usually organizations, and these organizations should publish their own profile and DID information on the official website.  Firstly, B fills in the customizable field with information that needs to be proved.  The Oracle must then use its master private key to sign the information and employ a larger sum of coindays to endorse it.  A can make a request for the field’s information (including the Oracle endorsement) on-chain. If A is convinced that B’s information is valid, he can continue providing services to B.</p>
+</li>
+</ul>
+<ul>
+<li><strong>Query</strong><br>Since the concept of DIDs has been introduced by digital identities at the beginning, DIDs can be used to conduct over-the-counter (OTC) trades with its ability to create transactions in the trading market.  We can query a DID’s current transaction requests and past transactions in the open market by entering the DID into the address query bar in the trading market. Conversely, a DID’s behavior and records in the market can be used as data to build digital identities.</li>
+</ul>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="mvs-whitepaper.html" class="article-footer-prev" title="Brief MVS whitepaper"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="build-mvs.html" class="article-footer-next" title="Build MVS Full Node"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Essence-of-Digital-Identity"><span class="toc-text">The Essence of Digital Identity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Use-Cases"><span class="toc-text">Use Cases</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#The-Operating-Procedure-of-Digital-Identities"><span class="toc-text">The Operating Procedure of Digital Identities</span></a></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Developers Overview</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="mvs-whitepaper.html" class="sidebar-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="sidebar-link current">Brief Avatar whitepaper</a><a href="build-mvs.html" class="sidebar-link">Build MVS Full Node</a><strong class="sidebar-title">Digital Asset (MST)</strong><a href="da-index.html" class="sidebar-link">Introduction</a><a href="da-issue.html" class="sidebar-link">MST Issuance</a><a href="da-secondary-issue.html" class="sidebar-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="sidebar-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="sidebar-link">MST Multi-signature</a><a href="da-certification.html" class="sidebar-link">MST Domain-name&Certification</a><a href="da-burn.html" class="sidebar-link">MST Burn</a><a href="da-programmable.html" class="sidebar-link">Programmable MST</a><strong class="sidebar-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="sidebar-link">MIT introduction</a><a href="mit-register.html" class="sidebar-link">MIT register</a><a href="mit-transfer.html" class="sidebar-link">MIT transfer</a><a href="mit-query.html" class="sidebar-link">MIT query</a><strong class="sidebar-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="sidebar-link">DID introduction</a><a href="di-register.html" class="sidebar-link">DID register</a><a href="di-transfer.html" class="sidebar-link">DID transfer</a><a href="di-query.html" class="sidebar-link">DID query</a><a href="di-send.html" class="sidebar-link">DID send etp or asset</a><strong class="sidebar-title">Tech-Guide</strong><a href="account-model.html" class="sidebar-link">Account model</a><a href="consensus-and-mining.html" class="sidebar-link">Consensus and mining</a><a href="database.html" class="sidebar-link">Database</a><a href="httpserver.html" class="sidebar-link">HttpServer</a><a href="p2p-network.html" class="sidebar-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="sidebar-link">Tx format and signing</a><a href="utxo-and-script.html" class="sidebar-link">UTXO and script</a><a href="utxo-limitation.html" class="sidebar-link">UTXO limitation</a><a href="cross-chain.html" class="sidebar-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="sidebar-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="sidebar-link">Plugin CLI</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Developers Overview</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="mvs-whitepaper.html" class="mobile-nav-link">Brief MVS whitepaper</a><a href="mvs-avatar-whitepaper.html" class="mobile-nav-link current">Brief Avatar whitepaper</a><a href="build-mvs.html" class="mobile-nav-link">Build MVS Full Node</a><strong class="mobile-nav-title">Digital Asset (MST)</strong><a href="da-index.html" class="mobile-nav-link">Introduction</a><a href="da-issue.html" class="mobile-nav-link">MST Issuance</a><a href="da-secondary-issue.html" class="mobile-nav-link">MST Secondary Issuance</a><a href="da-attenuation.html" class="mobile-nav-link">MST Conditional Offering</a><a href="da-multi-sig.html" class="mobile-nav-link">MST Multi-signature</a><a href="da-certification.html" class="mobile-nav-link">MST Domain-name&Certification</a><a href="da-burn.html" class="mobile-nav-link">MST Burn</a><a href="da-programmable.html" class="mobile-nav-link">Programmable MST</a><strong class="mobile-nav-title">Digital Asset (MIT)</strong><a href="mit-index.html" class="mobile-nav-link">MIT introduction</a><a href="mit-register.html" class="mobile-nav-link">MIT register</a><a href="mit-transfer.html" class="mobile-nav-link">MIT transfer</a><a href="mit-query.html" class="mobile-nav-link">MIT query</a><strong class="mobile-nav-title">Digital Identity (Avatar)</strong><a href="di-index.html" class="mobile-nav-link">DID introduction</a><a href="di-register.html" class="mobile-nav-link">DID register</a><a href="di-transfer.html" class="mobile-nav-link">DID transfer</a><a href="di-query.html" class="mobile-nav-link">DID query</a><a href="di-send.html" class="mobile-nav-link">DID send etp or asset</a><strong class="mobile-nav-title">Tech-Guide</strong><a href="account-model.html" class="mobile-nav-link">Account model</a><a href="consensus-and-mining.html" class="mobile-nav-link">Consensus and mining</a><a href="database.html" class="mobile-nav-link">Database</a><a href="httpserver.html" class="mobile-nav-link">HttpServer</a><a href="p2p-network.html" class="mobile-nav-link">P2P network</a><a href="mvs-transaction-format-and-signing.html" class="mobile-nav-link">Tx format and signing</a><a href="utxo-and-script.html" class="mobile-nav-link">UTXO and script</a><a href="utxo-limitation.html" class="mobile-nav-link">UTXO limitation</a><a href="cross-chain.html" class="mobile-nav-link">Cross chain swap</a><a href="mpc1-transaction-updation.html" class="mobile-nav-link">MPC1 transaction updation</a><a href="plugin-cli.html" class="mobile-nav-link">Plugin CLI</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="developers/mvs-avatar-whitepaper.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>

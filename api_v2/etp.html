@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>etp | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/api_v2/etp.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/api_v2/etp.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/api_v2/etp.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="Description API Methods  getbalance  Show total balance details of this account.  Parameters (positional)   ACCOUNTNAME Account name. ACCOUNTAUTH Account password/authorization.params:[    &quot;ACCOUNTNAM">
+<meta property="og:type" content="website">
+<meta property="og:title" content="etp">
+<meta property="og:url" content="https://docs.mvs.org/api_v2/etp.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="Description API Methods  getbalance  Show total balance details of this account.  Parameters (positional)   ACCOUNTNAME Account name. ACCOUNTAUTH Account password/authorization.params:[    &quot;ACCOUNTNAM">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-21T08:07:18.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="etp">
+<meta name="twitter:description" content="Description API Methods  getbalance  Show total balance details of this account.  Parameters (positional)   ACCOUNTNAME Account name. ACCOUNTAUTH Account password/authorization.params:[    &quot;ACCOUNTNAM">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="api_v2/etp.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">etp</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/api_v2/etp.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
+<h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
+<ul>
+<li><h3 id="getbalance" class="article-heading"><a href="#getbalance" class="headerlink" title="getbalance"></a><code>getbalance</code><a class="article-anchor" href="#getbalance" aria-hidden="true"></a></h3><p>  Show total balance details of this account.</p>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Object</code> - balance summaries</li>
+</ul>
+<ol>
+<li><code>total-confirmed</code> - total confirmed(unspent) etp amount</li>
+<li><code>total-received</code> - total received etp amount</li>
+<li><code>total-unspent</code> - total unspent etp amount</li>
+<li><code>total-available</code> - total available etp amount</li>
+<li><code>total-frozen</code> - total frozen etp amount</li>
+</ol>
+<ul>
+<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"getbalance",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"total-available"</span> : <span class="number">2000606696</span>,</span><br><span class="line">        <span class="string">"total-confirmed"</span> : <span class="number">2000606696</span>,</span><br><span class="line">        <span class="string">"total-frozen"</span> : <span class="number">0</span>,</span><br><span class="line">        <span class="string">"total-received"</span> : <span class="number">49291956690</span>,</span><br><span class="line">        <span class="string">"total-unspent"</span> : <span class="number">2000606696</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="listbalances" class="article-heading"><a href="#listbalances" class="headerlink" title="listbalances"></a><code>listbalances</code><a class="article-anchor" href="#listbalances" aria-hidden="true"></a></h3><p>  List all balance details of each address of this account.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-d</code> or <code>[--deposited]</code> List deposited ETPs, default is false.</li>
+<li><code>-g</code> or <code>[--greater_equal]</code> Greater than ETP bits.</li>
+<li><code>-l</code> or <code>[--lesser_equal]</code> Lesser than ETP bits.</li>
+<li><code>-n</code> or <code>[--nozero]</code> List non-zero upsent records.</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li>Returns<br><code>Array</code> - return balance of each address</li>
+</ul>
+<ol>
+<li><code>confirmed</code> - the address confirmed(unspent) etp amount</li>
+<li><code>received</code> - the address received etp amount</li>
+<li><code>unspent</code> - the address unspent etp amount</li>
+<li><code>available</code> - the address available etp amount</li>
+<li><code>frozen</code> - the address frozen etp amount</li>
+</ol>
+<ul>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"listbalances",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"balances"</span> :</span><br><span class="line">        [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"balance"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"available"</span> : <span class="number">100646696</span>,</span><br><span class="line">                    <span class="string">"confirmed"</span> : <span class="number">100646696</span>,</span><br><span class="line">                    <span class="string">"frozen"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"received"</span> : <span class="number">47391996691</span>,</span><br><span class="line">                    <span class="string">"unspent"</span> : <span class="number">100646696</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"balance"</span> :</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tKc8dxEEj9cWr4Ys2oUbgQxGtRgUEg9e5q"</span>,</span><br><span class="line">                    <span class="string">"available"</span> : <span class="number">1899960000</span>,</span><br><span class="line">                    <span class="string">"confirmed"</span> : <span class="number">1899960000</span>,</span><br><span class="line">                    <span class="string">"frozen"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"received"</span> : <span class="number">1899960000</span>,</span><br><span class="line">                    <span class="string">"unspent"</span> : <span class="number">1899960000</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request for list deposited balances. Available for V0.8.2.</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"listbalances",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        "--deposited"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> : </span><br><span class="line">    [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"address"</span> : <span class="string">"M9qeDursSJsxK9nHzTcRMnqpe78YXCKv48"</span>,</span><br><span class="line">            <span class="string">"deposited_balance"</span> : <span class="number">300</span>,</span><br><span class="line">            <span class="string">"deposited_height"</span> : <span class="number">25200</span>,</span><br><span class="line">            <span class="string">"expiration_height"</span> : <span class="number">27227</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"address"</span> : <span class="string">"M9L3ipy3Hcf6kdvknU3mH7mwH9ER3uCziu"</span>,</span><br><span class="line">            <span class="string">"deposited_balance"</span> : <span class="number">300287670</span>,</span><br><span class="line">            <span class="string">"deposited_height"</span> : <span class="number">25200</span>,</span><br><span class="line">            <span class="string">"expiration_height"</span> : <span class="number">27031</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="deposit" class="article-heading"><a href="#deposit" class="headerlink" title="deposit"></a><code>deposit</code><a class="article-anchor" href="#deposit" aria-hidden="true"></a></h3><p>  Deposit some etp, then get reward for frozen some etp.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-a</code> or <code>[--address]</code> The deposit target address.</li>
+<li><code>-d</code> or <code>[--deposit]</code> Deposits support [7, 30, 90, 182, 365] days. defaluts to 7 days</li>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>AMOUNT</code> How many you will deposit.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"AMOUNT"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - deposit transaction to be send.</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST -d <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":25,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"deposit",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test11",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        10000,</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "address": "tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y",</span></span><br><span class="line"><span class="string">            "deposit": 7</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> http:<span class="comment">//127.0.0.1:8820/rpc/v2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">25</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"256d6699d7c5dcc4be0bc34c3cc9b4d9fb7c8c63f57d98ec46449adc0a336f09"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"8e2dc008d39e1fd7ccea9c19fd2f72cc5d2c2d5d667de4cb86b5b86b7410848c"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">0</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 304402205eb1bb5ad9056c06db024bff142edca874dbaa6bcc88b74f22c290e078cf23b702200cf9201bca3c6055653a10e10bbe4d5c27b68f258e30a1d87591ceabcb86aa4401 ] [ 03b122b19d00981a2181ebabe58f1aae7d9ee245bf87a551e56ca5aea7f9b0ddfd ] [ 14 ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">10</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 0a ] numequalverify dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">99980000</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="send" class="article-heading"><a href="#send" class="headerlink" title="send"></a><code>send</code><a class="article-anchor" href="#send" aria-hidden="true"></a></h3><p>  send etp to a targert address, mychange goes to another existed address of this account.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp</li>
+<li><code>-m</code> or <code>[--memo]</code> The memo to descript transaction</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>TOADDRESS</code> Send to this address</li>
+<li><code>AMOUNT</code> How many you will spend<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"TOADDRESS"</span>,</span><br><span class="line">    <span class="string">"AMOUNT"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - return the transaction</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"send",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        "tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ",</span></span><br><span class="line"><span class="string">        "10000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">125</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"a40ab699fbb769f571c27995208f8a2e1c6e26095e119d6c59dc43dd7cefd3a8"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"e6a464f8b505c57d67e0079138618241a80fe7f633a83b628f20e197d4fb3183"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 3045022100fdbd7c785d665516fc7066a845b7fcc9bae2a25545982b414036da148d28dc210220186ebcc78fdab96d579896ef8e990ebc0bae93241b42e6b1226cb4f904778ea401 ] [ 03b122b19d00981a2181ebabe58f1aae7d9ee245bf87a551e56ca5aea7f9b0ddfd ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ e4b7fb501e2a43b670b3854b042ea24934942b2f ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">356695</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="sendfrom" class="article-heading"><a href="#sendfrom" class="headerlink" title="sendfrom"></a><code>sendfrom</code><a class="article-anchor" href="#sendfrom" aria-hidden="true"></a></h3><p>  send etp from a specified address of this account to target address, mychange goes to from_address.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp</li>
+<li><code>-m</code> or <code>[--memo]</code> The memo to descript transaction</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.</li>
+<li><code>FROMADDRESS</code> Send from this address</li>
+<li><code>TOADDRESS</code> Send to this address</li>
+<li><code>AMOUNT</code> How many you will spend<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span>,</span><br><span class="line">    <span class="string">"FROMADDRESS"</span>,</span><br><span class="line">    <span class="string">"TOADDRESS"</span>,</span><br><span class="line">    <span class="string">"AMOUNT"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - return the transaction</p>
+</li>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"sendfrom",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        "tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y",</span></span><br><span class="line"><span class="string">        "tTko1LmJMM4Y492xYWiacJ9pokxoG8FFjZ",</span></span><br><span class="line"><span class="string">        "10000"</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">125</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"e6a464f8b505c57d67e0079138618241a80fe7f633a83b628f20e197d4fb3183"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"30bff29ce81dac72ca8e91a4e278bcab6a713889f1c6593e37daf21736da4fa8"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 3045022100999a1b328128732c763e449f4fa167807c8c7b8607504c4f572246fab2debbf902203d76137cc87a9a688b266ec0b05912eabe4f089471ab22dfef0e247633e4d44501 ] [ 03b122b19d00981a2181ebabe58f1aae7d9ee245bf87a551e56ca5aea7f9b0ddfd ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tTko1LmJMM4Y492xYWiacJ9pokxoG8FFjZ"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ e47fa100e48b4080dbe122ff402d5350cabe06fd ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">376695</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><h3 id="sendmore" class="article-heading"><a href="#sendmore" class="headerlink" title="sendmore"></a><code>sendmore</code><a class="article-anchor" href="#sendmore" aria-hidden="true"></a></h3><p>  send etp to multi target addresses, must specify mychange address.</p>
+<ul>
+<li>Parameters (optional)</li>
+</ul>
+<ol>
+<li><code>-f</code> or <code>[--fee]</code> The fee of tx. default_value 0.0001 etp</li>
+<li><code>-m</code> or <code>[--mychange]</code> Mychange to this address</li>
+<li><code>-r</code> or <code>[--receivers]</code> Send to [address:amount]</li>
+</ol>
+<ul>
+<li>Parameters (positional)</li>
+</ul>
+<ol>
+<li><code>ACCOUNTNAME</code> Account name.</li>
+<li><code>ACCOUNTAUTH</code> Account password/authorization.<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">params:[</span><br><span class="line">    <span class="string">"ACCOUNTNAME"</span>,</span><br><span class="line">    <span class="string">"ACCOUNTAUTH"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>Returns<br><code>Object</code> - return the transaction</p>
+</li>
+<li><p>Example</p>
+</li>
+</ul>
+</li>
+<li><h4 id="sendmore-to-one-receiver" class="article-heading"><a href="#sendmore-to-one-receiver" class="headerlink" title="sendmore to one receiver"></a><code>sendmore to one receiver</code><a class="article-anchor" href="#sendmore-to-one-receiver" aria-hidden="true"></a></h4>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//example of sending to only one receiver.</span></span><br><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"sendmore",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "receivers":"tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ:10000",</span></span><br><span class="line"><span class="string">            "mychange": "tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">125</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"0f37cbe6f0c31548655d7ebda6d576ffd9f3facddfaf4a3be0126ef613f25155"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"a40ab699fbb769f571c27995208f8a2e1c6e26095e119d6c59dc43dd7cefd3a8"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 3045022100e234a13e5d8e8b39774f8065c6994c0974b7f619cfaf8b77a7a9493fc8f93b3d022010c7c592ba1d37688b989d8ed1baa0b5a19b7a9ab2f65228ffe5b94b03e7557e01 ] [ 03b122b19d00981a2181ebabe58f1aae7d9ee245bf87a551e56ca5aea7f9b0ddfd ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ e4b7fb501e2a43b670b3854b042ea24934942b2f ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">336695</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="sendmore-to-multiple-receivers" class="article-heading"><a href="#sendmore-to-multiple-receivers" class="headerlink" title="sendmore to multiple receivers"></a><code>sendmore to multiple receivers</code><a class="article-anchor" href="#sendmore-to-multiple-receivers" aria-hidden="true"></a></h4>  <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//example of sending to multiple receivers.</span></span><br><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl -X POST --data <span class="string">'&#123;</span></span><br><span class="line"><span class="string">    "id":125,</span></span><br><span class="line"><span class="string">    "jsonrpc":"2.0",</span></span><br><span class="line"><span class="string">    "method":"sendmore",</span></span><br><span class="line"><span class="string">    "params":[</span></span><br><span class="line"><span class="string">        "test1",</span></span><br><span class="line"><span class="string">        "passwd1",</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            "receivers":[</span></span><br><span class="line"><span class="string">                "tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ:10000",</span></span><br><span class="line"><span class="string">                "tEjJGzM6LB5zsK6aX8urD9RF5pAAJyrodC:10000"</span></span><br><span class="line"><span class="string">            ],</span></span><br><span class="line"><span class="string">            "mychange": "tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;'</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">8820</span>/rpc/v2</span><br><span class="line"></span><br><span class="line"><span class="comment">// Response</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"id"</span> : <span class="number">125</span>,</span><br><span class="line">    <span class="string">"jsonrpc"</span> : <span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"result"</span> :</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"transaction"</span> :</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"hash"</span> : <span class="string">"8294ae20bbcc00f07ff20d5e2e01653b55592528705b4a40d3f88f856590cf62"</span>,</span><br><span class="line">            <span class="string">"inputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"previous_output"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"hash"</span> : <span class="string">"0f37cbe6f0c31548655d7ebda6d576ffd9f3facddfaf4a3be0126ef613f25155"</span>,</span><br><span class="line">                        <span class="string">"index"</span> : <span class="number">1</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"[ 304402200a6540d1f9eea2682e326a8da6a733f0d49dda718a126e28edc6e1283a1d172d02207c7b31a8e317756920647b0ab5fc8fe3723ecefd11b70bec533f3a03ee67635801 ] [ 03b122b19d00981a2181ebabe58f1aae7d9ee245bf87a551e56ca5aea7f9b0ddfd ]"</span>,</span><br><span class="line">                    <span class="string">"sequence"</span> : <span class="number">4294967295</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"lock_time"</span> : <span class="string">"0"</span>,</span><br><span class="line">            <span class="string">"outputs"</span> :</span><br><span class="line">            [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tTmxWoQ3PohHaPdndAGD89o9AhLcJ7L9TJ"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ e4b7fb501e2a43b670b3854b042ea24934942b2f ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tEjJGzM6LB5zsK6aX8urD9RF5pAAJyrodC"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">1</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ 559d9851e62cfe1c05174958ca493aab96523fae ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">10000</span></span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="string">"address"</span> : <span class="string">"tRL8yxhSd3AAxpRcbxmEasv89VZ7ZJgh3y"</span>,</span><br><span class="line">                    <span class="string">"attachment"</span> :</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"type"</span> : <span class="string">"etp"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    <span class="string">"index"</span> : <span class="number">2</span>,</span><br><span class="line">                    <span class="string">"locked_height_range"</span> : <span class="number">0</span>,</span><br><span class="line">                    <span class="string">"script"</span> : <span class="string">"dup hash160 [ c9e5a7523f9f51858ad923995de69be769a2ed7d ] equalverify checksig"</span>,</span><br><span class="line">                    <span class="string">"value"</span> : <span class="number">306695</span></span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            <span class="string">"version"</span> : <span class="string">"2"</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.965Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <a href="blockchain.html" class="article-footer-prev" title="Blockchain"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="transaction.html" class="article-footer-next" title="Transaction"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-Methods"><span class="toc-text">API Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#getbalance"><span class="toc-text">getbalance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#listbalances"><span class="toc-text">listbalances</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#deposit"><span class="toc-text">deposit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#send"><span class="toc-text">send</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sendfrom"><span class="toc-text">sendfrom</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sendmore"><span class="toc-text">sendmore</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sendmore-to-one-receiver"><span class="toc-text">sendmore to one receiver</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sendmore-to-multiple-receivers"><span class="toc-text">sendmore to multiple receivers</span></a></li></ol></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">----</strong><a href="index.html" class="sidebar-link">Introduction</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">----</strong><a href="block.html" class="sidebar-link">Block</a><strong class="sidebar-title">----</strong><a href="account.html" class="sidebar-link">Account</a><strong class="sidebar-title">----</strong><a href="blockchain.html" class="sidebar-link">Blockchain</a><strong class="sidebar-title">----</strong><a href="etp.html" class="sidebar-link current">ETP</a><strong class="sidebar-title">----</strong><a href="transaction.html" class="sidebar-link">Transaction</a><strong class="sidebar-title">----</strong><a href="asset.html" class="sidebar-link">Asset</a><strong class="sidebar-title">----</strong><a href="multisig.html" class="sidebar-link">Multi-signature</a><strong class="sidebar-title">----</strong><a href="rawtx.html" class="sidebar-link">RawTx</a><strong class="sidebar-title">----</strong><a href="identity.html" class="sidebar-link">Identity</a><strong class="sidebar-title">----</strong><a href="mit.html" class="sidebar-link">MIT</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">----</strong><a href="index.html" class="mobile-nav-link">Introduction</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">----</strong><a href="block.html" class="mobile-nav-link">Block</a><strong class="mobile-nav-title">----</strong><a href="account.html" class="mobile-nav-link">Account</a><strong class="mobile-nav-title">----</strong><a href="blockchain.html" class="mobile-nav-link">Blockchain</a><strong class="mobile-nav-title">----</strong><a href="etp.html" class="mobile-nav-link current">ETP</a><strong class="mobile-nav-title">----</strong><a href="transaction.html" class="mobile-nav-link">Transaction</a><strong class="mobile-nav-title">----</strong><a href="asset.html" class="mobile-nav-link">Asset</a><strong class="mobile-nav-title">----</strong><a href="multisig.html" class="mobile-nav-link">Multi-signature</a><strong class="mobile-nav-title">----</strong><a href="rawtx.html" class="mobile-nav-link">RawTx</a><strong class="mobile-nav-title">----</strong><a href="identity.html" class="mobile-nav-link">Identity</a><strong class="mobile-nav-title">----</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="api_v2/etp.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+<script type="text/javascript">
+document.getElementById('search-input-wrap').classList.add('on');
+docsearch({
+  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
+  indexName: 'hexo',
+  inputSelector: '#search-input'
+});
+</script>
+
+
+</body>
+</html>
