@@ -2,7 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/index.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/index.html</loc>
+    
+    <lastmod>2020-02-20T03:49:41.627Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v3/index.html</loc>
+    
+    <lastmod>2020-02-20T03:46:32.916Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/developers/account-model.html</loc>
+    
+    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/developers/cross-chain.html</loc>
+    
+    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
     
@@ -10,6 +38,20 @@
   
   <url>
     <loc>https://docs.mvs.org/zh-cn/api_v3/asset.html</loc>
+    
+    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/docs/supernova.html</loc>
+    
+    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/docs/start_solo_pow_mining.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
     
@@ -37,13 +79,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/features-transfer-token.html</loc>
-    
-    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/docs/mobile.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
@@ -58,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/start_solo_pow_mining.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/index.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/features-issue-token.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/features-transfer-token.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
     
@@ -79,51 +114,9 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/cross-chain-swap.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/features-issue-token.html</loc>
     
     <lastmod>2020-02-20T03:17:05.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/supernova.html</loc>
-    
-    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/cross-chain.html</loc>
-    
-    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/account-model.html</loc>
-    
-    <lastmod>2020-02-20T03:17:05.024Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v3/asset.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/cross-chain-swap.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/features-issue-token.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
     
   </url>
   
@@ -135,7 +128,21 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/features-transfer-token.html</loc>
+    <loc>https://docs.mvs.org/api_v3/asset.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/supernova.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/start_solo_pow_mining.html</loc>
     
     <lastmod>2020-02-20T03:17:04.956Z</lastmod>
     
@@ -156,48 +163,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/join_mining_pool.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/index.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/plugin-cli.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/supernova.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/mobile.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/start_solo_pow_mining.html</loc>
-    
-    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/docs/start_pos_mining.html</loc>
     
     <lastmod>2020-02-20T03:17:04.956Z</lastmod>
@@ -212,7 +177,56 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/developers/plugin-cli.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/mobile.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/cross-chain-swap.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/features-issue-token.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/docs/mst_mining.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/features-transfer-token.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/index.html</loc>
+    
+    <lastmod>2020-02-20T03:17:04.956Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/join_mining_pool.html</loc>
     
     <lastmod>2020-02-20T03:17:04.956Z</lastmod>
     
@@ -275,21 +289,21 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/faq/mst.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/assets-operations.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/faq/index.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/utxo-and-script.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/faq/avatar.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/pillars.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -303,7 +317,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/utxo-and-script.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/mvs-whitepaper.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -324,14 +338,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/mvs-whitepaper.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/upgrade-mvs.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -359,13 +366,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/mainnet-info.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/developers/mpc1-transaction-updation.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
@@ -380,14 +380,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/mit-index.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/mit-query.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/mit-query.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/mit-index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -401,35 +401,28 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/setup_mining_pool.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/mpc1-upgrade-manual.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/private-chain.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/testnet.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/reset-mvs.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/faq/mst.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/upgrade-mvs.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/mainnet-info.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -443,7 +436,35 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/recognize-fronzen-ETP-transaction-outputs.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/faq/wallet.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/faq/index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/docs/setup_mining_pool.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/faq/avatar.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/docs/reset-mvs.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -457,14 +478,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/pillars.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/recognize-fronzen-ETP-transaction-outputs.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/testnet.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/private-chain.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -485,13 +506,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/command-line.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/docs/options.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
@@ -506,14 +520,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/docs/assets-operations.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/faq/wallet.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
@@ -527,14 +534,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api/asset.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/docs/command-line.html</loc>
     
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    <lastmod>2019-06-21T08:07:18.993Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/baas/sdk.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/httpserver.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -548,7 +555,28 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/httpserver.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/baas/sdk.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/baas/baas-did.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/baas/index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/v3-VS-v2.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -556,13 +584,6 @@
   
   <url>
     <loc>https://docs.mvs.org/zh-cn/developers/di-send.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/di-query.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -583,14 +604,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/database.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/websocket.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/da-multi-sig.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/database.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -604,13 +625,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/da-index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/developers/da-programmable.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
@@ -618,7 +632,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/da-certification.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/da-multi-sig.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/developers/da-index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -632,28 +653,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/transaction.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/rawtx.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/identity.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/da-attenuation.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/da-certification.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -667,14 +667,21 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/consensus-and-mining.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/da-attenuation.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/developers/build-mvs.html</loc>
+    <loc>https://docs.mvs.org/index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/api/account.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -688,7 +695,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api/account.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api/asset.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -709,13 +716,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/api/index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
@@ -730,13 +730,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/account.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/zh-cn/api/sendetp.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
@@ -744,7 +737,21 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/account.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/zh-cn/api_v2/block.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/asset.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -765,7 +772,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/asset.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/identity.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -779,14 +786,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/identity.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/mit.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/multisig.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -800,6 +800,13 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/transaction.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/zh-cn/api_v2/websocket.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
@@ -807,7 +814,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/transaction.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v2/mit.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -828,21 +835,14 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/zh-cn/developers/consensus-and-mining.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/zh-cn/api_v3/blockchain.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/baas/baas-did.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -856,7 +856,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v2/multisig.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/identity.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/zh-cn/developers/build-mvs.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
@@ -877,23 +884,30 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/v3-VS-v2.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/rawtx.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/api_v3/websocket.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/api_v3/transaction.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/zh-cn/baas/index.html</loc>
+    <loc>https://docs.mvs.org/zh-cn/developers/di-query.html</loc>
     
     <lastmod>2019-06-21T08:07:18.989Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/faq/mst.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
     
   </url>
   
@@ -912,14 +926,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/mpc1-upgrade-manual.html</loc>
+    <loc>https://docs.mvs.org/docs/options.html</loc>
     
     <lastmod>2019-06-21T08:07:18.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/deploy-wallet-for-exchange-platform.html</loc>
+    <loc>https://docs.mvs.org/docs/upgrade-mvs.html</loc>
     
     <lastmod>2019-06-21T08:07:18.973Z</lastmod>
     
@@ -947,35 +961,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/options.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/docs/reset-mvs.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/desktop.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/setup_mining_pool.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/docs/mainnet-info.html</loc>
     
     <lastmod>2019-06-21T08:07:18.973Z</lastmod>
     
@@ -989,6 +975,34 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/docs/setup_mining_pool.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/deploy-wallet-for-exchange-platform.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/mainnet-info.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/mpc1-upgrade-manual.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/docs/testnet.html</loc>
     
     <lastmod>2019-06-21T08:07:18.973Z</lastmod>
@@ -996,7 +1010,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/upgrade-mvs.html</loc>
+    <loc>https://docs.mvs.org/docs/desktop.html</loc>
     
     <lastmod>2019-06-21T08:07:18.973Z</lastmod>
     
@@ -1017,14 +1031,42 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/faq/mst.html</loc>
+    <loc>https://docs.mvs.org/baas/sdk.html</loc>
     
-    <lastmod>2019-06-21T08:07:18.973Z</lastmod>
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/api_v3/v3-VS-v2.html</loc>
+    <loc>https://docs.mvs.org/docs/config-file.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/backup-account.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/assets-operations.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/developers/utxo-limitation.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/developers/utxo-and-script.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1038,77 +1080,35 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/di-query.html</loc>
+    <loc>https://docs.mvs.org/developers/mvs-whitepaper.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/da-secondary-issue.html</loc>
+    <loc>https://docs.mvs.org/developers/mvs-wallet-address-example.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/database.html</loc>
+    <loc>https://docs.mvs.org/developers/mvs-transaction-format-and-signing.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/da-programmable.html</loc>
+    <loc>https://docs.mvs.org/developers/mvs-avatar-whitepaper.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/di-register.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/di-transfer.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/httpserver.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/mit-index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/di-send.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/mit-query.html</loc>
+    <loc>https://docs.mvs.org/developers/mpc1-transaction-updation.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1129,63 +1129,84 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/mvs-avatar-whitepaper.html</loc>
+    <loc>https://docs.mvs.org/developers/mit-query.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/command-line.html</loc>
+    <loc>https://docs.mvs.org/developers/mit-index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/mvs-transaction-format-and-signing.html</loc>
+    <loc>https://docs.mvs.org/developers/index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/mpc1-transaction-updation.html</loc>
+    <loc>https://docs.mvs.org/developers/httpserver.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/config-file.html</loc>
+    <loc>https://docs.mvs.org/developers/di-transfer.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/mvs-wallet-address-example.html</loc>
+    <loc>https://docs.mvs.org/developers/di-register.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/utxo-limitation.html</loc>
+    <loc>https://docs.mvs.org/developers/di-send.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/assets-operations.html</loc>
+    <loc>https://docs.mvs.org/developers/di-query.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/docs/backup-account.html</loc>
+    <loc>https://docs.mvs.org/developers/di-index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/developers/database.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/developers/da-secondary-issue.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/developers/da-programmable.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1199,14 +1220,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/da-certification.html</loc>
+    <loc>https://docs.mvs.org/developers/da-issue.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/da-issue.html</loc>
+    <loc>https://docs.mvs.org/developers/da-certification.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1220,13 +1241,6 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/da-attenuation.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/developers/da-burn.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
@@ -1234,7 +1248,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/baas/baas-did.html</loc>
+    <loc>https://docs.mvs.org/developers/da-attenuation.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1255,7 +1269,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/baas/sdk.html</loc>
+    <loc>https://docs.mvs.org/baas/baas-did.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/docs/command-line.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1269,7 +1290,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/di-index.html</loc>
+    <loc>https://docs.mvs.org/api_v3/v3-VS-v2.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1277,13 +1298,6 @@
   
   <url>
     <loc>https://docs.mvs.org/api_v3/websocket.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v3/rawtx.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1304,28 +1318,14 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/api_v3/rawtx.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/api_v3/mit.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v3/identity.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v3/index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v3/blockchain.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
     
@@ -1339,6 +1339,20 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/api_v3/identity.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v3/blockchain.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/api_v3/block.html</loc>
     
     <lastmod>2019-06-21T08:07:18.969Z</lastmod>
@@ -1346,35 +1360,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/developers/utxo-and-script.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/developers/mvs-whitepaper.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.969Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/transaction.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/rawtx.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/multisig.html</loc>
+    <loc>https://docs.mvs.org/api_v2/block.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     
@@ -1395,42 +1381,14 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/api_v2/index.html</loc>
+    <loc>https://docs.mvs.org/api_v3/account.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/api_v2/block.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/etp.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/asset.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/blockchain.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api/sendetp.html</loc>
+    <loc>https://docs.mvs.org/api_v2/transaction.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     
@@ -1444,28 +1402,63 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/api_v2/rawtx.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/asset.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/etp.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/blockchain.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/multisig.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api/sendetp.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api_v2/account.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/api/transaction.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api/index.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api/asset.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api/blocks.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     
@@ -1479,7 +1472,21 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/api/address.html</loc>
+    <loc>https://docs.mvs.org/api/index.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api/blocks.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://docs.mvs.org/api/asset.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     
@@ -1493,6 +1500,13 @@
   </url>
   
   <url>
+    <loc>https://docs.mvs.org/api/address.html</loc>
+    
+    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://docs.mvs.org/about/index.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
@@ -1500,21 +1514,7 @@
   </url>
   
   <url>
-    <loc>https://docs.mvs.org/api_v3/account.html</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://docs.mvs.org/news/2017/10/20/history-releasenotes/</loc>
-    
-    <lastmod>2019-06-21T08:07:18.965Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://docs.mvs.org/api_v2/account.html</loc>
     
     <lastmod>2019-06-21T08:07:18.965Z</lastmod>
     

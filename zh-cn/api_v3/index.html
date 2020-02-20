@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="Metaverse Docs">
 <meta property="og:description" content="This documentation provides more detailed information about the API.v3(JSON-RPC 2.0) list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-06-21T08:07:18.989Z">
+<meta property="og:updated_time" content="2020-02-20T03:49:41.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="API v3 Usage">
 <meta name="twitter:description" content="This documentation provides more detailed information about the API.v3(JSON-RPC 2.0) list and will be particularly helpful for people who want to build BaaS(Blockchain As A Service) appliacations. If">
@@ -703,6 +703,13 @@
 <td>0.7.3</td>
 </tr>
 <tr>
+<td><a href="asset.html#sendmoreasset">sendmoreasset</a></td>
+<td>√</td>
+<td>×</td>
+<td>√</td>
+<td>0.7.3</td>
+</tr>
+<tr>
 <td><a href="asset.html#sendassetfrom">sendassetfrom</a></td>
 <td>√</td>
 <td>×</td>
@@ -807,7 +814,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.989Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <time class="article-footer-updated" datetime="2020-02-20T03:49:41.627Z" itemprop="dateModified">上次更新：2020-02-20</time>
                 <a href="websocket.html" class="article-footer-next" title="Websocket"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -824,7 +831,7 @@
       </article>
       <aside id="sidebar" role="navigation">
   <div class="inner">
-    <strong class="sidebar-title">sidebar.api_v3.xxxx1</strong><a href="index.html" class="sidebar-link current">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">sidebar.api_v3.xxxx2</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">sidebar.api_v3.xxxx3</strong><a href="account.html" class="sidebar-link">账户</a><strong class="sidebar-title">sidebar.api_v3.xxxx4</strong><a href="blockchain.html" class="sidebar-link">区块链操作</a><strong class="sidebar-title">sidebar.api_v3.xxxx5</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">sidebar.api_v3.xxxx6</strong><a href="transaction.html" class="sidebar-link">交易</a><strong class="sidebar-title">sidebar.api_v3.xxxx7</strong><a href="asset.html" class="sidebar-link">资产</a><strong class="sidebar-title">sidebar.api_v3.xxxx8</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">sidebar.api_v3.xxxx9</strong><a href="rawtx.html" class="sidebar-link">离线交易</a><strong class="sidebar-title">sidebar.api_v3.xxxx10</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">sidebar.api_v3.xxxx11</strong><a href="mit.html" class="sidebar-link">MIT</a>
+    <strong class="sidebar-title">介绍</strong><a href="index.html" class="sidebar-link current">介绍</a><a href="websocket.html" class="sidebar-link">Websocket</a><strong class="sidebar-title">接口Block</strong><a href="block.html" class="sidebar-link">区块</a><strong class="sidebar-title">接口Account</strong><a href="account.html" class="sidebar-link">账户</a><strong class="sidebar-title">接口Blockchain</strong><a href="blockchain.html" class="sidebar-link">区块链</a><strong class="sidebar-title">接口ETP</strong><a href="etp.html" class="sidebar-link">ETP</a><strong class="sidebar-title">接口Tx</strong><a href="transaction.html" class="sidebar-link">交易</a><strong class="sidebar-title">接口Asset(MST)</strong><a href="asset.html" class="sidebar-link">资产(MST)</a><strong class="sidebar-title">接口Multi-sig</strong><a href="multisig.html" class="sidebar-link">多重签名</a><strong class="sidebar-title">接口RawTx</strong><a href="rawtx.html" class="sidebar-link">离线交易</a><strong class="sidebar-title">接口Avatar(DID)</strong><a href="identity.html" class="sidebar-link">身份</a><strong class="sidebar-title">接口Asset(MIT)</strong><a href="mit.html" class="sidebar-link">资产(MIT)</a>
   </div>
 </aside>
     </div>
@@ -855,7 +862,7 @@
       </li>
     </ul>
     
-      <strong class="mobile-nav-title">sidebar.api_v3.xxxx1</strong><a href="index.html" class="mobile-nav-link current">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx2</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx3</strong><a href="account.html" class="mobile-nav-link">账户</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx4</strong><a href="blockchain.html" class="mobile-nav-link">区块链操作</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx5</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx6</strong><a href="transaction.html" class="mobile-nav-link">交易</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx7</strong><a href="asset.html" class="mobile-nav-link">资产</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx8</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx9</strong><a href="rawtx.html" class="mobile-nav-link">离线交易</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx10</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">sidebar.api_v3.xxxx11</strong><a href="mit.html" class="mobile-nav-link">MIT</a>
+      <strong class="mobile-nav-title">介绍</strong><a href="index.html" class="mobile-nav-link current">介绍</a><a href="websocket.html" class="mobile-nav-link">Websocket</a><strong class="mobile-nav-title">接口Block</strong><a href="block.html" class="mobile-nav-link">区块</a><strong class="mobile-nav-title">接口Account</strong><a href="account.html" class="mobile-nav-link">账户</a><strong class="mobile-nav-title">接口Blockchain</strong><a href="blockchain.html" class="mobile-nav-link">区块链</a><strong class="mobile-nav-title">接口ETP</strong><a href="etp.html" class="mobile-nav-link">ETP</a><strong class="mobile-nav-title">接口Tx</strong><a href="transaction.html" class="mobile-nav-link">交易</a><strong class="mobile-nav-title">接口Asset(MST)</strong><a href="asset.html" class="mobile-nav-link">资产(MST)</a><strong class="mobile-nav-title">接口Multi-sig</strong><a href="multisig.html" class="mobile-nav-link">多重签名</a><strong class="mobile-nav-title">接口RawTx</strong><a href="rawtx.html" class="mobile-nav-link">离线交易</a><strong class="mobile-nav-title">接口Avatar(DID)</strong><a href="identity.html" class="mobile-nav-link">身份</a><strong class="mobile-nav-title">接口Asset(MIT)</strong><a href="mit.html" class="mobile-nav-link">资产(MIT)</a>
     
   </div>
   <div id="mobile-lang-select-wrap">
