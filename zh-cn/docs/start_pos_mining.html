@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Start PoS mining | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/zh-cn/docs/start_pos_mining.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/start_pos_mining.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/start_pos_mining.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="How does it work?First you will need to create an Avatar if you don’t already have one, since it is necessary for the different steps of PoS mining. Then you can start mining using the full node walle">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start PoS mining">
+<meta property="og:url" content="https://docs.mvs.org/zh-cn/docs/start_pos_mining.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="How does it work?First you will need to create an Avatar if you don’t already have one, since it is necessary for the different steps of PoS mining. Then you can start mining using the full node walle">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://docs.mvs.org/images/i/pos_mining_page.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/pos_mining_lock_etp.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/pos_mining_votes.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/pos_mining_votes_tx.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/pos_mining_start.png">
+<meta property="og:updated_time" content="2020-02-20T03:17:05.024Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Start PoS mining">
+<meta name="twitter:description" content="How does it work?First you will need to create an Avatar if you don’t already have one, since it is necessary for the different steps of PoS mining. Then you can start mining using the full node walle">
+<meta name="twitter:image" content="https://docs.mvs.org/images/i/pos_mining_page.png">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/zh-cn/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/zh-cn/docs/" class="main-nav-link">文档</a><a href="/zh-cn/api_v3/" class="main-nav-link">API v3</a><a href="/zh-cn/baas/" class="main-nav-link">BaaS</a><a href="/zh-cn/developers/" class="main-nav-link">开发者</a><a href="/zh-cn/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">发布</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></label>
+      <select id="lang-select" data-canonical="docs/start_pos_mining.html">
+        
+          <option value="en">English</option>
+        
+          <option value="zh-cn" selected>简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Start PoS mining</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/docs/start_pos_mining.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="How-does-it-work" class="article-heading"><a href="#How-does-it-work" class="headerlink" title="How does it work?"></a>How does it work?<a class="article-anchor" href="#How-does-it-work" aria-hidden="true"></a></h1><p>First you will need to create an Avatar if you don’t already have one, since it is necessary for the different steps of PoS mining. Then you can start mining using the full node wallet (also called desktop wallet), in the Mining section.</p>
+<p><img src="/images/i/pos_mining_page.png" alt="PoS mining page"></p>
+<p>There are 2 requirements in order to be able to create a block:</p>
+<h2 id="1-Lock-ETP" class="article-heading"><a href="#1-Lock-ETP" class="headerlink" title="1: Lock ETP"></a>1: Lock ETP<a class="article-anchor" href="#1-Lock-ETP" aria-hidden="true"></a></h2><p>You need to lock at least 1,000 ETP, for at least 24,000 blocks (approximately 1 week). It’s important to note that these 1,000 ETP have to be locked in 1 time: doing several locks of 500 ETP will not validate this requirement. It requires 1 lock transaction of 1,000 ETP or more.<br>Also the last 1,000 blocks before the unlock are excluded. It means that if you lock your ETP for 24,000 blocks, you will only be able to mine during the 23,000 first blocks. If you lock for 48,000 blocks, you will be able to mine for 47,000 blocks etc…</p>
+<p><img src="/images/i/pos_mining_lock_etp.png" alt="Lock ETP"></p>
+<p>Finally, the ETP previously locked via the deposit function do not validate this condition: those ETP were already rewarded by the deposit interests, and can’t be used for PoS mining. Only ETP locked via the new lock function introduced in MPC, without interests, can validate it.</p>
+<h2 id="2-Votes" class="article-heading"><a href="#2-Votes" class="headerlink" title="2: Votes"></a>2: Votes<a class="article-anchor" href="#2-Votes" aria-hidden="true"></a></h2><p>Then your chances to mine a block are defined by the number of outputs you have that are more than 1,000 ETP, that we call “Votes”. Outputs are basically the ETP you receive, so if you receive 2 transactions of 500 ETP you will have 2 outputs available to spend. But in that case you will not have any votes, since none of the outputs reach the 1,000 ETP threshold. At the opposite, if you receive 1 transaction of 2,000 ETP, you will only have 1 vote whereas you could have 2 votes with this amount.</p>
+<p>It’s also important to notice that 1 output of 2,000 ETP will give a bit more chances to find a block than 1 output of 1,000 ETP, but less than 2 outputs of 1,000 ETP . Indeed, the chances to mine a block vary according to the value of the output, but this calculation is not proportional and decreases rapidly. So the best chances to mine PoS are to keep as many outputs as possible just above 1,000 ETP.</p>
+<p>This is what the “Optimize” option of the wallet will do for you. It will simply send your ETP to yourself but split into outputs of exactly 1,000 ETP, to guarantee the highest efficiency. It will show you the number of votes you currently have, and how many you can get by reorganizing your outputs.</p>
+<p><img src="/images/i/pos_mining_votes.png" alt="Optimize your votes"></p>
+<p>You probably also noticed that there are “pending votes”. A pending vote is a vote that has been spent recently, in a range going from 500 to 1,000 blocks (from 4 to 8 hours). So if an output is spent, if you just received the transaction for instance, its aging will go to 0 and it will be displayed as a pending vote. After 500 to 1,000 blocks, it will become available to mine again. </p>
+<p>The exact aging requirement depends on the PoS difficulty: when there are more PoS miners it will increase till the maximum of 1,000 blocks, while when there are less PoS miners it will decrease to the minimum of 500 blocks.<br>It’s also important to note that optimizing your votes will send all your ETP to yourself, so this will set back the aging of all your votes to 0. You will then have to wait a few hours to be able to mine again. So try not to use this option too often, and keep this option for when it is really worth it.</p>
+<p><img src="/images/i/pos_mining_votes_tx.png" alt="Optimize votes transaction"></p>
+<p>Mining a PoS block will also bring back the aging of the vote used to 0, so after finding a block, this one vote will not be available for mining for the next few hours.</p>
+<p>These 2 conditions bring the very minimum amount of ETP required to do PoS mining to 2,000 ETP: 1,000 locked and 1,000 available to have at least 1 vote.</p>
+<h1 id="Start-mining" class="article-heading"><a href="#Start-mining" class="headerlink" title="Start mining"></a>Start mining<a class="article-anchor" href="#Start-mining" aria-hidden="true"></a></h1><p>Once the requirements are reached, the description on the right will show you till which block the first requirement is fulfilled, and the number of votes you have. After clicking on Start mining, you will see the mining information of your Avatar. Don’t forget to select a MST to mine, it does not cost you anything and you will receive both ETP and the selected MST as a reward when you find a block.</p>
+<p><img src="/images/i/pos_mining_start.png" alt="Mining started"></p>
+<p>Since finding a block creates a new transaction in your wallet, you will receive a new transaction notification each time you find a PoS block.</p>
+
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2020-02-20T03:17:05.024Z" itemprop="dateModified">上次更新：2020-02-20</time>
+                <a href="start_solo_pow_mining.html" class="article-footer-prev" title="Start solo PoW mining"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="mst_mining.html" class="article-footer-next" title="MST mining"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">目录</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#How-does-it-work"><span class="toc-text">How does it work?</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Lock-ETP"><span class="toc-text">1: Lock ETP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Votes"><span class="toc-text">2: Votes</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Start-mining"><span class="toc-text">Start mining</span></a></li></ol>
+              <a href="#" id="article-toc-top">回到顶部</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">开始使用</strong><a href="index.html" class="sidebar-link">轻松上手</a><a href="desktop.html" class="sidebar-link">在桌面环境使用</a><a href="mobile.html" class="sidebar-link">在移动端使用</a><a href="mainnet-info.html" class="sidebar-link">主网信息</a><strong class="sidebar-title">特性</strong><a href="features-issue-token.html" class="sidebar-link">创建与发行资产</a><a href="features-transfer-token.html" class="sidebar-link">转移资产</a><a href="supernova.html" class="sidebar-link">Supernova新特性</a><a href="pillars.html" class="sidebar-link">Pillars新特性</a><strong class="sidebar-title">全节点钱包</strong><a href="introduction.html" class="sidebar-link">介绍</a><a href="setup-linux.html" class="sidebar-link">在Linux上使用</a><a href="options.html" class="sidebar-link">配置选项</a><a href="config-file.html" class="sidebar-link">配置文件</a><a href="command-line.html" class="sidebar-link">命令行使用</a><a href="reset-mvs.html" class="sidebar-link">重置钱包</a><a href="upgrade-mvs.html" class="sidebar-link">升级钱包</a><a href="backup-account.html" class="sidebar-link">备份账户</a><a href="testnet.html" class="sidebar-link">测试网络</a><a href="private-chain.html" class="sidebar-link">搭建私有链</a><strong class="sidebar-title">Mining</strong><a href="setup_mining_pool.html" class="sidebar-link">搭建简易矿池</a><a href="join_mining_pool.html" class="sidebar-link">Join Mining Pool</a><a href="start_solo_pow_mining.html" class="sidebar-link">Start solo PoW mining</a><a href="start_pos_mining.html" class="sidebar-link current">Start PoS mining</a><a href="mst_mining.html" class="sidebar-link">MST mining</a><strong class="sidebar-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">识别冻结的ETP</a><a href="assets-operations.html" class="sidebar-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="sidebar-link">跨链置换</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/zh-cn/docs/" class="mobile-nav-link">文档</a><a href="/zh-cn/api_v3/" class="mobile-nav-link">API v3</a><a href="/zh-cn/baas/" class="mobile-nav-link">BaaS</a><a href="/zh-cn/developers/" class="mobile-nav-link">开发者</a><a href="/zh-cn/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">发布</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">开始使用</strong><a href="index.html" class="mobile-nav-link">轻松上手</a><a href="desktop.html" class="mobile-nav-link">在桌面环境使用</a><a href="mobile.html" class="mobile-nav-link">在移动端使用</a><a href="mainnet-info.html" class="mobile-nav-link">主网信息</a><strong class="mobile-nav-title">特性</strong><a href="features-issue-token.html" class="mobile-nav-link">创建与发行资产</a><a href="features-transfer-token.html" class="mobile-nav-link">转移资产</a><a href="supernova.html" class="mobile-nav-link">Supernova新特性</a><a href="pillars.html" class="mobile-nav-link">Pillars新特性</a><strong class="mobile-nav-title">全节点钱包</strong><a href="introduction.html" class="mobile-nav-link">介绍</a><a href="setup-linux.html" class="mobile-nav-link">在Linux上使用</a><a href="options.html" class="mobile-nav-link">配置选项</a><a href="config-file.html" class="mobile-nav-link">配置文件</a><a href="command-line.html" class="mobile-nav-link">命令行使用</a><a href="reset-mvs.html" class="mobile-nav-link">重置钱包</a><a href="upgrade-mvs.html" class="mobile-nav-link">升级钱包</a><a href="backup-account.html" class="mobile-nav-link">备份账户</a><a href="testnet.html" class="mobile-nav-link">测试网络</a><a href="private-chain.html" class="mobile-nav-link">搭建私有链</a><strong class="mobile-nav-title">Mining</strong><a href="setup_mining_pool.html" class="mobile-nav-link">搭建简易矿池</a><a href="join_mining_pool.html" class="mobile-nav-link">Join Mining Pool</a><a href="start_solo_pow_mining.html" class="mobile-nav-link">Start solo PoW mining</a><a href="start_pos_mining.html" class="mobile-nav-link current">Start PoS mining</a><a href="mst_mining.html" class="mobile-nav-link">MST mining</a><strong class="mobile-nav-title">平台部署</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">服务端部署钱包</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">识别冻结的ETP</a><a href="assets-operations.html" class="mobile-nav-link">元界MST使用说明</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1升级手册</a><a href="cross-chain-swap.html" class="mobile-nav-link">跨链置换</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>简体中文</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/start_pos_mining.html">
+      
+        <option value="en">English</option>
+      
+        <option value="zh-cn" selected>简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

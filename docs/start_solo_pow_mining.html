@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns#"><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <title>Start solo PoW mining | Metaverse Docs</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Canonical links -->
+  <link rel="canonical" href="https://docs.mvs.org/docs/start_solo_pow_mining.html">
+  <!-- Alternative links -->
+  
+    
+      <link rel="alternative" hreflang="en" href="https://docs.mvs.org/docs/start_solo_pow_mining.html">
+    
+      <link rel="alternative" hreflang="zh-cn" href="https://docs.mvs.org/zh-cn/docs/start_solo_pow_mining.html">
+    
+  
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="/icon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="/icon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="/icon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="/icon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="/icon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2f83cd">
+  <meta name="msapplication-TileImage" content="/icon/mstile-144x144.png">
+  <!-- CSS -->
+  <!-- build:css build/css/navy.css -->
+  <link rel="stylesheet" href="/css/navy.css">
+  <!-- endbuild -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css">
+  <!-- RSS -->
+  <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
+  <!-- Open Graph -->
+  <meta name="description" content="How to mine1. Start miningYou can simply use the startmining command to start mining. The default concensus is PoW. $ ./mvs-cli startmining account_name password 2. Setup mining accountOptionally, you">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start solo PoW mining">
+<meta property="og:url" content="https://docs.mvs.org/docs/start_solo_pow_mining.html">
+<meta property="og:site_name" content="Metaverse Docs">
+<meta property="og:description" content="How to mine1. Start miningYou can simply use the startmining command to start mining. The default concensus is PoW. $ ./mvs-cli startmining account_name password 2. Setup mining accountOptionally, you">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-02-20T03:17:04.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Start solo PoW mining">
+<meta name="twitter:description" content="How to mine1. Start miningYou can simply use the startmining command to start mining. The default concensus is PoW. $ ./mvs-cli startmining account_name password 2. Setup mining accountOptionally, you">
+<meta name="twitter:site" content="mvs_org">
+<meta property="fb:admins" content="100006665201854">
+  <!-- Google Analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-99097230-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</head>
+
+<body>
+  <div id="container">
+    <header id="header" class="wrapper">
+  <div id="header-inner" class="inner">
+    <h1 id="logo-wrap">
+      <a href="/" id="logo">Hexo</a>
+    </h1>
+    <nav id="main-nav">
+      <a href="/docs/" class="main-nav-link">Docs</a><a href="/api_v3/" class="main-nav-link">API v3</a><a href="/baas/" class="main-nav-link">BaaS</a><a href="/developers/" class="main-nav-link">Developers</a><a href="/faq/" class="main-nav-link">FAQ</a><a href="/news/" class="main-nav-link">Releases</a>
+      <a href="https://github.com/mvs-org/metaverse" class="main-nav-link"><i class="fa fa-github-alt"></i></a>
+      <div id="search-input-wrap">
+        <div id="search-input-icon">
+          <i class="fa fa-search"></i>
+        </div>
+        <input type="search" id="search-input" placeholder="Search...">
+      </div>
+    </nav>
+    <div id="lang-select-wrap">
+      <label id="lang-select-label"><i class="fa fa-globe"></i><span>English</span></label>
+      <select id="lang-select" data-canonical="docs/start_solo_pow_mining.html">
+        
+          <option value="en" selected>English</option>
+        
+          <option value="zh-cn">简体中文</option>
+        
+      </select>
+    </div>
+    <a id="mobile-nav-toggle">
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+      <span class="mobile-nav-toggle-bar"></span>
+    </a>
+  </div>
+</header>
+
+    <div id="content-wrap">
+  <div id="content" class="wrapper">
+    <div id="content-inner">
+      <article class="article-container" itemscope itemtype="http://schema.org/Article">
+        <div class="article-inner">
+          <div class="article">
+            <div class="inner">
+              <header class="article-header">
+                <h1 class="article-title" itemprop="name">Start solo PoW mining</h1>
+                <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/docs/start_solo_pow_mining.md" class="article-edit-link" title="Improve this doc"><i class="fa fa-pencil"></i></a>
+              </header>
+              <div class="article-content" itemprop="articleBody">
+                <h1 id="How-to-mine" class="article-heading"><a href="#How-to-mine" class="headerlink" title="How to mine"></a>How to mine<a class="article-anchor" href="#How-to-mine" aria-hidden="true"></a></h1><h2 id="1-Start-mining" class="article-heading"><a href="#1-Start-mining" class="headerlink" title="1. Start mining"></a>1. Start mining<a class="article-anchor" href="#1-Start-mining" aria-hidden="true"></a></h2><p>You can simply use the startmining command to start mining. The default concensus is PoW.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli startmining account_name password</span><br></pre></td></tr></table></figure>
+<h2 id="2-Setup-mining-account" class="article-heading"><a href="#2-Setup-mining-account" class="headerlink" title="2. Setup mining account"></a>2. Setup mining account<a class="article-anchor" href="#2-Setup-mining-account" aria-hidden="true"></a></h2><p>Optionally, you can use setminingaccount in order to choose which address will be used to mine, and optionally add a MST to be mined (see the section <a href="mst_mining.html">MST mining</a>). These options should be set before starting mining.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli setminingaccount account_name password payment_address -s mst_to_mine</span><br></pre></td></tr></table></figure>
+<h2 id="3-Stop-mining" class="article-heading"><a href="#3-Stop-mining" class="headerlink" title="3. Stop mining"></a>3. Stop mining<a class="article-anchor" href="#3-Stop-mining" aria-hidden="true"></a></h2><p>To stop mininig, use the stopmining command without any parameter.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ ./mvs-cli stopmining</span><br></pre></td></tr></table></figure>
+              </div>
+              <footer class="article-footer">
+                <time class="article-footer-updated" datetime="2020-02-20T03:17:04.956Z" itemprop="dateModified">Last updated: 2020-02-20</time>
+                <a href="join_mining_pool.html" class="article-footer-prev" title="Join Mining Pool"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="start_pos_mining.html" class="article-footer-next" title="Start PoS mining"><span>Next</span><i class="fa fa-chevron-right"></i></a>
+              </footer>
+              
+            </div>
+          </div>
+          <aside id="article-toc" role="navigation">
+            <div id="article-toc-inner">
+              <strong class="sidebar-title">Contents</strong>
+              <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#How-to-mine"><span class="toc-text">How to mine</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Start-mining"><span class="toc-text">1. Start mining</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Setup-mining-account"><span class="toc-text">2. Setup mining account</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Stop-mining"><span class="toc-text">3. Stop mining</span></a></li></ol></li></ol>
+              <a href="#" id="article-toc-top">Back to Top</a>
+            </div>
+          </aside>
+        </div>
+      </article>
+      <aside id="sidebar" role="navigation">
+  <div class="inner">
+    <strong class="sidebar-title">Get Started</strong><a href="index.html" class="sidebar-link">Quick Start</a><a href="desktop.html" class="sidebar-link">Desktop</a><a href="mobile.html" class="sidebar-link">Mobile</a><a href="mainnet-info.html" class="sidebar-link">Mainnet Information</a><strong class="sidebar-title">Features</strong><a href="features-issue-token.html" class="sidebar-link">Issue Tokens</a><a href="features-transfer-token.html" class="sidebar-link">Transfer Tokens</a><a href="supernova.html" class="sidebar-link">Supernova Features</a><a href="pillars.html" class="sidebar-link">Pillars Features</a><strong class="sidebar-title">Full Node Wallet</strong><a href="introduction.html" class="sidebar-link">Introduction</a><a href="setup-linux.html" class="sidebar-link">Setup on Linux</a><a href="options.html" class="sidebar-link">Start Running mvsd</a><a href="config-file.html" class="sidebar-link">Config File</a><a href="command-line.html" class="sidebar-link">Command-Line</a><a href="reset-mvs.html" class="sidebar-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="sidebar-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="sidebar-link">Backup Account</a><a href="testnet.html" class="sidebar-link">Testnet</a><a href="private-chain.html" class="sidebar-link">Private Chain</a><strong class="sidebar-title">Mining</strong><a href="setup_mining_pool.html" class="sidebar-link">Setup Mining Pool</a><a href="join_mining_pool.html" class="sidebar-link">Join Mining Pool</a><a href="start_solo_pow_mining.html" class="sidebar-link current">Start solo PoW mining</a><a href="start_pos_mining.html" class="sidebar-link">Start PoS mining</a><a href="mst_mining.html" class="sidebar-link">MST mining</a><strong class="sidebar-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="sidebar-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="sidebar-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="sidebar-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="sidebar-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="sidebar-link">Cross Chain Swap</a>
+  </div>
+</aside>
+    </div>
+  </div>
+</div>
+
+    <footer id="footer" class="wrapper">
+  <div class="inner">
+    <div id="footer-copyright">
+      &copy; 2020 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
+    </div>
+    <div id="footer-links">
+      <a href="https://twitter.com/mvs_org" class="footer-link" target="_blank"><i class="fa fa-twitter"></i></a>
+      <a href="https://github.com/mvs-org/metaverse" class="footer-link" target="_blank"><i class="fa fa-github-alt"></i></a>
+    </div>
+  </div>
+</footer>
+
+  </div>
+  <div id="mobile-nav-dimmer"></div>
+  <nav id="mobile-nav">
+  <div id="mobile-nav-inner">
+    <ul id="mobile-nav-list">
+      <a href="/docs/" class="mobile-nav-link">Docs</a><a href="/api_v3/" class="mobile-nav-link">API v3</a><a href="/baas/" class="mobile-nav-link">BaaS</a><a href="/developers/" class="mobile-nav-link">Developers</a><a href="/faq/" class="mobile-nav-link">FAQ</a><a href="/news/" class="mobile-nav-link">Releases</a>
+      <li class="mobile-nav-item">
+        <a href="https://github.com/mvs-org/metaverse" class="mobile-nav-link" rel="external" target="_blank">GitHub</a>
+      </li>
+    </ul>
+    
+      <strong class="mobile-nav-title">Get Started</strong><a href="index.html" class="mobile-nav-link">Quick Start</a><a href="desktop.html" class="mobile-nav-link">Desktop</a><a href="mobile.html" class="mobile-nav-link">Mobile</a><a href="mainnet-info.html" class="mobile-nav-link">Mainnet Information</a><strong class="mobile-nav-title">Features</strong><a href="features-issue-token.html" class="mobile-nav-link">Issue Tokens</a><a href="features-transfer-token.html" class="mobile-nav-link">Transfer Tokens</a><a href="supernova.html" class="mobile-nav-link">Supernova Features</a><a href="pillars.html" class="mobile-nav-link">Pillars Features</a><strong class="mobile-nav-title">Full Node Wallet</strong><a href="introduction.html" class="mobile-nav-link">Introduction</a><a href="setup-linux.html" class="mobile-nav-link">Setup on Linux</a><a href="options.html" class="mobile-nav-link">Start Running mvsd</a><a href="config-file.html" class="mobile-nav-link">Config File</a><a href="command-line.html" class="mobile-nav-link">Command-Line</a><a href="reset-mvs.html" class="mobile-nav-link">Reset MVS Wallet</a><a href="upgrade-mvs.html" class="mobile-nav-link">Upgrade MVS Wallet</a><a href="backup-account.html" class="mobile-nav-link">Backup Account</a><a href="testnet.html" class="mobile-nav-link">Testnet</a><a href="private-chain.html" class="mobile-nav-link">Private Chain</a><strong class="mobile-nav-title">Mining</strong><a href="setup_mining_pool.html" class="mobile-nav-link">Setup Mining Pool</a><a href="join_mining_pool.html" class="mobile-nav-link">Join Mining Pool</a><a href="start_solo_pow_mining.html" class="mobile-nav-link current">Start solo PoW mining</a><a href="start_pos_mining.html" class="mobile-nav-link">Start PoS mining</a><a href="mst_mining.html" class="mobile-nav-link">MST mining</a><strong class="mobile-nav-title">Deployment For Platform</strong><a href="deploy-wallet-for-exchange-platform.html" class="mobile-nav-link">Rapid Deployment</a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="mobile-nav-link">Recognize Fronzen ETP</a><a href="assets-operations.html" class="mobile-nav-link">Metaverse Smart Token</a><a href="mpc1-upgrade-manual.html" class="mobile-nav-link">MPC1 Upgrade Manual</a><a href="cross-chain-swap.html" class="mobile-nav-link">Cross Chain Swap</a>
+    
+  </div>
+  <div id="mobile-lang-select-wrap">
+    <span id="mobile-lang-select-label"><i class="fa fa-globe"></i><span>English</span></span>
+    <select id="mobile-lang-select" data-canonical="docs/start_solo_pow_mining.html">
+      
+        <option value="en" selected>English</option>
+      
+        <option value="zh-cn">简体中文</option>
+      
+    </select>
+  </div>
+</nav>
+  <!-- Scripts -->
+<!-- build:js build/js/main.js -->
+<script src="/js/lang_select.js"></script>
+<script src="/js/toc.js"></script>
+<script src="/js/mobile_nav.js"></script>
+<!-- endbuild -->
+
+<!-- Algolia -->
+
+
+</body>
+</html>

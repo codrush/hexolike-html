@@ -48,14 +48,14 @@
 <meta property="og:site_name" content="Metaverse Docs">
 <meta property="og:description" content="元界的HD账户模型及加密元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。 1 HD钱包1.1 HD钱包原理HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://i.imgur.com/k12Jkk0.png">
-<meta property="og:image" content="https://i.imgur.com/phpWeVF.png">
-<meta property="og:image" content="https://i.imgur.com/j09an8W.png">
-<meta property="og:updated_time" content="2019-06-21T08:07:18.969Z">
+<meta property="og:image" content="https://docs.mvs.org/images/i/k12Jkk0.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/phpWeVF.png">
+<meta property="og:image" content="https://docs.mvs.org/images/i/j09an8W.png">
+<meta property="og:updated_time" content="2020-02-20T03:17:04.956Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="元界的HD账户模型及加密">
 <meta name="twitter:description" content="元界的HD账户模型及加密元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。 1 HD钱包1.1 HD钱包原理HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD">
-<meta name="twitter:image" content="https://i.imgur.com/k12Jkk0.png">
+<meta name="twitter:image" content="https://docs.mvs.org/images/i/k12Jkk0.png">
 <meta name="twitter:site" content="mvs_org">
 <meta property="fb:admins" content="100006665201854">
   <!-- Google Analytics -->
@@ -122,10 +122,10 @@
                 <h1 id="元界的HD账户模型及加密" class="article-heading"><a href="#元界的HD账户模型及加密" class="headerlink" title="元界的HD账户模型及加密"></a>元界的HD账户模型及加密<a class="article-anchor" href="#元界的HD账户模型及加密" aria-hidden="true"></a></h1><p>元界钱包使用账户对钱包中的资产进行管理。账户设计应用到了HD钱包、数据库、单向散列函数等技术。</p>
 <h1 id="1-HD钱包" class="article-heading"><a href="#1-HD钱包" class="headerlink" title="1 HD钱包"></a>1 HD钱包<a class="article-anchor" href="#1-HD钱包" aria-hidden="true"></a></h1><h2 id="1-1-HD钱包原理" class="article-heading"><a href="#1-1-HD钱包原理" class="headerlink" title="1.1 HD钱包原理"></a>1.1 HD钱包原理<a class="article-anchor" href="#1-1-HD钱包原理" aria-hidden="true"></a></h2><p>HD钱包又称分层确定性钱包，它是基于比特币BIP0032标准的。分层确定性钱包包含从数据结构所生成的钥匙。这种母钥匙可以生成子钥匙序列。所生成的子钥匙又可以衍生出孙钥匙，基于些种规则，以此可以无穷类推。可以生成一个含有无穷多个子孙钥匙的树结构。HD钱包使用的便利性还表现在“助记词”，元界HD钱包便是基于此规则生成，用户只需要记住“助记词”和地址个数就可恢复出该账户所持有的资产的。</p>
 <p>以12单词助记词为例，从“助记词”到“根种子”运算原理如下图所示：</p>
-<p>助记词生成过程：<br><img src="https://i.imgur.com/k12Jkk0.png" alt="助记词生成过程"></p>
-<p>根种子生成过程：<br><img src="https://i.imgur.com/phpWeVF.png" alt="根种子生成过程"></p>
+<p>助记词生成过程：<br><img src="/images/i/k12Jkk0.png" alt="助记词生成过程"></p>
+<p>根种子生成过程：<br><img src="/images/i/phpWeVF.png" alt="根种子生成过程"></p>
 <p>HD钱包的“根种子”为128到256位的随机数。它使用CKD(child key derivation)方程从母密钥衍生出子密钥。子密钥衍生方程是基于单向散列函数。这个函数结合了：一个母公共钥匙、一个叫做链码（256位）的种子、一个索引号（32位）。这三个参数相结合并散列可以生成子密钥。”母公共钥匙+链码+索引号“合并在一起，并且用HMAC-SHA512散列之后可以产生512位的散列值。并将其拆分为两部分。右半部分的256位产生出可以给子链当链码。左半部分256位散列以及索引友被加载在母私钥上来衍生子私钥。如下图所示：</p>
-<p><img src="https://i.imgur.com/j09an8W.png" alt="从母密钥衍生出子密钥"></p>
+<p><img src="/images/i/j09an8W.png" alt="从母密钥衍生出子密钥"></p>
 <p>这样改变索引可以让我们延长母密钥假造序列中的其他子密钥。每个母密钥可以产生2的32次方个子密钥。</p>
 <h2 id="1-2-HD账户实现" class="article-heading"><a href="#1-2-HD账户实现" class="headerlink" title="1.2 HD账户实现"></a>1.2 HD账户实现<a class="article-anchor" href="#1-2-HD账户实现" aria-hidden="true"></a></h2><p>元界中新账户对应一个新生成的分层确定性钱包，新账户建立成功后会返回24个英文助记词，通过账户助记词可以恢复出用户的所有普通地址（后续元界还引入了多重签名地址）上的资产信息。一个账户可以连续生成多个地址，目前地址的最大个数为4294967296（2的32次方）个。每个元界HD账户生成的过程为：</p>
 <ol>
@@ -186,7 +186,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.969Z" itemprop="dateModified">Last updated: 2019-06-21</time>
+                <time class="article-footer-updated" datetime="2020-02-20T03:17:04.956Z" itemprop="dateModified">Last updated: 2020-02-20</time>
                 <a href="di-send.html" class="article-footer-prev" title="DID send etp or asset"><i class="fa fa-chevron-left"></i><span>Prev</span></a><a href="consensus-and-mining.html" class="article-footer-next" title="Consensus and mining"><span>Next</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
@@ -230,7 +230,7 @@
     <footer id="footer" class="wrapper">
   <div class="inner">
     <div id="footer-copyright">
-      &copy; 2019 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
+      &copy; 2020 <a href="https://github.com/mvs-org/metaverse/graphs/contributors" target="_blank">MVS Core Developers</a><br>
       Documentation licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a>.
     </div>
     <div id="footer-links">
@@ -273,16 +273,6 @@
 <!-- endbuild -->
 
 <!-- Algolia -->
-
-<script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
-<script type="text/javascript">
-document.getElementById('search-input-wrap').classList.add('on');
-docsearch({
-  apiKey: 'c3d5d4c995b5e0c2ffb5623900279a66',
-  indexName: 'hexo',
-  inputSelector: '#search-input'
-});
-</script>
 
 
 </body>
