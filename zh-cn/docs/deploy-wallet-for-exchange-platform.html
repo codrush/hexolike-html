@@ -48,7 +48,7 @@
 <meta property="og:site_name" content="Metaverse Docs">
 <meta property="og:description" content="标准程序 在Linux服务器上部署Metaverse节点。下载Metaverse钱包https://mvs.org/wallet.html 使用mvs-cli命令执行以下步骤 a. 创建钱包帐户b. 批量生成地址  将Metaverse ETP地址导入数据库 a. 将Metaverse ETP地址导入到交易所数据库b. 用户充值时将地址分配给用户  开发程序来完成以下功能：: a. 通过钱包API">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-06-21T08:07:18.993Z">
+<meta property="og:updated_time" content="2020-02-21T15:35:55.038Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="交易所平台部署Metaverse钱包指南">
 <meta name="twitter:description" content="标准程序 在Linux服务器上部署Metaverse节点。下载Metaverse钱包https://mvs.org/wallet.html 使用mvs-cli命令执行以下步骤 a. 创建钱包帐户b. 批量生成地址  将Metaverse ETP地址导入数据库 a. 将Metaverse ETP地址导入到交易所数据库b. 用户充值时将地址分配给用户  开发程序来完成以下功能：: a. 通过钱包API">
@@ -158,7 +158,7 @@
 <p>这些地址将显示为json响应格式。交易所需要将这些地址导入到其数据库中来分发给用户。</p>
 <h3 id="gt-gt-gt-用户充值和充值记录" class="article-heading"><a href="#gt-gt-gt-用户充值和充值记录" class="headerlink" title="&gt;&gt;&gt; 用户充值和充值记录"></a>&gt;&gt;&gt; 用户充值和充值记录<a class="article-anchor" href="#gt-gt-gt-用户充值和充值记录" aria-hidden="true"></a></h3><p>关于用户充值，交易所需要被告知以下内容：</p>
 <ul>
-<li>Metaverse区块链只有一个主链，没有侧链，不会分叉。你可以在区块浏览器查询区块信息： <a href="https://explorer.mvs.org" target="_blank" rel="noopener">https://explorer.mvs.org</a>.</li>
+<li>Metaverse区块链只有一个主链，没有侧链，不会分叉。你可以在区块浏览器查询区块信息： <a href="https://explorer.mvs.org" target="_blank" rel="noopener">https://explorer.mvs.org</a>.<br>(如果您可能会大批量发送交易，建议使用<code>-r or [--receivers]</code>来指定多个接受者，来降低发送交易的频率，建议5分钟以上来批量发送一次交易，以避免您热钱包的UTXO组合不够导致交易大量pending的可能。)</li>
 </ul>
 <ul>
 <li>在Metaverse区块链中记录的交易不能被篡改，这意味着用户确认即代表充值成功。我们建议确认密码超过30位。</li>
@@ -188,7 +188,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2019-06-21T08:07:18.993Z" itemprop="dateModified">上次更新：2019-06-21</time>
+                <time class="article-footer-updated" datetime="2020-02-21T15:35:55.038Z" itemprop="dateModified">上次更新：2020-02-21</time>
                 <a href="mst_mining.html" class="article-footer-prev" title="MST mining"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="recognize-fronzen-ETP-transaction-outputs.html" class="article-footer-next" title="识别冻结的ETP"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
