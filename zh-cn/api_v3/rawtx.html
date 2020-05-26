@@ -41,17 +41,17 @@
   <!-- RSS -->
   <link rel="alternate" href="/atom.xml" title="Metaverse Docs">
   <!-- Open Graph -->
-  <meta name="description" content="Description如果您可能会大批量发送交易，建议使用-r or [--receivers]来指定多个接受者，来降低发送交易的频率，建议5分钟以上来批量发送一次交易，以避免您热钱包的UTXO组合不够导致交易pending的可能。  API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]">
+  <meta name="description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]           Transaction fee. defaults to 10000 ETP bits -i or [--message]       Message/Information attached to">
 <meta property="og:type" content="website">
 <meta property="og:title" content="rawtx">
 <meta property="og:url" content="https://docs.mvs.org/zh-cn/api_v3/rawtx.html">
 <meta property="og:site_name" content="Metaverse Docs">
-<meta property="og:description" content="Description如果您可能会大批量发送交易，建议使用-r or [--receivers]来指定多个接受者，来降低发送交易的频率，建议5分钟以上来批量发送一次交易，以避免您热钱包的UTXO组合不够导致交易pending的可能。  API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]">
+<meta property="og:description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]           Transaction fee. defaults to 10000 ETP bits -i or [--message]       Message/Information attached to">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2020-02-21T15:36:24.840Z">
+<meta property="og:updated_time" content="2020-05-26T09:40:51.335Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rawtx">
-<meta name="twitter:description" content="Description如果您可能会大批量发送交易，建议使用-r or [--receivers]来指定多个接受者，来降低发送交易的频率，建议5分钟以上来批量发送一次交易，以避免您热钱包的UTXO组合不够导致交易pending的可能。  API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]">
+<meta name="twitter:description" content="Description API Methods  createrawtx  createrawtx  Parameters (positional)   -f or [--fee]           Transaction fee. defaults to 10000 ETP bits -i or [--message]       Message/Information attached to">
 <meta name="twitter:site" content="mvs_org">
 <meta property="fb:admins" content="100006665201854">
   <!-- Google Analytics -->
@@ -115,8 +115,7 @@
                 <a href="https://github.com/mvs-org/docs-mvs-org/edit/master/source/zh-cn/api_v3/rawtx.md" class="article-edit-link" title="改进本文"><i class="fa fa-pencil"></i></a>
               </header>
               <div class="article-content" itemprop="articleBody">
-                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><p>如果您可能会大批量发送交易，建议使用<code>-r or [--receivers]</code>来指定多个接受者，来降低发送交易的频率，建议5分钟以上来批量发送一次交易，以避免您热钱包的UTXO组合不够导致交易pending的可能。</p>
-<hr>
+                <h2 id="Description" class="article-heading"><a href="#Description" class="headerlink" title="Description"></a>Description<a class="article-anchor" href="#Description" aria-hidden="true"></a></h2><hr>
 <h2 id="API-Methods" class="article-heading"><a href="#API-Methods" class="headerlink" title="API Methods"></a>API Methods<a class="article-anchor" href="#API-Methods" aria-hidden="true"></a></h2><hr>
 <ul>
 <li><h3 id="createrawtx" class="article-heading"><a href="#createrawtx" class="headerlink" title="createrawtx"></a><code>createrawtx</code><a class="article-anchor" href="#createrawtx" aria-hidden="true"></a></h3><p>  createrawtx</p>
@@ -133,6 +132,7 @@
 <li><code>-t</code> or <code>[--type]</code>          Transaction type. 0 – transfer etp, 3 – transfer asset</li>
 <li><code>-u</code> or <code>[--utxos]</code>         Use the specific UTXO as input. Format: “tx-hash:output-index”</li>
 <li><code>-x</code> or <code>[--locktime]</code>      Locktime. defaults to 0</li>
+<li><code>-c</code> or <code>[--utxominimumconfirmations]</code>       If specified, Create transaction with the utxo minimum confirmations. defaults to 3.</li>
 </ol>
 <ul>
 <li>Returns<br><code>Object</code> -</li>
@@ -141,7 +141,9 @@
 <li><code>rawtx</code> - The Base16 transaction.</li>
 </ol>
 <ul>
-<li>Example<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v3 -X POST --data '&#123;"jsonrpc":"2.0","method":"createrawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[&#123;<span class="string">"type"</span>:<span class="string">"3"</span>, <span class="string">"senders"</span>:<span class="string">"tCrRWkDBZQTqp3AdZc39DSMJ8FremrTinj"</span>, <span class="string">"receivers"</span>:<span class="string">"t7M89JNHrVn3TwNDq2HTGbTMmCXCXQNhqr:100"</span>, <span class="string">"symbol"</span>:<span class="string">"RMB"</span>&#125;],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" : "02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e180000000000ffffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<li><p>Example</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v3 -X POST --data '&#123;"jsonrpc":"2.0","method":"createrawtx",</span></span><br><span class="line"><span class="string">"params"</span>:[&#123;<span class="string">"type"</span>:<span class="string">"3"</span>, <span class="string">"senders"</span>:<span class="string">"tCrRWkDBZQTqp3AdZc39DSMJ8FremrTinj"</span>, <span class="string">"receivers"</span>:<span class="string">"t7M89JNHrVn3TwNDq2HTGbTMmCXCXQNhqr:100"</span>, <span class="string">"symbol"</span>:<span class="string">"RMB"</span>&#125;],<span class="string">"id"</span>:<span class="number">7</span>&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" : "02000000011b1cb3fc24c24e13a71e11f26fd3bc8c69ff15e1269783e09b276a23b6bf1e180000000000ffffffff0264000000000000001976a91404a31ae84a152ca773728761b7260726d8aeff8c88ac01000000000000008c7be111000000001976a91441064be4875b7a3608a891173540e534d4b89b6f88ac010000000000000000000000"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Request</span></span><br><span class="line">curl http:<span class="comment">//127.0.0.1:8820/rpc/v3 -X POST --data '&#123;</span></span><br><span class="line">    <span class="string">"jsonrpc"</span>:<span class="string">"2.0"</span>,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"createrawtx"</span>,</span><br><span class="line">    <span class="string">"params"</span>:[</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="string">"type"</span>:<span class="string">"3"</span>, </span><br><span class="line">            <span class="string">"senders"</span>:<span class="string">"MGb4a2vtRHY6kkEH486hHrGsziGhTcSiyn"</span>, </span><br><span class="line">            <span class="string">"receivers"</span>:<span class="string">"MF89nPU6ang8SxRvnra2VFaphooiGnqjjZ:11"</span>, </span><br><span class="line">            <span class="string">"symbol"</span>:<span class="string">"DNA"</span>, </span><br><span class="line">            <span class="string">"utxominimumconfirmations"</span>: <span class="number">10</span> </span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"id"</span>:<span class="number">7</span></span><br><span class="line">&#125;<span class="string">'</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Response</span></span><br><span class="line"><span class="string">&#123;</span></span><br><span class="line"><span class="string">    "id" : 7,</span></span><br><span class="line"><span class="string">    "jsonrpc" : "2.0",</span></span><br><span class="line"><span class="string">    "result" : "0400000002b5f2a273da6630fc4aa46efa428efbb8c6ec2701ee4953d50edf011bbce9d7830000000000ffffffff71682da7f8b299b84847eab97e1c440557893bb9485670cfeca7e7e34b3c30fc0000000000ffffffff0200000000000000001976a9144f3de9c6614b46b8c8bdfd18b40bd5069998dd2488ac01000000020000000200000003444e410b00000000000000905f0100000000001976a9145f4ceb185ec0c40d0f20b4615cbe4c28b52771a788ac010000000000000000000000"</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -219,7 +221,7 @@
 
               </div>
               <footer class="article-footer">
-                <time class="article-footer-updated" datetime="2020-02-21T15:36:24.840Z" itemprop="dateModified">上次更新：2020-02-21</time>
+                <time class="article-footer-updated" datetime="2020-05-26T09:40:51.335Z" itemprop="dateModified">上次更新：2020-05-26</time>
                 <a href="multisig.html" class="article-footer-prev" title="多重签名"><i class="fa fa-chevron-left"></i><span>上一页</span></a><a href="identity.html" class="article-footer-next" title="身份"><span>下一页</span><i class="fa fa-chevron-right"></i></a>
               </footer>
               
